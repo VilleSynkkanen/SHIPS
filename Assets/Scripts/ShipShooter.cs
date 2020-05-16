@@ -9,6 +9,7 @@ struct ShotInfo
 {
     public bool input;
     public bool onCooldown;
+    public float cooldownLeft;
     public float shotCharge;
 }
 
@@ -22,7 +23,7 @@ public class ShipShooter : MonoBehaviour
 
     [SerializeField] float chargeSpeed;
     [SerializeField] float minimumCharge;
-    [SerializeField] float shotCooldown;
+    [SerializeField] float sideShotCooldown;
     [SerializeField] float shotForce;
     [SerializeField] float minForce;
     [SerializeField] float maxForce;
@@ -34,6 +35,9 @@ public class ShipShooter : MonoBehaviour
 
     string tag;     //used for identifying colliding projectiles
 
+    internal ShotInfo[] ShotInfo { get => shotInfo; }
+    public float SideShotCooldown { get => sideShotCooldown; }
+
     public event UnityAction<Side> shot = delegate { };
 
     void Awake()
@@ -42,7 +46,7 @@ public class ShipShooter : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         effects = GetComponent<ShotEffects>();
 
-        for(int i = 0; i <shotInfo.Length; i++)
+        for(int i = 0; i < shotInfo.Length; i++)
             shotInfo[i] = new ShotInfo();
 
         tag = gameObject.tag;
@@ -53,6 +57,7 @@ public class ShipShooter : MonoBehaviour
     {
         ReadInput();
         ChargeShot();
+        UpdateCooldowns();
     }
 
     void ReadInput()
@@ -64,7 +69,7 @@ public class ShipShooter : MonoBehaviour
     IEnumerator ShotCooldown(int index)
     {
         shotInfo[index].onCooldown = true;
-        yield return new WaitForSeconds(shotCooldown);
+        yield return new WaitForSeconds(sideShotCooldown);
         shotInfo[index].onCooldown = false;
     }
 
@@ -78,7 +83,8 @@ public class ShipShooter : MonoBehaviour
                 if (shotInfo[i].shotCharge >= 1)
                 {
                     Shoot((Side)i, 1);
-                    shotInfo[i].shotCharge = 0;
+                    ShotInfo[i].shotCharge = 0;
+                    shotInfo[i].cooldownLeft = sideShotCooldown;
                     StartCoroutine(ShotCooldown(i));
                 }
             }
@@ -86,6 +92,7 @@ public class ShipShooter : MonoBehaviour
             {
                 Shoot((Side)i, shotInfo[i].shotCharge);
                 shotInfo[i].shotCharge = 0;
+                shotInfo[i].cooldownLeft = sideShotCooldown;
                 StartCoroutine(ShotCooldown(i));
             }
             else
@@ -122,8 +129,19 @@ public class ShipShooter : MonoBehaviour
             ball.AddRelativeForce(Vector2.up * shotForce * charge * forceMultiplier);
             rb.AddRelativeForce(recoil * shotForce * charge * forceMultiplier);
         }
-
+        
         shot(side);
+    }
+
+    void UpdateCooldowns()
+    {
+        for(int i = 0; i < shotInfo.Length; i++)
+        {
+            if(shotInfo[i].onCooldown)
+            {
+                shotInfo[i].cooldownLeft -= Time.deltaTime;
+            }
+        }
     }
 
     private void OnDisable()

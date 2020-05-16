@@ -6,9 +6,10 @@ using UnityEngine.Events;
 public class ShipDamage : MonoBehaviour
 {
     [SerializeField] ShipSegment[] segments;
-    
+    [SerializeField] GameObject shipExplosion;
+
     [SerializeField] int maxHp;
-    float hp;
+    public float hp { get; private set; }
 
     float[] segmentHealth = new float[3];
 
@@ -17,15 +18,22 @@ public class ShipDamage : MonoBehaviour
     //rear hp: turning
 
     ShipMovement movement;
+    ShipUI ui;
+
+    public float[] SegmentHealth { get => segmentHealth; }
+    public int MaxHp { get => maxHp; }
+
     public event UnityAction<float, SegmentType> segmentDamage = delegate { };
 
     void Awake()
     {
         movement = GetComponent<ShipMovement>();
+        ui = GetComponent<ShipUI>();
         segmentDamage += movement.SegmentDamage;
+        segmentDamage += ui.UpdateHealthbars;
         hp = maxHp;
         for (int i = 0; i < segmentHealth.Length; i++)
-            segmentHealth[i] = 1f;
+            SegmentHealth[i] = 1f;
     }
 
     public void TakeDamage(float amount, SegmentType segment)
@@ -43,11 +51,13 @@ public class ShipDamage : MonoBehaviour
 
     void Destroy()
     {
+        Instantiate(shipExplosion, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 
     void OnDisable()
     {
         segmentDamage -= movement.SegmentDamage;
+        segmentDamage -= ui.UpdateHealthbars;
     }
 }

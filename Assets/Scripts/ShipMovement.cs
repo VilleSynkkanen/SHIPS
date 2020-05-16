@@ -10,6 +10,9 @@ public class ShipMovement : MonoBehaviour
     [SerializeField] float steeringSpeed;
     [SerializeField] float throttleSpeed;
 
+    [SerializeField] float damageAngleCoefficient;
+    [SerializeField] float maxDamageEfeect;
+
     float currentMoveSpeed;
     float currentTurnSpeed;
     float currentSteeringSpeed;
@@ -61,20 +64,25 @@ public class ShipMovement : MonoBehaviour
 
     public void SegmentDamage(float health, SegmentType segment)
     {
-        health = Mathf.Sqrt(health);
+        float effect = CalculateDamageEffects(health);
         if (segment == SegmentType.Front)
         {
-            currentMoveSpeed = moveSpeed * health;
+            currentMoveSpeed = moveSpeed * effect;
         }
         else if (segment == SegmentType.Middle)
         {
-            currentSteeringSpeed = steeringSpeed * health;
-            currentThrottleSpeed = throttleSpeed * health;
+            currentSteeringSpeed = steeringSpeed * effect;
+            currentThrottleSpeed = throttleSpeed * effect;
         }
         else if (segment == SegmentType.Back)
         {
-            currentTurnSpeed = turnSpeed * health;
+            currentTurnSpeed = turnSpeed * effect;
         }
+    }
+
+    public float CalculateDamageEffects(float health)
+    {
+        return damageAngleCoefficient * health + maxDamageEfeect;
     }
 
     void OnDisable()
