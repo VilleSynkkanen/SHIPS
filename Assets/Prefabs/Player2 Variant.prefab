@@ -66,6 +66,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: P2
       objectReference: {fileID: 0}
+    - target: {fileID: 6451593557642716291, guid: 9b5e019842cb10a4eadcda28ba2f6649,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6850355539462680270, guid: 9b5e019842cb10a4eadcda28ba2f6649,
         type: 3}
       propertyPath: m_TagString
@@ -81,10 +86,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: P2
       objectReference: {fileID: 0}
+    - target: {fileID: 7916367853047122364, guid: 9b5e019842cb10a4eadcda28ba2f6649,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.65882355
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916367853047122364, guid: 9b5e019842cb10a4eadcda28ba2f6649,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.05741527
+      objectReference: {fileID: 0}
+    - target: {fileID: 7916367853047122364, guid: 9b5e019842cb10a4eadcda28ba2f6649,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.039215695
+      objectReference: {fileID: 0}
     - target: {fileID: 7916367853365582388, guid: 9b5e019842cb10a4eadcda28ba2f6649,
         type: 3}
       propertyPath: m_Name
-      value: Player2
+      value: Player2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7916367853365582388, guid: 9b5e019842cb10a4eadcda28ba2f6649,
         type: 3}

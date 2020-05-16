@@ -49,6 +49,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ShootForward"",
+                    ""type"": ""Button"",
+                    ""id"": ""e07a6f5c-8517-4201-9337-28f8ef150f89"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""AimCannon"",
+                    ""type"": ""Value"",
+                    ""id"": ""d573135f-2459-46c1-a47c-0ca2930c912a"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -161,6 +177,61 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""ShootRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d31b4251-5663-4146-8585-418feacc1d87"",
+                    ""path"": ""<Keyboard>/x"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShootForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa3d082e-4c65-4782-a339-b52b3cfa833e"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimCannon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""id"": ""6b571660-5c85-4a90-9869-c104ceabcdbc"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimCannon"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""36977748-f16a-4a06-8019-98942fe85b2b"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimCannon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""bf4a2a41-e8e4-4c1f-a38d-affd9feef4e8"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimCannon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -173,6 +244,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Actions_Steering = m_Actions.FindAction("Steering", throwIfNotFound: true);
         m_Actions_ShootLeft = m_Actions.FindAction("ShootLeft", throwIfNotFound: true);
         m_Actions_ShootRight = m_Actions.FindAction("ShootRight", throwIfNotFound: true);
+        m_Actions_ShootForward = m_Actions.FindAction("ShootForward", throwIfNotFound: true);
+        m_Actions_AimCannon = m_Actions.FindAction("AimCannon", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -226,6 +299,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_Steering;
     private readonly InputAction m_Actions_ShootLeft;
     private readonly InputAction m_Actions_ShootRight;
+    private readonly InputAction m_Actions_ShootForward;
+    private readonly InputAction m_Actions_AimCannon;
     public struct ActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -234,6 +309,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Steering => m_Wrapper.m_Actions_Steering;
         public InputAction @ShootLeft => m_Wrapper.m_Actions_ShootLeft;
         public InputAction @ShootRight => m_Wrapper.m_Actions_ShootRight;
+        public InputAction @ShootForward => m_Wrapper.m_Actions_ShootForward;
+        public InputAction @AimCannon => m_Wrapper.m_Actions_AimCannon;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -255,6 +332,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @ShootRight.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShootRight;
                 @ShootRight.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShootRight;
                 @ShootRight.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShootRight;
+                @ShootForward.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShootForward;
+                @ShootForward.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShootForward;
+                @ShootForward.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShootForward;
+                @AimCannon.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimCannon;
+                @AimCannon.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimCannon;
+                @AimCannon.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimCannon;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -271,6 +354,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @ShootRight.started += instance.OnShootRight;
                 @ShootRight.performed += instance.OnShootRight;
                 @ShootRight.canceled += instance.OnShootRight;
+                @ShootForward.started += instance.OnShootForward;
+                @ShootForward.performed += instance.OnShootForward;
+                @ShootForward.canceled += instance.OnShootForward;
+                @AimCannon.started += instance.OnAimCannon;
+                @AimCannon.performed += instance.OnAimCannon;
+                @AimCannon.canceled += instance.OnAimCannon;
             }
         }
     }
@@ -281,5 +370,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnSteering(InputAction.CallbackContext context);
         void OnShootLeft(InputAction.CallbackContext context);
         void OnShootRight(InputAction.CallbackContext context);
+        void OnShootForward(InputAction.CallbackContext context);
+        void OnAimCannon(InputAction.CallbackContext context);
     }
 }

@@ -9,6 +9,8 @@ public class PlayerInput : MonoBehaviour
     public float vertical { get; private set; }
     public bool shootLeft { get; private set; }
     public bool shootRight { get; private set; }
+    public bool shootForward { get; private set; }
+    public float aim { get; private set; }
 
     void Awake()
     {
@@ -25,6 +27,12 @@ public class PlayerInput : MonoBehaviour
 
         controls.Actions.ShootRight.performed += ctx => shootRight = true;
         controls.Actions.ShootRight.canceled += ctx => shootRight = false;
+
+        controls.Actions.ShootForward.performed += ctx => shootForward = true;
+        controls.Actions.ShootForward.canceled += ctx => shootForward = false;
+
+        controls.Actions.AimCannon.performed += ctx => aim = ctx.ReadValue<float>();
+        controls.Actions.AimCannon.canceled += ctx => aim = 0;
     }
 
     void OnEnable()

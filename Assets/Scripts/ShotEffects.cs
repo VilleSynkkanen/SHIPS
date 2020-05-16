@@ -12,8 +12,9 @@ public class ShotEffects : Effects
 {
     [SerializeField] SpriteRenderer[] left;
     [SerializeField] SpriteRenderer[] right;
+    [SerializeField] SpriteRenderer[] forward;
 
-    EffectInfo[] effects = new EffectInfo[2];
+    EffectInfo[] effects = new EffectInfo[3];
 
     float startTime;
     
@@ -24,6 +25,7 @@ public class ShotEffects : Effects
 
         effects[0].sprites = left;
         effects[1].sprites = right;
+        effects[2].sprites = forward;
     }
 
     public void Effect(Side side)

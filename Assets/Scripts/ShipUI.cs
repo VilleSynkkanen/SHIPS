@@ -21,6 +21,8 @@ public class ShipUI : MonoBehaviour
     [SerializeField] Color fullyDamaged;
 
     [SerializeField] Image[] shotCooldownImages;
+    [SerializeField] GameObject[] arrows;
+    [SerializeField] Image[] arrowFills;
 
     ShipMovement movement;
     ShipDamage damage;
@@ -35,6 +37,8 @@ public class ShipUI : MonoBehaviour
         negativeThrottle.fillAmount = 0;
         positiveSteering.fillAmount = 0;
         negativeSteering.fillAmount = 0;
+        for(int i = 0; i < arrowFills.Length; i++)
+            arrowFills[i].fillAmount = 0;
     }
 
     public void UpdateUI()
@@ -66,7 +70,12 @@ public class ShipUI : MonoBehaviour
 
         for(int i = 0; i < shotCooldownImages.Length; i++)
         {
-            shotCooldownImages[i].fillAmount = shooter.ShotInfo[i].cooldownLeft / shooter.SideShotCooldown;
+            shotCooldownImages[i].fillAmount = shooter.ShotInfo[i].cooldownLeft / shooter.ShotInfo[i].cooldown;
+            arrowFills[i].fillAmount = shooter.ShotInfo[i].shotCharge;
+            if (!shooter.ShotInfo[i].onCooldown)
+            {
+                arrows[i].SetActive(true);
+            }
         }
     }
 
@@ -80,5 +89,10 @@ public class ShipUI : MonoBehaviour
         }
 
         totalHealth.fillAmount = damage.hp / damage.MaxHp;
+    }
+
+    public void ShotCannon(Side side)
+    {
+        arrows[(int)side].SetActive(false);
     }
 }
