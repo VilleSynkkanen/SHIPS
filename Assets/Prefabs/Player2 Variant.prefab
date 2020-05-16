@@ -66,10 +66,20 @@ PrefabInstance:
       propertyPath: m_TagString
       value: P2
       objectReference: {fileID: 0}
+    - target: {fileID: 3335537238819402736, guid: 9b5e019842cb10a4eadcda28ba2f6649,
+        type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335537238819402736, guid: 9b5e019842cb10a4eadcda28ba2f6649,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnAim
+      objectReference: {fileID: 0}
     - target: {fileID: 6451593557642716291, guid: 9b5e019842cb10a4eadcda28ba2f6649,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6850355539462680270, guid: 9b5e019842cb10a4eadcda28ba2f6649,
         type: 3}
@@ -104,7 +114,7 @@ PrefabInstance:
     - target: {fileID: 7916367853365582388, guid: 9b5e019842cb10a4eadcda28ba2f6649,
         type: 3}
       propertyPath: m_Name
-      value: Player2 Variant
+      value: Player2
       objectReference: {fileID: 0}
     - target: {fileID: 7916367853365582388, guid: 9b5e019842cb10a4eadcda28ba2f6649,
         type: 3}
@@ -169,7 +179,7 @@ PrefabInstance:
     - target: {fileID: 7916367853365582392, guid: 9b5e019842cb10a4eadcda28ba2f6649,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b5e019842cb10a4eadcda28ba2f6649, type: 3}

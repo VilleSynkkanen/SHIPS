@@ -20,17 +20,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Throttle"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""e90d533a-d517-4f3f-8d13-830fcbeab16c"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
                     ""name"": ""Steering"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""0673adbc-82c0-409d-9ed4-7ff6f1255eb2"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -65,16 +65,24 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""LayMine"",
+                    ""type"": ""Button"",
+                    ""id"": ""22943604-ef19-4574-acee-b5795db8f631"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""df38961e-f878-42e1-8f11-93978cc4e926"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/dpad/y"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Throttle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -96,7 +104,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Throttle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -107,7 +115,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Throttle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -115,10 +123,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f71a2490-3224-4c2d-b154-2ed435c302d4"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/dpad/x"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Steering"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -140,7 +148,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Steering"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -151,7 +159,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Steering"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -159,10 +167,21 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""32f4bbd0-904d-4701-b06f-22d13d1e773a"",
-                    ""path"": ""<Keyboard>/q"",
+                    ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ShootLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a82cc642-eb0d-482e-b95b-76776c63f9ea"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""ShootLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -170,10 +189,21 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2e6483ba-07ca-43de-8700-9ca959130db6"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ShootRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ecb4cdea-2194-47a1-943f-aa4f031b792f"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""ShootRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -181,24 +211,57 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d31b4251-5663-4146-8585-418feacc1d87"",
-                    ""path"": ""<Keyboard>/x"",
+                    ""path"": ""<Keyboard>/upArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""ShootForward"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""fa3d082e-4c65-4782-a339-b52b3cfa833e"",
-                    ""path"": """",
+                    ""id"": ""8bf8c900-6768-4a3f-9ac4-f6c94ff7b471"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""ShootForward"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Controller"",
+                    ""id"": ""cb4473c7-5172-4074-81e5-942823e12df6"",
+                    ""path"": ""1DAxis"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""AimCannon"",
-                    ""isComposite"": false,
+                    ""isComposite"": true,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""6480300a-50bd-400c-8fe2-a7ee558d13fa"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AimCannon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""d9e2b183-be7c-4cad-9f66-f074dd5fb590"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AimCannon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""Aim"",
@@ -214,10 +277,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""36977748-f16a-4a06-8019-98942fe85b2b"",
-                    ""path"": ""<Keyboard>/z"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""AimCannon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -225,18 +288,63 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""bf4a2a41-e8e4-4c1f-a38d-affd9feef4e8"",
-                    ""path"": ""<Keyboard>/c"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""AimCannon"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fa0e4d98-55e4-4bce-aba3-99d8780cde75"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""LayMine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""daaeda59-a61c-4352-931e-6beb0aa1321b"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""LayMine"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
     ],
-    ""controlSchemes"": []
+    ""controlSchemes"": [
+        {
+            ""name"": ""Keyboard"",
+            ""bindingGroup"": ""Keyboard"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""Controller"",
+            ""bindingGroup"": ""Controller"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        }
+    ]
 }");
         // Actions
         m_Actions = asset.FindActionMap("Actions", throwIfNotFound: true);
@@ -246,6 +354,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Actions_ShootRight = m_Actions.FindAction("ShootRight", throwIfNotFound: true);
         m_Actions_ShootForward = m_Actions.FindAction("ShootForward", throwIfNotFound: true);
         m_Actions_AimCannon = m_Actions.FindAction("AimCannon", throwIfNotFound: true);
+        m_Actions_LayMine = m_Actions.FindAction("LayMine", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -301,6 +410,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_ShootRight;
     private readonly InputAction m_Actions_ShootForward;
     private readonly InputAction m_Actions_AimCannon;
+    private readonly InputAction m_Actions_LayMine;
     public struct ActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -311,6 +421,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @ShootRight => m_Wrapper.m_Actions_ShootRight;
         public InputAction @ShootForward => m_Wrapper.m_Actions_ShootForward;
         public InputAction @AimCannon => m_Wrapper.m_Actions_AimCannon;
+        public InputAction @LayMine => m_Wrapper.m_Actions_LayMine;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -338,6 +449,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @AimCannon.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimCannon;
                 @AimCannon.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimCannon;
                 @AimCannon.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimCannon;
+                @LayMine.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLayMine;
+                @LayMine.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLayMine;
+                @LayMine.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLayMine;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -360,10 +474,31 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @AimCannon.started += instance.OnAimCannon;
                 @AimCannon.performed += instance.OnAimCannon;
                 @AimCannon.canceled += instance.OnAimCannon;
+                @LayMine.started += instance.OnLayMine;
+                @LayMine.performed += instance.OnLayMine;
+                @LayMine.canceled += instance.OnLayMine;
             }
         }
     }
     public ActionsActions @Actions => new ActionsActions(this);
+    private int m_KeyboardSchemeIndex = -1;
+    public InputControlScheme KeyboardScheme
+    {
+        get
+        {
+            if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
+            return asset.controlSchemes[m_KeyboardSchemeIndex];
+        }
+    }
+    private int m_ControllerSchemeIndex = -1;
+    public InputControlScheme ControllerScheme
+    {
+        get
+        {
+            if (m_ControllerSchemeIndex == -1) m_ControllerSchemeIndex = asset.FindControlSchemeIndex("Controller");
+            return asset.controlSchemes[m_ControllerSchemeIndex];
+        }
+    }
     public interface IActionsActions
     {
         void OnThrottle(InputAction.CallbackContext context);
@@ -372,5 +507,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnShootRight(InputAction.CallbackContext context);
         void OnShootForward(InputAction.CallbackContext context);
         void OnAimCannon(InputAction.CallbackContext context);
+        void OnLayMine(InputAction.CallbackContext context);
     }
 }

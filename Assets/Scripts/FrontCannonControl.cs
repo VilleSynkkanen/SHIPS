@@ -13,7 +13,7 @@ public class FrontCannonControl : MonoBehaviour
     void Awake()
     {
         input = GetComponent<PlayerInput>();
-        currentAngles = transform.eulerAngles;
+        currentAngles = new Vector3(0, 0, 0);
     }
 
     // Update is called once per frame

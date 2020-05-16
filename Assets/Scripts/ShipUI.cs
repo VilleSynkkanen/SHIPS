@@ -23,22 +23,32 @@ public class ShipUI : MonoBehaviour
     [SerializeField] Image[] shotCooldownImages;
     [SerializeField] GameObject[] arrows;
     [SerializeField] Image[] arrowFills;
+    
+    [SerializeField] TextMeshProUGUI mineText;
+    [SerializeField] Image mineCooldownImage;
 
     ShipMovement movement;
     ShipDamage damage;
     ShipShooter shooter;
+    ShipLayMine mines;
     
     void Awake()
     {
         movement = GetComponent<ShipMovement>();
         damage = GetComponent<ShipDamage>();
         shooter = GetComponent<ShipShooter>();
+        mines = GetComponent<ShipLayMine>();
         positiveThrottle.fillAmount = 0;
         negativeThrottle.fillAmount = 0;
         positiveSteering.fillAmount = 0;
         negativeSteering.fillAmount = 0;
         for(int i = 0; i < arrowFills.Length; i++)
             arrowFills[i].fillAmount = 0;
+    }
+
+    private void Start()
+    {
+        UpdateMines();
     }
 
     public void UpdateUI()
@@ -77,6 +87,9 @@ public class ShipUI : MonoBehaviour
                 arrows[i].SetActive(true);
             }
         }
+
+        if (mines.mines != 0)
+            mineCooldownImage.fillAmount = mines.cooldownLeft / mines.ShotCooldown;
     }
 
     public void UpdateHealthbars(float f, SegmentType s)    // parameters not used
@@ -94,5 +107,14 @@ public class ShipUI : MonoBehaviour
     public void ShotCannon(Side side)
     {
         arrows[(int)side].SetActive(false);
+    }
+
+    public void UpdateMines()
+    {
+        mineText.text = mines.mines.ToString();
+        if(mines.mines == 0)
+        {
+            mineCooldownImage.fillAmount = 1;
+        }
     }
 }
