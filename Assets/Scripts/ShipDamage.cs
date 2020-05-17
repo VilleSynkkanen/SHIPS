@@ -25,6 +25,8 @@ public class ShipDamage : MonoBehaviour
 
     public event UnityAction<float, SegmentType> segmentDamage = delegate { };
 
+    public static event UnityAction<GameObject> destroyed = delegate { };
+
     void Awake()
     {
         movement = GetComponent<ShipMovement>();
@@ -52,7 +54,8 @@ public class ShipDamage : MonoBehaviour
     void Destroy()
     {
         Instantiate(shipExplosion, transform.position, transform.rotation);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        destroyed(gameObject);
     }
 
     void OnDisable()

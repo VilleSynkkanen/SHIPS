@@ -90,4 +90,3 @@ public class ShipMovement : MonoBehaviour
         inputChanged -= ui.UpdateUI;
     }
 }
-
