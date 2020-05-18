@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FrontCannonControl : MonoBehaviour
 {
-    PlayerInput input;
+    PlayerControlInput input;
     Vector3 currentAngles;
     [SerializeField] Transform cannon;
     [SerializeField] float rotationSpeed;
@@ -12,7 +10,7 @@ public class FrontCannonControl : MonoBehaviour
 
     void Awake()
     {
-        input = GetComponent<PlayerInput>();
+        input = GetComponent<PlayerControlInput>();
         currentAngles = new Vector3(0, 0, 0);
     }
 

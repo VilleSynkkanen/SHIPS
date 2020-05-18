@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class ShipMovement : MonoBehaviour
 {
@@ -9,6 +8,7 @@ public class ShipMovement : MonoBehaviour
     [SerializeField] float turnSpeed;
     [SerializeField] float steeringSpeed;
     [SerializeField] float throttleSpeed;
+    [SerializeField] float reverseSpeed;
 
     [SerializeField] float damageAngleCoefficient;
     [SerializeField] float maxDamageEfeect;
@@ -22,7 +22,8 @@ public class ShipMovement : MonoBehaviour
     public float steering { get; private set; }  //[-1, 1]
 
     Rigidbody2D rb;
-    PlayerInput input;
+    public PlayerControlInput input { get; private set; }
+    public PlayerInput playerInput { get; private set; }
     ShipUI ui;
 
     public event UnityAction inputChanged = delegate { };
@@ -30,7 +31,8 @@ public class ShipMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        input = GetComponent<PlayerInput>();
+        input = GetComponent<PlayerControlInput>();
+        playerInput = GetComponent<PlayerInput>();
         ui = GetComponent<ShipUI>();
         inputChanged += ui.UpdateUI;
 
@@ -47,10 +49,20 @@ public class ShipMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.AddRelativeForce(Vector2.up * currentMoveSpeed * throttle * Time.fixedDeltaTime);
+        float multiplier = 1;
+        if (throttle < 0)
+            multiplier = reverseSpeed;
+
+        rb.AddRelativeForce(Vector2.up * multiplier * currentMoveSpeed * throttle * Time.fixedDeltaTime);
         rb.AddTorque(-currentTurnSpeed * steering * Time.fixedDeltaTime);
     }
 
+    public void SetControlsToZero()
+    {
+        throttle = 0;
+        steering = 0;
+    }
+    
     void ReadInput()
     {
         steering += input.horizontal * currentSteeringSpeed * Time.deltaTime;
@@ -86,6 +98,11 @@ public class ShipMovement : MonoBehaviour
     }
 
     void OnDisable()
+    {
+        inputChanged -= ui.UpdateUI;
+    }
+
+    void OnDestroy()
     {
         inputChanged -= ui.UpdateUI;
     }

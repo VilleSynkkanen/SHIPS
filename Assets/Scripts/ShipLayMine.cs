@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +6,7 @@ using UnityEngine.Events;
 
 public class ShipLayMine : MonoBehaviour
 {
-    PlayerInput input;
+    PlayerControlInput input;
     [SerializeField] AudioSource soundEffect;
     ShipUI ui;
 
@@ -28,7 +27,7 @@ public class ShipLayMine : MonoBehaviour
 
     private void Awake()
     {
-        input = GetComponent<PlayerInput>();
+        input = GetComponent<PlayerControlInput>();
         ui = GetComponent<ShipUI>();
         mines = startingMines;
         onCooldown = false;
@@ -71,7 +70,7 @@ public class ShipLayMine : MonoBehaviour
         collider.enabled = true;
     }
 
-    void OnDisable()
+    void OnDestroy()
     {
         mined += ui.UpdateMines;
     }

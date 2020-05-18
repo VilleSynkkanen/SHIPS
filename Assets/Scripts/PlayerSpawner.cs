@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerSpawner : MonoBehaviour
 {
     [SerializeField] Transform[] playerSpawns;
+    [SerializeField] Transform[] playerSpawns3;
     [SerializeField] GameObject[] playerPrefabs;
 
     GameController controller;
@@ -17,9 +16,16 @@ public class PlayerSpawner : MonoBehaviour
 
     public void SpawnPlayers()
     {
-        for (int i = 0; i < PlayerPrefs.GetInt("players", 2); i++)
+        Transform[] spawns;
+        int players = PlayerPrefs.GetInt("players", 2);
+        if (players == 3)
+            spawns = playerSpawns3;
+        else
+            spawns = playerSpawns;
+
+        for (int i = 0; i < players; i++)
         {
-            GameObject player = Instantiate(playerPrefabs[i], playerSpawns[i].position, playerSpawns[i].rotation);
+            GameObject player = Instantiate(playerPrefabs[i], spawns[i].position, spawns[i].rotation);
             controller.AddPlayer(player);
         }
     }

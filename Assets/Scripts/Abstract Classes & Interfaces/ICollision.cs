@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public interface ICollision
+﻿public interface ICollision
 {
     void Collision(ProjectileCollision collider);
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,7 +15,7 @@ struct ShotInfo
 
 public class ShipShooter : MonoBehaviour
 {
-    PlayerInput input;
+    PlayerControlInput input;
     ShotEffects effects;
     Rigidbody2D rb;
     ShipUI ui;
@@ -46,7 +45,7 @@ public class ShipShooter : MonoBehaviour
 
     void Awake()
     {
-        input = GetComponent<PlayerInput>();
+        input = GetComponent<PlayerControlInput>();
         rb = GetComponent<Rigidbody2D>();
         effects = GetComponent<ShotEffects>();
         ui = GetComponent<ShipUI>();
@@ -162,7 +161,7 @@ public class ShipShooter : MonoBehaviour
         }
     }
 
-    private void OnDisable()
+    void OnDestroy()
     {
         shot -= effects.Effect;
         shot -= ui.ShotCannon;

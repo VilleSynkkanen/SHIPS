@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 public class ShipDamage : MonoBehaviour
 {
@@ -19,6 +18,7 @@ public class ShipDamage : MonoBehaviour
 
     ShipMovement movement;
     ShipUI ui;
+    PlayerInput input;
 
     public float[] SegmentHealth { get => segmentHealth; }
     public int MaxHp { get => maxHp; }
@@ -31,6 +31,7 @@ public class ShipDamage : MonoBehaviour
     {
         movement = GetComponent<ShipMovement>();
         ui = GetComponent<ShipUI>();
+        input = GetComponent<PlayerInput>();
         segmentDamage += movement.SegmentDamage;
         segmentDamage += ui.UpdateHealthbars;
         hp = maxHp;
@@ -54,11 +55,11 @@ public class ShipDamage : MonoBehaviour
     void Destroy()
     {
         Instantiate(shipExplosion, transform.position, transform.rotation);
-        gameObject.SetActive(false);
+        gameObject.transform.position = new Vector3(1000,1000,-1000);
         destroyed(gameObject);
     }
 
-    void OnDisable()
+    void OnDestroy()
     {
         segmentDamage -= movement.SegmentDamage;
         segmentDamage -= ui.UpdateHealthbars;

@@ -73,6 +73,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""8747c435-1878-4ced-8785-5742ffb1d23b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -317,6 +325,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""LayMine"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e27247ad-acab-4c4e-b1d0-6e57267a61bb"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d355eb2f-cbd6-4458-a199-30f211c68758"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -355,6 +385,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Actions_ShootForward = m_Actions.FindAction("ShootForward", throwIfNotFound: true);
         m_Actions_AimCannon = m_Actions.FindAction("AimCannon", throwIfNotFound: true);
         m_Actions_LayMine = m_Actions.FindAction("LayMine", throwIfNotFound: true);
+        m_Actions_Quit = m_Actions.FindAction("Quit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -411,6 +442,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_ShootForward;
     private readonly InputAction m_Actions_AimCannon;
     private readonly InputAction m_Actions_LayMine;
+    private readonly InputAction m_Actions_Quit;
     public struct ActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -422,6 +454,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @ShootForward => m_Wrapper.m_Actions_ShootForward;
         public InputAction @AimCannon => m_Wrapper.m_Actions_AimCannon;
         public InputAction @LayMine => m_Wrapper.m_Actions_LayMine;
+        public InputAction @Quit => m_Wrapper.m_Actions_Quit;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -452,6 +485,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @LayMine.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLayMine;
                 @LayMine.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLayMine;
                 @LayMine.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnLayMine;
+                @Quit.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnQuit;
             }
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -477,6 +513,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @LayMine.started += instance.OnLayMine;
                 @LayMine.performed += instance.OnLayMine;
                 @LayMine.canceled += instance.OnLayMine;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
             }
         }
     }
@@ -508,5 +547,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnShootForward(InputAction.CallbackContext context);
         void OnAimCannon(InputAction.CallbackContext context);
         void OnLayMine(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
 }

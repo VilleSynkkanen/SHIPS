@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] MusicPlayer player;
+    MusicPlayer musicPlayer;
 
     [SerializeField] PlayerVictories victories;
 
@@ -14,9 +13,6 @@ public class GameController : MonoBehaviour
     bool gameEnded;
 
     List<GameObject> players = new List<GameObject>();
-    
-    GameObject player1;         // required for restart/quit
-    PlayerInput player1Input;
 
     public event UnityAction<int, int[]> gameEnd = delegate { };
 
@@ -31,35 +27,9 @@ public class GameController : MonoBehaviour
         ShipDamage.destroyed += RemovePlayer;
         gameEnded = false;
 
+        musicPlayer = FindObjectOfType<MusicPlayer>();
         uiManager = GetComponent<BattleUIManager>();
         gameEnd += uiManager.ShowVictoryUi;
-    }
-
-    void Start()
-    {
-        if (players.Count > 0)
-        {
-            player1 = players[0];
-            player1Input = player1.GetComponent<PlayerInput>();
-        }        
-    }
-
-    void Update()
-    {
-        if (gameEnded)
-            ReadInput();
-    }
-
-    void ReadInput()
-    {
-        if (player1Input.shootForward)
-        {
-            Restart();
-        }
-        if (player1Input.mine)
-        {
-            Quit();
-        }
     }
 
     public void AddPlayer(GameObject player)
@@ -70,6 +40,7 @@ public class GameController : MonoBehaviour
     public void RemovePlayer(GameObject player)
     {
         players.Remove(player);
+        DisablePlayerControls(player);
         CheckGameEnd();
     }
 
@@ -88,27 +59,27 @@ public class GameController : MonoBehaviour
         }
     }
     
+    void DisablePlayerControls(GameObject player)
+    {
+        ShipMovement movement = player.GetComponent<ShipMovement>();
+        movement.playerInput.enabled = false;
+        movement.SetControlsToZero();
+    }
+    
     void Victory(int i)
     {
+        DisablePlayerControls(players[0]);
         victories.playerVictories[i]++;
         gameEnd(i, victories.playerVictories);
-        RestorePlayer1();
+        Cursor.visible = true;
     }
 
     void Draw()
     {
         gameEnd(-1, victories.playerVictories);
-        RestorePlayer1();
+        Cursor.visible = true;
     }
 
-    void RestorePlayer1()
-    {
-        if (player1 != null)
-        {
-            player1.SetActive(true);
-            player1.transform.position = new Vector3(0, 0, -100);
-        }
-    }
     
     public void Restart()
     {
@@ -117,7 +88,7 @@ public class GameController : MonoBehaviour
 
     public void Quit()
     {
-        Destroy(player.gameObject);           // destroy music player
+        Destroy(musicPlayer.gameObject);
         SceneManager.LoadScene("MainMenu");
     }
 
