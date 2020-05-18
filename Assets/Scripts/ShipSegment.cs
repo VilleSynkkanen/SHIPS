@@ -24,7 +24,8 @@ public class ShipSegment : MonoBehaviour, ICollision
     public void Collision(ProjectileCollision collider)
     {
         Vector2 velocity = collider.rb.velocity;
-        rb.AddForce(velocity);
+        Vector2 position = new Vector2(collider.transform.position.x, collider.transform.position.y);
+        rb.AddExplosionForce(collider.ExplosionForce, position);
         TakeDamage(collider.CalculateDamage(velocity));
     }
 

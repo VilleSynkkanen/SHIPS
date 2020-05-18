@@ -133,6 +133,7 @@ MonoBehaviour:
   explosion: {fileID: 5166297233598870998, guid: 3b81a81f4552d0f47a9326831c46836a,
     type: 3}
   explosionTravel: 0
+  explosionForce: 32
 --- !u!50 &1356199553577383976
 Rigidbody2D:
   serializedVersion: 4

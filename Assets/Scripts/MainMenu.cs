@@ -11,6 +11,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject optionsMenu;
     [SerializeField] PlayerVictories victories;
 
+    void Awake()
+    {
+        Cursor.visible = true;
+    }
+
     public void ToMainMenu()
     {
         mainMenu.SetActive(true);

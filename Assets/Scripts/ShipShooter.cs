@@ -144,6 +144,8 @@ public class ShipShooter : MonoBehaviour
             ball.rotation += rotation;
             ball.AddRelativeForce(Vector2.up * shotForce * charge * forceMultiplier);
             rb.AddRelativeForce(recoil * shotForce * charge * forceMultiplier);
+
+            location.gameObject.GetComponent<AudioSource>().Play();
         }
         
         shot(side);

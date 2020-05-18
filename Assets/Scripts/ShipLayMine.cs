@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class ShipLayMine : MonoBehaviour
 {
     PlayerInput input;
+    [SerializeField] AudioSource soundEffect;
     ShipUI ui;
 
     [SerializeField] GameObject projectile;
@@ -55,6 +56,7 @@ public class ShipLayMine : MonoBehaviour
 
     void LayMine()
     {
+        soundEffect.Play();
         onCooldown = true;
         GameObject mine = Instantiate(projectile, shotLocation.position, shotLocation.rotation);
         mine.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * shotForce);

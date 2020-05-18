@@ -7,6 +7,27 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3411396965111293672, guid: ace811872a8f7154dac0999f2fbc1b7b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c2153dcd0edd22f40bdebf613271bae7, type: 3}
+    - target: {fileID: 3411396965111293672, guid: ace811872a8f7154dac0999f2fbc1b7b,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3411396965111293672, guid: ace811872a8f7154dac0999f2fbc1b7b,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -3249345746775159817, guid: 72d80f99dc6279245b8959d8d839ab3e,
+        type: 2}
+    - target: {fileID: 3411396965111293672, guid: ace811872a8f7154dac0999f2fbc1b7b,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 7189306343603192018, guid: ace811872a8f7154dac0999f2fbc1b7b,
         type: 3}
       propertyPath: m_Name

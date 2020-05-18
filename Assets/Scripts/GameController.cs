@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] MusicPlayer player;
+
     [SerializeField] PlayerVictories victories;
 
-    bool[] playerReady;
+    bool[] playersReady;
     bool gameEnded;
 
     List<GameObject> players = new List<GameObject>();
@@ -24,6 +26,8 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
+        Cursor.visible = false;
+        
         ShipDamage.destroyed += RemovePlayer;
         gameEnded = false;
 
@@ -113,6 +117,7 @@ public class GameController : MonoBehaviour
 
     public void Quit()
     {
+        Destroy(player.gameObject);           // destroy music player
         SceneManager.LoadScene("MainMenu");
     }
 

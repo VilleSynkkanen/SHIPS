@@ -21,7 +21,7 @@ public class HitEffect : Effects
         sprite.color = Color.Lerp(Visible, Invisible, delta * LerpSpeed);
         if (sprite.color == Invisible)
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 10);
         }
     }
 

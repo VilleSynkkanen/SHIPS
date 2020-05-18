@@ -9,7 +9,9 @@ public class ProjectileCollision : MonoBehaviour
     [SerializeField] float minDamage;
     [SerializeField] GameObject explosion;
     [SerializeField] float explosionTravel;
+    [SerializeField] float explosionForce;
     public Rigidbody2D rb { get; private set; }
+    public float ExplosionForce { get => explosionForce; }
 
     private void Awake()
     {
@@ -24,16 +26,14 @@ public class ProjectileCollision : MonoBehaviour
             collisionObject.Collision(this);
             dmg = 0;
             Vector3 explosionPosition = rb.velocity * explosionTravel;
-            Instantiate(explosion, transform.position + explosionPosition, transform.rotation);
+            if(collision.tag != "Boundary")    
+                Instantiate(explosion, transform.position + explosionPosition, transform.rotation);
             Destroy(gameObject);
         }
     }
 
     public float CalculateDamage(Vector2 velocity)
     {
-        // if velocity 0, damage is 50%
-        // if is 5, dmg is 150%
-
         float magnitude = velocity.magnitude;
         float damage = angleCoefficient * magnitude + minDamage;
 
