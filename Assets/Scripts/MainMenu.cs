@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class MainMenu : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject howToPlayMenu;
     [SerializeField] GameObject optionsMenu;
     [SerializeField] PlayerVictories victories;
+    [SerializeField] EventSystem eventSystem;
+    [SerializeField] GameObject menuStart;
+    [SerializeField] GameObject playMenuStart;
+    [SerializeField] GameObject howToPlayStart;
+    [SerializeField] GameObject optionsStart;
 
     void Awake()
     {
@@ -20,11 +26,13 @@ public class MainMenu : MonoBehaviour
         playMenu.SetActive(false);
         howToPlayMenu.SetActive(false);
         optionsMenu.SetActive(false);
+        eventSystem.SetSelectedGameObject(menuStart);
     }
     public void PlayMenu()
     {
         playMenu.SetActive(true);
         mainMenu.SetActive(false);
+        eventSystem.SetSelectedGameObject(playMenuStart);
     }
 
     public void Play(int amount)
@@ -38,12 +46,14 @@ public class MainMenu : MonoBehaviour
     {
         howToPlayMenu.SetActive(true);
         mainMenu.SetActive(false);
+        eventSystem.SetSelectedGameObject(howToPlayStart);
     }
 
-    public void  OptionsMenu()
+    public void OptionsMenu()
     {
         optionsMenu.SetActive(true);
         mainMenu.SetActive(false);
+        eventSystem.SetSelectedGameObject(optionsStart);
     }
 
     public void Quit()

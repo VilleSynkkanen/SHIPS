@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -9,10 +11,20 @@ public class GameController : MonoBehaviour
 
     [SerializeField] PlayerVictories victories;
 
-    bool[] playersReady;
+    [SerializeField] GameObject[] playersReadyTexts;
+    [SerializeField] GameObject instructionText;
+    bool gameStarted;
+    bool countdownStarted;
+    [SerializeField] float countdownTime;
+    float countdownTimer;
     bool gameEnded;
+    [SerializeField] TextMeshProUGUI countdownText;
+    [SerializeField] float startTextDelay;
+    [SerializeField] float readyTextDelay;
 
     List<GameObject> players = new List<GameObject>();
+    List<PlayerControlInput> playerInputs = new List<PlayerControlInput>();
+    List<bool> playersReady = new List<bool>();
 
     public event UnityAction<int, int[]> gameEnd = delegate { };
 
@@ -25,6 +37,8 @@ public class GameController : MonoBehaviour
         Cursor.visible = false;
         
         ShipDamage.destroyed += RemovePlayer;
+        gameStarted = false;
+        countdownStarted = false;
         gameEnded = false;
 
         musicPlayer = FindObjectOfType<MusicPlayer>();
@@ -32,9 +46,79 @@ public class GameController : MonoBehaviour
         gameEnd += uiManager.ShowVictoryUi;
     }
 
+    void Update()
+    {
+        if (!countdownStarted && !gameStarted)
+            ReadReadyInput();
+        if (!gameStarted && countdownStarted)
+            Countdown();
+    }
+
+    void ReadReadyInput()
+    {
+        bool allReady = true;
+        for (int i = 0; i < players.Count; i++)
+        {
+            if (playerInputs[i].vertical > 0)
+            {
+                playersReady[i] = true;
+                playersReadyTexts[i].SetActive(true);
+            }
+
+            if (!playersReady[i])
+            {
+                allReady = false;
+            }
+        }
+
+        if (allReady)
+        {
+            StartCoroutine(StartCountdown());
+        }
+    }
+
+    void Countdown()
+    {
+        countdownTimer -= Time.deltaTime;
+        countdownText.text = (Mathf.Ceil(countdownTimer)).ToString();
+        if (countdownTimer <= 0)
+            StartGame();
+    }
+
+    IEnumerator StartCountdown()
+    {
+        yield return new WaitForSeconds(readyTextDelay);
+
+        countdownStarted = true;
+        countdownTimer = countdownTime;
+        instructionText.SetActive(false);
+    }
+
+    void StartGame()
+    {
+        gameStarted = true;
+        countdownStarted = false;
+        countdownText.text = "GO";
+
+        foreach(GameObject player in players)
+        {
+            player.GetComponent<PlayerComponents>().Activate();
+        }
+
+        StartCoroutine(HideCountdownText());
+    }
+
+    IEnumerator HideCountdownText()
+    {
+        yield return new WaitForSeconds(startTextDelay);
+        countdownText.text = "";
+    }
+    
     public void AddPlayer(GameObject player)
     {
         players.Add(player);
+        playerInputs.Add(player.GetComponent<PlayerControlInput>());
+        playersReady.Add(false);
     }
 
     public void RemovePlayer(GameObject player)

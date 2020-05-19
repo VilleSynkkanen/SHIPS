@@ -1,16 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ScrollableMenu : MonoBehaviour
 {
+    [SerializeField] EventSystem eventSystem;
     [SerializeField] GameObject[] tips;
     [SerializeField] Button previous;
     [SerializeField] Button next;
     [SerializeField] bool goesAround;
     int i;
+    bool added;
+    
     void Awake()
     {
         i = 0;
+        added = true;
         CheckActiveButtons();
     }
 
@@ -27,6 +32,7 @@ public class ScrollableMenu : MonoBehaviour
         {
             tips[i].SetActive(true);
         }
+        added = false;
         CheckActiveButtons();
     }
 
@@ -43,6 +49,7 @@ public class ScrollableMenu : MonoBehaviour
         {
             tips[i].SetActive(true);
         }
+        added = true;
         CheckActiveButtons();
     }
 
@@ -53,6 +60,8 @@ public class ScrollableMenu : MonoBehaviour
             if (i == 0)
             {
                 previous.interactable = false;
+                if (!added)
+                    eventSystem.SetSelectedGameObject(next.gameObject);
             }
             else
             {
@@ -62,6 +71,8 @@ public class ScrollableMenu : MonoBehaviour
             if (i + 1 == tips.Length)
             {
                 next.interactable = false;
+                if(added)
+                    eventSystem.SetSelectedGameObject(previous.gameObject);
             }
             else
             {

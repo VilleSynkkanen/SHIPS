@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class BattleUIManager : MonoBehaviour
 {
     [SerializeField] GameObject victoryUi;
     [SerializeField] TextMeshProUGUI[] victoryTexts;
     [SerializeField] TextMeshProUGUI winnerText;
+    [SerializeField] EventSystem eventSystem;
+    [SerializeField] GameObject playAgainButton;
 
     GameController controller;
 
@@ -35,6 +38,7 @@ public class BattleUIManager : MonoBehaviour
         }
 
         victoryUi.SetActive(true);
+        eventSystem.SetSelectedGameObject(playAgainButton);
     }
 
     public void HideVictoryUI()

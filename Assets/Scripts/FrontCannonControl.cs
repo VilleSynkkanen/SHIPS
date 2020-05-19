@@ -3,6 +3,7 @@
 public class FrontCannonControl : MonoBehaviour
 {
     PlayerControlInput input;
+    ShipShooter shooter;
     Vector3 currentAngles;
     [SerializeField] Transform cannon;
     [SerializeField] float rotationSpeed;
@@ -11,13 +12,14 @@ public class FrontCannonControl : MonoBehaviour
     void Awake()
     {
         input = GetComponent<PlayerControlInput>();
+        shooter = GetComponent<ShipShooter>();
         currentAngles = new Vector3(0, 0, 0);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        ReadInput();
+        if(!shooter.ShotInfo[2].onCooldown)
+            ReadInput();
     }
 
     void FixedUpdate()
