@@ -1702,7 +1702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ec8b35ccc2db034d95f613833176df3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventSystem: {fileID: 0}
+  eventSystem: {fileID: 575475532}
   tips:
   - {fileID: 1857389691}
   - {fileID: 1934632459}
