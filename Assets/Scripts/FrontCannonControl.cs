@@ -6,8 +6,7 @@ public class FrontCannonControl : MonoBehaviour
     ShipShooter shooter;
     Vector3 currentAngles;
     [SerializeField] Transform cannon;
-    [SerializeField] float rotationSpeed;
-    [SerializeField] float maxAngle;
+    [SerializeField] FrontCannonData data;
 
     void Awake()
     {
@@ -29,8 +28,8 @@ public class FrontCannonControl : MonoBehaviour
 
     void ReadInput()
     {
-        currentAngles.z -= input.aim * rotationSpeed * Time.deltaTime;
-        currentAngles.z = Mathf.Clamp(currentAngles.z, -maxAngle, maxAngle);
+        currentAngles.z -= input.aim * data.rotationSpeed * Time.deltaTime;
+        currentAngles.z = Mathf.Clamp(currentAngles.z, -data.maxAngle, data.maxAngle);
     }
 
     void RotateCannon()

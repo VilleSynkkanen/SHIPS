@@ -6,15 +6,17 @@ public enum SegmentType { Front, Middle, Back}
 public class ShipSegment : MonoBehaviour, ICollision
 {
     [SerializeField] SegmentType type;
-    [SerializeField] int maxHp;
+    [SerializeField] ShipData data;
     [SerializeField] Rigidbody2D rb;    //rigidbody of ship
     [SerializeField] ShipDamage ship;
+    int i;
     public float hp { get; private set; }
-    public int MaxHp { get => maxHp; }
+    public int MaxHp { get => data.segmentHp[i]; }
     public event UnityAction<float, SegmentType> damageTaken = delegate { };
 
     void Awake()
     {
+        i = (int)type;
         hp = MaxHp;
         damageTaken += ship.TakeDamage;
     }

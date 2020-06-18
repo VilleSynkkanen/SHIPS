@@ -2,18 +2,18 @@
 
 public class ProjectileCollision : MonoBehaviour
 {
-    [SerializeField] int dmg;
-    [SerializeField] float angleCoefficient;
-    [SerializeField] float minDamage;
+    [SerializeField] ProjectileData data;
     [SerializeField] GameObject explosion;
     [SerializeField] float explosionTravel;
-    [SerializeField] float explosionForce;
+    int dmg;
+    
     public Rigidbody2D rb { get; private set; }
-    public float ExplosionForce { get => explosionForce; }
+    public float ExplosionForce { get => data.explosionForce; }
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        dmg = data.dmg;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -33,7 +33,7 @@ public class ProjectileCollision : MonoBehaviour
     public float CalculateDamage(Vector2 velocity)
     {
         float magnitude = velocity.magnitude;
-        float damage = angleCoefficient * magnitude + minDamage;
+        float damage = data.angleCoefficient * magnitude + data.minDamage;
 
         return damage * dmg;    // multiply coefficient by base dmg
     } 

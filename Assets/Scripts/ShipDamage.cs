@@ -7,7 +7,7 @@ public class ShipDamage : MonoBehaviour
     [SerializeField] ShipSegment[] segments;
     [SerializeField] GameObject shipExplosion;
 
-    [SerializeField] int maxHp;
+    [SerializeField] ShipData data;
     public float hp { get; private set; }
 
     float[] segmentHealth = new float[3];
@@ -21,7 +21,7 @@ public class ShipDamage : MonoBehaviour
     PlayerInput input;
 
     public float[] SegmentHealth { get => segmentHealth; }
-    public int MaxHp { get => maxHp; }
+    public int MaxHp { get => data.maxHp; }
 
     public event UnityAction<float, SegmentType> segmentDamage = delegate { };
 
@@ -34,7 +34,7 @@ public class ShipDamage : MonoBehaviour
         input = GetComponent<PlayerInput>();
         segmentDamage += movement.SegmentDamage;
         segmentDamage += ui.UpdateHealthbars;
-        hp = maxHp;
+        hp = data.maxHp;
         for (int i = 0; i < segmentHealth.Length; i++)
             SegmentHealth[i] = 1f;
     }

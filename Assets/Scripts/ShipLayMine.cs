@@ -12,16 +12,13 @@ public class ShipLayMine : MonoBehaviour
 
     [SerializeField] GameObject projectile;
     [SerializeField] Transform shotLocation;
-    [SerializeField] float shotForce;
-    [SerializeField] float shotCooldown;
-    [SerializeField] int startingMines;
-    [SerializeField] float activationDelay;
+    [SerializeField] MineData data;
 
     bool onCooldown;
     public float cooldownLeft { get; private set; }
 
     public int mines { get; private set; }
-    public float ShotCooldown { get => shotCooldown; }
+    public float ShotCooldown { get => data.shotCooldown; }
 
     public event UnityAction mined = delegate { };
 
@@ -29,7 +26,7 @@ public class ShipLayMine : MonoBehaviour
     {
         input = GetComponent<PlayerControlInput>();
         ui = GetComponent<ShipUI>();
-        mines = startingMines;
+        mines = data.startingMines;
         onCooldown = false;
         cooldownLeft = 0;
         mined += ui.UpdateMines;
@@ -58,15 +55,15 @@ public class ShipLayMine : MonoBehaviour
         soundEffect.Play();
         onCooldown = true;
         GameObject mine = Instantiate(projectile, shotLocation.position, shotLocation.rotation);
-        mine.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * shotForce);
+        mine.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * data.shotForce);
         StartCoroutine(ActivateCollider(mine.GetComponent<Collider2D>()));
-        cooldownLeft = shotCooldown;
+        cooldownLeft = data.shotCooldown;
         mines--;
     }
 
     IEnumerator ActivateCollider(Collider2D collider)
     {
-        yield return new WaitForSeconds(activationDelay);
+        yield return new WaitForSeconds(data.activationDelay);
         collider.enabled = true;
     }
 

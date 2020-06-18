@@ -1335,7 +1335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  maxHp: 10
+  data: {fileID: 11400000, guid: c141ca705f854bf49af92645223f0116, type: 2}
   rb: {fileID: 7916367853365582391}
   ship: {fileID: 7284722702327533440}
 --- !u!1 &259225832902729607
@@ -4553,7 +4553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  maxHp: 10
+  data: {fileID: 11400000, guid: c141ca705f854bf49af92645223f0116, type: 2}
   rb: {fileID: 7916367853365582391}
   ship: {fileID: 7284722702327533440}
 --- !u!1 &7425017111083657670
@@ -4705,7 +4705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  maxHp: 20
+  data: {fileID: 11400000, guid: c141ca705f854bf49af92645223f0116, type: 2}
   rb: {fileID: 7916367853365582391}
   ship: {fileID: 7284722702327533440}
 --- !u!1 &7488027433102318527
@@ -5103,13 +5103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b293e8a49bb792a41a45ca26fc3de593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
-  turnSpeed: 3
-  steeringSpeed: 0.5
-  throttleSpeed: 0.5
-  reverseSpeed: 0.25
-  damageAngleCoefficient: 0.5
-  maxDamageEfeect: 0.5
+  data: {fileID: 11400000, guid: f8b9fecb75b609f47b533f7e8089e327, type: 2}
 --- !u!114 &-6934305789866635666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5122,14 +5116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1281e0ffdd9c0eb4e8f8e70a63ff908b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargeSpeed: 1
-  minimumCharge: 0.1
-  sideShotCooldown: 10
-  forwardShotCooldown: 8
-  shotForce: 3
-  minForce: 0.9
-  maxForce: 1.1
-  rotationVariation: 1
+  data: {fileID: 11400000, guid: 90f7d105de8ffcb44b7136376c0177a6, type: 2}
   projectile: {fileID: 2496318178972590502, guid: 49bbb98bbe738b740be3b6c3ba507678,
     type: 3}
   leftLocations:
@@ -5205,7 +5192,7 @@ MonoBehaviour:
   - {fileID: 691696440159542815}
   shipExplosion: {fileID: 153781043075632041, guid: c831b34c2bedb8b4aba1c669b88d25ec,
     type: 3}
-  maxHp: 35
+  data: {fileID: 11400000, guid: c141ca705f854bf49af92645223f0116, type: 2}
 --- !u!114 &2254537009808911116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5244,8 +5231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannon: {fileID: 865341431063793738}
-  rotationSpeed: 15
-  maxAngle: 45
+  data: {fileID: 11400000, guid: d9495560fb3372b40ad15e201cd5360b, type: 2}
 --- !u!114 &8992935345088407537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5262,10 +5248,7 @@ MonoBehaviour:
   projectile: {fileID: 5845196771482175130, guid: cc5965131700da245965eb952f488f0e,
     type: 3}
   shotLocation: {fileID: 1026858322238714944}
-  shotForce: 15
-  shotCooldown: 8
-  startingMines: 4
-  activationDelay: 5
+  data: {fileID: 11400000, guid: cbc4babbecc1dec48b1b548474772beb, type: 2}
 --- !u!60 &7130486941138340605
 PolygonCollider2D:
   m_ObjectHideFlags: 0

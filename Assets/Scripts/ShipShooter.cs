@@ -22,14 +22,7 @@ public class ShipShooter : MonoBehaviour
 
     ShotInfo[] shotInfo = new ShotInfo[3];
 
-    [SerializeField] float chargeSpeed;
-    [SerializeField] float minimumCharge;
-    [SerializeField] float sideShotCooldown;
-    [SerializeField] float forwardShotCooldown;
-    [SerializeField] float shotForce;
-    [SerializeField] float minForce;
-    [SerializeField] float maxForce;
-    [SerializeField] float rotationVariation;
+    [SerializeField] ShipShooterData data;
 
     [SerializeField] GameObject projectile;
     [SerializeField] Transform[] leftLocations;
@@ -39,7 +32,7 @@ public class ShipShooter : MonoBehaviour
     string tag;     //used for identifying colliding projectiles
 
     internal ShotInfo[] ShotInfo { get => shotInfo; }
-    public float SideShotCooldown { get => sideShotCooldown; }
+    public float SideShotCooldown { get => data.sideShotCooldown; }
 
     public event UnityAction<Side> shot = delegate { };
 
@@ -53,9 +46,9 @@ public class ShipShooter : MonoBehaviour
         for(int i = 0; i < shotInfo.Length; i++)
             shotInfo[i] = new ShotInfo();
 
-        shotInfo[0].cooldown = sideShotCooldown;
-        shotInfo[1].cooldown = sideShotCooldown;
-        shotInfo[2].cooldown = forwardShotCooldown;
+        shotInfo[0].cooldown = data.sideShotCooldown;
+        shotInfo[1].cooldown = data.sideShotCooldown;
+        shotInfo[2].cooldown = data.forwardShotCooldown;
 
         tag = gameObject.tag;
         shot += effects.Effect;
@@ -89,7 +82,7 @@ public class ShipShooter : MonoBehaviour
         {
             if(shotInfo[i].input && !shotInfo[i].onCooldown)
             {
-                shotInfo[i].shotCharge += chargeSpeed * Time.deltaTime;
+                shotInfo[i].shotCharge += data.chargeSpeed * Time.deltaTime;
                 if (shotInfo[i].shotCharge >= 1)
                 {
                     Shoot((Side)i, 1);
@@ -98,7 +91,7 @@ public class ShipShooter : MonoBehaviour
                     StartCoroutine(ShotCooldown(i));
                 }
             }
-            else if(!shotInfo[i].input && !shotInfo[i].onCooldown && shotInfo[i].shotCharge > minimumCharge)
+            else if(!shotInfo[i].input && !shotInfo[i].onCooldown && shotInfo[i].shotCharge > data.minimumCharge)
             {
                 Shoot((Side)i, shotInfo[i].shotCharge);
                 shotInfo[i].shotCharge = 0;
@@ -134,15 +127,15 @@ public class ShipShooter : MonoBehaviour
 
         foreach (Transform location in shotLocations)
         {
-            float forceMultiplier = Random.Range(minForce, maxForce);
-            float rotation = Random.Range(-rotationVariation, rotationVariation);
+            float forceMultiplier = Random.Range(data.minForce, data.maxForce);
+            float rotation = Random.Range(-data.rotationVariation, data.rotationVariation);
 
             GameObject clone = Instantiate(projectile, location.position, location.rotation);
             clone.tag = tag;
             Rigidbody2D ball = clone.GetComponent<Rigidbody2D>();
             ball.rotation += rotation;
-            ball.AddRelativeForce(Vector2.up * shotForce * charge * forceMultiplier);
-            rb.AddRelativeForce(recoil * shotForce * charge * forceMultiplier);
+            ball.AddRelativeForce(Vector2.up * data.shotForce * charge * forceMultiplier);
+            rb.AddRelativeForce(recoil * data.shotForce * charge * forceMultiplier);
 
             location.gameObject.GetComponent<AudioSource>().Play();
         }

@@ -4,14 +4,7 @@ using UnityEngine.InputSystem;
 
 public class ShipMovement : MonoBehaviour
 {
-    [SerializeField] float moveSpeed;
-    [SerializeField] float turnSpeed;
-    [SerializeField] float steeringSpeed;
-    [SerializeField] float throttleSpeed;
-    [SerializeField] float reverseSpeed;
-
-    [SerializeField] float damageAngleCoefficient;
-    [SerializeField] float maxDamageEfeect;
+    [SerializeField] ShipMovementData data;
 
     float currentMoveSpeed;
     float currentTurnSpeed;
@@ -36,10 +29,10 @@ public class ShipMovement : MonoBehaviour
         ui = GetComponent<ShipUI>();
         inputChanged += ui.UpdateUI;
 
-        currentMoveSpeed = moveSpeed;
-        currentTurnSpeed = turnSpeed;
-        currentSteeringSpeed = steeringSpeed;
-        currentThrottleSpeed = throttleSpeed;
+        currentMoveSpeed = data.moveSpeed;
+        currentTurnSpeed = data.turnSpeed;
+        currentSteeringSpeed = data.steeringSpeed;
+        currentThrottleSpeed = data.throttleSpeed;
     }
 
     void Update()
@@ -51,7 +44,7 @@ public class ShipMovement : MonoBehaviour
     {
         float multiplier = 1;
         if (throttle < 0)
-            multiplier = reverseSpeed;
+            multiplier = data.reverseSpeed;
 
         rb.AddRelativeForce(Vector2.up * multiplier * currentMoveSpeed * throttle * Time.fixedDeltaTime);
         rb.AddTorque(-currentTurnSpeed * steering * Time.fixedDeltaTime);
@@ -79,22 +72,22 @@ public class ShipMovement : MonoBehaviour
         float effect = CalculateDamageEffects(health);
         if (segment == SegmentType.Front)
         {
-            currentMoveSpeed = moveSpeed * effect;
+            currentMoveSpeed = data.moveSpeed * effect;
         }
         else if (segment == SegmentType.Middle)
         {
-            currentSteeringSpeed = steeringSpeed * effect;
-            currentThrottleSpeed = throttleSpeed * effect;
+            currentSteeringSpeed = data.steeringSpeed * effect;
+            currentThrottleSpeed = data.throttleSpeed * effect;
         }
         else if (segment == SegmentType.Back)
         {
-            currentTurnSpeed = turnSpeed * effect;
+            currentTurnSpeed = data.turnSpeed * effect;
         }
     }
 
     public float CalculateDamageEffects(float health)
     {
-        return damageAngleCoefficient * health + maxDamageEfeect;
+        return data.damageAngleCoefficient * health + data.maxDamageEffect;
     }
 
     void OnDisable()

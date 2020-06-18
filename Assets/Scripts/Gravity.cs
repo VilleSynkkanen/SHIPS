@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour
 {
-    [SerializeField] float acceleration;
-    [SerializeField] float startingAltitude;
+    [SerializeField] ProjectileGravityData data;
     [SerializeField] GameObject waterHitEffect;
 
     float altitude;
@@ -13,13 +12,13 @@ public class Gravity : MonoBehaviour
 
     private void Awake()
     {
-        altitude = startingAltitude;
+        altitude = data.startingAltitude;
         downwardVelocity = 0;
     }
 
     void Update()
     {
-        downwardVelocity += acceleration * Time.deltaTime;
+        downwardVelocity += data.acceleration * Time.deltaTime;
     }
 
     void FixedUpdate()
