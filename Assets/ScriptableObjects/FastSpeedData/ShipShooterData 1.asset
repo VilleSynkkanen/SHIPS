@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11b07d47b7989174aaf65d4a6323e7dc, type: 3}
+  m_Name: ShipShooterData 1
+  m_EditorClassIdentifier: 
+  chargeSpeed: 1
+  minimumCharge: 0.1
+  sideShotCooldown: 8
+  forwardShotCooldown: 7
+  shotForce: 4
+  minForce: 0.9
+  maxForce: 1.1
+  rotationVariation: 1

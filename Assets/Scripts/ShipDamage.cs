@@ -7,7 +7,7 @@ public class ShipDamage : MonoBehaviour
     [SerializeField] ShipSegment[] segments;
     [SerializeField] GameObject shipExplosion;
 
-    [SerializeField] ShipData data;
+    ShipData data;
     public float hp { get; private set; }
 
     float[] segmentHealth = new float[3];
@@ -29,6 +29,7 @@ public class ShipDamage : MonoBehaviour
 
     void Awake()
     {
+        data = GameSettings.Instance.ShipData;
         movement = GetComponent<ShipMovement>();
         ui = GetComponent<ShipUI>();
         input = GetComponent<PlayerInput>();

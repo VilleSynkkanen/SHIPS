@@ -6,7 +6,7 @@ public enum SegmentType { Front, Middle, Back}
 public class ShipSegment : MonoBehaviour, ICollision
 {
     [SerializeField] SegmentType type;
-    [SerializeField] ShipData data;
+    ShipData data;
     [SerializeField] Rigidbody2D rb;    //rigidbody of ship
     [SerializeField] ShipDamage ship;
     int i;
@@ -16,6 +16,7 @@ public class ShipSegment : MonoBehaviour, ICollision
 
     void Awake()
     {
+        data = GameSettings.Instance.ShipData;
         i = (int)type;
         hp = MaxHp;
         damageTaken += ship.TakeDamage;

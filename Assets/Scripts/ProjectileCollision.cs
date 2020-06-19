@@ -1,17 +1,29 @@
 ﻿using UnityEngine;
 
+public enum ProjectileType { cannonball, mine}
 public class ProjectileCollision : MonoBehaviour
 {
-    [SerializeField] ProjectileData data;
+    ProjectileData data;
     [SerializeField] GameObject explosion;
     [SerializeField] float explosionTravel;
     int dmg;
+    [SerializeField] ProjectileType type;
     
     public Rigidbody2D rb { get; private set; }
     public float ExplosionForce { get => data.explosionForce; }
 
     private void Awake()
     {
+        // make better solution later for different projectiles
+
+        if (type == ProjectileType.cannonball)
+        {
+            data = GameSettings.Instance.CannonballProjectileData;
+        }
+        else if(type == ProjectileType.mine)
+        {
+            data = GameSettings.Instance.MineProjectileData;
+        }
         rb = GetComponent<Rigidbody2D>();
         dmg = data.dmg;
     }

@@ -22,7 +22,7 @@ public class ShipShooter : MonoBehaviour
 
     ShotInfo[] shotInfo = new ShotInfo[3];
 
-    [SerializeField] ShipShooterData data;
+    ShipShooterData data;
 
     [SerializeField] GameObject projectile;
     [SerializeField] Transform[] leftLocations;
@@ -38,6 +38,7 @@ public class ShipShooter : MonoBehaviour
 
     void Awake()
     {
+        data = GameSettings.Instance.ShipShooterData;
         input = GetComponent<PlayerControlInput>();
         rb = GetComponent<Rigidbody2D>();
         effects = GetComponent<ShotEffects>();

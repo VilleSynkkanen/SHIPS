@@ -6,10 +6,11 @@ public class FrontCannonControl : MonoBehaviour
     ShipShooter shooter;
     Vector3 currentAngles;
     [SerializeField] Transform cannon;
-    [SerializeField] FrontCannonData data;
+    FrontCannonData data;
 
     void Awake()
     {
+        data = GameSettings.Instance.FrontCannonData;
         input = GetComponent<PlayerControlInput>();
         shooter = GetComponent<ShipShooter>();
         currentAngles = new Vector3(0, 0, 0);

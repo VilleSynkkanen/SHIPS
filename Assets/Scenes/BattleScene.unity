@@ -3150,6 +3150,73 @@ Transform:
   m_Father: {fileID: 57396189}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135}
+--- !u!1 &1425045097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425045098}
+  - component: {fileID: 1425045099}
+  m_Layer: 0
+  m_Name: GameSettings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1425045098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425045097}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1425045099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425045097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac3d5adcf0d96647ab9348b506fa873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipData:
+  - {fileID: 11400000, guid: c141ca705f854bf49af92645223f0116, type: 2}
+  - {fileID: 11400000, guid: a3d8b262286e5474ab8abff00f10068c, type: 2}
+  shipShooterData:
+  - {fileID: 11400000, guid: 90f7d105de8ffcb44b7136376c0177a6, type: 2}
+  - {fileID: 11400000, guid: 15121fad265c7e04789de36e81a58631, type: 2}
+  shipMovementData:
+  - {fileID: 11400000, guid: f8b9fecb75b609f47b533f7e8089e327, type: 2}
+  - {fileID: 11400000, guid: 160fb9add3fc7c1469a5f1e6681d5e26, type: 2}
+  frontCannonData:
+  - {fileID: 11400000, guid: d9495560fb3372b40ad15e201cd5360b, type: 2}
+  - {fileID: 11400000, guid: 7d9c1dd3b205dcb469c7b76a8ce76cee, type: 2}
+  cannonballProjectileData:
+  - {fileID: 11400000, guid: d50d7aa67eff07b4d956b44421f8f204, type: 2}
+  - {fileID: 11400000, guid: 4faf1d89b4009184586e971ab294c970, type: 2}
+  cannonballGravityData:
+  - {fileID: 11400000, guid: 7cf2d17d1c9f46442b9ff434d3777f8b, type: 2}
+  - {fileID: 11400000, guid: 2d05eec887c29f14986a454cde28a0e1, type: 2}
+  mineProjectileData:
+  - {fileID: 11400000, guid: ec43dd293f39bb4428f47a3701711534, type: 2}
+  - {fileID: 11400000, guid: efda1d797495bf048aa333a55fb713f7, type: 2}
+  mineData:
+  - {fileID: 11400000, guid: cbc4babbecc1dec48b1b548474772beb, type: 2}
+  - {fileID: 11400000, guid: f7aaa1b97f9691a44949098e3589550c, type: 2}
 --- !u!1 &1472920460
 GameObject:
   m_ObjectHideFlags: 0

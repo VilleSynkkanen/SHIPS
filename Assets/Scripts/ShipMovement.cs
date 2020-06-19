@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class ShipMovement : MonoBehaviour
 {
-    [SerializeField] ShipMovementData data;
+    ShipMovementData data;
 
     float currentMoveSpeed;
     float currentTurnSpeed;
@@ -23,6 +23,7 @@ public class ShipMovement : MonoBehaviour
 
     void Awake()
     {
+        data = GameSettings.Instance.ShipMovementData;
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<PlayerControlInput>();
         playerInput = GetComponent<PlayerInput>();

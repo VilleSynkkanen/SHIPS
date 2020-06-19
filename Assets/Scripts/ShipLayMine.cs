@@ -12,7 +12,7 @@ public class ShipLayMine : MonoBehaviour
 
     [SerializeField] GameObject projectile;
     [SerializeField] Transform shotLocation;
-    [SerializeField] MineData data;
+    MineData data;
 
     bool onCooldown;
     public float cooldownLeft { get; private set; }
@@ -24,6 +24,7 @@ public class ShipLayMine : MonoBehaviour
 
     private void Awake()
     {
+        data = GameSettings.Instance.MineData;
         input = GetComponent<PlayerControlInput>();
         ui = GetComponent<ShipUI>();
         mines = data.startingMines;
