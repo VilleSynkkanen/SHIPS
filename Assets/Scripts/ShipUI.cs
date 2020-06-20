@@ -19,34 +19,25 @@ public class ShipUI : MonoBehaviour
     [SerializeField] Color fullyDamaged;
 
     [SerializeField] Image[] shotCooldownImages;
-    [SerializeField] GameObject[] arrows;
-    [SerializeField] Image[] arrowFills;
-    
-    [SerializeField] TextMeshProUGUI mineText;
-    [SerializeField] Image mineCooldownImage;
 
     ShipMovement movement;
     ShipDamage damage;
-    ShipShooter shooter;
-    ShipLayMine mines;
+    ShipShooterManager shooter;
     
     void Awake()
     {
         movement = GetComponent<ShipMovement>();
         damage = GetComponent<ShipDamage>();
-        shooter = GetComponent<ShipShooter>();
-        mines = GetComponent<ShipLayMine>();
+        shooter = GetComponent<ShipShooterManager>();
         positiveThrottle.fillAmount = 0;
         negativeThrottle.fillAmount = 0;
         positiveSteering.fillAmount = 0;
         negativeSteering.fillAmount = 0;
-        for(int i = 0; i < arrowFills.Length; i++)
-            arrowFills[i].fillAmount = 0;
     }
 
-    private void Start()
+    private void Update()
     {
-        UpdateMines();
+        UpdateUI();
     }
 
     public void UpdateUI()
@@ -78,16 +69,15 @@ public class ShipUI : MonoBehaviour
 
         for(int i = 0; i < shotCooldownImages.Length; i++)
         {
-            shotCooldownImages[i].fillAmount = shooter.ShotInfo[i].cooldownLeft / shooter.ShotInfo[i].cooldown;
-            arrowFills[i].fillAmount = shooter.ShotInfo[i].shotCharge;
-            if (!shooter.ShotInfo[i].onCooldown)
+            if(shooter.Shooters[i].Data.limitedAmmo && shooter.Shooters[i].ammoLeft <= 0)
             {
-                arrows[i].SetActive(true);
+                shotCooldownImages[i].fillAmount = 1;
+            }
+            else
+            {
+                shotCooldownImages[i].fillAmount = shooter.Shooters[i].cooldownLeft / shooter.Shooters[i].Data.shotCooldown;
             }
         }
-
-        if (mines.mines != 0)
-            mineCooldownImage.fillAmount = mines.cooldownLeft / mines.ShotCooldown;
     }
 
     public void UpdateHealthbars(float f, SegmentType s)    // parameters not used
@@ -100,19 +90,5 @@ public class ShipUI : MonoBehaviour
         }
 
         totalHealth.fillAmount = damage.hp / damage.MaxHp;
-    }
-
-    public void ShotCannon(Side side)
-    {
-        arrows[(int)side].SetActive(false);
-    }
-
-    public void UpdateMines()
-    {
-        mineText.text = mines.mines.ToString();
-        if(mines.mines == 0)
-        {
-            mineCooldownImage.fillAmount = 1;
-        }
     }
 }

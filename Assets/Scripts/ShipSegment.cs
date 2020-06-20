@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public enum SegmentType { Front, Middle, Back}
+public enum SegmentType { Front, Middle, Back }
 
 public class ShipSegment : MonoBehaviour, ICollision
 {

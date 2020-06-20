@@ -17,9 +17,6 @@ public class ShipMovement : MonoBehaviour
     Rigidbody2D rb;
     public PlayerControlInput input { get; private set; }
     public PlayerInput playerInput { get; private set; }
-    ShipUI ui;
-
-    public event UnityAction inputChanged = delegate { };
 
     void Awake()
     {
@@ -27,8 +24,6 @@ public class ShipMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<PlayerControlInput>();
         playerInput = GetComponent<PlayerInput>();
-        ui = GetComponent<ShipUI>();
-        inputChanged += ui.UpdateUI;
 
         currentMoveSpeed = data.moveSpeed;
         currentTurnSpeed = data.turnSpeed;
@@ -64,8 +59,6 @@ public class ShipMovement : MonoBehaviour
 
         throttle += input.vertical * currentThrottleSpeed * Time.deltaTime;
         throttle = Mathf.Clamp(throttle, -1, 1);
-
-        inputChanged();
     }
 
     public void SegmentDamage(float health, SegmentType segment)
@@ -89,15 +82,5 @@ public class ShipMovement : MonoBehaviour
     public float CalculateDamageEffects(float health)
     {
         return data.damageAngleCoefficient * health + data.maxDamageEffect;
-    }
-
-    void OnDisable()
-    {
-        inputChanged -= ui.UpdateUI;
-    }
-
-    void OnDestroy()
-    {
-        inputChanged -= ui.UpdateUI;
     }
 }

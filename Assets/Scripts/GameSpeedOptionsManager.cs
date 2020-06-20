@@ -10,7 +10,7 @@ public class GameSpeedOptionsManager : MonoBehaviour
     [SerializeField] Slider speedSlider;
     [SerializeField] TextMeshProUGUI speedText;
     
-    void Awake()
+    void Start()
     {
         speedSetting = PlayerPrefs.GetInt("SpeedSetting", 0);
         speedSlider.value = speedSetting;

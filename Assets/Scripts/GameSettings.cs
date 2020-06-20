@@ -2,29 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ShooterType { cannon, mine }
 public class GameSettings : MonoBehaviour
 {
     static GameSettings instance;
     public static GameSettings Instance { get { return instance; } }
 
     [SerializeField] ShipData[] shipData;
-    [SerializeField] ShipShooterData[] shipShooterData;
+    [SerializeField] ChargedShooterData[] cannonballShooterData;
     [SerializeField] ShipMovementData[] shipMovementData;
-    [SerializeField] FrontCannonData[] frontCannonData;
+    [SerializeField] AimPointData[] frontCannonData;
     [SerializeField] ProjectileData[] cannonballProjectileData;
     [SerializeField] ProjectileGravityData[] cannonballGravityData;
     [SerializeField] ProjectileData[] mineProjectileData;
-    [SerializeField] MineData[] mineData;
+    [SerializeField] MineShooterData[] mineShooterData;
     int settingNumber;
 
     public ShipData ShipData { get => shipData[settingNumber]; }
-    public ShipShooterData ShipShooterData { get => shipShooterData[settingNumber]; }
+    public ChargedShooterData CannonballShooterData { get => cannonballShooterData[settingNumber]; }
     public ShipMovementData ShipMovementData { get => shipMovementData[settingNumber]; }
-    public FrontCannonData FrontCannonData { get => frontCannonData[settingNumber]; }
+    public AimPointData FrontCannonData { get => frontCannonData[settingNumber]; }
     public ProjectileData CannonballProjectileData { get => cannonballProjectileData[settingNumber]; }
     public ProjectileGravityData CannonballGravityData { get => cannonballGravityData[settingNumber]; }
     public ProjectileData MineProjectileData { get => mineProjectileData[settingNumber]; }
-    public MineData MineData { get => mineData[settingNumber]; }
+    public MineShooterData MineShooterData{ get => mineShooterData[settingNumber]; }
 
     private void Awake()
     {
@@ -38,5 +39,21 @@ public class GameSettings : MonoBehaviour
         }
 
         settingNumber = PlayerPrefs.GetInt("SpeedSetting", 0);
+    }
+
+    public ShooterData GetShooterData(ShooterType type)
+    {
+        if (type == ShooterType.cannon)
+        {
+            return CannonballShooterData;
+        }
+        else if (type == ShooterType.mine)
+        {
+            return MineShooterData;
+        }
+        else
+        {
+            return null;
+        }
     }
 }

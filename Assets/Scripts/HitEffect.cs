@@ -14,7 +14,6 @@ public class HitEffect : Effects
 
     public override void HandleEffects()
     {
-
         float delta = Time.time - startTime;
         sprite.color = Color.Lerp(Visible, Invisible, delta * LerpSpeed);
         if (sprite.color == Invisible)

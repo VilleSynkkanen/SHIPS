@@ -3,14 +3,15 @@ using UnityEngine.InputSystem;
 
 public class PlayerControlInput : MonoBehaviour
 {
-    //PlayerControls controls;
     public float horizontal { get; private set; }
     public float vertical { get; private set; }
-    public bool shootLeft { get; private set; }
-    public bool shootRight { get; private set; }
-    public bool shootForward { get; private set; }
-    public bool mine { get; private set; }
-    public float aim { get; private set; }
+    public bool shoot1 { get; private set; }
+    public bool shoot3 { get; private set; }
+    public bool shoot2 { get; private set; }
+    public bool shoot4 { get; private set; }
+    public float[] Aim { get => aim; }
+
+    float[] aim = new float[2];
 
     bool quitting;
 
@@ -29,41 +30,47 @@ public class PlayerControlInput : MonoBehaviour
         horizontal = context.ReadValue<float>();
     }
 
-    public void OnShootLeft(InputAction.CallbackContext context)
+    public void OnShoot1(InputAction.CallbackContext context)
     {
         if(context.performed)
-            shootLeft = true;
+            shoot1 = true;
         else if (context.canceled)
-            shootLeft = false;
+            shoot1 = false;
     }
 
-    public void OnShootRight(InputAction.CallbackContext context)
+    public void OnShoot2(InputAction.CallbackContext context)
     {
         if (context.performed)
-            shootRight = true;
+            shoot2 = true;
         else if (context.canceled)
-            shootRight = false;
+            shoot2 = false;
     }
 
-    public void OnShootForward(InputAction.CallbackContext context)
+    public void OnShoot3(InputAction.CallbackContext context)
     {
         if (context.performed)
-            shootForward = true;
+            shoot3 = true;
         else if (context.canceled)
-            shootForward = false;
+            shoot3 = false;
     }
 
-    public void OnLayMine(InputAction.CallbackContext context)
+    
+    public void OnShoot4(InputAction.CallbackContext context)
     {
         if (context.performed)
-            mine = true;
+            shoot4 = true;
         else if (context.canceled)
-            mine = false;
+            shoot4 = false;
     }
 
-    public void OnAim(InputAction.CallbackContext context)
+    public void OnAimPrimary(InputAction.CallbackContext context)
     {
-        aim = context.ReadValue<float>();
+        Aim[0] = context.ReadValue<float>();
+    }
+
+    public void OnAimSecondary(InputAction.CallbackContext context)
+    {
+        Aim[1] = context.ReadValue<float>();
     }
 
     public void OnQuit(InputAction.CallbackContext context)
@@ -73,7 +80,5 @@ public class PlayerControlInput : MonoBehaviour
             quitting = true;
             FindObjectOfType<GameController>().Quit();
         }
-        
-        
     }
 }

@@ -1335,7 +1335,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  data: {fileID: 11400000, guid: c141ca705f854bf49af92645223f0116, type: 2}
   rb: {fileID: 7916367853365582391}
   ship: {fileID: 7284722702327533440}
 --- !u!1 &259225832902729607
@@ -4553,7 +4552,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  data: {fileID: 11400000, guid: c141ca705f854bf49af92645223f0116, type: 2}
   rb: {fileID: 7916367853365582391}
   ship: {fileID: 7284722702327533440}
 --- !u!1 &7425017111083657670
@@ -4705,7 +4703,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  data: {fileID: 11400000, guid: c141ca705f854bf49af92645223f0116, type: 2}
   rb: {fileID: 7916367853365582391}
   ship: {fileID: 7284722702327533440}
 --- !u!1 &7488027433102318527
@@ -5023,16 +5020,21 @@ GameObject:
   - component: {fileID: 7916367853365582391}
   - component: {fileID: 7916367853365582392}
   - component: {fileID: 7916367853365582393}
-  - component: {fileID: -6934305789866635666}
   - component: {fileID: 2645405205330958573}
   - component: {fileID: 7284722702327533440}
   - component: {fileID: 2254537009808911116}
   - component: {fileID: 6451593557642716291}
-  - component: {fileID: 8992935345088407537}
   - component: {fileID: 7130486941138340605}
   - component: {fileID: 3335537238819402736}
   - component: {fileID: 878294269748840859}
   - component: {fileID: 7491039244906683994}
+  - component: {fileID: 4437443701018246913}
+  - component: {fileID: 7873833102740746722}
+  - component: {fileID: 40432163381926001}
+  - component: {fileID: 5716113596794944980}
+  - component: {fileID: 4453827802926706669}
+  - component: {fileID: 7374339557904246257}
+  - component: {fileID: 1817748503822900133}
   m_Layer: 0
   m_Name: Player1
   m_TagString: P1
@@ -5103,32 +5105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b293e8a49bb792a41a45ca26fc3de593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: f8b9fecb75b609f47b533f7e8089e327, type: 2}
---- !u!114 &-6934305789866635666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7916367853365582388}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1281e0ffdd9c0eb4e8f8e70a63ff908b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 90f7d105de8ffcb44b7136376c0177a6, type: 2}
-  projectile: {fileID: 2496318178972590502, guid: 49bbb98bbe738b740be3b6c3ba507678,
-    type: 3}
-  leftLocations:
-  - {fileID: 7325660584271818299}
-  - {fileID: 5738412589823125980}
-  - {fileID: 1350010416735683086}
-  rightLocations:
-  - {fileID: 7388698959893051934}
-  - {fileID: 1364215885762796183}
-  - {fileID: 511463231754646991}
-  forwardLocations:
-  - {fileID: 865341431063793738}
 --- !u!114 &2645405205330958573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5162,18 +5138,9 @@ MonoBehaviour:
   fullyDamaged: {r: 0.60784316, g: 0, b: 0, a: 1}
   shotCooldownImages:
   - {fileID: 7033176746832385377}
-  - {fileID: 8227487419166032050}
   - {fileID: 3841524272845635076}
-  arrows:
-  - {fileID: 2066159123}
-  - {fileID: 970631381}
-  - {fileID: 468922589}
-  arrowFills:
-  - {fileID: 1029378686}
-  - {fileID: 694138048}
-  - {fileID: 1744977924}
-  mineText: {fileID: 1266241914919694494}
-  mineCooldownImage: {fileID: 2940482875567767216}
+  - {fileID: 8227487419166032050}
+  - {fileID: 2940482875567767216}
 --- !u!114 &7284722702327533440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5192,7 +5159,6 @@ MonoBehaviour:
   - {fileID: 691696440159542815}
   shipExplosion: {fileID: 153781043075632041, guid: c831b34c2bedb8b4aba1c669b88d25ec,
     type: 3}
-  data: {fileID: 11400000, guid: c141ca705f854bf49af92645223f0116, type: 2}
 --- !u!114 &2254537009808911116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5208,16 +5174,17 @@ MonoBehaviour:
   visible: {r: 1, g: 1, b: 1, a: 1}
   invisible: {r: 1, g: 1, b: 1, a: 0}
   lerpSpeed: 10
-  left:
+  effects0:
   - {fileID: 5115417091147924794}
   - {fileID: 1281962604037964325}
   - {fileID: 1422387268909165839}
-  right:
+  effects1:
+  - {fileID: 1997625948007748836}
+  effects2:
   - {fileID: 6412112572733212832}
   - {fileID: 3633513762962508185}
   - {fileID: 1965016670559119461}
-  forward:
-  - {fileID: 1997625948007748836}
+  effects3: []
 --- !u!114 &6451593557642716291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5230,25 +5197,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd374d7ecbd5b1045a96dcfe7445a836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannon: {fileID: 865341431063793738}
-  data: {fileID: 11400000, guid: d9495560fb3372b40ad15e201cd5360b, type: 2}
---- !u!114 &8992935345088407537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7916367853365582388}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e36db36cf91913c4889bd52ba6475297, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundEffect: {fileID: 5278454910361680165}
-  projectile: {fileID: 5845196771482175130, guid: cc5965131700da245965eb952f488f0e,
-    type: 3}
-  shotLocation: {fileID: 1026858322238714944}
-  data: {fileID: 11400000, guid: cbc4babbecc1dec48b1b548474772beb, type: 2}
+  aimPoints:
+  - {fileID: 865341431063793738}
+  baseRotations:
+  - {x: 0, y: 0, z: 0}
 --- !u!60 &7130486941138340605
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5343,7 +5295,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7916367853365582392}
-        m_MethodName: OnShootLeft
+        m_MethodName: OnShoot1
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5358,7 +5310,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7916367853365582392}
-        m_MethodName: OnShootRight
+        m_MethodName: OnShoot3
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5373,7 +5325,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7916367853365582392}
-        m_MethodName: OnShootForward
+        m_MethodName: OnShoot2
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5388,7 +5340,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7916367853365582392}
-        m_MethodName: OnAim
+        m_MethodName: OnAimPrimary
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5403,7 +5355,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7916367853365582392}
-        m_MethodName: OnLayMine
+        m_MethodName: OnShoot4
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5430,6 +5382,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8747c435-1878-4ced-8785-5742ffb1d23b
     m_ActionName: Actions/Quit[/Keyboard/escape,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7916367853365582392}
+        m_MethodName: OnAimSecondary
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7ad37a21-77e4-42d9-bd01-4e616cbba869
+    m_ActionName: Actions/AimSecondary[/XInputControllerWindows/leftTrigger,/XInputControllerWindows/rightTrigger,/Keyboard/1,/Keyboard/3]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Actions
@@ -5461,6 +5428,230 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1e5ba3822094094c8f3c0c1e089fd54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4437443701018246913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916367853365582388}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad4e2d81e4feb3045a048aaef6e31f82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shooters:
+  - {fileID: 7873833102740746722}
+  - {fileID: 40432163381926001}
+  - {fileID: 5716113596794944980}
+  - {fileID: 4453827802926706669}
+  aimableShooters:
+  - {fileID: 40432163381926001}
+--- !u!114 &7873833102740746722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916367853365582388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30077020424ea3642acbd6373164a41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotLocations:
+  - {fileID: 7325660584271818299}
+  - {fileID: 5738412589823125980}
+  - {fileID: 1350010416735683086}
+  projectile: {fileID: 2496318178972590502, guid: 49bbb98bbe738b740be3b6c3ba507678,
+    type: 3}
+  recoil: {x: 1, y: 0}
+  ShotEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1817748503822900133}
+        m_MethodName: DeactivateFill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2254537009808911116}
+        m_MethodName: Effect
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  type: 0
+--- !u!114 &40432163381926001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916367853365582388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30077020424ea3642acbd6373164a41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotLocations:
+  - {fileID: 865341431063793738}
+  projectile: {fileID: 2496318178972590502, guid: 49bbb98bbe738b740be3b6c3ba507678,
+    type: 3}
+  recoil: {x: 0, y: -1}
+  ShotEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1817748503822900133}
+        m_MethodName: DeactivateFill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2254537009808911116}
+        m_MethodName: Effect
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  type: 0
+--- !u!114 &5716113596794944980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916367853365582388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30077020424ea3642acbd6373164a41b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotLocations:
+  - {fileID: 7388698959893051934}
+  - {fileID: 1364215885762796183}
+  - {fileID: 511463231754646991}
+  projectile: {fileID: 2496318178972590502, guid: 49bbb98bbe738b740be3b6c3ba507678,
+    type: 3}
+  recoil: {x: -1, y: 0}
+  ShotEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1817748503822900133}
+        m_MethodName: DeactivateFill
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2254537009808911116}
+        m_MethodName: Effect
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  type: 0
+--- !u!114 &4453827802926706669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916367853365582388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d66f3a7ff01f142bf75fe97151b9db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotLocations:
+  - {fileID: 1026858322238714944}
+  projectile: {fileID: 5845196771482175130, guid: cc5965131700da245965eb952f488f0e,
+    type: 3}
+  recoil: {x: 0, y: 0}
+  ShotEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7374339557904246257}
+        m_MethodName: SetAmmoText
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  type: 1
+--- !u!114 &7374339557904246257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916367853365582388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aa5d84ae6ba05348930c3c59691289f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoTexts:
+  - {fileID: 1266241914919694494}
+  shooters:
+  - {fileID: 4453827802926706669}
+--- !u!114 &1817748503822900133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7916367853365582388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d403177fcb4d749a8c67c0feb50691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shooters:
+  - {fileID: 7873833102740746722}
+  - {fileID: 40432163381926001}
+  - {fileID: 5716113596794944980}
+  arrows:
+  - {fileID: 2066159123}
+  - {fileID: 468922589}
+  - {fileID: 970631381}
+  arrowFills:
+  - {fileID: 1029378686}
+  - {fileID: 1744977924}
+  - {fileID: 694138048}
 --- !u!1 &8007357147682147388
 GameObject:
   m_ObjectHideFlags: 0

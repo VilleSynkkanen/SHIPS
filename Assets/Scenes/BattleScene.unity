@@ -3196,15 +3196,15 @@ MonoBehaviour:
   shipData:
   - {fileID: 11400000, guid: c141ca705f854bf49af92645223f0116, type: 2}
   - {fileID: 11400000, guid: a3d8b262286e5474ab8abff00f10068c, type: 2}
-  shipShooterData:
-  - {fileID: 11400000, guid: 90f7d105de8ffcb44b7136376c0177a6, type: 2}
-  - {fileID: 11400000, guid: 15121fad265c7e04789de36e81a58631, type: 2}
+  cannonballShooterData:
+  - {fileID: 11400000, guid: a94834c8ceabb044a9b29d32f24da464, type: 2}
+  - {fileID: 11400000, guid: 64735f0ab75e3d947b5a73aa60552f0e, type: 2}
   shipMovementData:
   - {fileID: 11400000, guid: f8b9fecb75b609f47b533f7e8089e327, type: 2}
   - {fileID: 11400000, guid: 160fb9add3fc7c1469a5f1e6681d5e26, type: 2}
   frontCannonData:
-  - {fileID: 11400000, guid: d9495560fb3372b40ad15e201cd5360b, type: 2}
-  - {fileID: 11400000, guid: 7d9c1dd3b205dcb469c7b76a8ce76cee, type: 2}
+  - {fileID: 11400000, guid: 69debce3f2e12744eac51a4df52233ce, type: 2}
+  - {fileID: 11400000, guid: 7d1aef0f84808f54fb243ad1975ec394, type: 2}
   cannonballProjectileData:
   - {fileID: 11400000, guid: d50d7aa67eff07b4d956b44421f8f204, type: 2}
   - {fileID: 11400000, guid: 4faf1d89b4009184586e971ab294c970, type: 2}
@@ -3214,9 +3214,9 @@ MonoBehaviour:
   mineProjectileData:
   - {fileID: 11400000, guid: ec43dd293f39bb4428f47a3701711534, type: 2}
   - {fileID: 11400000, guid: efda1d797495bf048aa333a55fb713f7, type: 2}
-  mineData:
-  - {fileID: 11400000, guid: cbc4babbecc1dec48b1b548474772beb, type: 2}
-  - {fileID: 11400000, guid: f7aaa1b97f9691a44949098e3589550c, type: 2}
+  mineShooterData:
+  - {fileID: 11400000, guid: b8be2c509a4f2a744b87b494e0ed39d5, type: 2}
+  - {fileID: 11400000, guid: a90f9fdfc3fa97b4da2c00847e6d0a06, type: 2}
 --- !u!1 &1472920460
 GameObject:
   m_ObjectHideFlags: 0
