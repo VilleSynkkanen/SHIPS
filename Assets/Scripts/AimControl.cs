@@ -35,8 +35,8 @@ public class AimControl : MonoBehaviour
         {
             if(shooter.AimableShooters[i].cooldownLeft <= 0)
             {
-                currentAngles[i].z -= input.Aim[i] * data.rotationSpeed * Time.deltaTime;
-                currentAngles[i].z = Mathf.Clamp(currentAngles[i].z, -data.maxAngle, data.maxAngle);
+                currentAngles[i].z -= input.Aim[i] * data.RotationSpeed * Time.deltaTime;
+                currentAngles[i].z = Mathf.Clamp(currentAngles[i].z, -data.MaxAngle, data.MaxAngle);
             }
         }    
     }

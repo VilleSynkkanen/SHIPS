@@ -21,7 +21,7 @@ public class ShipDamage : MonoBehaviour
     PlayerInput input;
 
     public float[] SegmentHealth { get => segmentHealth; }
-    public int MaxHp { get => data.maxHp; }
+    public int MaxHp { get => data.MaxHp; }
 
     public event UnityAction<float, SegmentType> segmentDamage = delegate { };
 
@@ -35,7 +35,7 @@ public class ShipDamage : MonoBehaviour
         input = GetComponent<PlayerInput>();
         segmentDamage += movement.SegmentDamage;
         segmentDamage += ui.UpdateHealthbars;
-        hp = data.maxHp;
+        hp = data.MaxHp;
         for (int i = 0; i < segmentHealth.Length; i++)
             SegmentHealth[i] = 1f;
     }

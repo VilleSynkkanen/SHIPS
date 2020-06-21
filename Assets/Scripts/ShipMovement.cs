@@ -25,10 +25,10 @@ public class ShipMovement : MonoBehaviour
         input = GetComponent<PlayerControlInput>();
         playerInput = GetComponent<PlayerInput>();
 
-        currentMoveSpeed = data.moveSpeed;
-        currentTurnSpeed = data.turnSpeed;
-        currentSteeringSpeed = data.steeringSpeed;
-        currentThrottleSpeed = data.throttleSpeed;
+        currentMoveSpeed = data.MoveSpeed;
+        currentTurnSpeed = data.TurnSpeed;
+        currentSteeringSpeed = data.SteeringSpeed;
+        currentThrottleSpeed = data.ThrottleSpeed;
     }
 
     void Update()
@@ -40,7 +40,7 @@ public class ShipMovement : MonoBehaviour
     {
         float multiplier = 1;
         if (throttle < 0)
-            multiplier = data.reverseSpeed;
+            multiplier = data.ReverseSpeed;
 
         rb.AddRelativeForce(Vector2.up * multiplier * currentMoveSpeed * throttle * Time.fixedDeltaTime);
         rb.AddTorque(-currentTurnSpeed * steering * Time.fixedDeltaTime);
@@ -66,21 +66,21 @@ public class ShipMovement : MonoBehaviour
         float effect = CalculateDamageEffects(health);
         if (segment == SegmentType.Front)
         {
-            currentMoveSpeed = data.moveSpeed * effect;
+            currentMoveSpeed = data.MoveSpeed * effect;
         }
         else if (segment == SegmentType.Middle)
         {
-            currentSteeringSpeed = data.steeringSpeed * effect;
-            currentThrottleSpeed = data.throttleSpeed * effect;
+            currentSteeringSpeed = data.SteeringSpeed * effect;
+            currentThrottleSpeed = data.ThrottleSpeed * effect;
         }
         else if (segment == SegmentType.Back)
         {
-            currentTurnSpeed = data.turnSpeed * effect;
+            currentTurnSpeed = data.TurnSpeed * effect;
         }
     }
 
     public float CalculateDamageEffects(float health)
     {
-        return data.damageAngleCoefficient * health + data.maxDamageEffect;
+        return data.DamageAngleCoefficient * health + data.MaxDamageEffect;
     }
 }

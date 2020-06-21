@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ProjectileGravityData : ScriptableObject
 {
-    public float acceleration;
-    public float startingAltitude;
+    [SerializeField] float acceleration;
+    [SerializeField] float startingAltitude;
+
+    public float Acceleration { get => acceleration; }
+    public float StartingAltitude { get => startingAltitude; }
 }

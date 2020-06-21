@@ -17,26 +17,26 @@ public abstract class ChargedShooter : Shooter
 
     public override void ShotInput(bool input)
     {
-        if (Data.limitedAmmo && ammoLeft <= 0)
+        if (Data.LimitedAmmo && ammoLeft <= 0)
         {
             return;
         }
 
         if (input && cooldownLeft <= 0)
         {
-            shotCharge += chargedData.chargeSpeed * Time.deltaTime;
+            shotCharge += chargedData.ChargeSpeed * Time.deltaTime;
             if (shotCharge >= 1)
             {
                 Shoot();
                 shotCharge = 0;
-                SetCooldown(chargedData.shotCooldown);
+                SetCooldown(chargedData.ShotCooldown);
             }
         }
-        else if (!input && cooldownLeft <= 0 && shotCharge > chargedData.minimumCharge)
+        else if (!input && cooldownLeft <= 0 && shotCharge > chargedData.MinimumCharge)
         {
             Shoot();
             shotCharge = 0;
-            SetCooldown(chargedData.shotCooldown);
+            SetCooldown(chargedData.ShotCooldown);
         }
         else
         {

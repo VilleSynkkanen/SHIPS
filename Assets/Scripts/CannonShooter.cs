@@ -8,18 +8,18 @@ public class CannonShooter : ChargedShooter
     {
         foreach (Transform location in ShotLocations)
         {
-            float forceMultiplier = Random.Range(chargedData.minForce, chargedData.maxForce);
-            float rotation = Random.Range(-chargedData.rotationVariation, chargedData.rotationVariation);
+            float forceMultiplier = Random.Range(chargedData.MinForce, chargedData.MaxForce);
+            float rotation = Random.Range(-chargedData.RotationVariation, chargedData.RotationVariation);
 
             GameObject clone = Instantiate(Projectile, location.position, location.rotation);
             clone.tag = tag;
             Rigidbody2D ball = clone.GetComponent<Rigidbody2D>();
             ball.rotation += rotation;
-            ball.AddRelativeForce(Vector2.up * chargedData.shotForce * shotCharge * forceMultiplier);
-            rb.AddRelativeForce(Recoil * chargedData.shotForce * shotCharge * forceMultiplier);
+            ball.AddRelativeForce(Vector2.up * chargedData.ShotForce * shotCharge * forceMultiplier);
+            rb.AddRelativeForce(Recoil * chargedData.ShotForce * shotCharge * forceMultiplier);
             location.gameObject.GetComponent<AudioSource>().Play();
 
-            if(Data.limitedAmmo)
+            if(Data.LimitedAmmo)
             {
                 ExpendAmmo();
             }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2496318178172029159}
   - component: {fileID: 2496318178172029156}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 0fe3ec855562ad84696e576a40cab207, type: 3}
   m_Color: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
   m_FlipX: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 2496318178972590503}
   - component: {fileID: -5496976053363735970}
   - component: {fileID: 8348898588576410189}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cannonball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6a6b1c8d1280146bbdb4cc1c36191d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 7cf2d17d1c9f46442b9ff434d3777f8b, type: 2}
   waterHitEffect: {fileID: 1759561010169357495, guid: 8974a784819331047bb0cc152025170a,
     type: 3}
 --- !u!114 &8348898588576410189
@@ -180,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f2adcf40258c4408133d8b19577363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: d50d7aa67eff07b4d956b44421f8f204, type: 2}
   explosion: {fileID: 7189306343603192018, guid: ace811872a8f7154dac0999f2fbc1b7b,
     type: 3}
   explosionTravel: 0.025
+  type: 0

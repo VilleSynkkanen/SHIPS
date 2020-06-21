@@ -11,7 +11,7 @@ public class ShipSegment : MonoBehaviour, ICollision
     [SerializeField] ShipDamage ship;
     int i;
     public float hp { get; private set; }
-    public int MaxHp { get => data.segmentHp[i]; }
+    public int MaxHp { get => data.SegmentHp[i]; }
     public event UnityAction<float, SegmentType> damageTaken = delegate { };
 
     void Awake()

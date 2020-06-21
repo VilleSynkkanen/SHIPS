@@ -5,11 +5,19 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ShooterData : ScriptableObject
 {
-    public float shotCooldown;
-    public float shotForce;
-    public float minForce;
-    public float maxForce;
-    public float rotationVariation;
-    public bool limitedAmmo;
-    public int startingAmmo;
+    [SerializeField] float shotCooldown;
+    [SerializeField] float shotForce;
+    [SerializeField] float minForce;
+    [SerializeField] float maxForce;
+    [SerializeField] float rotationVariation;
+    [SerializeField] bool limitedAmmo;
+    [SerializeField] int startingAmmo;
+
+    public float ShotCooldown { get => shotCooldown; }
+    public float ShotForce { get => shotForce; }
+    public float MinForce { get => minForce; }
+    public float MaxForce { get => maxForce; }
+    public float RotationVariation { get => rotationVariation; }
+    public bool LimitedAmmo { get => limitedAmmo; }
+    public int StartingAmmo { get => startingAmmo; }
 }

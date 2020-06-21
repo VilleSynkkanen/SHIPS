@@ -13,13 +13,13 @@ public class Gravity : MonoBehaviour
     private void Awake()
     {
         data = GameSettings.Instance.CannonballGravityData;
-        altitude = data.startingAltitude;
+        altitude = data.StartingAltitude;
         downwardVelocity = 0;
     }
 
     void Update()
     {
-        downwardVelocity += data.acceleration * Time.deltaTime;
+        downwardVelocity += data.Acceleration * Time.deltaTime;
     }
 
     void FixedUpdate()

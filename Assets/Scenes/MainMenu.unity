@@ -11315,7 +11315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 36.500023}
+  m_AnchoredPosition: {x: 0, y: -47}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1427186915
@@ -15483,6 +15483,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedSlider: {fileID: 1145004494}
   speedText: {fileID: 1593824310}
+  speedNames:
+  - SLOW
+  - FAST
 --- !u!1 &1970741007
 GameObject:
   m_ObjectHideFlags: 0

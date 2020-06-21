@@ -16,6 +16,7 @@ public class GameSettings : MonoBehaviour
     [SerializeField] ProjectileGravityData[] cannonballGravityData;
     [SerializeField] ProjectileData[] mineProjectileData;
     [SerializeField] MineShooterData[] mineShooterData;
+    [SerializeField] RigidbodyData[] shipRigidbodyData;
     int settingNumber;
 
     public ShipData ShipData { get => shipData[settingNumber]; }
@@ -26,6 +27,7 @@ public class GameSettings : MonoBehaviour
     public ProjectileGravityData CannonballGravityData { get => cannonballGravityData[settingNumber]; }
     public ProjectileData MineProjectileData { get => mineProjectileData[settingNumber]; }
     public MineShooterData MineShooterData{ get => mineShooterData[settingNumber]; }
+    public RigidbodyData ShipRigidbodyData { get => shipRigidbodyData[settingNumber]; }
 
     private void Awake()
     {

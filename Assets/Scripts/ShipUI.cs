@@ -69,13 +69,13 @@ public class ShipUI : MonoBehaviour
 
         for(int i = 0; i < shotCooldownImages.Length; i++)
         {
-            if(shooter.Shooters[i].Data.limitedAmmo && shooter.Shooters[i].ammoLeft <= 0)
+            if(shooter.Shooters[i].Data.LimitedAmmo && shooter.Shooters[i].ammoLeft <= 0)
             {
                 shotCooldownImages[i].fillAmount = 1;
             }
             else
             {
-                shotCooldownImages[i].fillAmount = shooter.Shooters[i].cooldownLeft / shooter.Shooters[i].Data.shotCooldown;
+                shotCooldownImages[i].fillAmount = shooter.Shooters[i].cooldownLeft / shooter.Shooters[i].Data.ShotCooldown;
             }
         }
     }

@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ShipData : ScriptableObject
 {
-    public int maxHp;
-    public int[] segmentHp;
+    [SerializeField] int maxHp;
+    [SerializeField] int[] segmentHp;
+
+    public int MaxHp { get => maxHp; }
+    public int[] SegmentHp { get => segmentHp; }
 }

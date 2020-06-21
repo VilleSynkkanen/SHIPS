@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ChargedShooterData : ShooterData
 {
-    public float chargeSpeed;
-    public float minimumCharge;
+    [SerializeField] float chargeSpeed;
+    [SerializeField] float minimumCharge;
+
+    public float ChargeSpeed { get => chargeSpeed; }
+    public float MinimumCharge { get => minimumCharge; }
 }

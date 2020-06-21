@@ -3217,6 +3217,9 @@ MonoBehaviour:
   mineShooterData:
   - {fileID: 11400000, guid: b8be2c509a4f2a744b87b494e0ed39d5, type: 2}
   - {fileID: 11400000, guid: a90f9fdfc3fa97b4da2c00847e6d0a06, type: 2}
+  shipRigidbodyData:
+  - {fileID: 11400000, guid: 3b69cdbf12d823b4f925b9832bcfc85f, type: 2}
+  - {fileID: 11400000, guid: b35e1a1e92de753499cf8acf32549b89, type: 2}
 --- !u!1 &1472920460
 GameObject:
   m_ObjectHideFlags: 0

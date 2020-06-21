@@ -16,11 +16,11 @@ public class MineShooter : InstantShooter
         foreach (Transform location in ShotLocations)
         {
             GameObject mine = Instantiate(Projectile, location.position, location.rotation);
-            mine.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * Data.shotForce);
+            mine.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * Data.ShotForce);
             StartCoroutine(ActivateCollider(mine.GetComponent<Collider2D>()));
             location.gameObject.GetComponent<AudioSource>().Play();
 
-            if (Data.limitedAmmo)
+            if (Data.LimitedAmmo)
             {
                 ExpendAmmo();
             }
@@ -31,7 +31,7 @@ public class MineShooter : InstantShooter
 
     IEnumerator ActivateCollider(Collider2D collider)
     {
-        yield return new WaitForSeconds(mineData.activationDelay);
+        yield return new WaitForSeconds(mineData.ActivationDelay);
         collider.enabled = true;
     }
 }

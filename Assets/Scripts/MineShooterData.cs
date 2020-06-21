@@ -5,5 +5,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class MineShooterData : ShooterData
 {
-    public float activationDelay;
+    [SerializeField] float activationDelay;
+
+    public float ActivationDelay { get => activationDelay; }
 }

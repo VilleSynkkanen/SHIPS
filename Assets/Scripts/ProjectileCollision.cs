@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public enum ProjectileType { cannonball, mine}
+public enum ProjectileType { cannonball, mine }
 public class ProjectileCollision : MonoBehaviour
 {
     ProjectileData data;
@@ -10,7 +10,7 @@ public class ProjectileCollision : MonoBehaviour
     [SerializeField] ProjectileType type;
     
     public Rigidbody2D rb { get; private set; }
-    public float ExplosionForce { get => data.explosionForce; }
+    public float ExplosionForce { get => data.ExplosionForce; }
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class ProjectileCollision : MonoBehaviour
             data = GameSettings.Instance.MineProjectileData;
         }
         rb = GetComponent<Rigidbody2D>();
-        dmg = data.dmg;
+        dmg = data.Dmg;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -45,7 +45,7 @@ public class ProjectileCollision : MonoBehaviour
     public float CalculateDamage(Vector2 velocity)
     {
         float magnitude = velocity.magnitude;
-        float damage = data.angleCoefficient * magnitude + data.minDamage;
+        float damage = data.AngleCoefficient * magnitude + data.MinDamage;
 
         return damage * dmg;    // multiply coefficient by base dmg
     } 

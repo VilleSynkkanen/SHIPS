@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu]
 public class AimPointData : ScriptableObject
 {
-    public float rotationSpeed;
-    public float maxAngle;
+    [SerializeField] float rotationSpeed;
+    [SerializeField] float maxAngle;
+
+    public float RotationSpeed { get => rotationSpeed; }
+    public float MaxAngle { get => maxAngle; }
 }

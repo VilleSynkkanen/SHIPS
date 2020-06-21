@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9022144741670196672}
   - component: {fileID: 6723341865110169813}
-  m_Layer: 0
-  m_Name: GameObject
+  m_Layer: 8
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1c0d528395c265744b314726e2d4b631, type: 3}
   m_Color: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
   m_FlipX: 0
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 923350061341625723}
   - component: {fileID: 1356199553577383976}
   - component: {fileID: 1413323992034295896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}

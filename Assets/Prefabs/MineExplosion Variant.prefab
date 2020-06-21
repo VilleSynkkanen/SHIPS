@@ -33,6 +33,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineExplosion Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7189306343603192019, guid: ace811872a8f7154dac0999f2fbc1b7b,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7189306343603192028, guid: ace811872a8f7154dac0999f2fbc1b7b,
         type: 3}
       propertyPath: m_LocalPosition.x
