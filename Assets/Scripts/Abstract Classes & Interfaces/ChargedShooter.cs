@@ -29,14 +29,14 @@ public abstract class ChargedShooter : Shooter
             {
                 Shoot();
                 shotCharge = 0;
-                SetCooldown(chargedData.ShotCooldown);
+                SetCooldown(cooldownLeft + chargedData.ShotCooldown);
             }
         }
         else if (!input && cooldownLeft <= 0 && shotCharge > chargedData.MinimumCharge)
         {
             Shoot();
             shotCharge = 0;
-            SetCooldown(chargedData.ShotCooldown);
+            SetCooldown(cooldownLeft + chargedData.ShotCooldown);
         }
         else
         {

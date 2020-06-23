@@ -6,6 +6,7 @@ public class ShipDamage : MonoBehaviour
 {
     [SerializeField] ShipSegment[] segments;
     [SerializeField] GameObject shipExplosion;
+    [SerializeField] ShipType type;
 
     ShipData data;
     public float hp { get; private set; }
@@ -22,6 +23,7 @@ public class ShipDamage : MonoBehaviour
 
     public float[] SegmentHealth { get => segmentHealth; }
     public int MaxHp { get => data.MaxHp; }
+    public ShipType Type { get => type; }
 
     public event UnityAction<float, SegmentType> segmentDamage = delegate { };
 
@@ -29,7 +31,7 @@ public class ShipDamage : MonoBehaviour
 
     void Awake()
     {
-        data = GameSettings.Instance.ShipData;
+        data = GameSettings.Instance.GetShipData(type);
         movement = GetComponent<ShipMovement>();
         ui = GetComponent<ShipUI>();
         input = GetComponent<PlayerInput>();

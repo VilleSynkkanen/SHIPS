@@ -134,12 +134,10 @@ public class GameController : MonoBehaviour
         {
             string i = "" + players[0].tag[1];
             Victory(int.Parse(i) - 1);
-            gameEnded = true;
         }
         else if(players.Count == 0)
         {
             Draw();
-            gameEnded = true;
         }
     }
     
@@ -152,19 +150,26 @@ public class GameController : MonoBehaviour
     
     void Victory(int i)
     {
-        DisablePlayerControls(players[0]);
-        victories.playerVictories[i]++;
-        gameEnd(i, victories.playerVictories);
-        Cursor.visible = true;
+        if(!gameEnded)
+        {
+            DisablePlayerControls(players[0]);
+            victories.playerVictories[i]++;
+            gameEnd(i, victories.playerVictories);
+            Cursor.visible = true;
+            gameEnded = true;
+        }
     }
 
     void Draw()
     {
-        gameEnd(-1, victories.playerVictories);
-        Cursor.visible = true;
+        if (!gameEnded)
+        {
+            gameEnd(-1, victories.playerVictories);
+            Cursor.visible = true;
+            gameEnded = true;
+        } 
     }
 
-    
     public void Restart()
     {
         SceneManager.LoadScene("BattleScene");

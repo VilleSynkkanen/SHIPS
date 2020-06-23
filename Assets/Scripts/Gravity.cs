@@ -6,13 +6,14 @@ public class Gravity : MonoBehaviour
 {
     ProjectileGravityData data;
     [SerializeField] GameObject waterHitEffect;
+    [SerializeField] ShooterType type;
 
     float altitude;
     float downwardVelocity;
 
     private void Awake()
     {
-        data = GameSettings.Instance.CannonballGravityData;
+        data = GameSettings.Instance.GetProjectileGravityData(type);
         altitude = data.StartingAltitude;
         downwardVelocity = 0;
     }

@@ -4,10 +4,9 @@ using UnityEngine;
 
 public abstract class InstantShooter : Shooter
 {
-    
     public override void ShotInput(bool input)
     {
-        if (Data.LimitedAmmo && ammoLeft <= 0)      // move to shooter?
+        if (Data.LimitedAmmo && ammoLeft <= 0)
         {
             return;
         }
@@ -15,7 +14,7 @@ public abstract class InstantShooter : Shooter
         if (input && cooldownLeft <= 0)
         {
             Shoot();
-            SetCooldown(cooldownLeft + Data.ShotCooldown);      // move to shooter??
+            SetCooldown(cooldownLeft + Data.ShotCooldown);
         }
     }
 }

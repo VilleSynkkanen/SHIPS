@@ -33,7 +33,7 @@ public class BattleUIManager : MonoBehaviour
             }
             else
             {
-                victoryTexts[i].text =  "PLAYER " + (i + 1).ToString() + " WINS: " + controller.Victories.playerVictories[i].ToString();
+                victoryTexts[i].text =  "PLAYER " + (i + 1).ToString() + " VICTORIES: " + controller.Victories.playerVictories[i].ToString();
             }
         }
 

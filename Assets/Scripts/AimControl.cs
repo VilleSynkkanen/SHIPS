@@ -8,10 +8,11 @@ public class AimControl : MonoBehaviour
     [SerializeField] Transform[] aimPoints;
     AimPointData data;
     [SerializeField] Vector3[] baseRotations;
+    [SerializeField] AimPointType type;
 
     void Awake()
     {
-        data = GameSettings.Instance.FrontCannonData;
+        data = GameSettings.Instance.GetAimPointData(type);
         shooter = GetComponent<ShipShooterManager>();
         input = GetComponent<PlayerControlInput>();
         currentAngles = new Vector3[aimPoints.Length];
@@ -19,8 +20,6 @@ public class AimControl : MonoBehaviour
 
     void Update()
     {
-        // implement not rot when on cooldown
-
         ReadInput();
     }
 

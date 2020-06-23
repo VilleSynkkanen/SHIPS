@@ -16,7 +16,7 @@ public class ShipSegment : MonoBehaviour, ICollision
 
     void Awake()
     {
-        data = GameSettings.Instance.ShipData;
+        data = GameSettings.Instance.GetShipData(ship.Type);
         i = (int)type;
         hp = MaxHp;
         damageTaken += ship.TakeDamage;
