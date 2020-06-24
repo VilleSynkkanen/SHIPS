@@ -5037,7 +5037,7 @@ GameObject:
   - component: {fileID: 1817748503822900133}
   - component: {fileID: 4448225901012965208}
   m_Layer: 0
-  m_Name: Player1
+  m_Name: Player1Frigate
   m_TagString: P1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5106,6 +5106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b293e8a49bb792a41a45ca26fc3de593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
 --- !u!114 &2645405205330958573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5160,6 +5161,7 @@ MonoBehaviour:
   - {fileID: 691696440159542815}
   shipExplosion: {fileID: 153781043075632041, guid: c831b34c2bedb8b4aba1c669b88d25ec,
     type: 3}
+  type: 0
 --- !u!114 &2254537009808911116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5202,6 +5204,7 @@ MonoBehaviour:
   - {fileID: 865341431063793738}
   baseRotations:
   - {x: 0, y: 0, z: 0}
+  type: 0
 --- !u!60 &7130486941138340605
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5665,6 +5668,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 520b1702a5653634898b92d1e4c10daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ship: 1
+  type: 0
+  sType: 0
 --- !u!1 &8007357147682147388
 GameObject:
   m_ObjectHideFlags: 0

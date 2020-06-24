@@ -3223,6 +3223,12 @@ MonoBehaviour:
   frigateMineProjectileData:
   - {fileID: 11400000, guid: ec43dd293f39bb4428f47a3701711534, type: 2}
   - {fileID: 11400000, guid: efda1d797495bf048aa333a55fb713f7, type: 2}
+  frigateCannonballRigidbodyData:
+  - {fileID: 11400000, guid: 759084c7e69e93544a13714b566b90c6, type: 2}
+  - {fileID: 11400000, guid: b1084a657d5a2e846ae045ad78451b18, type: 2}
+  frigateMineRigidbodyData:
+  - {fileID: 11400000, guid: 284393fc96d922744b51a4b473ae3cbc, type: 2}
+  - {fileID: 11400000, guid: 37ceae1e5d90c5c43806c96486ab28b8, type: 2}
   frigateCannonballGravityData:
   - {fileID: 11400000, guid: 7cf2d17d1c9f46442b9ff434d3777f8b, type: 2}
   - {fileID: 11400000, guid: 2d05eec887c29f14986a454cde28a0e1, type: 2}

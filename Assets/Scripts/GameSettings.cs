@@ -29,7 +29,10 @@ public class GameSettings : MonoBehaviour
     
     [SerializeField] ProjectileData[] frigateCannonballProjectileData;
     [SerializeField] ProjectileData[] frigateMineProjectileData;
-    
+
+    [SerializeField] RigidbodyData[] frigateCannonballRigidbodyData;
+    [SerializeField] RigidbodyData[] frigateMineRigidbodyData;
+
     [SerializeField] ProjectileGravityData[] frigateCannonballGravityData;
     
     List<ShipData[]> shipDatas;
@@ -38,6 +41,7 @@ public class GameSettings : MonoBehaviour
     List<AimPointData[]> aimPointDatas;
     List<ShooterData[]> shooterDatas;
     List<ProjectileData[]> projectileDatas;
+    List<RigidbodyData[]> projectileRigidbodyDatas;
     List<ProjectileGravityData[]> projectileGravityDatas;
 
     int settingNumber;
@@ -63,6 +67,7 @@ public class GameSettings : MonoBehaviour
         
         shooterDatas = new List<ShooterData[]> { frigateCannonballShooterData, frigateMineShooterData};
         projectileDatas = new List<ProjectileData[]> { frigateCannonballProjectileData, frigateMineProjectileData };
+        projectileRigidbodyDatas = new List<RigidbodyData[]> { frigateCannonballRigidbodyData, frigateMineRigidbodyData };
         projectileGravityDatas = new List<ProjectileGravityData[]> { frigateCannonballGravityData, null };
     }
 
@@ -99,5 +104,10 @@ public class GameSettings : MonoBehaviour
     public ProjectileGravityData GetProjectileGravityData(ShooterType type)
     {
         return projectileGravityDatas[(int)type][settingNumber];
+    }
+
+    public RigidbodyData GetProjectileRigidbodyData(ShooterType type)
+    {
+        return projectileRigidbodyDatas[(int)type][settingNumber];
     }
 }

@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 2496318178972590503}
   - component: {fileID: -5496976053363735970}
   - component: {fileID: 8348898588576410189}
+  - component: {fileID: 3138396178362493550}
   m_Layer: 9
   m_Name: Cannonball
   m_TagString: Untagged
@@ -167,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waterHitEffect: {fileID: 1759561010169357495, guid: 8974a784819331047bb0cc152025170a,
     type: 3}
+  type: 0
 --- !u!114 &8348898588576410189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,3 +185,18 @@ MonoBehaviour:
     type: 3}
   explosionTravel: 0.025
   type: 0
+--- !u!114 &3138396178362493550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2496318178972590502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 520b1702a5653634898b92d1e4c10daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ship: 0
+  shipType: 0
+  shooterType: 0
