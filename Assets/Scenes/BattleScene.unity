@@ -479,6 +479,60 @@ Transform:
   m_Father: {fileID: 367281448}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &997272754 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7121852736542568682, guid: a676b301eaff01348b0dcbcf5fd6c164,
+    type: 3}
+  m_PrefabInstance: {fileID: 9016187995482043195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &997272755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997272754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ef73fdf7f356a439ab12ece05967ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1093058166 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7065453223439751136, guid: a676b301eaff01348b0dcbcf5fd6c164,
+    type: 3}
+  m_PrefabInstance: {fileID: 9016187995482043195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1093058167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1093058166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ef73fdf7f356a439ab12ece05967ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1365910775 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 336218655411344798, guid: a676b301eaff01348b0dcbcf5fd6c164,
+    type: 3}
+  m_PrefabInstance: {fileID: 9016187995482043195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1365910776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365910775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ef73fdf7f356a439ab12ece05967ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1425045097
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +615,24 @@ MonoBehaviour:
   frigateCannonballGravityData:
   - {fileID: 11400000, guid: 7cf2d17d1c9f46442b9ff434d3777f8b, type: 2}
   - {fileID: 11400000, guid: 2d05eec887c29f14986a454cde28a0e1, type: 2}
+--- !u!1 &1972094282 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1691476942232830137, guid: a676b301eaff01348b0dcbcf5fd6c164,
+    type: 3}
+  m_PrefabInstance: {fileID: 9016187995482043195}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1972094283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972094282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ef73fdf7f356a439ab12ece05967ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2059964975
 GameObject:
   m_ObjectHideFlags: 3
