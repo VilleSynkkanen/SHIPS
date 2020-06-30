@@ -12,25 +12,28 @@ public class ShipSegment : MonoBehaviour, ICollision
     int i;
     public float hp { get; private set; }
     public int MaxHp { get => data.SegmentHp[i]; }
+    public Rigidbody2D Rb { get => rb; }
+    public ShipDamage Ship { get => ship; }
+
     public event UnityAction<float, SegmentType> damageTaken = delegate { };
 
     void Awake()
     {
-        data = GameSettings.Instance.GetShipData(ship.Type);
+        data = GameSettings.Instance.GetShipData(Ship.Type);
         i = (int)type;
         hp = MaxHp;
-        damageTaken += ship.TakeDamage;
+        damageTaken += Ship.TakeDamage;
     }
     
     public void Collision(ProjectileCollision collider)
     {
         Vector2 velocity = collider.rb.velocity;
         Vector2 position = new Vector2(collider.transform.position.x, collider.transform.position.y);
-        rb.AddExplosionForce(collider.ExplosionForce, position);
+        Rb.AddExplosionForce(collider.ExplosionForce, position);
         TakeDamage(collider.CalculateDamage(velocity));
     }
 
-    void TakeDamage(float amount)
+    public void TakeDamage(float amount)
     {
         hp -= amount;
         if (hp < 0)
@@ -40,6 +43,6 @@ public class ShipSegment : MonoBehaviour, ICollision
 
     void OnDestroy()
     {
-        damageTaken -= ship.TakeDamage;
+        damageTaken -= Ship.TakeDamage;
     }
 }

@@ -12,6 +12,9 @@ public class ShipMovement : MonoBehaviour
     float currentSteeringSpeed;
     float currentThrottleSpeed;
 
+    float moveMultiplier;
+    float turnMultiplier;
+
     public float throttle { get; private set; }  //[-1, 1]
     public float steering { get; private set; }  //[-1, 1]
 
@@ -30,6 +33,8 @@ public class ShipMovement : MonoBehaviour
         currentTurnSpeed = data.TurnSpeed;
         currentSteeringSpeed = data.SteeringSpeed;
         currentThrottleSpeed = data.ThrottleSpeed;
+        moveMultiplier = 1;
+        turnMultiplier = 1;
     }
 
     void Update()
@@ -43,8 +48,8 @@ public class ShipMovement : MonoBehaviour
         if (throttle < 0)
             multiplier = data.ReverseSpeed;
 
-        rb.AddRelativeForce(Vector2.up * multiplier * currentMoveSpeed * throttle * Time.fixedDeltaTime);
-        rb.AddTorque(-currentTurnSpeed * steering * Time.fixedDeltaTime);
+        rb.AddRelativeForce(Vector2.up * multiplier * currentMoveSpeed * moveMultiplier * throttle * Time.fixedDeltaTime);
+        rb.AddTorque(-currentTurnSpeed * turnMultiplier * steering * Time.fixedDeltaTime);
     }
 
     public void SetControlsToZero()
@@ -60,6 +65,18 @@ public class ShipMovement : MonoBehaviour
 
         throttle += input.vertical * currentThrottleSpeed * Time.deltaTime;
         throttle = Mathf.Clamp(throttle, -1, 1);
+    }
+
+    public void SlowEffect(float move, float turn)
+    {
+        moveMultiplier -= move;
+        turnMultiplier -= turn;
+    }
+
+    public void EndSlowEffect(float move, float turn)
+    {
+        moveMultiplier += move;
+        turnMultiplier += turn;
     }
 
     public void SegmentDamage(float health, SegmentType segment)

@@ -24,6 +24,7 @@ public class ShipDamage : MonoBehaviour
     public float[] SegmentHealth { get => segmentHealth; }
     public int MaxHp { get => data.MaxHp; }
     public ShipType Type { get => type; }
+    public ShipMovement Movement { get => movement; }
 
     public event UnityAction<float, SegmentType> segmentDamage = delegate { };
 
@@ -35,7 +36,7 @@ public class ShipDamage : MonoBehaviour
         movement = GetComponent<ShipMovement>();
         ui = GetComponent<ShipUI>();
         input = GetComponent<PlayerInput>();
-        segmentDamage += movement.SegmentDamage;
+        segmentDamage += Movement.SegmentDamage;
         segmentDamage += ui.UpdateHealthbars;
         hp = data.MaxHp;
         for (int i = 0; i < segmentHealth.Length; i++)
@@ -64,7 +65,7 @@ public class ShipDamage : MonoBehaviour
 
     void OnDestroy()
     {
-        segmentDamage -= movement.SegmentDamage;
+        segmentDamage -= Movement.SegmentDamage;
         segmentDamage -= ui.UpdateHealthbars;
     }
 }

@@ -9,6 +9,7 @@ TagManager:
   - P3
   - P4
   - Boundary
+  - Mine
   layers:
   - Default
   - TransparentFX
