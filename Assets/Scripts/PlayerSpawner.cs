@@ -5,6 +5,7 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField] Transform[] playerSpawns;
     [SerializeField] Transform[] playerSpawns3;
     [SerializeField] GameObject[] playerPrefabs;
+    [SerializeField] PlayerVictories victories;
 
     GameController controller;
     
@@ -17,7 +18,7 @@ public class PlayerSpawner : MonoBehaviour
     public void SpawnPlayers()
     {
         Transform[] spawns;
-        int players = PlayerPrefs.GetInt("players", 2);
+        int players = victories.playerVictories.Length;
         if (players == 3)
             spawns = playerSpawns3;
         else

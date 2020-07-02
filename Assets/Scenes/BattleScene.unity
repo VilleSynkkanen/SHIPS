@@ -530,7 +530,6 @@ MonoBehaviour:
   - {fileID: 9008095190071116587, guid: bad6775c2bea6fc4db85be3558e6d446, type: 3}
   - {fileID: 2482448393314820953, guid: 17ff064c8e459d24080a0867b57d3f75, type: 3}
   - {fileID: 8433258433225908312, guid: 084dd6df85d38f04ba18003b13c429ab, type: 3}
-  - {fileID: 7138802710338015752, guid: 7e548d276fbd608489b73d2d553f09f7, type: 3}
   victories: {fileID: 11400000, guid: 258eecf70f13a704bb5f5156a4bb26a3, type: 2}
 --- !u!1 &1425045097
 GameObject:

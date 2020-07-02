@@ -38,7 +38,6 @@ public class MainMenu : MonoBehaviour
     public void Play(int amount)
     {
         victories.playerVictories = new int[amount];
-        PlayerPrefs.SetInt("players", amount);
         SceneManager.LoadScene("BattleScene");
     }
 
