@@ -5,10 +5,11 @@ using UnityEngine;
 public class MapSpawner : MonoBehaviour
 {
     [SerializeField] GameObject[] maps;
+    [SerializeField] PlayerVictories victories;
 
     private void Awake()
     {
-        int i = PlayerPrefs.GetInt("MapIndex", 0);
+        int i = victories.mapIndex;
         Instantiate(maps[i]);
     }
 }
