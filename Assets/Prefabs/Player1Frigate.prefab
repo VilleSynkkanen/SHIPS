@@ -5559,8 +5559,12 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 7ad37a21-77e4-42d9-bd01-4e616cbba869
     m_ActionName: Actions/AimSecondary[/XInputControllerWindows/leftTrigger,/XInputControllerWindows/rightTrigger,/Keyboard/1,/Keyboard/3]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 13478067-39d8-4228-af96-e2b1903e3436
+    m_ActionName: MainMenu/Ready[/Keyboard/w,/XInputControllerWindows/dpad/up]
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: 
   m_DefaultActionMap: Actions
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

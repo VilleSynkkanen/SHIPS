@@ -410,6 +410,44 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "MainMenu",
+            "id": "859a399f-6f1c-4e41-ad78-03e3db5cc3d1",
+            "actions": [
+                {
+                    "name": "Ready",
+                    "type": "Button",
+                    "id": "13478067-39d8-4228-af96-e2b1903e3436",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c1eb0cd7-2ce9-4a09-89d4-8ac25fa6b6ba",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7fa4d0c1-b519-4b10-bfda-e3229fd13017",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Ready",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

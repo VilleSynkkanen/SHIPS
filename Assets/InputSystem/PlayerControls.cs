@@ -423,6 +423,44 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""MainMenu"",
+            ""id"": ""859a399f-6f1c-4e41-ad78-03e3db5cc3d1"",
+            ""actions"": [
+                {
+                    ""name"": ""Ready"",
+                    ""type"": ""Button"",
+                    ""id"": ""13478067-39d8-4228-af96-e2b1903e3436"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c1eb0cd7-2ce9-4a09-89d4-8ac25fa6b6ba"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ready"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7fa4d0c1-b519-4b10-bfda-e3229fd13017"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ready"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -461,6 +499,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Actions_AimPrimary = m_Actions.FindAction("AimPrimary", throwIfNotFound: true);
         m_Actions_AimSecondary = m_Actions.FindAction("AimSecondary", throwIfNotFound: true);
         m_Actions_Quit = m_Actions.FindAction("Quit", throwIfNotFound: true);
+        // MainMenu
+        m_MainMenu = asset.FindActionMap("MainMenu", throwIfNotFound: true);
+        m_MainMenu_Ready = m_MainMenu.FindAction("Ready", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -603,6 +644,39 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         }
     }
     public ActionsActions @Actions => new ActionsActions(this);
+
+    // MainMenu
+    private readonly InputActionMap m_MainMenu;
+    private IMainMenuActions m_MainMenuActionsCallbackInterface;
+    private readonly InputAction m_MainMenu_Ready;
+    public struct MainMenuActions
+    {
+        private @PlayerControls m_Wrapper;
+        public MainMenuActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Ready => m_Wrapper.m_MainMenu_Ready;
+        public InputActionMap Get() { return m_Wrapper.m_MainMenu; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(MainMenuActions set) { return set.Get(); }
+        public void SetCallbacks(IMainMenuActions instance)
+        {
+            if (m_Wrapper.m_MainMenuActionsCallbackInterface != null)
+            {
+                @Ready.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnReady;
+                @Ready.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnReady;
+                @Ready.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnReady;
+            }
+            m_Wrapper.m_MainMenuActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Ready.started += instance.OnReady;
+                @Ready.performed += instance.OnReady;
+                @Ready.canceled += instance.OnReady;
+            }
+        }
+    }
+    public MainMenuActions @MainMenu => new MainMenuActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -632,5 +706,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnAimPrimary(InputAction.CallbackContext context);
         void OnAimSecondary(InputAction.CallbackContext context);
         void OnQuit(InputAction.CallbackContext context);
+    }
+    public interface IMainMenuActions
+    {
+        void OnReady(InputAction.CallbackContext context);
     }
 }
