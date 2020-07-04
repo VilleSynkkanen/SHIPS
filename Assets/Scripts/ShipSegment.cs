@@ -24,6 +24,11 @@ public class ShipSegment : MonoBehaviour, ICollision
         hp = MaxHp;
         damageTaken += Ship.TakeDamage;
     }
+
+    public void ResetSegmentHealth()
+    {
+        hp = MaxHp;
+    }
     
     public void Collision(ProjectileCollision collider)
     {

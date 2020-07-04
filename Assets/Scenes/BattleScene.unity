@@ -613,6 +613,49 @@ MonoBehaviour:
   frigateCannonballGravityData:
   - {fileID: 11400000, guid: 7cf2d17d1c9f46442b9ff434d3777f8b, type: 2}
   - {fileID: 11400000, guid: 2d05eec887c29f14986a454cde28a0e1, type: 2}
+--- !u!1 &1657714391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657714392}
+  - component: {fileID: 1657714393}
+  m_Layer: 0
+  m_Name: Projectiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1657714392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657714391}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1657714393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657714391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34f05d59a0a6ab741bf438af025c7c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2002521624
 GameObject:
   m_ObjectHideFlags: 0
@@ -715,6 +758,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 054b3d0ab5500a3499043ff6ad5a4802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  victories: {fileID: 11400000, guid: 258eecf70f13a704bb5f5156a4bb26a3, type: 2}
 --- !u!4 &2002521627
 Transform:
   m_ObjectHideFlags: 0

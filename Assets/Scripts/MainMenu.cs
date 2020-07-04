@@ -8,7 +8,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject playMenu;
     [SerializeField] GameObject howToPlayMenu;
     [SerializeField] GameObject optionsMenu;
-    [SerializeField] PlayerVictories victories;
     [SerializeField] EventSystem eventSystem;
     [SerializeField] GameObject menuStart;
     [SerializeField] GameObject playMenuStart;
@@ -35,9 +34,8 @@ public class MainMenu : MonoBehaviour
         eventSystem.SetSelectedGameObject(playMenuStart);
     }
 
-    public void Play(int amount)
+    public void Play()
     {
-        victories.playerVictories = new int[amount];
         SceneManager.LoadScene("BattleScene");
     }
 

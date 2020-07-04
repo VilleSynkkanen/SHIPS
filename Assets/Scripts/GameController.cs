@@ -7,12 +7,8 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
-    MusicPlayer musicPlayer;
-
     [SerializeField] PlayerVictories victories;
 
-    [SerializeField] GameObject[] playersReadyTexts;
-    [SerializeField] GameObject instructionText;
     bool gameStarted;
     bool countdownStarted;
     [SerializeField] float countdownTime;
@@ -21,10 +17,11 @@ public class GameController : MonoBehaviour
     [SerializeField] TextMeshProUGUI countdownText;
     [SerializeField] float startTextDelay;
     [SerializeField] float readyTextDelay;
+    [SerializeField] PlayerSpawner spawner;
 
+    List<GameObject> playersAlive = new List<GameObject>();
     List<GameObject> players = new List<GameObject>();
     List<PlayerControlInput> playerInputs = new List<PlayerControlInput>();
-    List<bool> playersReady = new List<bool>();
 
     public event UnityAction<int, int[]> gameEnd = delegate { };
 
@@ -41,40 +38,15 @@ public class GameController : MonoBehaviour
         countdownStarted = false;
         gameEnded = false;
 
-        musicPlayer = FindObjectOfType<MusicPlayer>();
         uiManager = GetComponent<BattleUIManager>();
         gameEnd += uiManager.ShowVictoryUi;
+        DeviceAssignment.CountdownStart += AllPlayersReady;
     }
 
     void Update()
     {
-        if (!countdownStarted && !gameStarted)
-            ReadReadyInput();
         if (!gameStarted && countdownStarted)
             Countdown();
-    }
-
-    void ReadReadyInput()
-    {
-        bool allReady = true;
-        for (int i = 0; i < players.Count; i++)
-        {
-            if (playerInputs[i].vertical > 0)
-            {
-                playersReady[i] = true;
-                playersReadyTexts[i].SetActive(true);
-            }
-
-            if (!playersReady[i])
-            {
-                allReady = false;
-            }
-        }
-
-        if (allReady)
-        {
-            StartCoroutine(StartCountdown());
-        }
     }
 
     void Countdown()
@@ -85,13 +57,17 @@ public class GameController : MonoBehaviour
             StartGame();
     }
 
+    void AllPlayersReady()
+    {
+        StartCoroutine(StartCountdown());
+    }
+    
     IEnumerator StartCountdown()
     {
         yield return new WaitForSeconds(readyTextDelay);
 
         countdownStarted = true;
         countdownTimer = countdownTime;
-        instructionText.SetActive(false);
     }
 
     void StartGame()
@@ -100,7 +76,7 @@ public class GameController : MonoBehaviour
         countdownStarted = false;
         countdownText.text = "GO";
 
-        foreach(GameObject player in players)
+        foreach(GameObject player in playersAlive)
         {
             player.GetComponent<PlayerComponents>().Activate();
         }
@@ -116,26 +92,26 @@ public class GameController : MonoBehaviour
     
     public void AddPlayer(GameObject player)
     {
+        playersAlive.Add(player);
         players.Add(player);
         playerInputs.Add(player.GetComponent<PlayerControlInput>());
-        playersReady.Add(false);
     }
 
     public void RemovePlayer(GameObject player)
     {
-        players.Remove(player);
+        playersAlive.Remove(player);
         DisablePlayerControls(player);
         CheckGameEnd();
     }
 
     void CheckGameEnd()
     {
-        if(players.Count == 1)
+        if(playersAlive.Count == 1)
         {
-            string i = "" + players[0].tag[1];
+            string i = "" + playersAlive[0].tag[1];
             Victory(int.Parse(i) - 1);
         }
-        else if(players.Count == 0)
+        else if(playersAlive.Count == 0)
         {
             Draw();
         }
@@ -143,23 +119,23 @@ public class GameController : MonoBehaviour
     
     void DisablePlayerControls(GameObject player)
     {
-        ShipMovement movement = player.GetComponent<ShipMovement>();
-        movement.playerInput.enabled = false;
-        movement.SetControlsToZero();
+        PlayerComponents components = player.GetComponent<PlayerComponents>();
+        components.Deactivate();
+        components.movement.SetControlsToZero();
     }
     
     void Victory(int i)
     {
         if(!gameEnded)
         {
-            DisablePlayerControls(players[0]);
+            DisablePlayerControls(playersAlive[0]);
             victories.playerVictories[i]++;
             gameEnd(i, victories.playerVictories);
             Cursor.visible = true;
             gameEnded = true;
         }
     }
-
+    
     void Draw()
     {
         if (!gameEnded)
@@ -172,12 +148,35 @@ public class GameController : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("BattleScene");
+        gameStarted = false;
+        countdownStarted = false;
+        gameEnded = false;
+        Cursor.visible = false;
+        uiManager.HideVictoryUI();
+        spawner.ResetPlayerPositions(players);
+        ProjectileParent.instance.DestroyAllProjectiles();
+        playersAlive = new List<GameObject>();
+        foreach(GameObject player in players)
+        {
+            playersAlive.Add(player);
+            PlayerComponents components = player.GetComponent<PlayerComponents>();
+            components.Deactivate();
+            components.damage.ResetShipHealth();
+            components.movement.ResetShipDamage();
+            components.damage.Ui.UpdateHealthbars();
+            components.shooter.ResetShooters();
+            foreach(AmmoTextController ammo in components.ammoTexts)
+            {
+                ammo.SetAllAmmoTexts();
+            }
+        }
+        AllPlayersReady();
     }
 
     public void Quit()
     {
-        Destroy(musicPlayer.gameObject);
+        Destroy(MusicPlayer.instance.gameObject);
+        Destroy(DeviceAssignment.instance.gameObject);
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -185,5 +184,6 @@ public class GameController : MonoBehaviour
     {
         ShipDamage.destroyed -= RemovePlayer;
         gameEnd -= uiManager.ShowVictoryUi;
+        DeviceAssignment.CountdownStart -= AllPlayersReady;
     }
 }

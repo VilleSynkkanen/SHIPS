@@ -29,6 +29,11 @@ public class ShipMovement : MonoBehaviour
         input = GetComponent<PlayerControlInput>();
         playerInput = GetComponent<PlayerInput>();
 
+        ResetShipDamage();
+    }
+
+    public void ResetShipDamage()
+    {
         currentMoveSpeed = data.MoveSpeed;
         currentTurnSpeed = data.TurnSpeed;
         currentSteeringSpeed = data.SteeringSpeed;

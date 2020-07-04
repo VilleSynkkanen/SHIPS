@@ -9,7 +9,6 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField] GameObject[] playerPrefabs0;
     [SerializeField] GameObject[] playerPrefabs1;
     [SerializeField] GameObject[] playerPrefabs2;
-    [SerializeField] PlayerVictories victories;
 
     GameController controller;
 
@@ -42,6 +41,19 @@ public class PlayerSpawner : MonoBehaviour
                DeviceAssignment.instance.Inputs[i].devices[0]);
             player.transform.position = spawns[i].position;
             controller.AddPlayer(player.gameObject);
+        }
+    }
+
+    public void ResetPlayerPositions(List<GameObject> players)
+    {
+        Transform[] spawns;
+        if (players.Count == 3)
+            spawns = playerSpawns3;
+        else
+            spawns = playerSpawns;
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].transform.position = spawns[i].position;
         }
     }
 }

@@ -10,14 +10,19 @@ public class AmmoTextController : MonoBehaviour
 
     private void Start()
     {
-        for(int i = 0; i < ammoTexts.Length; i++)
-        {
-            ammoTexts[i].text = shooters[i].ammoLeft.ToString();
-        }
+        SetAllAmmoTexts();
     }
 
     public void SetAmmoText(int i)
     {
         ammoTexts[i].text = shooters[i].ammoLeft.ToString();
+    }
+
+    public void SetAllAmmoTexts()
+    {
+        for (int i = 0; i < ammoTexts.Length; i++)
+        {
+            ammoTexts[i].text = shooters[i].ammoLeft.ToString();
+        }
     }
 }

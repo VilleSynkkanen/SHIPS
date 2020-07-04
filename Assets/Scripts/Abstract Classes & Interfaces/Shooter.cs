@@ -26,7 +26,13 @@ public abstract class Shooter : MonoBehaviour
     private void Awake()
     {
         data = GameSettings.Instance.GetShooterData(type);
+        ResetState();
+    }
+
+    public void ResetState()
+    {
         ammoLeft = data.StartingAmmo;
+        cooldownLeft = 0;
     }
 
     private void Update()

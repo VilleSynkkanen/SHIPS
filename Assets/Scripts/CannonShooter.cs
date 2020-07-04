@@ -12,6 +12,7 @@ public class CannonShooter : ChargedShooter
             float rotation = Random.Range(-chargedData.RotationVariation, chargedData.RotationVariation);
 
             GameObject clone = Instantiate(Projectile, location.position, location.rotation);
+            clone.transform.SetProjectileParent();
             clone.tag = tag;
             Rigidbody2D ball = clone.GetComponent<Rigidbody2D>();
             ball.rotation += rotation;

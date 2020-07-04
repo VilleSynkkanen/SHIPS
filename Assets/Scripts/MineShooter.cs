@@ -16,6 +16,7 @@ public class MineShooter : InstantShooter
         foreach (Transform location in ShotLocations)
         {
             GameObject mine = Instantiate(Projectile, location.position, location.rotation);
+            mine.transform.SetProjectileParent();
             mine.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * Data.ShotForce);
             StartCoroutine(ActivateCollider(mine.GetComponent<Collider2D>()));
             location.gameObject.GetComponent<AudioSource>().Play();

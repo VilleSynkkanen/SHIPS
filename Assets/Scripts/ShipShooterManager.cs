@@ -17,6 +17,14 @@ public class ShipShooterManager : MonoBehaviour
         input = GetComponent<PlayerControlInput>();
     }
 
+    public void ResetShooters()
+    {
+        foreach(Shooter shooter in shooters)
+        {
+            shooter.ResetState();
+        }
+    }
+    
     private void Update()
     {
         ReadInput();

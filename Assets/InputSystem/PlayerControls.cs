@@ -435,6 +435,30 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Next"",
+                    ""type"": ""Button"",
+                    ""id"": ""50756015-06bd-4eae-9c47-51cb4c8e4c8e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Previous"",
+                    ""type"": ""Button"",
+                    ""id"": ""14cbce9a-bdeb-4e87-92a8-01b24e0c991a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Unready"",
+                    ""type"": ""Button"",
+                    ""id"": ""2dc0247c-c031-4741-91f7-f6b28049ffc7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -457,6 +481,72 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Ready"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d8bd2942-0a3f-4500-b1d7-c5e7ef089e3f"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b8c7245-48be-4385-82cf-a658dc6f4f0d"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""94241a7b-e3d3-4135-bfa3-6a876ff022d8"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Previous"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bd3056bb-9738-471c-a77e-2039e1ec9a9d"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Previous"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d23c2134-7405-4754-a9f1-63451d7ce4a8"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Unready"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f48aff7a-0489-48b7-8910-03edb0c33a4e"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Unready"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -502,6 +592,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // MainMenu
         m_MainMenu = asset.FindActionMap("MainMenu", throwIfNotFound: true);
         m_MainMenu_Ready = m_MainMenu.FindAction("Ready", throwIfNotFound: true);
+        m_MainMenu_Next = m_MainMenu.FindAction("Next", throwIfNotFound: true);
+        m_MainMenu_Previous = m_MainMenu.FindAction("Previous", throwIfNotFound: true);
+        m_MainMenu_Unready = m_MainMenu.FindAction("Unready", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -649,11 +742,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_MainMenu;
     private IMainMenuActions m_MainMenuActionsCallbackInterface;
     private readonly InputAction m_MainMenu_Ready;
+    private readonly InputAction m_MainMenu_Next;
+    private readonly InputAction m_MainMenu_Previous;
+    private readonly InputAction m_MainMenu_Unready;
     public struct MainMenuActions
     {
         private @PlayerControls m_Wrapper;
         public MainMenuActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Ready => m_Wrapper.m_MainMenu_Ready;
+        public InputAction @Next => m_Wrapper.m_MainMenu_Next;
+        public InputAction @Previous => m_Wrapper.m_MainMenu_Previous;
+        public InputAction @Unready => m_Wrapper.m_MainMenu_Unready;
         public InputActionMap Get() { return m_Wrapper.m_MainMenu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -666,6 +765,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Ready.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnReady;
                 @Ready.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnReady;
                 @Ready.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnReady;
+                @Next.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnNext;
+                @Next.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnNext;
+                @Next.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnNext;
+                @Previous.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnPrevious;
+                @Previous.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnPrevious;
+                @Previous.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnPrevious;
+                @Unready.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnUnready;
+                @Unready.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnUnready;
+                @Unready.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnUnready;
             }
             m_Wrapper.m_MainMenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -673,6 +781,15 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Ready.started += instance.OnReady;
                 @Ready.performed += instance.OnReady;
                 @Ready.canceled += instance.OnReady;
+                @Next.started += instance.OnNext;
+                @Next.performed += instance.OnNext;
+                @Next.canceled += instance.OnNext;
+                @Previous.started += instance.OnPrevious;
+                @Previous.performed += instance.OnPrevious;
+                @Previous.canceled += instance.OnPrevious;
+                @Unready.started += instance.OnUnready;
+                @Unready.performed += instance.OnUnready;
+                @Unready.canceled += instance.OnUnready;
             }
         }
     }
@@ -710,5 +827,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IMainMenuActions
     {
         void OnReady(InputAction.CallbackContext context);
+        void OnNext(InputAction.CallbackContext context);
+        void OnPrevious(InputAction.CallbackContext context);
+        void OnUnready(InputAction.CallbackContext context);
     }
 }

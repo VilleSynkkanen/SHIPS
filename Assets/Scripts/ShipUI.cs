@@ -80,7 +80,7 @@ public class ShipUI : MonoBehaviour
         }
     }
 
-    public void UpdateHealthbars(float f, SegmentType s)    // parameters not used
+    public void UpdateHealthbars(float f = 0, SegmentType s = SegmentType.Middle)    // parameters not used
     {
         for (int i = 0; i < segmentHealth.Length; i++)
         {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
@@ -16,10 +17,13 @@ public class DeviceAssignment : MonoBehaviour
     List<DeviceAssignmentControls> assignments = new List<DeviceAssignmentControls>();
     List<ShipType> ships = new List<ShipType>();
     InputDevice[] devices;
+    [SerializeField] PlayerVictories victories;
 
     public List<PlayerInput> Inputs { get => inputs; }
     public List<DeviceAssignmentControls> Assignments { get => assignments; }
     public List<ShipType> Ships { get => ships; }
+    public static UnityAction CountdownStart;
+
 
     private void Awake()
     {
@@ -35,9 +39,8 @@ public class DeviceAssignment : MonoBehaviour
 
         PlayerInputManager.instance.onPlayerJoined += JoinDevice;
         PlayerInputManager.instance.onPlayerLeft += RemoveDevice;
+        victories.playerVictories = new int[0];
     }
-
-    //inputs[i].devices[0]  to access device, required for ship instantiation
 
     private void Start()
     {
@@ -49,9 +52,8 @@ public class DeviceAssignment : MonoBehaviour
         Inputs.Add(input);
         DeviceAssignmentControls ass = input.GetComponent<DeviceAssignmentControls>();
         Assignments.Add(ass);
-        Ships.Add(ShipType.torpedoboat);
         if(ass != null)
-            ass.SetDeviceAssignment(this);
+            ass.SetDeviceAssignment(this, Inputs.Count - 1);
     }
 
     public void CheckReadiness()
@@ -72,12 +74,22 @@ public class DeviceAssignment : MonoBehaviour
 
     void SpawnShips()
     {
+        if(victories.playerVictories.Length == 0)
+        {
+            victories.playerVictories = new int[Assignments.Count];
+        }
+        for (int i = 0; i < Assignments.Count; i++)
+        {
+            ships.Add((ShipType)assignments[i].Selection.i);
+        }
         spawner.SpawnPlayers();
         foreach (DeviceAssignmentControls ass in Assignments)
         {
             if (ass != null)
                 ass.gameObject.SetActive(false);
         }
+
+        CountdownStart();
     }
 
     public void RemoveDevice(PlayerInput input)
