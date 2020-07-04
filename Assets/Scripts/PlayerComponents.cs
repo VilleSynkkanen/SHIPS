@@ -17,6 +17,7 @@ public class PlayerComponents : MonoBehaviour
         aim = GetComponent<AimControl>();
         damage = GetComponent<ShipDamage>();
         ammoTexts = GetComponents<AmmoTextController>();
+        GameController.GameRestart += GameRestart;
     }
 
     public void Activate()
@@ -31,5 +32,23 @@ public class PlayerComponents : MonoBehaviour
         movement.enabled = false;
         shooter.enabled = false;
         aim.enabled = false;
+    }
+
+    public void GameRestart()
+    {
+        Deactivate();
+        damage.ResetShipHealth();
+        movement.ResetShipDamage();
+        damage.Ui.UpdateHealthbars();
+        shooter.ResetShooters();
+        foreach (AmmoTextController ammo in ammoTexts)
+        {
+            ammo.SetAllAmmoTexts();
+        }
+    }
+
+    void OnDestroy()
+    {
+        GameController.GameRestart -= GameRestart;
     }
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FrigateCannonShooterData
   m_EditorClassIdentifier: 
   shotCooldown: 8
-  shotForce: 3.5
+  shotForce: 4
   minForce: 0.9
   maxForce: 1.1
   rotationVariation: 1

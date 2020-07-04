@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     List<PlayerControlInput> playerInputs = new List<PlayerControlInput>();
 
     public event UnityAction<int, int[]> gameEnd = delegate { };
+    public static event UnityAction GameRestart = delegate { };
 
     BattleUIManager uiManager;
 
@@ -152,31 +153,21 @@ public class GameController : MonoBehaviour
         countdownStarted = false;
         gameEnded = false;
         Cursor.visible = false;
-        uiManager.HideVictoryUI();
         spawner.ResetPlayerPositions(players);
-        ProjectileParent.instance.DestroyAllProjectiles();
         playersAlive = new List<GameObject>();
+        uiManager.HideVictoryUI(); 
+        ProjectileParent.instance.DestroyAllProjectiles();
+        GameRestart();
         foreach(GameObject player in players)
         {
             playersAlive.Add(player);
-            PlayerComponents components = player.GetComponent<PlayerComponents>();
-            components.Deactivate();
-            components.damage.ResetShipHealth();
-            components.movement.ResetShipDamage();
-            components.damage.Ui.UpdateHealthbars();
-            components.shooter.ResetShooters();
-            foreach(AmmoTextController ammo in components.ammoTexts)
-            {
-                ammo.SetAllAmmoTexts();
-            }
+            
         }
         AllPlayersReady();
     }
 
     public void Quit()
     {
-        Destroy(MusicPlayer.instance.gameObject);
-        Destroy(DeviceAssignment.instance.gameObject);
         SceneManager.LoadScene("MainMenu");
     }
 

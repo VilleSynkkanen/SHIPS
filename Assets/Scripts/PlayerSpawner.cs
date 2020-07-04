@@ -17,7 +17,6 @@ public class PlayerSpawner : MonoBehaviour
     void Awake()
     {
         controller = GetComponent<GameController>();
-        //SpawnPlayers();
 
         prefabs.Add(playerPrefabs0);
         prefabs.Add(playerPrefabs1);

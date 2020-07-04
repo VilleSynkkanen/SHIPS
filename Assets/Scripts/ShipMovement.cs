@@ -52,9 +52,19 @@ public class ShipMovement : MonoBehaviour
         float multiplier = 1;
         if (throttle < 0)
             multiplier = data.ReverseSpeed;
+        float turningCoefficient = 1;
+        // makes turning speed depend on ship speed (experimental)
+        /*if (rb.velocity.magnitude < 0.3f)
+        {
+            turningCoefficient *= rb.velocity.magnitude / 0.3f;
+            if (turningCoefficient < 0.25f)
+                turningCoefficient = 0.25f;
+        }*/
+        if (Vector3.Dot(rb.velocity, transform.up) < 0)
+            turningCoefficient *= -1;
 
         rb.AddRelativeForce(Vector2.up * multiplier * currentMoveSpeed * moveMultiplier * throttle * Time.fixedDeltaTime);
-        rb.AddTorque(-currentTurnSpeed * turnMultiplier * steering * Time.fixedDeltaTime);
+        rb.AddTorque(-currentTurnSpeed * turnMultiplier * steering * turningCoefficient * Time.fixedDeltaTime);
     }
 
     public void SetControlsToZero()

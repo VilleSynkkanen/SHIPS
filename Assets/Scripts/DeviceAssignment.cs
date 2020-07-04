@@ -9,22 +9,21 @@ using TMPro;
 
 public class DeviceAssignment : MonoBehaviour
 {
-
     public static DeviceAssignment instance = null;
-    PlayerSpawner spawner;
+    public static UnityAction CountdownStart = delegate { };
 
+    [SerializeField] PlayerVictories victories;
+
+    PlayerSpawner spawner;
+    InputDevice[] devices;
     List<PlayerInput> inputs = new List<PlayerInput>();
     List<DeviceAssignmentControls> assignments = new List<DeviceAssignmentControls>();
     List<ShipType> ships = new List<ShipType>();
-    InputDevice[] devices;
-    [SerializeField] PlayerVictories victories;
 
     public List<PlayerInput> Inputs { get => inputs; }
     public List<DeviceAssignmentControls> Assignments { get => assignments; }
     public List<ShipType> Ships { get => ships; }
-    public static UnityAction CountdownStart;
-
-
+    
     private void Awake()
     {
         if (instance != null)
@@ -34,7 +33,6 @@ public class DeviceAssignment : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
 
         PlayerInputManager.instance.onPlayerJoined += JoinDevice;
@@ -65,14 +63,14 @@ public class DeviceAssignment : MonoBehaviour
                     return;
             }
 
-            print("all ready");
-            Invoke("SpawnShips", 1);
-            //SpawnShips();
+            StartCoroutine(SpawnShips());
         }
     }
 
-    void SpawnShips()
+    IEnumerator SpawnShips()
     {
+        yield return new WaitForSeconds(0.1f);
+        
         if(victories.playerVictories.Length == 0)
         {
             victories.playerVictories = new int[Assignments.Count];
@@ -81,6 +79,8 @@ public class DeviceAssignment : MonoBehaviour
         {
             ships.Add((ShipType)assignments[i].Selection.i);
         }
+        
+        // spawning must be done before deactivating gameobjects
         spawner.SpawnPlayers();
         foreach (DeviceAssignmentControls ass in Assignments)
         {
@@ -98,7 +98,7 @@ public class DeviceAssignment : MonoBehaviour
         Destroy(controls.gameObject);
     }
 
-    private void OnDestroy()
+    void OnDestroy()
     {
         if(PlayerInputManager.instance != null)
             PlayerInputManager.instance.onPlayerJoined -= JoinDevice;

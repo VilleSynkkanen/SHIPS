@@ -13,7 +13,6 @@ public class MusicPlayer : MonoBehaviour
         else
         {
             instance = this;
-            DontDestroyOnLoad(gameObject);
         }
     }
 }
