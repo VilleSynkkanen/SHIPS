@@ -38,7 +38,6 @@ public class DeviceAssignment : MonoBehaviour
         }
 
         PlayerInputManager.instance.onPlayerJoined += JoinDevice;
-        PlayerInputManager.instance.onPlayerLeft += RemoveDevice;
         victories.playerVictories = new int[0];
     }
 
@@ -92,8 +91,16 @@ public class DeviceAssignment : MonoBehaviour
         CountdownStart();
     }
 
-    public void RemoveDevice(PlayerInput input)
+    public void RemoveDevice(DeviceAssignmentControls controls)
     {
-        // implement
+        assignments.Remove(controls);
+        inputs.Remove(controls.Input);
+        Destroy(controls.gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        if(PlayerInputManager.instance != null)
+            PlayerInputManager.instance.onPlayerJoined -= JoinDevice;
     }
 }

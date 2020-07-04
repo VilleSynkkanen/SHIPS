@@ -11,7 +11,7 @@ public class DeviceAssignmentControls : MonoBehaviour
     [SerializeField] RectTransform rectTrans;
     DeviceAssignment assignment;
     ShipSelection selection;
-    int plrIndex;
+    public int plrIndex { get; private set; }
     public bool ready { get; private set; }
     public PlayerInput Input { get => input; }
     public ShipSelection Selection { get => selection; }
@@ -59,6 +59,11 @@ public class DeviceAssignmentControls : MonoBehaviour
         {
             text.text = "P" + (plrIndex + 1).ToString() + " JOINED";
             ready = false;
+        }
+        else if(context.started && !ready)
+        {
+            input.user.UnpairDevices();
+            assignment.RemoveDevice(this);
         }
     }
 

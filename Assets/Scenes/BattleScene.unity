@@ -719,7 +719,7 @@ MonoBehaviour:
       m_SingletonActionBindings:
       - m_Name: 
         m_Id: 265e3cc6-0236-47b8-ba8d-ec73ea75980b
-        m_Path: <Keyboard>/backspace
+        m_Path: <Keyboard>/w
         m_Interactions: 
         m_Processors: 
         m_Groups: 
@@ -727,7 +727,7 @@ MonoBehaviour:
         m_Flags: 0
       - m_Name: 
         m_Id: da2447e8-595e-4384-b3d8-341b231445b8
-        m_Path: <Gamepad>/start
+        m_Path: <Gamepad>/dpad/up
         m_Interactions: 
         m_Processors: 
         m_Groups: 
