@@ -8,8 +8,8 @@ public abstract class ChargedShooter : Shooter
     public Rigidbody2D rb { get; private set; }
 
     public float shotCharge { get; private set; }
-    
-    private void Start()
+
+    public void Start()
     {
         chargedData = (ChargedShooterData)Data;
         rb = GetComponent<Rigidbody2D>();
