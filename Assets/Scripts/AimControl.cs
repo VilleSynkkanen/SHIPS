@@ -6,13 +6,17 @@ public class AimControl : MonoBehaviour
     ShipShooterManager shooter;
     Vector3[] currentAngles;
     [SerializeField] Transform[] aimPoints;
-    AimPointData data;
+    AimPointData[] data;
     [SerializeField] Vector3[] baseRotations;
-    [SerializeField] AimPointType type;
+    [SerializeField] AimPointType[] type;
 
     void Awake()
     {
-        data = GameSettings.Instance.GetAimPointData(type);
+        data = new AimPointData[type.Length];
+        for(int i = 0; i < type.Length; i++)
+        {
+            data[i] = GameSettings.Instance.GetAimPointData(type[i]);
+        }
         shooter = GetComponent<ShipShooterManager>();
         input = GetComponent<PlayerControlInput>();
         currentAngles = new Vector3[aimPoints.Length];
@@ -34,8 +38,8 @@ public class AimControl : MonoBehaviour
         {
             if(shooter.AimableShooters[i].cooldownLeft <= 0)
             {
-                currentAngles[i].z -= input.Aim[i] * data.RotationSpeed * Time.deltaTime;
-                currentAngles[i].z = Mathf.Clamp(currentAngles[i].z, -data.MaxAngle, data.MaxAngle);
+                currentAngles[i].z -= input.Aim[i] * data[i].RotationSpeed * Time.deltaTime;
+                currentAngles[i].z = Mathf.Clamp(currentAngles[i].z, -data[i].MaxAngle, data[i].MaxAngle);
             }
         }    
     }

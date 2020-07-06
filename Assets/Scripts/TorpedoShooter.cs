@@ -5,11 +5,13 @@ using UnityEngine;
 public class TorpedoShooter : ChargedShooter
 {
     TorpedoShooterData torpData;
+    Rigidbody2D rb;
 
     public new void Start()
     {
         base.Start();
         torpData = (TorpedoShooterData)Data;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public override void Shoot()
@@ -27,6 +29,8 @@ public class TorpedoShooter : ChargedShooter
             clone.transform.SetProjectileParent();
             clone.tag = tag;
             Rigidbody2D projectile = clone.GetComponent<Rigidbody2D>();
+            projectile.velocity = rb.velocity;
+            StartCoroutine(ActivateCollider(clone.GetComponent<Collider2D>()));
             location.gameObject.GetComponent<AudioSource>().Play();
 
             if (Data.LimitedAmmo)
@@ -36,5 +40,11 @@ public class TorpedoShooter : ChargedShooter
         }
 
         TriggerShotEvent();
+    }
+
+    IEnumerator ActivateCollider(Collider2D collider)
+    {
+        yield return new WaitForSeconds(torpData.ActivationDelay);
+        collider.enabled = true;
     }
 }
