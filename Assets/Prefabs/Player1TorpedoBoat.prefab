@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8324939805829173338}
   - component: {fileID: 3810116679720112951}
   m_Layer: 0
-  m_Name: R1
+  m_Name: B1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1497,8 +1497,7 @@ GameObject:
   - component: {fileID: 6657914969000505246}
   - component: {fileID: 8169926019755720386}
   - component: {fileID: 1346989705686752187}
-  - component: {fileID: 5485912598175517022}
-  - component: {fileID: 1709158366680286018}
+  - component: {fileID: 906915741057244928}
   - component: {fileID: 7554572979930103062}
   - component: {fileID: 5500453535008043499}
   m_Layer: 0
@@ -1926,10 +1925,10 @@ MonoBehaviour:
   - {fileID: 6657914969000505246}
   - {fileID: 8169926019755720386}
   - {fileID: 1346989705686752187}
-  - {fileID: 5485912598175517022}
+  - {fileID: 906915741057244928}
   aimableShooters:
   - {fileID: 8169926019755720386}
-  - {fileID: 5485912598175517022}
+  - {fileID: 906915741057244928}
 --- !u!114 &6657914969000505246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2037,7 +2036,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   type: 2
---- !u!114 &5485912598175517022
+--- !u!114 &906915741057244928
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2046,45 +2045,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 2031785500683975815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47d66f3a7ff01f142bf75fe97151b9db, type: 3}
+  m_Script: {fileID: 11500000, guid: 78545ee5ceb448f42bbdde8e2267b7fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shotLocations:
-  - {fileID: 9200553387996926707}
-  projectile: {fileID: 5845196771482175130, guid: cc5965131700da245965eb952f488f0e,
+  - {fileID: 8324939805829173338}
+  projectile: {fileID: 2496318178972590502, guid: 49bbb98bbe738b740be3b6c3ba507678,
     type: 3}
-  recoil: {x: 0, y: 0}
+  recoil: {x: 0, y: 1}
   ShotEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1709158366680286018}
-        m_MethodName: SetAmmoText
+      - m_Target: {fileID: 7554572979930103062}
+        m_MethodName: DeactivateFill
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  type: 1
---- !u!114 &1709158366680286018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2031785500683975815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aa5d84ae6ba05348930c3c59691289f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammoTexts:
-  - {fileID: 6952525294210930221}
-  shooters:
-  - {fileID: 5485912598175517022}
+      - m_Target: {fileID: 7973471186288004543}
+        m_MethodName: Effect
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  type: 4
 --- !u!114 &7554572979930103062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2101,14 +2095,17 @@ MonoBehaviour:
   - {fileID: 6657914969000505246}
   - {fileID: 8169926019755720386}
   - {fileID: 1346989705686752187}
+  - {fileID: 906915741057244928}
   arrows:
   - {fileID: 8209724275012464800}
   - {fileID: 8209724275562698350}
   - {fileID: 8209724276135775846}
+  - {fileID: 7719768263985835200}
   arrowFills:
   - {fileID: 8209724276060255437}
   - {fileID: 8209724275333113527}
   - {fileID: 8209724276396020339}
+  - {fileID: 8269802927034376670}
 --- !u!114 &5500453535008043499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3770,7 +3767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 49899523663623360}
   m_Layer: 0
-  m_Name: R1AimPoint
+  m_Name: B1AimPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4322,7 +4319,7 @@ GameObject:
   - component: {fileID: 7491399426813878896}
   - component: {fileID: 1410972023851137674}
   m_Layer: 0
-  m_Name: DirectionArrowF
+  m_Name: DirectionArrowB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

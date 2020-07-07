@@ -613,6 +613,9 @@ MonoBehaviour:
   torpedoBoatTorpedoShooterData:
   - {fileID: 11400000, guid: c5d948aab3c66114eb71696fb0fe27ce, type: 2}
   - {fileID: 11400000, guid: 825c650da8ebc874f93cf39c01d7623b, type: 2}
+  torpedoBoatBurstCannonData:
+  - {fileID: 11400000, guid: 09574b24d7ee39a4e9b0fba8be98cd29, type: 2}
+  - {fileID: 11400000, guid: aa9c99217dae74c4d896a842b2bcd395, type: 2}
   frigateCannonballProjectileData:
   - {fileID: 11400000, guid: d50d7aa67eff07b4d956b44421f8f204, type: 2}
   - {fileID: 11400000, guid: 4faf1d89b4009184586e971ab294c970, type: 2}
@@ -622,6 +625,9 @@ MonoBehaviour:
   torpedoBoatTorpedoProjectileData:
   - {fileID: 11400000, guid: 92402e5bab39cae46a3f7216896fecca, type: 2}
   - {fileID: 11400000, guid: 41883650bb54ef244bf531f145a640cc, type: 2}
+  torpedoBoatCannonballProjectileData:
+  - {fileID: 11400000, guid: 0604a29aee601bb4abc8bcb2eb76c5e5, type: 2}
+  - {fileID: 11400000, guid: c8849f2660718184fb5f04770ac3db20, type: 2}
   frigateCannonballRigidbodyData:
   - {fileID: 11400000, guid: 759084c7e69e93544a13714b566b90c6, type: 2}
   - {fileID: 11400000, guid: b1084a657d5a2e846ae045ad78451b18, type: 2}
@@ -631,9 +637,15 @@ MonoBehaviour:
   torpedoBoatTorpedoRigidbodyData:
   - {fileID: 11400000, guid: 1494ec78a4a7a574bb9a943cf211ae7d, type: 2}
   - {fileID: 11400000, guid: 882bfce42eef94f49bc42d7c2de7cc9b, type: 2}
+  torpedoBoatCannonballRigidbodyData:
+  - {fileID: 11400000, guid: 965a70471f03a6b47af36f70bdf93673, type: 2}
+  - {fileID: 11400000, guid: 27cb55e619d5c9c4583fd4eb058a8f25, type: 2}
   frigateCannonballGravityData:
   - {fileID: 11400000, guid: 7cf2d17d1c9f46442b9ff434d3777f8b, type: 2}
   - {fileID: 11400000, guid: 2d05eec887c29f14986a454cde28a0e1, type: 2}
+  torpedoBoatCannonballGravityData:
+  - {fileID: 11400000, guid: 7cf2d17d1c9f46442b9ff434d3777f8b, type: 2}
+  - {fileID: 11400000, guid: 80a2991c7ab8d724c8e7f45542ef697d, type: 2}
 --- !u!1 &1657714391
 GameObject:
   m_ObjectHideFlags: 0

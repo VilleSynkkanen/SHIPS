@@ -5362,7 +5362,7 @@ MonoBehaviour:
   - {fileID: 2396091863164613305}
   baseRotations:
   - {x: 0, y: 0, z: 0}
-  type: 0
+  type: 00000000
 --- !u!60 &7130486941138340605
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5563,6 +5563,18 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 13478067-39d8-4228-af96-e2b1903e3436
     m_ActionName: MainMenu/Ready[/Keyboard/w,/XInputControllerWindows/dpad/up]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 50756015-06bd-4eae-9c47-51cb4c8e4c8e
+    m_ActionName: MainMenu/Next[/Keyboard/d,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 14cbce9a-bdeb-4e87-92a8-01b24e0c991a
+    m_ActionName: MainMenu/Previous[/Keyboard/a,/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2dc0247c-c031-4741-91f7-f6b28049ffc7
+    m_ActionName: MainMenu/Unready[/Keyboard/s,/XInputControllerWindows/dpad/down]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Actions
