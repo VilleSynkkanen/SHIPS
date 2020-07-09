@@ -21,6 +21,11 @@ public class TorpedoShooter : ChargedShooter
 
     IEnumerator Shot()
     {
+        foreach (Transform location in ShotLocations)
+        {
+            location.gameObject.GetComponent<AudioSource>().Play();
+        }
+
         yield return new WaitForSeconds(torpData.LaunchDelay);
 
         foreach (Transform location in ShotLocations)
@@ -31,8 +36,7 @@ public class TorpedoShooter : ChargedShooter
             Rigidbody2D projectile = clone.GetComponent<Rigidbody2D>();
             projectile.velocity = rb.velocity;
             StartCoroutine(ActivateCollider(clone.GetComponent<Collider2D>()));
-            location.gameObject.GetComponent<AudioSource>().Play();
-
+            
             if (Data.LimitedAmmo)
             {
                 ExpendAmmo();

@@ -39,6 +39,7 @@ public class PlayerSpawner : MonoBehaviour
             PlayerInput player = PlayerInput.Instantiate(prefabs[(int)DeviceAssignment.instance.Ships[i]][i], -1, null, -1, 
                DeviceAssignment.instance.Inputs[i].devices[0]);
             player.transform.position = spawns[i].position;
+            player.transform.rotation = spawns[i].rotation;
             controller.AddPlayer(player.gameObject);
         }
     }

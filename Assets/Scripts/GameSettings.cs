@@ -29,21 +29,24 @@ public class GameSettings : MonoBehaviour
     [SerializeField] ChargedShooterData[] frigateCannonballShooterData;
     [SerializeField] MineShooterData[] frigateMineShooterData;
     [SerializeField] TorpedoShooterData[] torpedoBoatTorpedoShooterData;
-    //[SerializeField] aaa torpedoBoatShotgunData
+    [SerializeField] ShotgunShooterData[] torpedoBoatShotgunData;
     [SerializeField] BurstShooterData[] torpedoBoatBurstCannonData;
     
     [SerializeField] ProjectileData[] frigateCannonballProjectileData;
     [SerializeField] ProjectileData[] frigateMineProjectileData;
     [SerializeField] ProjectileData[] torpedoBoatTorpedoProjectileData;
     [SerializeField] ProjectileData[] torpedoBoatCannonballProjectileData;
+    [SerializeField] ProjectileData[] torpedoBoatShotgunShotProjectileData;
 
     [SerializeField] RigidbodyData[] frigateCannonballRigidbodyData;
     [SerializeField] RigidbodyData[] frigateMineRigidbodyData;
     [SerializeField] RigidbodyData[] torpedoBoatTorpedoRigidbodyData;
     [SerializeField] RigidbodyData[] torpedoBoatCannonballRigidbodyData;
+    [SerializeField] RigidbodyData[] torpedoBoatShotgunShotRigidbodyData;
 
     [SerializeField] ProjectileGravityData[] frigateCannonballGravityData;
     [SerializeField] ProjectileGravityData[] torpedoBoatCannonballGravityData;
+    [SerializeField] ProjectileGravityData[] torpedoBoatShotgunShotGravityData;
 
     List<ShipData[]> shipDatas;
     List<ShipMovementData[]> shipMovementDatas;
@@ -75,13 +78,14 @@ public class GameSettings : MonoBehaviour
         
         aimPointDatas = new List<AimPointData[]> { frigateFrontCannonAimData, torpedoBoatFrontCannonAimData, torpedoBoatRearCannonAimData };
                                                                                                                                       
-        shooterDatas = new List<ShooterData[]> { frigateCannonballShooterData, frigateMineShooterData, torpedoBoatTorpedoShooterData, 
-            null, torpedoBoatBurstCannonData };
+        shooterDatas = new List<ShooterData[]> { frigateCannonballShooterData, frigateMineShooterData, torpedoBoatTorpedoShooterData,
+            torpedoBoatShotgunData, torpedoBoatBurstCannonData };
         projectileDatas = new List<ProjectileData[]> { frigateCannonballProjectileData, frigateMineProjectileData, 
-            torpedoBoatTorpedoProjectileData, null, torpedoBoatCannonballProjectileData };
+            torpedoBoatTorpedoProjectileData, torpedoBoatShotgunShotProjectileData, torpedoBoatCannonballProjectileData };
         projectileRigidbodyDatas = new List<RigidbodyData[]> { frigateCannonballRigidbodyData, frigateMineRigidbodyData, 
-            torpedoBoatTorpedoRigidbodyData, null, torpedoBoatCannonballRigidbodyData };
-        projectileGravityDatas = new List<ProjectileGravityData[]> { frigateCannonballGravityData, null, null, null, torpedoBoatCannonballGravityData };
+            torpedoBoatTorpedoRigidbodyData, torpedoBoatShotgunShotRigidbodyData, torpedoBoatCannonballRigidbodyData };
+        projectileGravityDatas = new List<ProjectileGravityData[]> { frigateCannonballGravityData, null, null, torpedoBoatShotgunShotGravityData, 
+            torpedoBoatCannonballGravityData };
     }
 
     public ShipData GetShipData(ShipType type)

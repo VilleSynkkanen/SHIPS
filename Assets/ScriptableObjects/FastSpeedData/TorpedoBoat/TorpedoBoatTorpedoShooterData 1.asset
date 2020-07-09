@@ -21,5 +21,5 @@ MonoBehaviour:
   startingAmmo: 0
   chargeSpeed: 1
   minimumCharge: 0.5
-  launchDelay: 0.5
+  launchDelay: 0.2
   activationDelay: 1

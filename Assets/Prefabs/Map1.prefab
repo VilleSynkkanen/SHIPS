@@ -763,10 +763,10 @@ MonoBehaviour:
   - {fileID: 4940695125546240913, guid: 0b70b24eaa89df44ba081c299c03c75b, type: 3}
   - {fileID: 7046078890965804203, guid: 8da30ac021b067642828a7d6868055a4, type: 3}
   playerPrefabs2:
-  - {fileID: 7916367853365582388, guid: 9b5e019842cb10a4eadcda28ba2f6649, type: 3}
-  - {fileID: 6984006723380113752, guid: ff300dd9065d0db4aae0e3f3fbfde8df, type: 3}
-  - {fileID: 4940695125546240913, guid: 0b70b24eaa89df44ba081c299c03c75b, type: 3}
-  - {fileID: 7046078890965804203, guid: 8da30ac021b067642828a7d6868055a4, type: 3}
+  - {fileID: 7187208062566614105, guid: 7f3e93ffd13f4874dbfdd3299e049f00, type: 3}
+  - {fileID: 5635651626913154045, guid: 4d1454f135fad7f4e871c34c7c7996fe, type: 3}
+  - {fileID: 4140972496212889776, guid: 24a98142bc93dea4080cfdcf592bc2f0, type: 3}
+  - {fileID: 2706629075371708443, guid: 5e2b09bc0327df943ab1574f594e5701, type: 3}
 --- !u!114 &1406226073987130125
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,17 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55238ebbb60e8ce49b6ff1c3db3146b2, type: 3}
-  m_Name: TorpedoBoatTorpedoShooterData
+  m_Script: {fileID: 11500000, guid: 79309d97be5427543bf98d596b2bbab5, type: 3}
+  m_Name: TorpedoBoatShotgunShooterData
   m_EditorClassIdentifier: 
   shotCooldown: 10
-  shotForce: 0
-  minForce: 1
-  maxForce: 1
-  rotationVariation: 0
+  shotForce: 1.2
+  minForce: 0.85
+  maxForce: 1.15
+  rotationVariation: 8
   limitedAmmo: 0
   startingAmmo: 0
   chargeSpeed: 1
-  minimumCharge: 0.5
-  launchDelay: 0.2
-  activationDelay: 1
+  minimumCharge: 0.25
+  shotAmount: 3

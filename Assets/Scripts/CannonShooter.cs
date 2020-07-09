@@ -9,7 +9,7 @@ public class CannonShooter : ChargedShooter
         StartCoroutine(Shot());
     }
 
-    public IEnumerator Shot(int burst=1, float burstTime=0)
+    public IEnumerator Shot(int burst=1, float burstTime=0, bool effect=true)
     {
         float charge = shotCharge;
         for(int i = 0; i < burst; i++)
@@ -34,8 +34,12 @@ public class CannonShooter : ChargedShooter
                 }
             }
 
-            TriggerShotEvent();
+            if(burst > 1 && effect)
+                TriggerShotEvent();
             yield return new WaitForSeconds(burstTime);
         }
+
+        if(burst == 1 && effect)
+            TriggerShotEvent();
     }
 }

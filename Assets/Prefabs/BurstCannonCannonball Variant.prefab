@@ -12,6 +12,12 @@ PrefabInstance:
       propertyPath: type
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: -5496976053363735970, guid: 49bbb98bbe738b740be3b6c3ba507678,
+        type: 3}
+      propertyPath: waterHitEffect
+      value: 
+      objectReference: {fileID: 4106312846769502169, guid: 7d2c3e54cee09124186bd8201c4ad5e8,
+        type: 3}
     - target: {fileID: 2496318178972590501, guid: 49bbb98bbe738b740be3b6c3ba507678,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -92,5 +98,11 @@ PrefabInstance:
       propertyPath: type
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8348898588576410189, guid: 49bbb98bbe738b740be3b6c3ba507678,
+        type: 3}
+      propertyPath: explosion
+      value: 
+      objectReference: {fileID: 7503129335416402992, guid: 5d9c753523836f54a8e6525552c63973,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49bbb98bbe738b740be3b6c3ba507678, type: 3}
