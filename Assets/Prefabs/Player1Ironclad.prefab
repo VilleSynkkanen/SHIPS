@@ -5231,7 +5231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b293e8a49bb792a41a45ca26fc3de593, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 2
 --- !u!114 &3086337099177035392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5286,7 +5286,7 @@ MonoBehaviour:
   - {fileID: 575307392978944114}
   shipExplosion: {fileID: 153781043075632041, guid: c831b34c2bedb8b4aba1c669b88d25ec,
     type: 3}
-  type: 0
+  type: 2
 --- !u!114 &1237144433952535905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5334,7 +5334,8 @@ MonoBehaviour:
   baseRotations:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  type: 0000000000000000
+  type: 3
+  aimDirections: 01000000ffffffff
 --- !u!60 &7824464637992817808
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5689,7 +5690,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  type: 0
+  type: 5
 --- !u!114 &4697595526433481657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5778,7 +5779,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  type: 0
+  type: 5
 --- !u!114 &1683063800018404808
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5819,7 +5820,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ship: 1
-  shipType: 0
+  shipType: 2
   shooterType: 0
 --- !u!1 &7187208062883862486
 GameObject:

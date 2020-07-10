@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afa6390f4783a2a4581d8b16f767ce7a, type: 3}
-  m_Name: TorpedoBoatMovementData
+  m_Script: {fileID: 11500000, guid: 138aa1af2ad360c4ca3806e8fb857af9, type: 3}
+  m_Name: IroncladCannonballGravityData
   m_EditorClassIdentifier: 
-  moveSpeed: 25
-  turnSpeed: 5
-  steeringSpeed: 0.4
-  throttleSpeed: 0.4
-  reverseSpeed: 1
-  damageAngleCoefficient: 0.5
-  maxDamageEffect: 0.5
+  acceleration: 2.5
+  startingAltitude: 10

@@ -67,17 +67,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""AimPrimary"",
+                    ""name"": ""Aim"",
                     ""type"": ""Value"",
                     ""id"": ""d573135f-2459-46c1-a47c-0ca2930c912a"",
-                    ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
-                    ""name"": ""AimSecondary"",
-                    ""type"": ""Value"",
-                    ""id"": ""7ad37a21-77e4-42d9-bd01-4e616cbba869"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -231,7 +223,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AimPrimary"",
+                    ""action"": ""Aim"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -242,7 +234,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
-                    ""action"": ""AimPrimary"",
+                    ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -253,7 +245,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
-                    ""action"": ""AimPrimary"",
+                    ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -264,7 +256,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""AimPrimary"",
+                    ""action"": ""Aim"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
@@ -275,7 +267,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""AimPrimary"",
+                    ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -286,7 +278,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
-                    ""action"": ""AimPrimary"",
+                    ""action"": ""Aim"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
@@ -333,72 +325,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Shoot4"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Controller"",
-                    ""id"": ""a20113b7-4d80-4824-8a2b-d1afc5ba5a88"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AimSecondary"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""9542632e-f206-48f4-aaf1-2f2be45003f9"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""AimSecondary"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""80089a3c-31bd-4929-a84f-ea7277545cd2"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""AimSecondary"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Aim"",
-                    ""id"": ""d303078e-74b1-44df-81de-47c026bf39ba"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""AimSecondary"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""0a185815-7025-4880-b6f1-164d6f72015f"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""AimSecondary"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""2b338e3e-855c-4eb6-8ebc-0028d978ee8a"",
-                    ""path"": ""<Keyboard>/3"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard"",
-                    ""action"": ""AimSecondary"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -586,8 +512,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Actions_Shoot2 = m_Actions.FindAction("Shoot2", throwIfNotFound: true);
         m_Actions_Shoot3 = m_Actions.FindAction("Shoot3", throwIfNotFound: true);
         m_Actions_Shoot4 = m_Actions.FindAction("Shoot4", throwIfNotFound: true);
-        m_Actions_AimPrimary = m_Actions.FindAction("AimPrimary", throwIfNotFound: true);
-        m_Actions_AimSecondary = m_Actions.FindAction("AimSecondary", throwIfNotFound: true);
+        m_Actions_Aim = m_Actions.FindAction("Aim", throwIfNotFound: true);
         m_Actions_Quit = m_Actions.FindAction("Quit", throwIfNotFound: true);
         // MainMenu
         m_MainMenu = asset.FindActionMap("MainMenu", throwIfNotFound: true);
@@ -650,8 +575,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Actions_Shoot2;
     private readonly InputAction m_Actions_Shoot3;
     private readonly InputAction m_Actions_Shoot4;
-    private readonly InputAction m_Actions_AimPrimary;
-    private readonly InputAction m_Actions_AimSecondary;
+    private readonly InputAction m_Actions_Aim;
     private readonly InputAction m_Actions_Quit;
     public struct ActionsActions
     {
@@ -663,8 +587,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Shoot2 => m_Wrapper.m_Actions_Shoot2;
         public InputAction @Shoot3 => m_Wrapper.m_Actions_Shoot3;
         public InputAction @Shoot4 => m_Wrapper.m_Actions_Shoot4;
-        public InputAction @AimPrimary => m_Wrapper.m_Actions_AimPrimary;
-        public InputAction @AimSecondary => m_Wrapper.m_Actions_AimSecondary;
+        public InputAction @Aim => m_Wrapper.m_Actions_Aim;
         public InputAction @Quit => m_Wrapper.m_Actions_Quit;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
@@ -693,12 +616,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Shoot4.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShoot4;
                 @Shoot4.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShoot4;
                 @Shoot4.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShoot4;
-                @AimPrimary.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimPrimary;
-                @AimPrimary.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimPrimary;
-                @AimPrimary.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimPrimary;
-                @AimSecondary.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimSecondary;
-                @AimSecondary.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimSecondary;
-                @AimSecondary.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimSecondary;
+                @Aim.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAim;
+                @Aim.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAim;
+                @Aim.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAim;
                 @Quit.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnQuit;
                 @Quit.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnQuit;
                 @Quit.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnQuit;
@@ -724,12 +644,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Shoot4.started += instance.OnShoot4;
                 @Shoot4.performed += instance.OnShoot4;
                 @Shoot4.canceled += instance.OnShoot4;
-                @AimPrimary.started += instance.OnAimPrimary;
-                @AimPrimary.performed += instance.OnAimPrimary;
-                @AimPrimary.canceled += instance.OnAimPrimary;
-                @AimSecondary.started += instance.OnAimSecondary;
-                @AimSecondary.performed += instance.OnAimSecondary;
-                @AimSecondary.canceled += instance.OnAimSecondary;
+                @Aim.started += instance.OnAim;
+                @Aim.performed += instance.OnAim;
+                @Aim.canceled += instance.OnAim;
                 @Quit.started += instance.OnQuit;
                 @Quit.performed += instance.OnQuit;
                 @Quit.canceled += instance.OnQuit;
@@ -820,8 +737,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnShoot2(InputAction.CallbackContext context);
         void OnShoot3(InputAction.CallbackContext context);
         void OnShoot4(InputAction.CallbackContext context);
-        void OnAimPrimary(InputAction.CallbackContext context);
-        void OnAimSecondary(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
         void OnQuit(InputAction.CallbackContext context);
     }
     public interface IMainMenuActions

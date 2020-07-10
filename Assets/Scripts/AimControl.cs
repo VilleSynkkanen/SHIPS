@@ -6,17 +6,14 @@ public class AimControl : MonoBehaviour
     ShipShooterManager shooter;
     Vector3[] currentAngles;
     [SerializeField] Transform[] aimPoints;
-    AimPointData[] data;
+    AimPointData data;
     [SerializeField] Vector3[] baseRotations;
-    [SerializeField] AimPointType[] type;
+    [SerializeField] AimPointType type;
+    [SerializeField] int[] aimDirections;
 
     void Awake()
     {
-        data = new AimPointData[type.Length];
-        for(int i = 0; i < type.Length; i++)
-        {
-            data[i] = GameSettings.Instance.GetAimPointData(type[i]);
-        }
+        data = GameSettings.Instance.GetAimPointData(type);
         shooter = GetComponent<ShipShooterManager>();
         input = GetComponent<PlayerControlInput>();
         currentAngles = new Vector3[aimPoints.Length];
@@ -34,14 +31,24 @@ public class AimControl : MonoBehaviour
 
     void ReadInput()
     {
+        bool canAim = false;
         for (int i = 0; i < aimPoints.Length; i++)
         {
-            if(shooter.AimableShooters[i].cooldownLeft <= 0)
+            // can be aimed if at least one shooter has not shot
+            if (shooter.AimableShooters[i].cooldownLeft <= 0)
             {
-                currentAngles[i].z -= input.Aim[i] * data[i].RotationSpeed * Time.deltaTime;
-                currentAngles[i].z = Mathf.Clamp(currentAngles[i].z, -data[i].MaxAngle, data[i].MaxAngle);
+                canAim = true;
             }
-        }    
+        }
+
+        if (!canAim)
+            return;
+
+        for (int i = 0; i < aimPoints.Length; i++)
+        {
+            currentAngles[i].z -= aimDirections[i] * input.aim * data.RotationSpeed * Time.deltaTime;
+            currentAngles[i].z = Mathf.Clamp(currentAngles[i].z, -data.MaxAngle, data.MaxAngle);
+        }
     }
 
     void RotatePoints()

@@ -25,7 +25,7 @@ public class CannonShooter : ChargedShooter
                 Rigidbody2D ball = clone.GetComponent<Rigidbody2D>();
                 ball.rotation += rotation;
                 ball.AddRelativeForce(Vector2.up * chargedData.ShotForce * charge * forceMultiplier);
-                rb.AddRelativeForce(Recoil * chargedData.ShotForce * shotCharge * forceMultiplier);
+                rb.AddForce(-clone.transform.up * chargedData.ShotForce * shotCharge * forceMultiplier);
                 location.gameObject.GetComponent<AudioSource>().Play();
 
                 if (Data.LimitedAmmo)

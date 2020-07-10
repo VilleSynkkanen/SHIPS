@@ -34,8 +34,6 @@ public class PlayerSpawner : MonoBehaviour
 
         for (int i = 0; i < players; i++)
         {
-            print(players);
-            print(DeviceAssignment.instance.Inputs.Count);
             PlayerInput player = PlayerInput.Instantiate(prefabs[(int)DeviceAssignment.instance.Ships[i]][i], -1, null, -1, 
                DeviceAssignment.instance.Inputs[i].devices[0]);
             player.transform.position = spawns[i].position;
@@ -54,6 +52,7 @@ public class PlayerSpawner : MonoBehaviour
         for (int i = 0; i < players.Count; i++)
         {
             players[i].transform.position = spawns[i].position;
+            players[i].transform.rotation = spawns[i].rotation;
         }
     }
 }

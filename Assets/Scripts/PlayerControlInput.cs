@@ -9,9 +9,7 @@ public class PlayerControlInput : MonoBehaviour
     public bool shoot3 { get; private set; }
     public bool shoot2 { get; private set; }
     public bool shoot4 { get; private set; }
-    public float[] Aim { get => aim; }
-
-    float[] aim = new float[2];
+    public float aim { get; private set; }
 
     bool quitting;
 
@@ -65,13 +63,10 @@ public class PlayerControlInput : MonoBehaviour
 
     public void OnAimPrimary(InputAction.CallbackContext context)
     {
-        Aim[0] = context.ReadValue<float>();
+        aim = context.ReadValue<float>();
     }
 
-    public void OnAimSecondary(InputAction.CallbackContext context)
-    {
-        Aim[1] = context.ReadValue<float>();
-    }
+
 
     public void OnQuit(InputAction.CallbackContext context)
     {

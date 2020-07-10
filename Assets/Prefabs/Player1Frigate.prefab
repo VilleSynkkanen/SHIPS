@@ -5362,7 +5362,8 @@ MonoBehaviour:
   - {fileID: 2396091863164613305}
   baseRotations:
   - {x: 0, y: 0, z: 0}
-  type: 00000000
+  type: 0
+  aimDirections: 01000000
 --- !u!60 &7130486941138340605
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5544,21 +5545,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8747c435-1878-4ced-8785-5742ffb1d23b
     m_ActionName: Actions/Quit[/Keyboard/escape,/XInputControllerWindows/start]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7916367853365582392}
-        m_MethodName: OnAimSecondary
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 7ad37a21-77e4-42d9-bd01-4e616cbba869
-    m_ActionName: Actions/AimSecondary[/XInputControllerWindows/leftTrigger,/XInputControllerWindows/rightTrigger,/Keyboard/1,/Keyboard/3]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 13478067-39d8-4228-af96-e2b1903e3436

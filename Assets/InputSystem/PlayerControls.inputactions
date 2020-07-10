@@ -54,17 +54,9 @@
                     "interactions": ""
                 },
                 {
-                    "name": "AimPrimary",
+                    "name": "Aim",
                     "type": "Value",
                     "id": "d573135f-2459-46c1-a47c-0ca2930c912a",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "AimSecondary",
-                    "type": "Value",
-                    "id": "7ad37a21-77e4-42d9-bd01-4e616cbba869",
                     "expectedControlType": "Axis",
                     "processors": "",
                     "interactions": ""
@@ -218,7 +210,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AimPrimary",
+                    "action": "Aim",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -229,7 +221,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
-                    "action": "AimPrimary",
+                    "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -240,7 +232,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Controller",
-                    "action": "AimPrimary",
+                    "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -251,7 +243,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "AimPrimary",
+                    "action": "Aim",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -262,7 +254,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "AimPrimary",
+                    "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -273,7 +265,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "AimPrimary",
+                    "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -320,72 +312,6 @@
                     "action": "Shoot4",
                     "isComposite": false,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "Controller",
-                    "id": "a20113b7-4d80-4824-8a2b-d1afc5ba5a88",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AimSecondary",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "9542632e-f206-48f4-aaf1-2f2be45003f9",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Controller",
-                    "action": "AimSecondary",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "80089a3c-31bd-4929-a84f-ea7277545cd2",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Controller",
-                    "action": "AimSecondary",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "Aim",
-                    "id": "d303078e-74b1-44df-81de-47c026bf39ba",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "AimSecondary",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "0a185815-7025-4880-b6f1-164d6f72015f",
-                    "path": "<Keyboard>/1",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "AimSecondary",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "2b338e3e-855c-4eb6-8ebc-0028d978ee8a",
-                    "path": "<Keyboard>/3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard",
-                    "action": "AimSecondary",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "",

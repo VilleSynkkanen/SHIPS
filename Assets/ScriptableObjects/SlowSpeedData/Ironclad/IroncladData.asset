@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afa6390f4783a2a4581d8b16f767ce7a, type: 3}
-  m_Name: TorpedoBoatMovementData
+  m_Script: {fileID: 11500000, guid: 755160d4fb4d85b4ea7d741ac8b7e992, type: 3}
+  m_Name: IroncladData
   m_EditorClassIdentifier: 
-  moveSpeed: 25
-  turnSpeed: 5
-  steeringSpeed: 0.4
-  throttleSpeed: 0.4
-  reverseSpeed: 1
-  damageAngleCoefficient: 0.5
-  maxDamageEffect: 0.5
+  maxHp: 50
+  segmentHp: 140000002400000014000000

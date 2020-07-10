@@ -580,21 +580,27 @@ MonoBehaviour:
   torpedoBoatData:
   - {fileID: 11400000, guid: 7aef30307ccbfc84e9d5181358675a5f, type: 2}
   - {fileID: 11400000, guid: 4200ff63e82090d4c8ace48720f18979, type: 2}
-  ironcladData: []
+  ironcladData:
+  - {fileID: 11400000, guid: 4d8a74a45d960c74e9d98122fd41148a, type: 2}
+  - {fileID: 11400000, guid: 649d4a99c43c4f74bbef242fd2b1dd3d, type: 2}
   frigateMovementData:
   - {fileID: 11400000, guid: f8b9fecb75b609f47b533f7e8089e327, type: 2}
   - {fileID: 11400000, guid: 160fb9add3fc7c1469a5f1e6681d5e26, type: 2}
   torpedoBoatMovementData:
   - {fileID: 11400000, guid: ef9eb2566ad3ee448bc6bcdb270d9a73, type: 2}
   - {fileID: 11400000, guid: ddf5ab48fa3ea0147b5621c8d9a6f7f5, type: 2}
-  ironcladMovementData: []
+  ironcladMovementData:
+  - {fileID: 11400000, guid: cea2c32e7da076e4596294ccd30b048b, type: 2}
+  - {fileID: 11400000, guid: 0c89aac5039300745a58cdc81edac1b2, type: 2}
   frigateRigidbodyData:
   - {fileID: 11400000, guid: 3b69cdbf12d823b4f925b9832bcfc85f, type: 2}
   - {fileID: 11400000, guid: b35e1a1e92de753499cf8acf32549b89, type: 2}
   torpedoBoatRigidbodyData:
   - {fileID: 11400000, guid: 2922e4522c195ea42b8a852e0cac0a40, type: 2}
   - {fileID: 11400000, guid: f2baa638fef4ffa45aa4031d6f37f216, type: 2}
-  ironcladRigidbodyData: []
+  ironcladRigidbodyData:
+  - {fileID: 11400000, guid: 5a98b5662562f0b44b1d80b6d8a4e680, type: 2}
+  - {fileID: 11400000, guid: f762fea13eb1df845b4eee641286dd91, type: 2}
   frigateFrontCannonAimData:
   - {fileID: 11400000, guid: 69debce3f2e12744eac51a4df52233ce, type: 2}
   - {fileID: 11400000, guid: 7d1aef0f84808f54fb243ad1975ec394, type: 2}
@@ -604,6 +610,9 @@ MonoBehaviour:
   torpedoBoatRearCannonAimData:
   - {fileID: 11400000, guid: 5fa29c337810b5547b406f31f49b8945, type: 2}
   - {fileID: 11400000, guid: 968a30a28af1e4543bf0fe6bd6e5d685, type: 2}
+  ironcladCannonAimData:
+  - {fileID: 11400000, guid: 28763dd8160fbd04bb78c740fca6e9a6, type: 2}
+  - {fileID: 11400000, guid: 829ccae8d4b85924f99df40b36112fb1, type: 2}
   frigateCannonballShooterData:
   - {fileID: 11400000, guid: a94834c8ceabb044a9b29d32f24da464, type: 2}
   - {fileID: 11400000, guid: 64735f0ab75e3d947b5a73aa60552f0e, type: 2}
@@ -619,6 +628,9 @@ MonoBehaviour:
   torpedoBoatBurstCannonData:
   - {fileID: 11400000, guid: 09574b24d7ee39a4e9b0fba8be98cd29, type: 2}
   - {fileID: 11400000, guid: aa9c99217dae74c4d896a842b2bcd395, type: 2}
+  ironcladCannonballShooterData:
+  - {fileID: 11400000, guid: f40a3ee65457b7049b20fcbf3bc48b22, type: 2}
+  - {fileID: 11400000, guid: 211b0df89d109fd4d99dd76fdeb962c2, type: 2}
   frigateCannonballProjectileData:
   - {fileID: 11400000, guid: d50d7aa67eff07b4d956b44421f8f204, type: 2}
   - {fileID: 11400000, guid: 4faf1d89b4009184586e971ab294c970, type: 2}
@@ -634,6 +646,9 @@ MonoBehaviour:
   torpedoBoatShotgunShotProjectileData:
   - {fileID: 11400000, guid: 9301167fc2dca304c8d1cda1e81f8061, type: 2}
   - {fileID: 11400000, guid: 10927ea2f8078d64f9cf026550b27bfb, type: 2}
+  ironcladCannonballProjectileData:
+  - {fileID: 11400000, guid: 16ffb5dfee5cc0c40a4a9171dbff3757, type: 2}
+  - {fileID: 11400000, guid: a34809b16e9fb474a8c60348ade8549d, type: 2}
   frigateCannonballRigidbodyData:
   - {fileID: 11400000, guid: 759084c7e69e93544a13714b566b90c6, type: 2}
   - {fileID: 11400000, guid: b1084a657d5a2e846ae045ad78451b18, type: 2}
@@ -649,6 +664,9 @@ MonoBehaviour:
   torpedoBoatShotgunShotRigidbodyData:
   - {fileID: 11400000, guid: 7b17b40d3f20f544cb004507ec6309eb, type: 2}
   - {fileID: 11400000, guid: 4c59eff8c55fc5745aa4c681d2ace85c, type: 2}
+  ironcladCannonballRigidbodyData:
+  - {fileID: 11400000, guid: 3e35ff5c5a3ef77448de35f08b40db5c, type: 2}
+  - {fileID: 11400000, guid: d9f6d2acd59f8fe43b04de307ef56642, type: 2}
   frigateCannonballGravityData:
   - {fileID: 11400000, guid: 7cf2d17d1c9f46442b9ff434d3777f8b, type: 2}
   - {fileID: 11400000, guid: 2d05eec887c29f14986a454cde28a0e1, type: 2}
@@ -658,6 +676,9 @@ MonoBehaviour:
   torpedoBoatShotgunShotGravityData:
   - {fileID: 11400000, guid: ba7a1c153b1f8614191ed60adbb6c2c6, type: 2}
   - {fileID: 11400000, guid: db3363601937f6e44817124e8f47d639, type: 2}
+  ironcladCannonballGravityData:
+  - {fileID: 11400000, guid: 6a4b31970a5ddc245a548a0476f8066b, type: 2}
+  - {fileID: 11400000, guid: b17a1f29459c3d447ad238b134e51a8b, type: 2}
 --- !u!1 &1657714391
 GameObject:
   m_ObjectHideFlags: 0

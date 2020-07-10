@@ -16,6 +16,6 @@ MonoBehaviour:
   turnSpeed: 4.5
   steeringSpeed: 1
   throttleSpeed: 1
-  reverseSpeed: 0.5
+  reverseSpeed: 1
   damageAngleCoefficient: 0.5
   maxDamageEffect: 0.5
