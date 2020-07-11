@@ -631,6 +631,9 @@ MonoBehaviour:
   ironcladCannonballShooterData:
   - {fileID: 11400000, guid: f40a3ee65457b7049b20fcbf3bc48b22, type: 2}
   - {fileID: 11400000, guid: 211b0df89d109fd4d99dd76fdeb962c2, type: 2}
+  ironcladFlamethrowerShooterData:
+  - {fileID: 11400000, guid: e9e17f260fb288648ad0f9759ee03257, type: 2}
+  - {fileID: 11400000, guid: 5ea4250dfdcd41840ada752674004a13, type: 2}
   frigateCannonballProjectileData:
   - {fileID: 11400000, guid: d50d7aa67eff07b4d956b44421f8f204, type: 2}
   - {fileID: 11400000, guid: 4faf1d89b4009184586e971ab294c970, type: 2}

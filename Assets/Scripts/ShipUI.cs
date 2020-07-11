@@ -19,6 +19,7 @@ public class ShipUI : MonoBehaviour
     [SerializeField] Color fullyDamaged;
 
     [SerializeField] Image[] shotCooldownImages;
+    [SerializeField] bool[] useFills;
 
     ShipMovement movement;
     ShipDamage damage;
@@ -69,13 +70,16 @@ public class ShipUI : MonoBehaviour
 
         for(int i = 0; i < shotCooldownImages.Length; i++)
         {
-            if(shooter.Shooters[i].Data.LimitedAmmo && shooter.Shooters[i].ammoLeft <= 0)
+            if(useFills[i])
             {
-                shotCooldownImages[i].fillAmount = 1;
-            }
-            else
-            {
-                shotCooldownImages[i].fillAmount = shooter.Shooters[i].cooldownLeft / shooter.Shooters[i].Data.ShotCooldown;
+                if(shooter.Shooters[i].Data.LimitedAmmo && shooter.Shooters[i].ammoLeft <= 0)
+                {
+                    shotCooldownImages[i].fillAmount = 1;
+                }
+                else
+                {
+                    shotCooldownImages[i].fillAmount = shooter.Shooters[i].cooldownLeft / shooter.Shooters[i].Data.ShotCooldown;
+                }
             }
         }
     }

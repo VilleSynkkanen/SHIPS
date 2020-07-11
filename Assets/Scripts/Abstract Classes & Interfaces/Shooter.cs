@@ -33,7 +33,7 @@ public abstract class Shooter : MonoBehaviour
         cooldownLeft = 0;
     }
 
-    private void Update()
+    public void Update()
     {
         UpdateCooldown();
     }
