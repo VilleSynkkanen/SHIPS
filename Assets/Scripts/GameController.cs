@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     [SerializeField] float startTextDelay;
     [SerializeField] float readyTextDelay;
     [SerializeField] PlayerSpawner spawner;
+    [SerializeField] GameObject instructionText;
 
     List<GameObject> playersAlive = new List<GameObject>();
     List<GameObject> players = new List<GameObject>();
@@ -60,6 +61,7 @@ public class GameController : MonoBehaviour
 
     void AllPlayersReady()
     {
+        instructionText.SetActive(false);
         StartCoroutine(StartCountdown());
     }
     

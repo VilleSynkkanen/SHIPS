@@ -153,9 +153,24 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2dc0247c-c031-4741-91f7-f6b28049ffc7
     m_ActionName: MainMenu/Unready[/Keyboard/s,/XInputControllerWindows/dpad/down]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 218873223844601377}
+        m_MethodName: OnPlayer2Join
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0f77a480-0975-481f-b9ea-c9df386cdb7e
+    m_ActionName: MainMenu/Player2Join[/Keyboard/upArrow]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 859a399f-6f1c-4e41-ad78-03e3db5cc3d1
+  m_DefaultActionMap: MainMenu
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &218873223844601377
@@ -172,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 218873223844601378}
   selection: {fileID: 955527418844354246}
+  player2Prefab: {fileID: 218873223844601376}
 --- !u!114 &955527418844354246
 MonoBehaviour:
   m_ObjectHideFlags: 0

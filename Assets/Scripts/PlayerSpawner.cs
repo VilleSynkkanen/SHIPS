@@ -13,6 +13,7 @@ public class PlayerSpawner : MonoBehaviour
     GameController controller;
 
     List<GameObject[]> prefabs = new List<GameObject[]>();
+    List<PlayerInput> inputs = new List<PlayerInput>();
     
     void Awake()
     {
@@ -34,8 +35,27 @@ public class PlayerSpawner : MonoBehaviour
 
         for (int i = 0; i < players; i++)
         {
-            PlayerInput player = PlayerInput.Instantiate(prefabs[(int)DeviceAssignment.instance.Ships[i]][i], -1, null, -1, 
-               DeviceAssignment.instance.Inputs[i].devices[0]);
+            PlayerInput player;       
+            if (DeviceAssignment.instance.Inputs[i].devices.Count > 0)
+            {
+                player = PlayerInput.Instantiate(prefabs[(int)DeviceAssignment.instance.Ships[i]][i], -1, null, -1,
+                    DeviceAssignment.instance.Inputs[i].devices[0]);
+            }
+            else
+            {
+                //if device is not plr2 keyboard
+                player = PlayerInput.Instantiate(prefabs[(int)DeviceAssignment.instance.Ships[i]][i], -1, null, -1, Keyboard.current);
+                player.SwitchCurrentControlScheme("KeyboardSecondary");
+                foreach(PlayerInput input in inputs)
+                {
+                    if(input.devices[0] == Keyboard.current)
+                    {
+                        input.SwitchCurrentControlScheme("KeyboardPrimary");
+                    }
+                }
+            }
+
+            inputs.Add(player);
             player.transform.position = spawns[i].position;
             player.transform.rotation = spawns[i].rotation;
             controller.AddPlayer(player.gameObject);

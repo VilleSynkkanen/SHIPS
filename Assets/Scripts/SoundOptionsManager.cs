@@ -50,8 +50,8 @@ public class SoundOptionsManager : MonoBehaviour
 
     public void UpdateTexts()
     {
-        texts[0].text = "Master: " + Mathf.Round(100 * master.value).ToString();
-        texts[1].text = "Music: " + Mathf.Round(100 * music.value).ToString();
-        texts[2].text = "Effects: " + Mathf.Round(100 * effects.value).ToString();
+        texts[0].text = "MASTER: " + Mathf.Round(100 * master.value).ToString();
+        texts[1].text = "MUSIC: " + Mathf.Round(100 * music.value).ToString();
+        texts[2].text = "EFFECTS: " + Mathf.Round(100 * effects.value).ToString();
     }
 }

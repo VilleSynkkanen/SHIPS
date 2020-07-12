@@ -87,7 +87,7 @@ public class DeviceAssignment : MonoBehaviour
             if (ass != null)
                 ass.gameObject.SetActive(false);
         }
-
+        gameObject.SetActive(false);
         CountdownStart();
     }
 
@@ -95,6 +95,10 @@ public class DeviceAssignment : MonoBehaviour
     {
         assignments.Remove(controls);
         inputs.Remove(controls.Input);
+        if(controls.Input.devices.Count == 0)
+        {
+            controls.Player2Disconnected();
+        }
         Destroy(controls.gameObject);
     }
 
