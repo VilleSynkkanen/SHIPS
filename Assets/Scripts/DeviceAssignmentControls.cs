@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
+using TMPro;
 
 public class DeviceAssignmentControls : MonoBehaviour
 {
@@ -28,48 +28,45 @@ public class DeviceAssignmentControls : MonoBehaviour
         plrIndex = playerIndex;
         selection.SetUI(playerIndex);
     }
-    
-    public void OnThrottle(InputAction.CallbackContext context)
+
+    public void OnReady(InputAction.CallbackContext context)
     {
-        if(context.ReadValue<float>() > 0)
+        if (context.started && !ready)
         {
-            if (context.started && !ready)
-            {
-                selection.SetPlayerText("P" + (plrIndex + 1).ToString() + " READY");
-                ready = true;
-                assignment.CheckReadiness();
-            }
-        }
-        else
-        {
-            if (context.started && ready)
-            {
-                selection.SetPlayerText("P" + (plrIndex + 1).ToString() + " JOINED");
-                ready = false;
-            }
-            else if (context.started && !ready)
-            {
-                input.user.UnpairDevices();
-                assignment.RemoveDevice(this);
-            }
+            selection.SetPlayerText("P" + (plrIndex + 1).ToString() + " READY");
+            ready = true;
+            assignment.CheckReadiness();
         }
     }
-    public void OnSteering(InputAction.CallbackContext context)
+    public void OnNext(InputAction.CallbackContext context)
     {
-        if (context.ReadValue<float>() > 0)
+        if (context.started && !ready)
         {
-            if (context.started && !ready)
-            {
-                Selection.NextShip();
-            }
+            Selection.NextShip();
         }
-        else
+    }
+
+    public void OnPrevious(InputAction.CallbackContext context)
+    {
+        if (context.started && !ready)
         {
-            if (context.started && !ready)
-            {
-                Selection.PreviousShip();
-            }
-        }   
+            Selection.PreviousShip();
+        }
+    }
+
+    public void OnUnready(InputAction.CallbackContext context)
+    {
+        if (context.started && ready)
+        {
+            selection.SetPlayerText("P" + (plrIndex + 1).ToString() + " JOINED");
+            ready = false;
+        }
+        else if (context.started && !ready)
+        {
+            input.user.UnpairDevices();
+            assignment.RemoveDevice(this);
+            
+        }
     }
 
     public void OnPlayer2Join(InputAction.CallbackContext context)
@@ -82,13 +79,6 @@ public class DeviceAssignmentControls : MonoBehaviour
         }
     }
 
-    public void OnQuit(InputAction.CallbackContext context)
-    {
-        if(context.started)
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
-    }
     public void Player2Disconnected()
     {
         plr2Joined = false;
