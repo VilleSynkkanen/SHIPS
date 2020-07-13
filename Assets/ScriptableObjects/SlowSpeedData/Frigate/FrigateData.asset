@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FrigateData
   m_EditorClassIdentifier: 
   maxHp: 35
-  segmentHp: 0a000000140000000a000000
+  segmentHp: 0c000000140000000c000000

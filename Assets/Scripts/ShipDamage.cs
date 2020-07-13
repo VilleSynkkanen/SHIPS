@@ -61,10 +61,25 @@ public class ShipDamage : MonoBehaviour
         segmentHealth[i] = segments[i].hp / segments[i].MaxHp;
         segmentDamage(segmentHealth[i], segment);
 
-        if(hp <= 0)
+        if(hp <= 0 || SegmentsDestroyed())
         {
             Destroy();
         }
+    }
+
+    bool SegmentsDestroyed()
+    {
+        int amount = 0;
+        foreach(ShipSegment segment in segments)
+        {
+            if (segment.hp <= 0)
+                amount++;
+        }
+
+        if (amount >= 2)
+            return true;
+        else
+            return false;
     }
 
     void Destroy()

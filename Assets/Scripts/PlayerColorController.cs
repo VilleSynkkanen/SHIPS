@@ -11,6 +11,11 @@ public class PlayerColorController : MonoBehaviour
     private void Awake()
     {
         assignment = GetComponent<DeviceAssignmentControls>();
+        UpdateColor();
+    }
+
+    public void UpdateColor()
+    {
         string tag;
         if (assignment != null)
             tag = "P" + (assignment.plrIndex + 1).ToString();
@@ -20,8 +25,8 @@ public class PlayerColorController : MonoBehaviour
         float green = PlayerPrefs.GetFloat(tag + "G", 1);
         float blue = PlayerPrefs.GetFloat(tag + "B", 1);
         Color color = new Color(red, green, blue);
-        
-        foreach(SpriteRenderer sprite in sprites)
+
+        foreach (SpriteRenderer sprite in sprites)
         {
             sprite.color = color;
         }

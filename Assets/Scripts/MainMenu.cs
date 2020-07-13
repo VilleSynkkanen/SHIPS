@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
+
 
 public class MainMenu : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject howToPlayStart;
     [SerializeField] GameObject optionsStart;
 
+    [SerializeField] UnityEvent OnMainMenu;
+
     void Awake()
     {
         Cursor.visible = true;
@@ -26,6 +30,7 @@ public class MainMenu : MonoBehaviour
         howToPlayMenu.SetActive(false);
         optionsMenu.SetActive(false);
         eventSystem.SetSelectedGameObject(menuStart);
+        OnMainMenu.Invoke();
     }
     public void PlayMenu()
     {

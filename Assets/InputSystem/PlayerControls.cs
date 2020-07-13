@@ -580,6 +580,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Quit"",
+                    ""type"": ""Button"",
+                    ""id"": ""43d294a6-5ce8-4abe-8dbd-6cf14ebd100c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -725,6 +733,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Player2Join"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a6bfeb2c-e323-4168-98fa-06ff3df32859"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard;KeyboardPrimary;KeyboardSecondary"",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""faa900cd-9f21-4998-94be-1fbe3d65b037"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -781,6 +811,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_MainMenu_Previous = m_MainMenu.FindAction("Previous", throwIfNotFound: true);
         m_MainMenu_Unready = m_MainMenu.FindAction("Unready", throwIfNotFound: true);
         m_MainMenu_Player2Join = m_MainMenu.FindAction("Player2Join", throwIfNotFound: true);
+        m_MainMenu_Quit = m_MainMenu.FindAction("Quit", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -924,6 +955,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_MainMenu_Previous;
     private readonly InputAction m_MainMenu_Unready;
     private readonly InputAction m_MainMenu_Player2Join;
+    private readonly InputAction m_MainMenu_Quit;
     public struct MainMenuActions
     {
         private @PlayerControls m_Wrapper;
@@ -933,6 +965,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Previous => m_Wrapper.m_MainMenu_Previous;
         public InputAction @Unready => m_Wrapper.m_MainMenu_Unready;
         public InputAction @Player2Join => m_Wrapper.m_MainMenu_Player2Join;
+        public InputAction @Quit => m_Wrapper.m_MainMenu_Quit;
         public InputActionMap Get() { return m_Wrapper.m_MainMenu; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -957,6 +990,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Player2Join.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnPlayer2Join;
                 @Player2Join.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnPlayer2Join;
                 @Player2Join.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnPlayer2Join;
+                @Quit.started -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnQuit;
+                @Quit.performed -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnQuit;
+                @Quit.canceled -= m_Wrapper.m_MainMenuActionsCallbackInterface.OnQuit;
             }
             m_Wrapper.m_MainMenuActionsCallbackInterface = instance;
             if (instance != null)
@@ -976,6 +1012,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Player2Join.started += instance.OnPlayer2Join;
                 @Player2Join.performed += instance.OnPlayer2Join;
                 @Player2Join.canceled += instance.OnPlayer2Join;
+                @Quit.started += instance.OnQuit;
+                @Quit.performed += instance.OnQuit;
+                @Quit.canceled += instance.OnQuit;
             }
         }
     }
@@ -1034,5 +1073,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnPrevious(InputAction.CallbackContext context);
         void OnUnready(InputAction.CallbackContext context);
         void OnPlayer2Join(InputAction.CallbackContext context);
+        void OnQuit(InputAction.CallbackContext context);
     }
 }

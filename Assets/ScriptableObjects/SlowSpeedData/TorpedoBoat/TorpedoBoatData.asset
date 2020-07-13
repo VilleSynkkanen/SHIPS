@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 755160d4fb4d85b4ea7d741ac8b7e992, type: 3}
   m_Name: TorpedoBoatData
   m_EditorClassIdentifier: 
-  maxHp: 35
-  segmentHp: 0a000000140000000a000000
+  maxHp: 15
+  segmentHp: 050000000a00000005000000

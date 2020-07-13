@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DeviceAssignmentControls : MonoBehaviour
 {
@@ -29,43 +29,47 @@ public class DeviceAssignmentControls : MonoBehaviour
         selection.SetUI(playerIndex);
     }
     
-    public void OnReady(InputAction.CallbackContext context)
+    public void OnThrottle(InputAction.CallbackContext context)
     {
-        if(context.started && !ready)
+        if(context.ReadValue<float>() > 0)
         {
-            selection.SetPlayerText("P" + (plrIndex + 1).ToString() + " READY");
-            ready = true;
-            assignment.CheckReadiness();
+            if (context.started && !ready)
+            {
+                selection.SetPlayerText("P" + (plrIndex + 1).ToString() + " READY");
+                ready = true;
+                assignment.CheckReadiness();
+            }
+        }
+        else
+        {
+            if (context.started && ready)
+            {
+                selection.SetPlayerText("P" + (plrIndex + 1).ToString() + " JOINED");
+                ready = false;
+            }
+            else if (context.started && !ready)
+            {
+                input.user.UnpairDevices();
+                assignment.RemoveDevice(this);
+            }
         }
     }
-    public void OnNext(InputAction.CallbackContext context)
+    public void OnSteering(InputAction.CallbackContext context)
     {
-        if (context.started && !ready)
+        if (context.ReadValue<float>() > 0)
         {
-            Selection.NextShip();
+            if (context.started && !ready)
+            {
+                Selection.NextShip();
+            }
         }
-    }
-
-    public void OnPrevious(InputAction.CallbackContext context)
-    {
-        if (context.started && !ready)
+        else
         {
-            Selection.PreviousShip();
-        }
-    }
-
-    public void OnUnready(InputAction.CallbackContext context)
-    {
-        if (context.started && ready)
-        {
-            selection.SetPlayerText("P" + (plrIndex + 1).ToString() + " JOINED");
-            ready = false;
-        }
-        else if(context.started && !ready)
-        {
-            input.user.UnpairDevices();
-            assignment.RemoveDevice(this);
-        }
+            if (context.started && !ready)
+            {
+                Selection.PreviousShip();
+            }
+        }   
     }
 
     public void OnPlayer2Join(InputAction.CallbackContext context)
@@ -78,6 +82,13 @@ public class DeviceAssignmentControls : MonoBehaviour
         }
     }
 
+    public void OnQuit(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+    }
     public void Player2Disconnected()
     {
         plr2Joined = false;
