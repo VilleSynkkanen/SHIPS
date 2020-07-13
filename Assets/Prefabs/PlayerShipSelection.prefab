@@ -211,6 +211,7 @@ MonoBehaviour:
   - {fileID: 1124394118556270739}
   text: {fileID: 6124758256499162444}
   rectTrans: {fileID: 6017171300533598628}
+  colorController: {fileID: 8714420130699727094}
 --- !u!114 &8714420130699727094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,7 +1122,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 90
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1930, y: 1080}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

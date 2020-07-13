@@ -8,11 +8,13 @@ public class ShipSelection : MonoBehaviour
     [SerializeField] GameObject[] ships;
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] RectTransform rectTrans;
+    [SerializeField] PlayerColorController colorController;
     public int i { get; private set; }
 
     private void Awake()
     {
         i = 0;
+
     }
 
     public void SetPlayerText(string txt)
@@ -50,7 +52,7 @@ public class ShipSelection : MonoBehaviour
         }
     }
 
-    public void SetUI(int i)
+    public void SetUI(int i, bool ready=false)
     {
         Vector2 pivot;
         Vector3 position = Vector3.zero;
@@ -83,10 +85,16 @@ public class ShipSelection : MonoBehaviour
         }
 
         rectTrans.pivot = pivot;
-        rectTrans.position = position;
+        rectTrans.anchoredPosition = Vector3.zero;
         rectTrans.anchorMin = anchorMin;
         rectTrans.anchorMax = anchorMax;
 
-        SetPlayerText("P" + (i + 1).ToString() + " JOINED");
+
+        if(!ready)
+            SetPlayerText("P" + (i + 1).ToString() + " JOINED");
+        else
+            SetPlayerText("P" + (i + 1).ToString() + " READY");
+        colorController.UpdateColor();
     }
+
 }

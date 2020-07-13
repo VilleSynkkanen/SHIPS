@@ -61,7 +61,7 @@ public class ActionRebindingController : MonoBehaviour
 
         //or find a way to make it work with current system
         string json = actions.ToJson();
-        Debug.Log("Saving as JSON: " + json);
+        //Debug.Log("Saving as JSON: " + json);
         File.WriteAllText(Application.persistentDataPath + "/keybinds.txt", json);
     }
 
@@ -70,9 +70,9 @@ public class ActionRebindingController : MonoBehaviour
         // loading seems to work
         if(File.Exists(Application.persistentDataPath + "/keybinds.txt"))
         {
-            print("exists");
+            //print("exists");
             string savedKeybinds = File.ReadAllText(Application.persistentDataPath + "/keybinds.txt");
-            Debug.Log("Loaded JSON: " + savedKeybinds);
+            //Debug.Log("Loaded JSON: " + savedKeybinds);
             actions.LoadFromJson(savedKeybinds);
             ui.UpdateUIElements();
         }
@@ -85,7 +85,7 @@ public class ActionRebindingController : MonoBehaviour
     public void ResetToDefault()
     {
         string json = defaultActions.ToJson();
-        Debug.Log("Saving as JSON: " + json);
+        //Debug.Log("Saving as JSON: " + json);
         File.WriteAllText(Application.persistentDataPath + "/keybinds.txt", json);
         LoadKeybinds();
         ui.UpdateUIElements();

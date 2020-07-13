@@ -23,7 +23,9 @@ public class DeviceAssignment : MonoBehaviour
     public List<PlayerInput> Inputs { get => inputs; }
     public List<DeviceAssignmentControls> Assignments { get => assignments; }
     public List<ShipType> Ships { get => ships; }
-    
+    public bool plr2Joined { get; set; }
+    public DeviceAssignmentControls plr2 { get; set; }
+
     private void Awake()
     {
         if (instance != null)
@@ -37,6 +39,7 @@ public class DeviceAssignment : MonoBehaviour
 
         PlayerInputManager.instance.onPlayerJoined += JoinDevice;
         victories.playerVictories = new int[0];
+        plr2Joined = false;
     }
 
     private void Start()
@@ -100,6 +103,12 @@ public class DeviceAssignment : MonoBehaviour
             controls.Player2Disconnected();
         }
         Destroy(controls.gameObject);
+
+        for(int i = 0; i < assignments.Count; i++)
+        {
+            assignments[i].SetIndex(i);
+            assignments[i].Selection.SetUI(i);
+        }
     }
 
     void OnDestroy()

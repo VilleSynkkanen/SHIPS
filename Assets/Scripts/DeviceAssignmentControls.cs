@@ -10,17 +10,12 @@ public class DeviceAssignmentControls : MonoBehaviour
     [SerializeField] ShipSelection selection;
     [SerializeField] GameObject player2Prefab;
     DeviceAssignment assignment;
-    public static bool plr2Joined;
 
     public int plrIndex { get; private set; }
     public bool ready { get; private set; }
     public PlayerInput Input { get => input; }
     public ShipSelection Selection { get => selection; }
 
-    private void Awake()
-    {
-        plr2Joined = false;
-    }
 
     public void SetDeviceAssignment(DeviceAssignment ass, int playerIndex)
     {
@@ -63,24 +58,36 @@ public class DeviceAssignmentControls : MonoBehaviour
         }
         else if (context.started && !ready)
         {
+            if(input.currentControlScheme == "Keyboard" && assignment.plr2Joined && assignment.plr2 != this)
+            {
+                if(assignment.plr2.ready)
+                    assignment.plr2.OnUnready(context);
+                assignment.plr2.OnUnready(context);
+            }
+            
             input.user.UnpairDevices();
             assignment.RemoveDevice(this);
-            
         }
     }
 
     public void OnPlayer2Join(InputAction.CallbackContext context)
     {
-        if (context.started && !plr2Joined)
+        if (context.started && !assignment.plr2Joined)
         {
             PlayerInput player = PlayerInput.Instantiate(player2Prefab, -1, null, -1, Keyboard.current);
             player.SwitchCurrentControlScheme("KeyboardSecondary");
-            plr2Joined = true;
+            assignment.plr2Joined = true;
+            assignment.plr2 = player.GetComponent<DeviceAssignmentControls>();
         }
     }
 
     public void Player2Disconnected()
     {
-        plr2Joined = false;
+        assignment.plr2Joined = false;
+    }
+
+    public void SetIndex(int i)
+    {
+        plrIndex = i;
     }
 }
