@@ -29,6 +29,15 @@ public class AimControl : MonoBehaviour
         RotatePoints();
     }
 
+    public void ResetRotations()
+    {
+        for (int i = 0; i < aimPoints.Length; i++)
+        {
+            Vector3 shipRotation = new Vector3(0, 0, transform.eulerAngles.z);
+            aimPoints[i].eulerAngles = shipRotation + baseRotations[i];
+        }
+    }
+
     void ReadInput()
     {
         bool canAim = false;

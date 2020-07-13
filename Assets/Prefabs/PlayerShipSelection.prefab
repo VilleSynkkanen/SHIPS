@@ -187,7 +187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 218873223844601378}
   selection: {fileID: 955527418844354246}
-  player2Prefab: {fileID: 218873223844601376}
+  player2Prefab: {fileID: 6728688606788280990, guid: e659ab28eab1b014299ecc1c9eea0fea,
+    type: 3}
 --- !u!114 &955527418844354246
 MonoBehaviour:
   m_ObjectHideFlags: 0

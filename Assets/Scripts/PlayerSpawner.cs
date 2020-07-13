@@ -73,6 +73,7 @@ public class PlayerSpawner : MonoBehaviour
         {
             players[i].transform.position = spawns[i].position;
             players[i].transform.rotation = spawns[i].rotation;
+            players[i].GetComponent<AimControl>().ResetRotations();
         }
     }
 }
