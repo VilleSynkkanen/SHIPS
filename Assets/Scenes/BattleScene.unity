@@ -604,9 +604,6 @@ MonoBehaviour:
   frigateFrontCannonAimData:
   - {fileID: 11400000, guid: 69debce3f2e12744eac51a4df52233ce, type: 2}
   - {fileID: 11400000, guid: 7d1aef0f84808f54fb243ad1975ec394, type: 2}
-  torpedoBoatFrontCannonAimData:
-  - {fileID: 11400000, guid: 6f48178ec5269024aa4041eb073a71f8, type: 2}
-  - {fileID: 11400000, guid: 5e68af23c3be84d4ca87530c4e085593, type: 2}
   torpedoBoatRearCannonAimData:
   - {fileID: 11400000, guid: 5fa29c337810b5547b406f31f49b8945, type: 2}
   - {fileID: 11400000, guid: 968a30a28af1e4543bf0fe6bd6e5d685, type: 2}

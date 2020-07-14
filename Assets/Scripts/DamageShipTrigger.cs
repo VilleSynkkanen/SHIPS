@@ -12,7 +12,8 @@ public class DamageShipTrigger : MonoBehaviour
         for(int i = 0; i < segments.Count; i++)
         {
             float velocity = segments[i].Rb.velocity.magnitude;
-            segments[i].TakeDamage(data.BaseDamage * Mathf.Pow(velocity, data.SpeedPower) * Time.deltaTime);
+            segments[i].TakeDamage(segments[i].data.TerrainDamageMultiplier * data.BaseDamage 
+                * Mathf.Pow(velocity, data.SpeedPower) * Time.deltaTime);
         }
     }
 

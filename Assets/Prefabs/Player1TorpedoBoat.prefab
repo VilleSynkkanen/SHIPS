@@ -1666,7 +1666,7 @@ MonoBehaviour:
   - {fileID: 49899523663623360}
   baseRotations:
   - {x: 0, y: 0, z: 0}
-  type: 2
+  type: 1
   aimDirections: 01000000
 --- !u!60 &1376510094379789390
 PolygonCollider2D:

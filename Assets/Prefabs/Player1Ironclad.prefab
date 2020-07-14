@@ -4785,7 +4785,7 @@ MonoBehaviour:
   baseRotations:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  type: 3
+  type: 2
   aimDirections: 01000000ffffffff
 --- !u!60 &7824464637992817808
 PolygonCollider2D:

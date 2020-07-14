@@ -21,7 +21,7 @@ public class PlayerControlInput : MonoBehaviour
     public void OnThrottlePlus(InputAction.CallbackContext context)
     {
         if (context.performed)
-            vertical = 1;
+            vertical = context.ReadValue<float>();
         else if (context.canceled)
             vertical = 0;
     }
@@ -29,7 +29,7 @@ public class PlayerControlInput : MonoBehaviour
     public void OnThrottleMinus(InputAction.CallbackContext context)
     {
         if (context.performed)
-            vertical = -1;
+            vertical = -context.ReadValue<float>();
         else if (context.canceled)
             vertical = 0;
     }
@@ -37,7 +37,7 @@ public class PlayerControlInput : MonoBehaviour
     public void OnSteeringPlus(InputAction.CallbackContext context)
     {
         if (context.performed)
-            horizontal = 1;
+            horizontal = context.ReadValue<float>();
         else if (context.canceled)
             horizontal = 0;
     }
@@ -45,7 +45,7 @@ public class PlayerControlInput : MonoBehaviour
     public void OnSteeringMinus(InputAction.CallbackContext context)
     {
         if (context.performed)
-            horizontal = -1;
+            horizontal = -context.ReadValue<float>();
         else if (context.canceled)
             horizontal = 0;
     }
@@ -86,7 +86,7 @@ public class PlayerControlInput : MonoBehaviour
     public void OnAimPlus(InputAction.CallbackContext context)
     {
         if (context.performed)
-            aim = 1;
+            aim = context.ReadValue<float>();
         else if (context.canceled)
             aim = 0;
     }
@@ -94,7 +94,7 @@ public class PlayerControlInput : MonoBehaviour
     public void OnAimMinus(InputAction.CallbackContext context)
     {
         if (context.performed)
-            aim = -1;
+            aim = -context.ReadValue<float>();
         else if (context.canceled)
             aim = 0;
     }

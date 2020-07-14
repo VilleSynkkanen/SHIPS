@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1e7cac58a9edfe41a5686c2f29ad8ae, type: 3}
   m_Name: TorpedoBoatRearCannonAimData
   m_EditorClassIdentifier: 
-  rotationSpeed: 15
-  maxAngle: 45
+  rotationSpeed: 25
+  maxAngle: 75

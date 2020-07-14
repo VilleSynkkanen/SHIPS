@@ -6,7 +6,7 @@ public enum SegmentType { Front, Middle, Back }
 public class ShipSegment : MonoBehaviour, ICollision
 {
     [SerializeField] SegmentType type;
-    ShipData data;
+    public ShipData data { get; private set; }
     [SerializeField] Rigidbody2D rb;    //rigidbody of ship
     [SerializeField] ShipDamage ship;
     int i;

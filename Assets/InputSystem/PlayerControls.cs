@@ -20,33 +20,33 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""ThrottlePlus"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""e90d533a-d517-4f3f-8d13-830fcbeab16c"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Analog"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
                     ""name"": ""ThrottleMinus"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""b6800d06-bafe-437a-bd45-f364ebfb180f"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Analog"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
                     ""name"": ""SteeringPlus"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""90bccbaf-0c5c-4d68-a8ff-66734af95c8c"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Analog"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
                     ""name"": ""SteeringMinus"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""61dc8838-e088-441a-9cc0-8492a9da59de"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": ""Analog"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -86,7 +86,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""AimPlus"",
                     ""type"": ""Value"",
                     ""id"": ""d573135f-2459-46c1-a47c-0ca2930c912a"",
-                    ""expectedControlType"": ""Axis"",
+                    ""expectedControlType"": ""Analog"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -94,7 +94,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""AimMinus"",
                     ""type"": ""Value"",
                     ""id"": ""3b2ff1e9-8ecb-46df-8c9a-403d0cc5af1e"",
-                    ""expectedControlType"": ""Axis"",
+                    ""expectedControlType"": ""Analog"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -188,7 +188,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a82cc642-eb0d-482e-b95b-76776c63f9ea"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
@@ -232,7 +232,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""ecb4cdea-2194-47a1-943f-aa4f031b792f"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
@@ -320,7 +320,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""daaeda59-a61c-4352-931e-6beb0aa1321b"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
@@ -364,7 +364,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8bf8c900-6768-4a3f-9ac4-f6c94ff7b471"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
@@ -540,7 +540,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""5db4d255-a716-4680-8eb6-2260b265002b"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
@@ -584,7 +584,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2217432d-585c-498c-9de7-2b1c667d6d2a"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",

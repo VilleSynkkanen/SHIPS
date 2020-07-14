@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 35
   segmentHp: 0c000000140000000c000000
+  terrainDamageMultiplier: 1
