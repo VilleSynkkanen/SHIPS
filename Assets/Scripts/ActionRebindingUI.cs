@@ -16,6 +16,8 @@ public class ActionRebindingUI : MonoBehaviour
     [SerializeField] string[] actionNames;
     [SerializeField] string[] groupNames;
     [SerializeField] int mapSwitchIndex;
+    [SerializeField] GameObject instructionOverlay;
+    [SerializeField] TextMeshProUGUI instructions;
 
     List<TextMeshProUGUI[]> texts = new List<TextMeshProUGUI[]>();
 
@@ -60,6 +62,18 @@ public class ActionRebindingUI : MonoBehaviour
             if (action == map.FindAction(actionNames[i]))
                 texts[bindingIndex][i].text = action.GetBindingDisplayString(bindingIndex);
         }
-   
+    }
+
+    public void SetInstructionOverlay(bool active, bool keyboard = true)
+    {
+        instructionOverlay.SetActive(active);
+        if(active && keyboard)
+        {
+            instructions.text = "PRESS A KEY YOU WANT TO BIND TO\nPRESS ESC TO CANCEL REBINDING";
+        }
+        else if(active && !keyboard)
+        {
+            instructions.text = "PRESS A BUTTON YOU WANT TO BIND TO\nPRESS START TO CANCEL REBINDING";
+        }
     }
 }

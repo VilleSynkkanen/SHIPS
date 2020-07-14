@@ -42,21 +42,38 @@ public class ActionRebindingController : MonoBehaviour
         }
 
         int bindingIndex = inputAction.GetBindingIndex(InputBinding.MaskByGroup(group));
-        print(bindingIndex);
+        string controlType;
+        string cancelType;
+        bool keyboard;
+        if (bindingIndex == 3)
+        {
+            controlType = "<Gamepad>";
+            cancelType = "<Gamepad>/start";
+            keyboard = false;
+        }
+        else
+        {
+            controlType = "<keyboard>";
+            cancelType = "<Keyboard>/escape";
+            keyboard = true;
+        }
 
-        rebindOperation = inputAction.PerformInteractiveRebinding(bindingIndex).WithCancelingThrough("<Keyboard>/escape")
-            .OnCancel(operation =>
+        rebindOperation = inputAction.PerformInteractiveRebinding(bindingIndex).WithCancelingThrough(cancelType)
+            .WithControlsHavingToMatchPath(controlType).OnCancel(operation =>
             {
                 CleanUp();
                 print("canceled");
+                ui.SetInstructionOverlay(false);
             })
             .OnComplete(operation =>
             {
                 CleanUp();
                 print("complete");
                 ui.UpdateSingleElement(inputAction, bindingIndex, inputAction.actionMap.name);
+                ui.SetInstructionOverlay(false);
             });
 
+        ui.SetInstructionOverlay(true, keyboard);
         rebindOperation.Start();
     }
 
