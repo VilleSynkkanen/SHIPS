@@ -39,6 +39,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 218873223844601378, guid: 608a7d9bd3bd14f40900009ad63a06d8,
         type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 218873223844601378, guid: 608a7d9bd3bd14f40900009ad63a06d8,
+        type: 3}
       propertyPath: m_DefaultActionMap
       value: MainMenu
       objectReference: {fileID: 0}
@@ -146,6 +151,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_DefaultControlScheme
       value: KeyboardSecondary
+      objectReference: {fileID: 0}
+    - target: {fileID: 218873223844601378, guid: 608a7d9bd3bd14f40900009ad63a06d8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
+      value: Actions/ThrottleMinus[/XInputControllerWindows/dpad/down,/Keyboard/s,/Keyboard/quote]
+      objectReference: {fileID: 0}
+    - target: {fileID: 218873223844601378, guid: 608a7d9bd3bd14f40900009ad63a06d8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: Actions/SteeringPlus[/XInputControllerWindows/dpad/right,/Keyboard/d,/Keyboard/backslash]
+      objectReference: {fileID: 0}
+    - target: {fileID: 218873223844601378, guid: 608a7d9bd3bd14f40900009ad63a06d8,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: Actions/SteeringMinus[/XInputControllerWindows/dpad/left,/Keyboard/a,/Keyboard/semicolon]
       objectReference: {fileID: 0}
     - target: {fileID: 218873223844601379, guid: 608a7d9bd3bd14f40900009ad63a06d8,
         type: 3}

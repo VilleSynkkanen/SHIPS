@@ -19,18 +19,34 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""id"": ""0f2dc023-1694-464f-9c61-cda43719cd05"",
             ""actions"": [
                 {
-                    ""name"": ""Throttle"",
-                    ""type"": ""Value"",
+                    ""name"": ""ThrottlePlus"",
+                    ""type"": ""Button"",
                     ""id"": ""e90d533a-d517-4f3f-8d13-830fcbeab16c"",
-                    ""expectedControlType"": ""Axis"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Steering"",
-                    ""type"": ""Value"",
-                    ""id"": ""0673adbc-82c0-409d-9ed4-7ff6f1255eb2"",
-                    ""expectedControlType"": ""Axis"",
+                    ""name"": ""ThrottleMinus"",
+                    ""type"": ""Button"",
+                    ""id"": ""b6800d06-bafe-437a-bd45-f364ebfb180f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SteeringPlus"",
+                    ""type"": ""Button"",
+                    ""id"": ""90bccbaf-0c5c-4d68-a8ff-66734af95c8c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SteeringMinus"",
+                    ""type"": ""Button"",
+                    ""id"": ""61dc8838-e088-441a-9cc0-8492a9da59de"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -67,9 +83,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""Aim"",
+                    ""name"": ""AimPlus"",
                     ""type"": ""Value"",
                     ""id"": ""d573135f-2459-46c1-a47c-0ca2930c912a"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""AimMinus"",
+                    ""type"": ""Value"",
+                    ""id"": ""3b2ff1e9-8ecb-46df-8c9a-403d0cc5af1e"",
                     ""expectedControlType"": ""Axis"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -86,157 +110,47 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""df38961e-f878-42e1-8f11-93978cc4e926"",
-                    ""path"": ""<Gamepad>/dpad/y"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Throttle"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""Throttle"",
-                    ""id"": ""ff7b259c-9d26-429e-a812-b1eaaf9e5663"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Throttle"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""76cec267-38e7-4b0c-abb7-330a3639145b"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard;KeyboardPrimary"",
-                    ""action"": ""Throttle"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""0462ddd6-58d1-452f-b76e-a7b3535ec56a"",
+                    ""id"": ""a8f7eb5a-b0e4-4d14-9d28-bc78a725e557"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard;KeyboardPrimary"",
-                    ""action"": ""Throttle"",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ThrottlePlus"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Throttle"",
-                    ""id"": ""da9b0ab7-b4f7-4430-8cd7-c54323ce89a8"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Throttle"",
-                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""1d5a6daf-8282-46ad-870f-9528bca3950a"",
-                    ""path"": ""<Keyboard>/quote"",
+                    ""name"": """",
+                    ""id"": ""08e7d2cf-47aa-4919-a2ed-18e2e4f476c2"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""KeyboardSecondary"",
-                    ""action"": ""Throttle"",
+                    ""groups"": ""KeyboardPrimary"",
+                    ""action"": ""ThrottlePlus"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""positive"",
-                    ""id"": ""72887011-a5dc-4621-a871-912b9cb36b1d"",
+                    ""name"": """",
+                    ""id"": ""9c61e7b8-3167-4a62-9b3a-dec877af90dc"",
                     ""path"": ""<Keyboard>/leftBracket"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""KeyboardSecondary"",
-                    ""action"": ""Throttle"",
+                    ""action"": ""ThrottlePlus"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""f71a2490-3224-4c2d-b154-2ed435c302d4"",
-                    ""path"": ""<Gamepad>/dpad/x"",
+                    ""id"": ""df38961e-f878-42e1-8f11-93978cc4e926"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Controller"",
-                    ""action"": ""Steering"",
+                    ""action"": ""ThrottlePlus"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""dc75b37e-3e73-4fbf-b162-e4faa30cfae0"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Steering"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""9c7cd7e0-af36-4254-bb55-5422a90dcaa5"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard;KeyboardPrimary"",
-                    ""action"": ""Steering"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""a1c27433-3363-4476-9ab3-90b8685ae278"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard;KeyboardPrimary"",
-                    ""action"": ""Steering"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""1D Axis"",
-                    ""id"": ""6ffea0af-1119-4ca7-a129-5b00a4549cb2"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Steering"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""e2fb1e30-5314-4618-9244-9984199e8f6e"",
-                    ""path"": ""<Keyboard>/semicolon"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardSecondary"",
-                    ""action"": ""Steering"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""2fae5334-d7ef-4def-8521-2a49e1cb365a"",
-                    ""path"": ""<Keyboard>/backslash"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardSecondary"",
-                    ""action"": ""Steering"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -327,111 +241,34 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Controller"",
-                    ""id"": ""cb4473c7-5172-4074-81e5-942823e12df6"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""6480300a-50bd-400c-8fe2-a7ee558d13fa"",
-                    ""path"": ""<Gamepad>/buttonWest"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""d9e2b183-be7c-4cad-9f66-f074dd5fb590"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Controller"",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Aim"",
-                    ""id"": ""6b571660-5c85-4a90-9869-c104ceabcdbc"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""36977748-f16a-4a06-8019-98942fe85b2b"",
-                    ""path"": ""<Keyboard>/q"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard;KeyboardPrimary"",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""bf4a2a41-e8e4-4c1f-a38d-affd9feef4e8"",
-                    ""path"": ""<Keyboard>/e"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard;KeyboardPrimary"",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Aim"",
-                    ""id"": ""7f4d99a1-36e3-43ee-820b-d093373c95ea"",
-                    ""path"": ""1DAxis"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Aim"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""a7670562-440a-4ab9-9177-fd3edc871799"",
-                    ""path"": ""<Keyboard>/p"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardSecondary"",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""75ee5101-2257-429a-886f-a700a30219a9"",
-                    ""path"": ""<Keyboard>/rightBracket"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""KeyboardSecondary"",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
                     ""name"": """",
                     ""id"": ""e27247ad-acab-4c4e-b1d0-6e57267a61bb"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard;KeyboardPrimary;KeyboardSecondary"",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""671fafb8-7333-4bad-a207-594bd718aacc"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard;KeyboardPrimary"",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""985dfe4b-2216-4db8-b882-a3665f09dd79"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardSecondary"",
                     ""action"": ""Quit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -534,6 +371,226 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Shoot2"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c8298044-a3d7-4412-a5b4-da6b47a62e0f"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""ThrottleMinus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a580ccc1-a64e-4f02-8d4b-c5d083e3f45c"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardPrimary"",
+                    ""action"": ""ThrottleMinus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2d314911-2170-4ea5-8ddb-b45140546267"",
+                    ""path"": ""<Keyboard>/quote"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardSecondary"",
+                    ""action"": ""ThrottleMinus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2e0caf2b-ebd4-4764-9231-420585b2fe5c"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""SteeringMinus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5ec889cf-7875-41d8-8421-a492259bfecd"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardPrimary"",
+                    ""action"": ""SteeringMinus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""961e6682-f8b5-49ad-b6aa-f2cb159c597b"",
+                    ""path"": ""<Keyboard>/semicolon"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardSecondary"",
+                    ""action"": ""SteeringMinus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""506e2f18-22d7-4d7e-83d5-23d7ec456126"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""SteeringPlus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e55fdcde-be7e-438d-94ee-10eaf31fff5c"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardPrimary"",
+                    ""action"": ""SteeringPlus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""070cc359-633e-4e98-8b8d-1fb88c2c193d"",
+                    ""path"": ""<Keyboard>/backslash"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardSecondary"",
+                    ""action"": ""SteeringPlus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dab16adc-1c2d-4e06-8544-cb836e39cfb0"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""SteeringPlus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3353fdac-5931-4325-913c-0ba57ca9a6d0"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""ThrottleMinus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0844cd39-4e55-4bb4-a967-983e004345b5"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""SteeringMinus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5f798f5-0dd5-4fed-8007-5e7aa1900293"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""AimPlus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c2674818-541e-4fb2-a309-a4fc57b5fe1f"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardPrimary"",
+                    ""action"": ""AimPlus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9babfa37-25ad-4dd3-8186-1e2d95d7dcf6"",
+                    ""path"": ""<Keyboard>/rightBracket"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardSecondary"",
+                    ""action"": ""AimPlus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5db4d255-a716-4680-8eb6-2260b265002b"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AimPlus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78f08afb-bdef-436f-8f92-4740b8191d82"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""AimMinus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0e716b74-f981-42b1-a9bd-49f6ce2fd994"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardPrimary"",
+                    ""action"": ""AimMinus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4b1a18ff-2bfb-4658-8c1d-d6aad5546307"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardSecondary"",
+                    ""action"": ""AimMinus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2217432d-585c-498c-9de7-2b1c667d6d2a"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""AimMinus"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -597,7 +654,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard;KeyboardPrimary"",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Ready"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3d5c6bd7-61c1-425c-969d-17b7aceb9c11"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardPrimary"",
                     ""action"": ""Ready"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -630,7 +698,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard;KeyboardPrimary"",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7587cae-4504-44a6-bb4a-7fc48b82bab1"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardPrimary"",
                     ""action"": ""Next"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -663,7 +742,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard;KeyboardPrimary"",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Previous"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cfb8234b-8c19-4082-9e37-43ba4eca86ee"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardPrimary"",
                     ""action"": ""Previous"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -696,7 +786,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard;KeyboardPrimary"",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Unready"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c69db4b6-72a9-4be0-82a5-33d71ce3d72f"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardPrimary"",
                     ""action"": ""Unready"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -729,7 +830,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/leftBracket"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard;KeyboardPrimary"",
+                    ""groups"": ""Keyboard"",
                     ""action"": ""Player2Join"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -740,7 +841,29 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard;KeyboardPrimary;KeyboardSecondary"",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c01079e8-1419-469b-b574-bc5e7d46139b"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard;KeyboardPrimary"",
+                    ""action"": ""Quit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3512c274-a3d3-416d-98a1-35d89ccc7c95"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardSecondary"",
                     ""action"": ""Quit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -751,7 +874,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""Quit"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -796,13 +919,16 @@ public class @PlayerControls : IInputActionCollection, IDisposable
 }");
         // Actions
         m_Actions = asset.FindActionMap("Actions", throwIfNotFound: true);
-        m_Actions_Throttle = m_Actions.FindAction("Throttle", throwIfNotFound: true);
-        m_Actions_Steering = m_Actions.FindAction("Steering", throwIfNotFound: true);
+        m_Actions_ThrottlePlus = m_Actions.FindAction("ThrottlePlus", throwIfNotFound: true);
+        m_Actions_ThrottleMinus = m_Actions.FindAction("ThrottleMinus", throwIfNotFound: true);
+        m_Actions_SteeringPlus = m_Actions.FindAction("SteeringPlus", throwIfNotFound: true);
+        m_Actions_SteeringMinus = m_Actions.FindAction("SteeringMinus", throwIfNotFound: true);
         m_Actions_Shoot1 = m_Actions.FindAction("Shoot1", throwIfNotFound: true);
         m_Actions_Shoot2 = m_Actions.FindAction("Shoot2", throwIfNotFound: true);
         m_Actions_Shoot3 = m_Actions.FindAction("Shoot3", throwIfNotFound: true);
         m_Actions_Shoot4 = m_Actions.FindAction("Shoot4", throwIfNotFound: true);
-        m_Actions_Aim = m_Actions.FindAction("Aim", throwIfNotFound: true);
+        m_Actions_AimPlus = m_Actions.FindAction("AimPlus", throwIfNotFound: true);
+        m_Actions_AimMinus = m_Actions.FindAction("AimMinus", throwIfNotFound: true);
         m_Actions_Quit = m_Actions.FindAction("Quit", throwIfNotFound: true);
         // MainMenu
         m_MainMenu = asset.FindActionMap("MainMenu", throwIfNotFound: true);
@@ -861,25 +987,31 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     // Actions
     private readonly InputActionMap m_Actions;
     private IActionsActions m_ActionsActionsCallbackInterface;
-    private readonly InputAction m_Actions_Throttle;
-    private readonly InputAction m_Actions_Steering;
+    private readonly InputAction m_Actions_ThrottlePlus;
+    private readonly InputAction m_Actions_ThrottleMinus;
+    private readonly InputAction m_Actions_SteeringPlus;
+    private readonly InputAction m_Actions_SteeringMinus;
     private readonly InputAction m_Actions_Shoot1;
     private readonly InputAction m_Actions_Shoot2;
     private readonly InputAction m_Actions_Shoot3;
     private readonly InputAction m_Actions_Shoot4;
-    private readonly InputAction m_Actions_Aim;
+    private readonly InputAction m_Actions_AimPlus;
+    private readonly InputAction m_Actions_AimMinus;
     private readonly InputAction m_Actions_Quit;
     public struct ActionsActions
     {
         private @PlayerControls m_Wrapper;
         public ActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Throttle => m_Wrapper.m_Actions_Throttle;
-        public InputAction @Steering => m_Wrapper.m_Actions_Steering;
+        public InputAction @ThrottlePlus => m_Wrapper.m_Actions_ThrottlePlus;
+        public InputAction @ThrottleMinus => m_Wrapper.m_Actions_ThrottleMinus;
+        public InputAction @SteeringPlus => m_Wrapper.m_Actions_SteeringPlus;
+        public InputAction @SteeringMinus => m_Wrapper.m_Actions_SteeringMinus;
         public InputAction @Shoot1 => m_Wrapper.m_Actions_Shoot1;
         public InputAction @Shoot2 => m_Wrapper.m_Actions_Shoot2;
         public InputAction @Shoot3 => m_Wrapper.m_Actions_Shoot3;
         public InputAction @Shoot4 => m_Wrapper.m_Actions_Shoot4;
-        public InputAction @Aim => m_Wrapper.m_Actions_Aim;
+        public InputAction @AimPlus => m_Wrapper.m_Actions_AimPlus;
+        public InputAction @AimMinus => m_Wrapper.m_Actions_AimMinus;
         public InputAction @Quit => m_Wrapper.m_Actions_Quit;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
@@ -890,12 +1022,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_ActionsActionsCallbackInterface != null)
             {
-                @Throttle.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnThrottle;
-                @Throttle.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnThrottle;
-                @Throttle.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnThrottle;
-                @Steering.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSteering;
-                @Steering.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSteering;
-                @Steering.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSteering;
+                @ThrottlePlus.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnThrottlePlus;
+                @ThrottlePlus.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnThrottlePlus;
+                @ThrottlePlus.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnThrottlePlus;
+                @ThrottleMinus.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnThrottleMinus;
+                @ThrottleMinus.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnThrottleMinus;
+                @ThrottleMinus.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnThrottleMinus;
+                @SteeringPlus.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSteeringPlus;
+                @SteeringPlus.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSteeringPlus;
+                @SteeringPlus.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSteeringPlus;
+                @SteeringMinus.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSteeringMinus;
+                @SteeringMinus.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSteeringMinus;
+                @SteeringMinus.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnSteeringMinus;
                 @Shoot1.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShoot1;
                 @Shoot1.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShoot1;
                 @Shoot1.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShoot1;
@@ -908,9 +1046,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Shoot4.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShoot4;
                 @Shoot4.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShoot4;
                 @Shoot4.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnShoot4;
-                @Aim.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAim;
-                @Aim.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAim;
-                @Aim.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAim;
+                @AimPlus.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimPlus;
+                @AimPlus.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimPlus;
+                @AimPlus.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimPlus;
+                @AimMinus.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimMinus;
+                @AimMinus.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimMinus;
+                @AimMinus.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnAimMinus;
                 @Quit.started -= m_Wrapper.m_ActionsActionsCallbackInterface.OnQuit;
                 @Quit.performed -= m_Wrapper.m_ActionsActionsCallbackInterface.OnQuit;
                 @Quit.canceled -= m_Wrapper.m_ActionsActionsCallbackInterface.OnQuit;
@@ -918,12 +1059,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             m_Wrapper.m_ActionsActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Throttle.started += instance.OnThrottle;
-                @Throttle.performed += instance.OnThrottle;
-                @Throttle.canceled += instance.OnThrottle;
-                @Steering.started += instance.OnSteering;
-                @Steering.performed += instance.OnSteering;
-                @Steering.canceled += instance.OnSteering;
+                @ThrottlePlus.started += instance.OnThrottlePlus;
+                @ThrottlePlus.performed += instance.OnThrottlePlus;
+                @ThrottlePlus.canceled += instance.OnThrottlePlus;
+                @ThrottleMinus.started += instance.OnThrottleMinus;
+                @ThrottleMinus.performed += instance.OnThrottleMinus;
+                @ThrottleMinus.canceled += instance.OnThrottleMinus;
+                @SteeringPlus.started += instance.OnSteeringPlus;
+                @SteeringPlus.performed += instance.OnSteeringPlus;
+                @SteeringPlus.canceled += instance.OnSteeringPlus;
+                @SteeringMinus.started += instance.OnSteeringMinus;
+                @SteeringMinus.performed += instance.OnSteeringMinus;
+                @SteeringMinus.canceled += instance.OnSteeringMinus;
                 @Shoot1.started += instance.OnShoot1;
                 @Shoot1.performed += instance.OnShoot1;
                 @Shoot1.canceled += instance.OnShoot1;
@@ -936,9 +1083,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Shoot4.started += instance.OnShoot4;
                 @Shoot4.performed += instance.OnShoot4;
                 @Shoot4.canceled += instance.OnShoot4;
-                @Aim.started += instance.OnAim;
-                @Aim.performed += instance.OnAim;
-                @Aim.canceled += instance.OnAim;
+                @AimPlus.started += instance.OnAimPlus;
+                @AimPlus.performed += instance.OnAimPlus;
+                @AimPlus.canceled += instance.OnAimPlus;
+                @AimMinus.started += instance.OnAimMinus;
+                @AimMinus.performed += instance.OnAimMinus;
+                @AimMinus.canceled += instance.OnAimMinus;
                 @Quit.started += instance.OnQuit;
                 @Quit.performed += instance.OnQuit;
                 @Quit.canceled += instance.OnQuit;
@@ -1057,13 +1207,16 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     }
     public interface IActionsActions
     {
-        void OnThrottle(InputAction.CallbackContext context);
-        void OnSteering(InputAction.CallbackContext context);
+        void OnThrottlePlus(InputAction.CallbackContext context);
+        void OnThrottleMinus(InputAction.CallbackContext context);
+        void OnSteeringPlus(InputAction.CallbackContext context);
+        void OnSteeringMinus(InputAction.CallbackContext context);
         void OnShoot1(InputAction.CallbackContext context);
         void OnShoot2(InputAction.CallbackContext context);
         void OnShoot3(InputAction.CallbackContext context);
         void OnShoot4(InputAction.CallbackContext context);
-        void OnAim(InputAction.CallbackContext context);
+        void OnAimPlus(InputAction.CallbackContext context);
+        void OnAimMinus(InputAction.CallbackContext context);
         void OnQuit(InputAction.CallbackContext context);
     }
     public interface IMainMenuActions

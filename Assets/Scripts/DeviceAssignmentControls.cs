@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
+using UnityEngine.SceneManagement;
 
 public class DeviceAssignmentControls : MonoBehaviour
 {
@@ -78,6 +78,14 @@ public class DeviceAssignmentControls : MonoBehaviour
             player.SwitchCurrentControlScheme("KeyboardSecondary");
             assignment.plr2Joined = true;
             assignment.plr2 = player.GetComponent<DeviceAssignmentControls>();
+        }
+    }
+
+    public void OnQuit(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            SceneManager.LoadScene("MainMenu");
         }
     }
 

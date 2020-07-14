@@ -12,14 +12,20 @@ public class ActionRebindingController : MonoBehaviour
 
     void Start()
     {
-        LoadKeybinds();
+        //LoadKeybinds();
+        ui.UpdateUIElements();
     }
 
     public void Rebind(string actionAndGroup)
     {
         //arr[0] = action name, arr[1] = group
         string[] arr = actionAndGroup.Split(':');
-        InputActionMap map = actions.FindActionMap("Actions");
+        string mapName;
+        if (arr.Length <= 2)
+            mapName = "Actions";
+        else
+            mapName = arr[2];
+        InputActionMap map = actions.FindActionMap(mapName);
         InputAction action = map.FindAction(arr[0]);
         RebindActionStart(action, arr[1]);
     }
@@ -36,6 +42,7 @@ public class ActionRebindingController : MonoBehaviour
         }
 
         int bindingIndex = inputAction.GetBindingIndex(InputBinding.MaskByGroup(group));
+        print(bindingIndex);
 
         rebindOperation = inputAction.PerformInteractiveRebinding(bindingIndex).WithCancelingThrough("<Keyboard>/escape")
             .OnCancel(operation =>
@@ -47,7 +54,7 @@ public class ActionRebindingController : MonoBehaviour
             {
                 CleanUp();
                 print("complete");
-                ui.UpdateSingleElement(inputAction, bindingIndex);
+                ui.UpdateSingleElement(inputAction, bindingIndex, inputAction.actionMap.name);
             });
 
         rebindOperation.Start();

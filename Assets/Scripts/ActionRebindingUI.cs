@@ -15,6 +15,7 @@ public class ActionRebindingUI : MonoBehaviour
     [SerializeField] InputActionAsset inputs;
     [SerializeField] string[] actionNames;
     [SerializeField] string[] groupNames;
+    [SerializeField] int mapSwitchIndex;
 
     List<TextMeshProUGUI[]> texts = new List<TextMeshProUGUI[]>();
 
@@ -28,22 +29,31 @@ public class ActionRebindingUI : MonoBehaviour
 
     public void UpdateUIElements()
     {
-        InputActionMap map = inputs.FindActionMap("Actions");
+        InputActionMap map;
+        InputActionMap mapActions = inputs.FindActionMap("Actions");
+        InputActionMap mapMenu = inputs.FindActionMap("MainMenu");
         for (int j = 0; j < groupNames.Length; j++)
         {
             for (int i = 0; i < actionNames.Length; i++)
             {
-                InputAction action = map.FindAction(actionNames[i]);
-
-                int bindingIndex = action.GetBindingIndex(InputBinding.MaskByGroup(groupNames[j]));
-                texts[j][i].text = action.GetBindingDisplayString(bindingIndex);
+                if(texts[j].Length > i)
+                {
+                    print(texts[j].Length + " " + i);
+                    if (i < mapSwitchIndex)
+                        map = mapActions;
+                    else
+                        map = mapMenu;
+                    InputAction action = map.FindAction(actionNames[i]);
+                    int bindingIndex = action.GetBindingIndex(InputBinding.MaskByGroup(groupNames[j]));
+                    texts[j][i].text = action.GetBindingDisplayString(bindingIndex);
+                }
             }
         }
     }
 
-    public void UpdateSingleElement(InputAction action, int bindingIndex)
+    public void UpdateSingleElement(InputAction action, int bindingIndex, string actionMap)
     {
-        InputActionMap map = inputs.FindActionMap("Actions");
+        InputActionMap map = inputs.FindActionMap(actionMap);
 
         for (int i = 0; i < actionNames.Length; i++)
         {

@@ -4852,7 +4852,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7187208062566614101}
-        m_MethodName: OnThrottle
+        m_MethodName: OnThrottlePlus
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4864,21 +4864,6 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: e90d533a-d517-4f3f-8d13-830fcbeab16c
     m_ActionName: Actions/Throttle[/XInputControllerWindows/dpad/y,/Keyboard/s,/Keyboard/w]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7187208062566614101}
-        m_MethodName: OnSteering
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 0673adbc-82c0-409d-9ed4-7ff6f1255eb2
-    m_ActionName: Actions/Steering[/XInputControllerWindows/dpad/x,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7187208062566614101}
@@ -4927,7 +4912,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7187208062566614101}
-        m_MethodName: OnAimPrimary
+        m_MethodName: OnAimPlus
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4993,6 +4978,66 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 43d294a6-5ce8-4abe-8dbd-6cf14ebd100c
     m_ActionName: MainMenu/Quit[/Keyboard/escape,/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7187208062566614101}
+        m_MethodName: OnThrottleMinus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b6800d06-bafe-437a-bd45-f364ebfb180f
+    m_ActionName: Actions/ThrottleMinus[/XInputControllerWindows/dpad/down,/Keyboard/s,/Keyboard/quote]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7187208062566614101}
+        m_MethodName: OnSteeringPlus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 90bccbaf-0c5c-4d68-a8ff-66734af95c8c
+    m_ActionName: Actions/SteeringPlus[/XInputControllerWindows/dpad/right,/Keyboard/d,/Keyboard/backslash]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7187208062566614101}
+        m_MethodName: OnSteeringMinus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 61dc8838-e088-441a-9cc0-8492a9da59de
+    m_ActionName: Actions/SteeringMinus[/XInputControllerWindows/dpad/left,/Keyboard/a,/Keyboard/semicolon]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7187208062566614101}
+        m_MethodName: OnAimMinus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3b2ff1e9-8ecb-46df-8c9a-403d0cc5af1e
+    m_ActionName: Actions/AimMinus[/Keyboard/q,/Keyboard/q,/Keyboard/p,/XInputControllerWindows/buttonWest]
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Actions

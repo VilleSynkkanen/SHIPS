@@ -18,14 +18,36 @@ public class PlayerControlInput : MonoBehaviour
         quitting = false;
     }
 
-    public void OnThrottle(InputAction.CallbackContext context)
+    public void OnThrottlePlus(InputAction.CallbackContext context)
     {
-        vertical = context.ReadValue<float>();
+        if (context.performed)
+            vertical = 1;
+        else if (context.canceled)
+            vertical = 0;
     }
 
-    public void OnSteering(InputAction.CallbackContext context)
+    public void OnThrottleMinus(InputAction.CallbackContext context)
     {
-        horizontal = context.ReadValue<float>();
+        if (context.performed)
+            vertical = -1;
+        else if (context.canceled)
+            vertical = 0;
+    }
+
+    public void OnSteeringPlus(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            horizontal = 1;
+        else if (context.canceled)
+            horizontal = 0;
+    }
+
+    public void OnSteeringMinus(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            horizontal = -1;
+        else if (context.canceled)
+            horizontal = 0;
     }
 
     public void OnShoot1(InputAction.CallbackContext context)
@@ -61,12 +83,21 @@ public class PlayerControlInput : MonoBehaviour
             shoot4 = false;
     }
 
-    public void OnAimPrimary(InputAction.CallbackContext context)
+    public void OnAimPlus(InputAction.CallbackContext context)
     {
-        aim = context.ReadValue<float>();
+        if (context.performed)
+            aim = 1;
+        else if (context.canceled)
+            aim = 0;
     }
 
-
+    public void OnAimMinus(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            aim = -1;
+        else if (context.canceled)
+            aim = 0;
+    }
 
     public void OnQuit(InputAction.CallbackContext context)
     {
