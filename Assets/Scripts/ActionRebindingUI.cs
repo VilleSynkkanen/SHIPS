@@ -40,7 +40,6 @@ public class ActionRebindingUI : MonoBehaviour
             {
                 if(texts[j].Length > i)
                 {
-                    print(texts[j].Length + " " + i);
                     if (i < mapSwitchIndex)
                         map = mapActions;
                     else

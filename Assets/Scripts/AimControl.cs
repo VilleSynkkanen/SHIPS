@@ -33,6 +33,7 @@ public class AimControl : MonoBehaviour
     {
         for (int i = 0; i < aimPoints.Length; i++)
         {
+            currentAngles[i] = baseRotations[i];
             Vector3 shipRotation = new Vector3(0, 0, transform.eulerAngles.z);
             aimPoints[i].eulerAngles = shipRotation + baseRotations[i];
         }

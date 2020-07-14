@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,18 +8,36 @@ using UnityEngine.InputSystem;
 public class ActionRebindingController : MonoBehaviour
 {
     [SerializeField] InputActionAsset actions;
-    [SerializeField] InputActionAsset defaultActions;
     [SerializeField] ActionRebindingUI ui;
 
     void Start()
     {
-        //LoadKeybinds();
+        LoadKeybinds();
         ui.UpdateUIElements();
     }
 
+    [System.Serializable]
+    class BindingWrapperClass
+    {
+        public List<BindingSerializable> bindingList = new List<BindingSerializable>();
+    }
+
+    [System.Serializable]
+    private struct BindingSerializable
+    {
+        public string id;
+        public string path;
+
+        public BindingSerializable(string bindingId, string bindingPath)
+        {
+            id = bindingId;
+            path = bindingPath;
+        }
+    }
+
+
     public void Rebind(string actionAndGroup)
     {
-        //arr[0] = action name, arr[1] = group
         string[] arr = actionAndGroup.Split(':');
         string mapName;
         if (arr.Length <= 2)
@@ -79,39 +98,56 @@ public class ActionRebindingController : MonoBehaviour
 
     public void SaveKeybinds()
     {
-        //does not save input mappings
-        //traverse through bindings and save to a different class and save that to json
-        //loading similarly
+        BindingWrapperClass bindingList = new BindingWrapperClass();
+        foreach (var map in actions.actionMaps)
+        {
+            foreach (var binding in map.bindings)
+            {
+                if (!string.IsNullOrEmpty(binding.overridePath))
+                {
+                    bindingList.bindingList.Add(new BindingSerializable(binding.id.ToString(), binding.overridePath));
+                }
+            }
+        }
 
-        //or find a way to make it work with current system
-        string json = actions.ToJson();
-        //Debug.Log("Saving as JSON: " + json);
-        File.WriteAllText(Application.persistentDataPath + "/keybinds.txt", json);
+        PlayerPrefs.SetString("ControlOverrides", JsonUtility.ToJson(bindingList));
+        PlayerPrefs.Save();
     }
 
     public void LoadKeybinds()
     {
-        // loading seems to work
-        if(File.Exists(Application.persistentDataPath + "/keybinds.txt"))
+        if (PlayerPrefs.HasKey("ControlOverrides"))
         {
-            //print("exists");
-            string savedKeybinds = File.ReadAllText(Application.persistentDataPath + "/keybinds.txt");
-            //Debug.Log("Loaded JSON: " + savedKeybinds);
-            actions.LoadFromJson(savedKeybinds);
-            ui.UpdateUIElements();
-        }
-        else
-        {
-            ResetToDefault();
+            BindingWrapperClass bindingList = JsonUtility.FromJson(PlayerPrefs.GetString("ControlOverrides"), 
+                typeof(BindingWrapperClass)) as BindingWrapperClass;
+
+            Dictionary<Guid, string> overrides = new Dictionary<Guid, string>();
+            foreach (var item in bindingList.bindingList)
+            {
+                overrides.Add(new Guid(item.id), item.path);
+            }
+
+            foreach (var map in actions.actionMaps)
+            {
+                var bindings = map.bindings;
+                for (var i = 0; i < bindings.Count; ++i)
+                {
+                    if (overrides.TryGetValue(bindings[i].id, out string overridePath))
+                    {
+                        map.ApplyBindingOverride(i, new InputBinding { overridePath = overridePath });
+                    }
+                }
+            }
         }
     }
 
     public void ResetToDefault()
     {
-        string json = defaultActions.ToJson();
-        //Debug.Log("Saving as JSON: " + json);
-        File.WriteAllText(Application.persistentDataPath + "/keybinds.txt", json);
-        LoadKeybinds();
+        foreach (var map in actions.actionMaps)
+        {
+            map.RemoveAllBindingOverrides();
+        }
+        PlayerPrefs.DeleteKey("ControlOverrides");
         ui.UpdateUIElements();
     }
 }

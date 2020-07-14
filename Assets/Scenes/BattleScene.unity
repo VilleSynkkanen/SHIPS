@@ -736,6 +736,7 @@ GameObject:
   - component: {fileID: 2002521627}
   - component: {fileID: 2002521626}
   - component: {fileID: 2002521625}
+  - component: {fileID: 2002521628}
   m_Layer: 0
   m_Name: DeviceAssignment
   m_TagString: Untagged
@@ -777,7 +778,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_JoinAction:
-    m_UseReference: 0
+    m_UseReference: 1
     m_Action:
       m_Name: Join
       m_Type: 0
@@ -802,7 +803,7 @@ MonoBehaviour:
         m_Groups: 
         m_Action: Join
         m_Flags: 0
-    m_Reference: {fileID: -2621154741063047242, guid: 0f8d9d1987ac00542beeb2ccd921e48d,
+    m_Reference: {fileID: -6638606068298663795, guid: 57bfba3ce4eeb7a4a949082f8ac04159,
       type: 3}
   m_PlayerPrefab: {fileID: 218873223844601376, guid: 608a7d9bd3bd14f40900009ad63a06d8,
     type: 3}
@@ -842,6 +843,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2002521628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002521624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81add6658694964b9fffc953b25eeb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 2002521625}
 --- !u!1 &2059964975
 GameObject:
   m_ObjectHideFlags: 3

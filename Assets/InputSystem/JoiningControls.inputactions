@@ -1,0 +1,44 @@
+{
+    "name": "JoiningControls",
+    "maps": [
+        {
+            "name": "Joining",
+            "id": "327fa364-f9d1-4a42-9f4e-673da94db6fb",
+            "actions": [
+                {
+                    "name": "Join",
+                    "type": "Button",
+                    "id": "b6d3c274-582d-43f2-99f0-356b709e0301",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "68e5cf8c-829f-452b-aa84-2095b26e1835",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7ecb1a56-1417-4b33-bc07-17655a1b1fb7",
+                    "path": "<Gamepad>/dpad/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Join",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
