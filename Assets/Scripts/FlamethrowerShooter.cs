@@ -7,9 +7,11 @@ public class FlamethrowerShooter : InstantShooter
 {
     [SerializeField] FlamethrowerCollider col;
     FlamethrowerShooterData flamerData;
+    [SerializeField] AudioSource audioSource;
     public float heat { get; private set; }
     float timeShot;
     public bool overheated { get; private set; }
+    float audioPlayedTime;
 
     [SerializeField] UnityEvent OnDrainedAmmo;
 
@@ -18,6 +20,7 @@ public class FlamethrowerShooter : InstantShooter
         flamerData = (FlamethrowerShooterData)Data;
         heat = 0;
         timeShot = Time.time;
+        audioPlayedTime = Time.time;
     }
 
     public new void Update()
@@ -56,6 +59,13 @@ public class FlamethrowerShooter : InstantShooter
                     OnDrainedAmmo.Invoke();
             }
 
+            
+            if (Time.time - audioPlayedTime > 0.1f)
+            {
+                audioPlayedTime = Time.time;
+                audioSource.Play();
+            }
+            
             TriggerShotEvent();
         }
     }

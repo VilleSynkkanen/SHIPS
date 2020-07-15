@@ -12,6 +12,9 @@ public class PlayerControlInput : MonoBehaviour
     public float aim { get; private set; }
 
     bool quitting;
+    int lastHorizontalPerformed;
+    int lastVerticalPerformed;
+    int lastAimPerformed;
 
     void Awake()
     {
@@ -20,34 +23,84 @@ public class PlayerControlInput : MonoBehaviour
 
     public void OnThrottlePlus(InputAction.CallbackContext context)
     {
+        if (context.started)
+        {
+            lastVerticalPerformed = 0;
+        }
+
+        if (lastVerticalPerformed == 1)
+            return;
+
         if (context.performed)
+        {
             vertical = context.ReadValue<float>();
+        }
         else if (context.canceled)
+        {
             vertical = 0;
+        }
     }
 
     public void OnThrottleMinus(InputAction.CallbackContext context)
     {
+        if (context.started)
+        {
+            lastVerticalPerformed = 1;
+        }
+
+        if (lastVerticalPerformed == 0)
+            return;
+
         if (context.performed)
+        {
             vertical = -context.ReadValue<float>();
+        }
         else if (context.canceled)
+        {
             vertical = 0;
+        }
     }
 
     public void OnSteeringPlus(InputAction.CallbackContext context)
     {
+        if(context.started)
+        {
+            lastHorizontalPerformed = 0;
+        }
+
+        if (lastHorizontalPerformed == 1)
+            return;
+
         if (context.performed)
+        {
             horizontal = context.ReadValue<float>();
+        }
         else if (context.canceled)
+        {
             horizontal = 0;
+        }
+            
     }
 
     public void OnSteeringMinus(InputAction.CallbackContext context)
     {
+        if (context.started)
+        {
+            lastHorizontalPerformed = 1;
+        }
+
+        if (lastHorizontalPerformed == 0)
+            return;
+        
         if (context.performed)
+        {
             horizontal = -context.ReadValue<float>();
+        }   
         else if (context.canceled)
+        {
             horizontal = 0;
+        }
+            
     }
 
     public void OnShoot1(InputAction.CallbackContext context)
@@ -85,18 +138,42 @@ public class PlayerControlInput : MonoBehaviour
 
     public void OnAimPlus(InputAction.CallbackContext context)
     {
+        if (context.started)
+        {
+            lastAimPerformed = 0;
+        }
+
+        if (lastAimPerformed == 1)
+            return;
+
         if (context.performed)
+        {
             aim = context.ReadValue<float>();
+        }
         else if (context.canceled)
+        {
             aim = 0;
+        }
     }
 
     public void OnAimMinus(InputAction.CallbackContext context)
     {
+        if (context.started)
+        {
+            lastAimPerformed = 1;
+        }
+
+        if (lastAimPerformed == 0)
+            return;
+
         if (context.performed)
+        {
             aim = -context.ReadValue<float>();
+        }
         else if (context.canceled)
+        {
             aim = 0;
+        }
     }
 
     public void OnQuit(InputAction.CallbackContext context)

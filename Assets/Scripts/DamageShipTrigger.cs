@@ -24,6 +24,8 @@ public class DamageShipTrigger : MonoBehaviour
         {
             segments.Add(seg);
             seg.Ship.Movement.SlowEffect(data.MoveSlowAmount, data.TurningSlowAmount);
+            if(data.PlayDamageSound)
+                seg.PlayTerrainDamage();
         }
     }
 
@@ -34,6 +36,8 @@ public class DamageShipTrigger : MonoBehaviour
         {
             segments.Remove(seg);
             seg.Ship.Movement.EndSlowEffect(data.MoveSlowAmount, data.TurningSlowAmount);
+            if (data.PlayDamageSound)
+                seg.StopTerrainDamage();
         }
     }
 }

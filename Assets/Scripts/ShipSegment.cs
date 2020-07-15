@@ -9,6 +9,8 @@ public class ShipSegment : MonoBehaviour, ICollision
     public ShipData data { get; private set; }
     [SerializeField] Rigidbody2D rb;    //rigidbody of ship
     [SerializeField] ShipDamage ship;
+    [SerializeField] AudioSource terrainDamage;
+    [SerializeField] float volumeSpeedMultiplier;
     int i;
     public float hp { get; private set; }
     public int MaxHp { get => data.SegmentHp[i]; }
@@ -23,6 +25,11 @@ public class ShipSegment : MonoBehaviour, ICollision
         i = (int)type;
         hp = MaxHp;
         damageTaken += Ship.TakeDamage;
+    }
+
+    private void Update()
+    {
+        terrainDamage.volume = volumeSpeedMultiplier * rb.velocity.magnitude;
     }
 
     public void ResetSegmentHealth()
@@ -45,6 +52,17 @@ public class ShipSegment : MonoBehaviour, ICollision
             hp = 0;
         damageTaken(amount, type);
     }
+
+    public void PlayTerrainDamage()
+    {
+        terrainDamage.Play();
+    }
+
+    public void StopTerrainDamage()
+    {
+        terrainDamage.Stop();
+    }
+
 
     void OnDestroy()
     {

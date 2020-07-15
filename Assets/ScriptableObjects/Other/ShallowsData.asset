@@ -16,3 +16,4 @@ MonoBehaviour:
   speedPower: 2
   moveSlowAmount: 0.05
   turningSlowAmount: 0.05
+  playDamageSound: 1
