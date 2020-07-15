@@ -22,6 +22,8 @@ public class ShipMovement : MonoBehaviour
     public PlayerControlInput input { get; private set; }
     public PlayerInput playerInput { get; private set; }
 
+    float turningCoefficient;
+
     void Awake()
     {
         data = GameSettings.Instance.GetShipMovementData(type);
@@ -52,14 +54,13 @@ public class ShipMovement : MonoBehaviour
         float multiplier = 1;
         if (throttle < 0)
             multiplier = data.ReverseSpeed;
-        float turningCoefficient = 1;
-        // makes turning speed depend on ship speed (experimental)
-        /*if (rb.velocity.magnitude < 0.3f)
+        turningCoefficient = 1;
+        if (rb.velocity.magnitude < data.TurningPenaltyTreshold)
         {
-            turningCoefficient *= rb.velocity.magnitude / 0.3f;
-            if (turningCoefficient < 0.25f)
-                turningCoefficient = 0.25f;
-        }*/
+            turningCoefficient = (1 - data.MaxTurningPenalty) * rb.velocity.magnitude / data.TurningPenaltyTreshold + data.MaxTurningPenalty;
+        }
+        
+        /// makes reversing invert turning controls (experimental)
         if (Vector3.Dot(rb.velocity, transform.up) < 0)
             turningCoefficient *= -1;
 

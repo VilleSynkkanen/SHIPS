@@ -19,3 +19,5 @@ MonoBehaviour:
   reverseSpeed: 0.25
   damageAngleCoefficient: 0.5
   maxDamageEffect: 0.5
+  turningPenaltyTreshold: 0.4
+  maxTurningPenalty: 0.5

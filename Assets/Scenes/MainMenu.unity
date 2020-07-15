@@ -704,12 +704,22 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "AFTER THE PLAYERS HAVE SELECTED A MAP THEY GET TO JOIN THE GAME AND SELECT
-    THEIR SHIPS.\n\nJOINING THE GAME IS DONE BY PRESSING THE FORWARD BUTTON. SCROLLING
-    THROUGH SHIP TYPES IS DONE WITH THE RIGHT AND LEFT BUTTONS. \n\nWHEN A PLAYER
-    HAS SELECTED THEIR SHIP, THEY CAN READY UP BY PRESSING FORWARD AGAIN. THE PLAYER
-    CAN UNREADY OR UNDO JOINING THE GAME BY PRESSING THE BACK BUTTON.\n\nONCE ALL
-    PLAYERS ARE READY, THE GAME WILL START AFTER A SHORT COUNTDOWN"
+  m_text: 'AFTER THE PLAYERS HAVE SELECTED A MAP THEY GET TO JOIN THE GAME AND SELECT
+    THEIR SHIPS.
+
+
+    JOINING THE GAME IS DONE BY PRESSING THE JOIN BUTTON. SCROLLING
+    THROUGH SHIP TYPES IS DONE WITH THE NEXT AND PREVIOUS BUTTONS (KEYBINDINGS IN
+    OPTIONS MENU).
+
+
+    WHEN A PLAYER HAS SELECTED THEIR SHIP, THEY CAN READY UP
+    BY PRESSING FORWARD AGAIN. THE PLAYER CAN UNREADY OR UNDO JOINING THE GAME BY
+    PRESSING THE BACK BUTTON.
+
+
+    ONCE ALL PLAYERS ARE READY, THE GAME WILL START
+    AFTER A SHORT COUNTDOWN.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -754,7 +764,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 442
+  m_firstOverflowCharacterIndex: 471
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -778,10 +788,10 @@ MonoBehaviour:
   m_margin: {x: -472.8476, y: -0.90593266, z: -472.86032, w: -391.2231}
   m_textInfo:
     textComponent: {fileID: 45687610}
-    characterCount: 451
+    characterCount: 481
     spriteCount: 0
-    spaceCount: 84
-    wordCount: 81
+    spaceCount: 87
+    wordCount: 85
     linkCount: 0
     lineCount: 13
     pageCount: 1
@@ -10348,7 +10358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &498739388
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15871,11 +15881,11 @@ MonoBehaviour:
       m_Calls: []
   m_text: "THE SHIPS ARE CONTROLLED WITH MOVEMENT, SHOOTING AND AIMING KEYS. \n\nTHE
     MOVEMENT KEYS ARE USED TO ADJUST THE THROTTLE AND THE STEERING VALUES. THEY DO
-    NOT NEED TO BE HELD DOWN TO KEEP MOVING OR TURNING.\n\nTHERE ARE TWO TYPES OF
-    SHOOTERS: CHARGED SHOOTERS, WHICH NEED TO BE CHARGED BEFORE SHOOTING AND INSTANT,
-    WHICH SHOOT AS SOON AS THE SHOT BUTTON IS PRESSED.\n\nEACH SHIP HAS ONE AIM CONTROL,
-    WHICH CAN BE USED FOR AIMING A SHOOTER. THE SPEED AND ROTATION RANGE VARIES SHIP
-    BY SHIP."
+    NOT NEED TO BE HELD DOWN TO KEEP MOVING OR TURNING. SHIPS TURN SLOWER BELOW CERTAIN
+    SPEEDS.\n\nTHERE ARE TWO TYPES OF SHOOTERS: CHARGED SHOOTERS, WHICH NEED TO BE
+    CHARGED BEFORE SHOOTING AND INSTANT, WHICH SHOOT AS SOON AS THE SHOT BUTTON IS
+    PRESSED.\n\nEACH SHIP HAS ONE AIM CONTROL, WHICH CAN BE USED FOR AIMING A SHOOTER.
+    THE SPEED AND ROTATION RANGE VARIES SHIP BY SHIP."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15920,7 +15930,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 423
+  m_firstOverflowCharacterIndex: 463
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -15944,10 +15954,10 @@ MonoBehaviour:
   m_margin: {x: -472.8476, y: -0.90593266, z: -472.86032, w: -391.2231}
   m_textInfo:
     textComponent: {fileID: 763178045}
-    characterCount: 481
+    characterCount: 521
     spriteCount: 0
-    spaceCount: 89
-    wordCount: 86
+    spaceCount: 95
+    wordCount: 92
     linkCount: 0
     lineCount: 13
     pageCount: 1
@@ -36418,7 +36428,7 @@ MonoBehaviour:
 
 
     THE TORPEDO BOAT CAN ALSO
-    REVERSE AT FULL SPEED, UNLIKE OTHER SHIPS
+    REVERSE AT FULL SPEED, UNLIKE OTHER SHIPS. IT TAKES LESS DAMAGE FROM TERRAIN.
 
 
     STRATEGIES:'
@@ -36490,10 +36500,10 @@ MonoBehaviour:
   m_margin: {x: -472.8476, y: -0.90593266, z: -472.86032, w: -391.2231}
   m_textInfo:
     textComponent: {fileID: 1770368485}
-    characterCount: 276
+    characterCount: 311
     spriteCount: 0
-    spaceCount: 54
-    wordCount: 52
+    spaceCount: 60
+    wordCount: 58
     linkCount: 0
     lineCount: 10
     pageCount: 1
@@ -38113,7 +38123,7 @@ MonoBehaviour:
     TURRETS AT THE FRONT AND THE BACK. THE TURRETS ARE AIMED SIMULTANEOUSLY, BUT
     CAN BE SHOT SEPARATELY. IN ADDITION, THE SHIP HAS CLOSE-RANGE FLAMETHROWERS AT
     BOTH SIDES. THE FLAMETHROWERS HAVE LIMITED AMMO AND OVERHEAT WHEN FIRED, AFTER
-    WHICH THEY MUST COOL DOWN
+    WHICH THEY MUST COOL DOWN.
 
 
     STRATEGIES: '
@@ -41278,7 +41288,7 @@ MonoBehaviour:
 
 
     MAP
-    SELECTION IS DONE BEFORE ENTERING THE GAME AND SELECTING SHIPS
+    SELECTION IS DONE BEFORE ENTERING THE GAME AND SELECTING SHIPS.
 
 
 
@@ -41353,7 +41363,7 @@ MonoBehaviour:
   m_margin: {x: -472.8476, y: -0.90593266, z: -472.86032, w: -391.2231}
   m_textInfo:
     textComponent: {fileID: 1925991803}
-    characterCount: 357
+    characterCount: 358
     spriteCount: 0
     spaceCount: 67
     wordCount: 59

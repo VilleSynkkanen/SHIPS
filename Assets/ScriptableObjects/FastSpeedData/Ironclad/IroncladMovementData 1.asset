@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa6390f4783a2a4581d8b16f767ce7a, type: 3}
   m_Name: IroncladMovementData 1
   m_EditorClassIdentifier: 
-  moveSpeed: 60
-  turnSpeed: 20
+  moveSpeed: 56
+  turnSpeed: 22
   steeringSpeed: 0.45
   throttleSpeed: 0.45
   reverseSpeed: 0.2
   damageAngleCoefficient: 0.5
   maxDamageEffect: 0.5
+  turningPenaltyTreshold: 0.3
+  maxTurningPenalty: 0.6
