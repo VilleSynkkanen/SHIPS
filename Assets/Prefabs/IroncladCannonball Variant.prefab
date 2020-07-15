@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -5496976053363735970, guid: 49bbb98bbe738b740be3b6c3ba507678,
+        type: 3}
+      propertyPath: type
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2496318178972590501, guid: 49bbb98bbe738b740be3b6c3ba507678,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -75,7 +80,17 @@ PrefabInstance:
     - target: {fileID: 2496318178972590502, guid: 49bbb98bbe738b740be3b6c3ba507678,
         type: 3}
       propertyPath: m_Name
-      value: IroncladCannonball
+      value: IroncladCannonball Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3138396178362493550, guid: 49bbb98bbe738b740be3b6c3ba507678,
+        type: 3}
+      propertyPath: shooterType
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8348898588576410189, guid: 49bbb98bbe738b740be3b6c3ba507678,
+        type: 3}
+      propertyPath: type
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49bbb98bbe738b740be3b6c3ba507678, type: 3}

@@ -10,7 +10,6 @@ public class FlamethrowerShooter : InstantShooter
     public float heat { get; private set; }
     float timeShot;
     public bool overheated { get; private set; }
-    bool ammoDrained;
 
     [SerializeField] UnityEvent OnDrainedAmmo;
 

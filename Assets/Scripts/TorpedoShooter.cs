@@ -5,13 +5,11 @@ using UnityEngine;
 public class TorpedoShooter : ChargedShooter
 {
     TorpedoShooterData torpData;
-    Rigidbody2D rb;
 
     public new void Start()
     {
         base.Start();
         torpData = (TorpedoShooterData)Data;
-        rb = GetComponent<Rigidbody2D>();
     }
 
     public override void Shoot()

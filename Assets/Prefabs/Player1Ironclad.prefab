@@ -5161,7 +5161,7 @@ MonoBehaviour:
   shotLocations:
   - {fileID: 171363610122669607}
   - {fileID: 3622803022285638692}
-  projectile: {fileID: 2496318178972590502, guid: 49bbb98bbe738b740be3b6c3ba507678,
+  projectile: {fileID: 3781400955942950735, guid: e3ec44a9a9929ab49a96d753a2d2857b,
     type: 3}
   ShotEvent:
     m_PersistentCalls:
@@ -5259,7 +5259,7 @@ MonoBehaviour:
   shotLocations:
   - {fileID: 4523301167856710830}
   - {fileID: 699911512097260456}
-  projectile: {fileID: 2496318178972590502, guid: 49bbb98bbe738b740be3b6c3ba507678,
+  projectile: {fileID: 3781400955942950735, guid: e3ec44a9a9929ab49a96d753a2d2857b,
     type: 3}
   ShotEvent:
     m_PersistentCalls:

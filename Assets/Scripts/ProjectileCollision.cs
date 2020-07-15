@@ -5,7 +5,7 @@ public class ProjectileCollision : MonoBehaviour
     ProjectileData data;
     [SerializeField] GameObject explosion;
     [SerializeField] float explosionTravel;
-    int dmg;
+    float dmg;
     [SerializeField] ShooterType type;
     
     public Rigidbody2D rb { get; private set; }

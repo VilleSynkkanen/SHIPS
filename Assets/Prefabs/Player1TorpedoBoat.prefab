@@ -2090,7 +2090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotLocations:
   - {fileID: 8324939805829173338}
-  projectile: {fileID: 2496318178972590502, guid: 49bbb98bbe738b740be3b6c3ba507678,
+  projectile: {fileID: 7400745729478669127, guid: 5d38bd24454590d47ae8732e556e5d52,
     type: 3}
   ShotEvent:
     m_PersistentCalls:

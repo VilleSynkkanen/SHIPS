@@ -14,7 +14,6 @@ public class ShipSelection : MonoBehaviour
     private void Awake()
     {
         i = 0;
-
     }
 
     public void SetPlayerText(string txt)
@@ -55,7 +54,6 @@ public class ShipSelection : MonoBehaviour
     public void SetUI(int i, bool ready=false)
     {
         Vector2 pivot;
-        Vector3 position = Vector3.zero;
         Vector2 anchorMin;
         Vector2 anchorMax;
 

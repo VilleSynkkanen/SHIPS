@@ -10358,7 +10358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &498739388
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36428,10 +36428,7 @@ MonoBehaviour:
 
 
     THE TORPEDO BOAT CAN ALSO
-    REVERSE AT FULL SPEED, UNLIKE OTHER SHIPS. IT TAKES LESS DAMAGE FROM TERRAIN.
-
-
-    STRATEGIES:'
+    REVERSE AT FULL SPEED, UNLIKE OTHER SHIPS. IT TAKES LESS DAMAGE FROM TERRAIN.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -36500,12 +36497,12 @@ MonoBehaviour:
   m_margin: {x: -472.8476, y: -0.90593266, z: -472.86032, w: -391.2231}
   m_textInfo:
     textComponent: {fileID: 1770368485}
-    characterCount: 311
+    characterCount: 299
     spriteCount: 0
-    spaceCount: 60
-    wordCount: 58
+    spaceCount: 58
+    wordCount: 57
     linkCount: 0
-    lineCount: 10
+    lineCount: 8
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -38123,10 +38120,7 @@ MonoBehaviour:
     TURRETS AT THE FRONT AND THE BACK. THE TURRETS ARE AIMED SIMULTANEOUSLY, BUT
     CAN BE SHOT SEPARATELY. IN ADDITION, THE SHIP HAS CLOSE-RANGE FLAMETHROWERS AT
     BOTH SIDES. THE FLAMETHROWERS HAVE LIMITED AMMO AND OVERHEAT WHEN FIRED, AFTER
-    WHICH THEY MUST COOL DOWN.
-
-
-    STRATEGIES: '
+    WHICH THEY MUST COOL DOWN.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -44005,10 +43999,7 @@ MonoBehaviour:
 
     THE SHIP HAS THREE CANNONS AT BOTH SIDES
     AND AN AIMABLE FRONT CANNON. IT ALSO HAS THE ABILITY TO LAY MINES. THE AMOUNT
-    OF MINES IS LIMITED.
-
-
-    STRATEGIES:'
+    OF MINES IS LIMITED.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
