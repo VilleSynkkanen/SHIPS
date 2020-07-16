@@ -22,7 +22,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""ThrottlePlus"",
                     ""type"": ""Value"",
                     ""id"": ""e90d533a-d517-4f3f-8d13-830fcbeab16c"",
-                    ""expectedControlType"": ""Analog"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -30,7 +30,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""ThrottleMinus"",
                     ""type"": ""Value"",
                     ""id"": ""b6800d06-bafe-437a-bd45-f364ebfb180f"",
-                    ""expectedControlType"": ""Analog"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -38,7 +38,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""SteeringPlus"",
                     ""type"": ""Value"",
                     ""id"": ""90bccbaf-0c5c-4d68-a8ff-66734af95c8c"",
-                    ""expectedControlType"": ""Analog"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -46,7 +46,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""SteeringMinus"",
                     ""type"": ""Value"",
                     ""id"": ""61dc8838-e088-441a-9cc0-8492a9da59de"",
-                    ""expectedControlType"": ""Analog"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -86,7 +86,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""AimPlus"",
                     ""type"": ""Value"",
                     ""id"": ""d573135f-2459-46c1-a47c-0ca2930c912a"",
-                    ""expectedControlType"": ""Analog"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 },
@@ -94,7 +94,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""name"": ""AimMinus"",
                     ""type"": ""Value"",
                     ""id"": ""3b2ff1e9-8ecb-46df-8c9a-403d0cc5af1e"",
-                    ""expectedControlType"": ""Analog"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 },

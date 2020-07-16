@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-
 public class ShotEffects : Effects
 {
     [SerializeField] SpriteRenderer[] effects0;

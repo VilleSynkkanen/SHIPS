@@ -6,12 +6,13 @@ public enum SegmentType { Front, Middle, Back }
 public class ShipSegment : MonoBehaviour, ICollision
 {
     [SerializeField] SegmentType type;
-    public ShipData data { get; private set; }
-    [SerializeField] Rigidbody2D rb;    //rigidbody of ship
+    [SerializeField] Rigidbody2D rb;   
     [SerializeField] ShipDamage ship;
     [SerializeField] AudioSource terrainDamage;
     [SerializeField] float volumeSpeedMultiplier;
+
     int i;
+    public ShipData data { get; private set; }
     public float hp { get; private set; }
     public int MaxHp { get => data.SegmentHp[i]; }
     public Rigidbody2D Rb { get => rb; }
@@ -27,7 +28,7 @@ public class ShipSegment : MonoBehaviour, ICollision
         damageTaken += Ship.TakeDamage;
     }
 
-    private void Update()
+    void Update()
     {
         terrainDamage.volume = volumeSpeedMultiplier * rb.velocity.magnitude;
     }

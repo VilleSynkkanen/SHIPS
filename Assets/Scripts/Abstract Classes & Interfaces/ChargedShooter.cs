@@ -6,7 +6,6 @@ public abstract class ChargedShooter : Shooter
 {
     public ChargedShooterData chargedData { get; private set; }
     public Rigidbody2D rb { get; private set; }
-
     public float shotCharge { get; private set; }
 
     public void Start()

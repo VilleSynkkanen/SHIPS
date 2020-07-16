@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShipShooterManager : MonoBehaviour
 {
     [SerializeField] Shooter[] shooters;
     [SerializeField] Shooter[] aimableShooters;
+    
     PlayerControlInput input;
     bool[] shotInputs = new bool[4];
 

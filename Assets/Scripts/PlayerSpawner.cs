@@ -11,14 +11,12 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField] GameObject[] playerPrefabs2;
 
     GameController controller;
-
     List<GameObject[]> prefabs = new List<GameObject[]>();
     List<PlayerInput> inputs = new List<PlayerInput>();
     
     void Awake()
     {
         controller = GetComponent<GameController>();
-
         prefabs.Add(playerPrefabs0);
         prefabs.Add(playerPrefabs1);
         prefabs.Add(playerPrefabs2);

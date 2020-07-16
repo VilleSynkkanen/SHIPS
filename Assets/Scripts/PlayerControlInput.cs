@@ -3,6 +3,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerControlInput : MonoBehaviour
 {
+    bool quitting;
+    int lastHorizontalPerformed;
+    int lastVerticalPerformed;
+    int lastAimPerformed;
+
     public float horizontal { get; private set; }
     public float vertical { get; private set; }
     public bool shoot1 { get; private set; }
@@ -10,11 +15,6 @@ public class PlayerControlInput : MonoBehaviour
     public bool shoot2 { get; private set; }
     public bool shoot4 { get; private set; }
     public float aim { get; private set; }
-
-    bool quitting;
-    int lastHorizontalPerformed;
-    int lastVerticalPerformed;
-    int lastAimPerformed;
 
     void Awake()
     {

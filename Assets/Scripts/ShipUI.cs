@@ -8,16 +8,12 @@ public class ShipUI : MonoBehaviour
     [SerializeField] Image positiveThrottle;
     [SerializeField] Image negativeSteering;
     [SerializeField] Image positiveSteering;
-
     [SerializeField] Image[] segmentHealth;
     [SerializeField] Image totalHealth;
-
     [SerializeField] Image[] segmentImages;
     [SerializeField] TextMeshProUGUI[] segmentTexts;
-
     [SerializeField] Color undamaged;
     [SerializeField] Color fullyDamaged;
-
     [SerializeField] Image[] shotCooldownImages;
     [SerializeField] bool[] useFills;
 

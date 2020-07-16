@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
-using TMPro;
-
 
 public class DeviceAssignment : MonoBehaviour
 {
@@ -15,7 +12,7 @@ public class DeviceAssignment : MonoBehaviour
     [SerializeField] PlayerVictories victories;
 
     PlayerSpawner spawner;
-    InputDevice[] devices;
+    
     List<PlayerInput> inputs = new List<PlayerInput>();
     List<DeviceAssignmentControls> assignments = new List<DeviceAssignmentControls>();
     List<ShipType> ships = new List<ShipType>();

@@ -5,11 +5,11 @@ using UnityEngine.Events;
 
 public abstract class Shooter : MonoBehaviour
 {
-    ShooterData data;
     [SerializeField] Transform[] shotLocations;
     [SerializeField] GameObject projectile;
     [SerializeField] UnityEvent ShotEvent;
     [SerializeField] ShooterType type;
+    ShooterData data;
 
     public ShooterData Data { get => data; }
 

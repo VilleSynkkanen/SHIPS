@@ -3,7 +3,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
-
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject mainMenu;

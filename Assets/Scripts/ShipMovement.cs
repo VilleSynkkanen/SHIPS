@@ -1,28 +1,25 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class ShipMovement : MonoBehaviour
 {
-    [SerializeField] ShipType type;
+    [SerializeField] ShipType type;  
     ShipMovementData data;
+    Rigidbody2D rb;
 
     float currentMoveSpeed;
     float currentTurnSpeed;
     float currentSteeringSpeed;
     float currentThrottleSpeed;
-
     float moveMultiplier;
     float turnMultiplier;
+    float turningCoefficient;
 
     public float throttle { get; private set; }  //[-1, 1]
     public float steering { get; private set; }  //[-1, 1]
 
-    Rigidbody2D rb;
     public PlayerControlInput input { get; private set; }
     public PlayerInput playerInput { get; private set; }
-
-    float turningCoefficient;
 
     void Awake()
     {
@@ -30,7 +27,6 @@ public class ShipMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         input = GetComponent<PlayerControlInput>();
         playerInput = GetComponent<PlayerInput>();
-
         ResetShipDamage();
     }
 
@@ -60,7 +56,7 @@ public class ShipMovement : MonoBehaviour
             turningCoefficient = (1 - data.MaxTurningPenalty) * rb.velocity.magnitude / data.TurningPenaltyTreshold + data.MaxTurningPenalty;
         }
         
-        /// makes reversing invert turning controls (experimental)
+        // makes reversing invert turning controls (experimental)
         if (Vector3.Dot(rb.velocity, transform.up) < 0)
             turningCoefficient *= -1;
 

@@ -1,18 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class FlamethrowerShooter : InstantShooter
 {
     [SerializeField] FlamethrowerCollider col;
-    FlamethrowerShooterData flamerData;
     [SerializeField] AudioSource audioSource;
-    public float heat { get; private set; }
+    
+    FlamethrowerShooterData flamerData;
     float timeShot;
-    public bool overheated { get; private set; }
     float audioPlayedTime;
 
+    public float heat { get; private set; }
+    public bool overheated { get; private set; }
+    
     [SerializeField] UnityEvent OnDrainedAmmo;
 
     private void Start()

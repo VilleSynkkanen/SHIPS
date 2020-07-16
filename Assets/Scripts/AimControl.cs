@@ -2,14 +2,15 @@
 
 public class AimControl : MonoBehaviour
 {
-    PlayerControlInput input;
-    ShipShooterManager shooter;
-    Vector3[] currentAngles;
     [SerializeField] Transform[] aimPoints;
-    AimPointData data;
     [SerializeField] Vector3[] baseRotations;
     [SerializeField] AimPointType type;
     [SerializeField] int[] aimDirections;
+
+    PlayerControlInput input;
+    ShipShooterManager shooter;
+    Vector3[] currentAngles;
+    AimPointData data;
 
     void Awake()
     {

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,13 +14,13 @@ public class ActionRebindingController : MonoBehaviour
         ui.UpdateUIElements();
     }
 
-    [System.Serializable]
+    [Serializable]
     class BindingWrapperClass
     {
         public List<BindingSerializable> bindingList = new List<BindingSerializable>();
     }
 
-    [System.Serializable]
+    [Serializable]
     private struct BindingSerializable
     {
         public string id;
@@ -50,7 +49,6 @@ public class ActionRebindingController : MonoBehaviour
 
     public void RebindActionStart(InputAction inputAction, string group)
     {
-        print("started");
         InputActionRebindingExtensions.RebindingOperation rebindOperation = null;
         
         void CleanUp()
@@ -76,17 +74,18 @@ public class ActionRebindingController : MonoBehaviour
             keyboard = true;
         }
 
+        print(controlType);
+        print(bindingIndex);
+
         rebindOperation = inputAction.PerformInteractiveRebinding(bindingIndex).WithCancelingThrough(cancelType)
             .WithControlsHavingToMatchPath(controlType).OnCancel(operation =>
             {
                 CleanUp();
-                print("canceled");
                 ui.SetInstructionOverlay(false);
             })
             .OnComplete(operation =>
             {
                 CleanUp();
-                print("complete");
                 ui.UpdateSingleElement(inputAction, bindingIndex, inputAction.actionMap.name);
                 ui.SetInstructionOverlay(false);
             });

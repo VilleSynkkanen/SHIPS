@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class RigidbodySettingsController : MonoBehaviour
 {
-    Rigidbody2D rb;
-    RigidbodyData data;
     [SerializeField] bool ship;
     [SerializeField] ShipType shipType;
     [SerializeField] ShooterType shooterType;
+
+    Rigidbody2D rb;
+    RigidbodyData data;
 
     private void Awake()
     {

@@ -1,15 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class FlamethrowerFillController : MonoBehaviour
 {
     [SerializeField] Image[] fills;
     [SerializeField] FlamethrowerShooter shooter;
-    [SerializeField] bool[] fillOnOverheat;
     [SerializeField] GameObject arrow;
-
+    [SerializeField] bool[] fillOnOverheat;
 
     void Update()
     {

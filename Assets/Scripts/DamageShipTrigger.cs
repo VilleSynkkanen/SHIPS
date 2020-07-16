@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class DamageShipTrigger : MonoBehaviour
 {
-    List<ShipSegment> segments = new List<ShipSegment>();
     [SerializeField] DamageShipTriggerData data;
+    List<ShipSegment> segments = new List<ShipSegment>();
 
     private void Update()
     {

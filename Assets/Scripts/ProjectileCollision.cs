@@ -2,12 +2,13 @@
 
 public class ProjectileCollision : MonoBehaviour
 {
-    ProjectileData data;
     [SerializeField] GameObject explosion;
     [SerializeField] float explosionTravel;
-    float dmg;
     [SerializeField] ShooterType type;
     
+    ProjectileData data;
+    float dmg;
+
     public Rigidbody2D rb { get; private set; }
     public float ExplosionForce { get => data.ExplosionForce; }
 

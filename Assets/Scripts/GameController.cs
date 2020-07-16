@@ -8,28 +8,27 @@ using TMPro;
 public class GameController : MonoBehaviour
 {
     [SerializeField] PlayerVictories victories;
-
-    bool gameStarted;
-    bool countdownStarted;
-    [SerializeField] float countdownTime;
-    float countdownTimer;
-    bool gameEnded;
     [SerializeField] TextMeshProUGUI countdownText;
-    [SerializeField] float startTextDelay;
-    [SerializeField] float readyTextDelay;
     [SerializeField] PlayerSpawner spawner;
     [SerializeField] GameObject instructionText;
+    [SerializeField] float countdownTime;
+    [SerializeField] float startTextDelay;
+    [SerializeField] float readyTextDelay;
 
+    BattleUIManager uiManager;
     List<GameObject> playersAlive = new List<GameObject>();
     List<GameObject> players = new List<GameObject>();
     List<PlayerControlInput> playerInputs = new List<PlayerControlInput>();
 
-    public event UnityAction<int, int[]> gameEnd = delegate { };
-    public static event UnityAction GameRestart = delegate { };
-
-    BattleUIManager uiManager;
+    float countdownTimer;
+    bool gameEnded;
+    bool gameStarted;
+    bool countdownStarted;
 
     public PlayerVictories Victories { get => victories; }
+
+    public event UnityAction<int, int[]> gameEnd = delegate { };
+    public static event UnityAction GameRestart = delegate { };
 
     void Awake()
     {
