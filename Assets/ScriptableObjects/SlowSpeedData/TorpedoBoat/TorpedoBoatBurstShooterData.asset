@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cafeccfcadad5c64f8886be583ba6e3e, type: 3}
   m_Name: TorpedoBoatBurstShooterData
   m_EditorClassIdentifier: 
-  shotCooldown: 9
-  shotForce: 3.8
+  shotCooldown: 10
+  shotForce: 3.2
   minForce: 0.95
   maxForce: 1.05
   rotationVariation: 2

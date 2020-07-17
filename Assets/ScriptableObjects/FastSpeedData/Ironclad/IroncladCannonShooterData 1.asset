@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f4c7e0d88cea404d9e81d16464691b8, type: 3}
   m_Name: IroncladCannonShooterData 1
   m_EditorClassIdentifier: 
-  shotCooldown: 10
-  shotForce: 4
+  shotCooldown: 12.5
+  shotForce: 3.8
   minForce: 0.95
   maxForce: 1.05
   rotationVariation: 0.5

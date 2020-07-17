@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 755160d4fb4d85b4ea7d741ac8b7e992, type: 3}
   m_Name: IroncladData 1
   m_EditorClassIdentifier: 
-  maxHp: 50
-  segmentHp: 140000002400000014000000
-  terrainDamageMultiplier: 1.5
+  maxHp: 44
+  segmentHp: 120000002000000012000000
+  terrainDamageMultiplier: 1.8

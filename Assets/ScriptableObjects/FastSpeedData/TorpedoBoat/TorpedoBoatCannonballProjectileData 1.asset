@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8a28e7f0ae3ac49bf4c2fe91d23344, type: 3}
   m_Name: TorpedoBoatCannonballProjectileData 1
   m_EditorClassIdentifier: 
-  dmg: 1.8
+  dmg: 1.6
   angleCoefficient: 0.2
   minDamage: 0.5
   explosionForce: 3

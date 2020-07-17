@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afa6390f4783a2a4581d8b16f767ce7a, type: 3}
   m_Name: FrigateMovementData 1
   m_EditorClassIdentifier: 
-  moveSpeed: 36
+  moveSpeed: 40
   turnSpeed: 8
-  steeringSpeed: 0.65
-  throttleSpeed: 0.65
+  steeringSpeed: 0.7
+  throttleSpeed: 0.7
   reverseSpeed: 0.3
   damageAngleCoefficient: 0.5
   maxDamageEffect: 0.5
