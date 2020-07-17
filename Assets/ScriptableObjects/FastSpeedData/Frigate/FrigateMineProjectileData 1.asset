@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b8a28e7f0ae3ac49bf4c2fe91d23344, type: 3}
   m_Name: FrigateMineProjectileData 1
   m_EditorClassIdentifier: 
-  dmg: 10
+  dmg: 15
   angleCoefficient: 0
   minDamage: 1
   explosionForce: 32

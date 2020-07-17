@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 54
   turnSpeed: 22
-  steeringSpeed: 0.5
-  throttleSpeed: 0.5
+  steeringSpeed: 0.4
+  throttleSpeed: 0.2
   reverseSpeed: 0.25
   damageAngleCoefficient: 0.5
   maxDamageEffect: 0.5

@@ -19,4 +19,4 @@ MonoBehaviour:
   rotationVariation: 5
   limitedAmmo: 1
   startingAmmo: 4
-  activationDelay: 5
+  activationDelay: 3
