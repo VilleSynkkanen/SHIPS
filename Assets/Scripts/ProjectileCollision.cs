@@ -5,7 +5,8 @@ public class ProjectileCollision : MonoBehaviour
     [SerializeField] GameObject explosion;
     [SerializeField] float explosionTravel;
     [SerializeField] ShooterType type;
-    
+    [SerializeField] bool boundaryCollision;
+
     ProjectileData data;
     float dmg;
 
@@ -27,9 +28,13 @@ public class ProjectileCollision : MonoBehaviour
             collisionObject.Collision(this);
             dmg = 0;
             Vector3 explosionPosition = rb.velocity * explosionTravel;
-            if(collision.tag != "Boundary")    
+            if(collision.tag != "Boundary")
+            {
                 Instantiate(explosion, transform.position + explosionPosition, transform.rotation);
-            Destroy(gameObject);
+                Destroy(gameObject);
+            }    
+            else if(collision.tag == "Boundary" && boundaryCollision)
+                Destroy(gameObject);
         }
     }
 

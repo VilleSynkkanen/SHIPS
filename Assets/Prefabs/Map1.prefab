@@ -781,12 +781,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   victories: {fileID: 11400000, guid: 258eecf70f13a704bb5f5156a4bb26a3, type: 2}
-  countdownTime: 2.5
   countdownText: {fileID: 1406226073006933160}
-  startTextDelay: 1
-  readyTextDelay: 0.5
   spawner: {fileID: 1406226073987130126}
   instructionText: {fileID: 7188498505855953547}
+  countdownTime: 2.5
+  startTextDelay: 1
+  readyTextDelay: 0.5
 --- !u!114 &1406226073987130124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2540,6 +2540,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1406226073987130125}
+    - target: {fileID: 5768471780106320644, guid: ad6642876704eb0469566603f10615be,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 13.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768471780106320649, guid: ad6642876704eb0469566603f10615be,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 13.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768471780106320650, guid: ad6642876704eb0469566603f10615be,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -13.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768471780106320651, guid: ad6642876704eb0469566603f10615be,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: -13.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8218579979407748096, guid: ad6642876704eb0469566603f10615be,
         type: 3}
       propertyPath: m_LocalPosition.x

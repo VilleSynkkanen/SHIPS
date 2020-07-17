@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: IroncladCannonShooterData 1
   m_EditorClassIdentifier: 
   shotCooldown: 12.5
-  shotForce: 3.8
+  shotForce: 3.7
   minForce: 0.95
   maxForce: 1.05
-  rotationVariation: 0.5
+  rotationVariation: 1.5
   limitedAmmo: 0
   startingAmmo: 0
   chargeSpeed: 1

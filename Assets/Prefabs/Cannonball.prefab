@@ -185,6 +185,7 @@ MonoBehaviour:
     type: 3}
   explosionTravel: 0.025
   type: 0
+  boundaryCollision: 1
 --- !u!114 &3138396178362493550
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FrigateMovementData 1
   m_EditorClassIdentifier: 
   moveSpeed: 40
-  turnSpeed: 8
+  turnSpeed: 9
   steeringSpeed: 0.7
   throttleSpeed: 0.7
   reverseSpeed: 0.3
