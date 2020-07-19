@@ -4925,7 +4925,6 @@ MonoBehaviour:
   - {fileID: 1999405406}
   - {fileID: 982396430}
   - {fileID: 670474126}
-  - {fileID: 0}
 --- !u!1 &235756476
 GameObject:
   m_ObjectHideFlags: 0
@@ -28238,7 +28237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 85}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1408104941
@@ -33214,6 +33213,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a0051f83819e4004bad9b1cde049f3e6, type: 3}
   - {fileID: 21300000, guid: 91793a2943033df46a3de1803f4d3e84, type: 3}
   - {fileID: 21300000, guid: 29e5d71465313ff448777cb76b3e7ebc, type: 3}
+  - {fileID: 21300000, guid: cfe36281ebe82fb4c8b201e8c794fb10, type: 3}
   image: {fileID: 2103829370}
   victories: {fileID: 11400000, guid: 258eecf70f13a704bb5f5156a4bb26a3, type: 2}
 --- !u!1 &1586386214
@@ -42416,7 +42416,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1965127319
 RectTransform:
   m_ObjectHideFlags: 0

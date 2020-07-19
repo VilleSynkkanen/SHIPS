@@ -75,7 +75,7 @@ public class GameSettings : MonoBehaviour
             instance = this;
         }
 
-        settingNumber = PlayerPrefs.GetInt("SpeedSetting", 0);
+        settingNumber = PlayerPrefs.GetInt("SpeedSetting", 1);
 
         shipDatas = new List<ShipData[]> { frigateData, torpedoBoatData, ironcladData };
         shipMovementDatas = new List<ShipMovementData[]> { frigateMovementData, torpedoBoatMovementData, ironcladMovementData };

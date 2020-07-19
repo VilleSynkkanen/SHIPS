@@ -7,9 +7,13 @@ public class PlayerColorController : MonoBehaviour
     [SerializeField] Image[] images;
     DeviceAssignmentControls assignment;
 
-    private void Awake()
+    void Awake()
     {
         assignment = GetComponent<DeviceAssignmentControls>();
+    }
+
+    void Start()
+    {
         UpdateColor();
     }
 

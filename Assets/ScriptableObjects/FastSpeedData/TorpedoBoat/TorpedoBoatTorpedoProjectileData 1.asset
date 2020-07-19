@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TorpedoBoatTorpedoProjectileData 1
   m_EditorClassIdentifier: 
   dmg: 5
-  angleCoefficient: 0.2
-  minDamage: 0.5
+  angleCoefficient: 0
+  minDamage: 1
   explosionForce: 6
