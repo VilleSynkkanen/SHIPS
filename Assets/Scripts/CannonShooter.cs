@@ -9,10 +9,12 @@ public class CannonShooter : ChargedShooter
         StartCoroutine(Shot());
     }
 
-    public IEnumerator Shot(int burst=1, float burstTime=0, bool effect=true)
-    {
+    public IEnumerator Shot(int burst=1, float burstTime=0, bool effect=true, bool chargeMatters = true)
+    {       
         float charge = shotCharge;
-        for(int i = 0; i < burst; i++)
+        if (!chargeMatters)
+            charge = 1;
+        for (int i = 0; i < burst; i++)
         {
             foreach (Transform location in ShotLocations)
             {
