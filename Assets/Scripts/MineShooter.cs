@@ -4,6 +4,7 @@ using UnityEngine;
 public class MineShooter : InstantShooter
 {
     MineShooterData mineData;
+    [SerializeField] bool giveFriendlyTag;
     
     void Start()
     {
@@ -19,6 +20,8 @@ public class MineShooter : InstantShooter
             mine.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * Data.ShotForce);
             StartCoroutine(ActivateCollider(mine.GetComponent<Collider2D>()));
             location.gameObject.GetComponent<AudioSource>().Play();
+            if (giveFriendlyTag)
+                mine.tag = tag;
 
             if (Data.LimitedAmmo)
             {

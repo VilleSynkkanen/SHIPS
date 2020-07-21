@@ -584,6 +584,9 @@ MonoBehaviour:
   ironcladData:
   - {fileID: 11400000, guid: 4d8a74a45d960c74e9d98122fd41148a, type: 2}
   - {fileID: 11400000, guid: 649d4a99c43c4f74bbef242fd2b1dd3d, type: 2}
+  shipXData:
+  - {fileID: 11400000, guid: ce375685af01b404eb9930765b2f4479, type: 2}
+  - {fileID: 11400000, guid: ce375685af01b404eb9930765b2f4479, type: 2}
   frigateMovementData:
   - {fileID: 11400000, guid: f8b9fecb75b609f47b533f7e8089e327, type: 2}
   - {fileID: 11400000, guid: 160fb9add3fc7c1469a5f1e6681d5e26, type: 2}
@@ -593,6 +596,9 @@ MonoBehaviour:
   ironcladMovementData:
   - {fileID: 11400000, guid: cea2c32e7da076e4596294ccd30b048b, type: 2}
   - {fileID: 11400000, guid: 0c89aac5039300745a58cdc81edac1b2, type: 2}
+  shipXMovementData:
+  - {fileID: 11400000, guid: 43b6f5ca4309beb4fa5efeae8315f0cf, type: 2}
+  - {fileID: 11400000, guid: 43b6f5ca4309beb4fa5efeae8315f0cf, type: 2}
   frigateRigidbodyData:
   - {fileID: 11400000, guid: 3b69cdbf12d823b4f925b9832bcfc85f, type: 2}
   - {fileID: 11400000, guid: b35e1a1e92de753499cf8acf32549b89, type: 2}
@@ -602,6 +608,9 @@ MonoBehaviour:
   ironcladRigidbodyData:
   - {fileID: 11400000, guid: 5a98b5662562f0b44b1d80b6d8a4e680, type: 2}
   - {fileID: 11400000, guid: f762fea13eb1df845b4eee641286dd91, type: 2}
+  shipXRigidbodyData:
+  - {fileID: 11400000, guid: dc78626781b0e07409db27ff52a44e29, type: 2}
+  - {fileID: 11400000, guid: dc78626781b0e07409db27ff52a44e29, type: 2}
   frigateFrontCannonAimData:
   - {fileID: 11400000, guid: 69debce3f2e12744eac51a4df52233ce, type: 2}
   - {fileID: 11400000, guid: 7d1aef0f84808f54fb243ad1975ec394, type: 2}
@@ -632,6 +641,9 @@ MonoBehaviour:
   ironcladFlamethrowerShooterData:
   - {fileID: 11400000, guid: e9e17f260fb288648ad0f9759ee03257, type: 2}
   - {fileID: 11400000, guid: 5ea4250dfdcd41840ada752674004a13, type: 2}
+  shipXCannonShooterData:
+  - {fileID: 11400000, guid: fc63e9002993c834d9b282739a2b2dfd, type: 2}
+  - {fileID: 11400000, guid: fc63e9002993c834d9b282739a2b2dfd, type: 2}
   frigateCannonballProjectileData:
   - {fileID: 11400000, guid: d50d7aa67eff07b4d956b44421f8f204, type: 2}
   - {fileID: 11400000, guid: 4faf1d89b4009184586e971ab294c970, type: 2}
@@ -650,6 +662,9 @@ MonoBehaviour:
   ironcladCannonballProjectileData:
   - {fileID: 11400000, guid: 16ffb5dfee5cc0c40a4a9171dbff3757, type: 2}
   - {fileID: 11400000, guid: a34809b16e9fb474a8c60348ade8549d, type: 2}
+  shipXProjectileData:
+  - {fileID: 11400000, guid: 89160a9ebdee2004696aab1c11a2afe4, type: 2}
+  - {fileID: 11400000, guid: 89160a9ebdee2004696aab1c11a2afe4, type: 2}
   frigateCannonballRigidbodyData:
   - {fileID: 11400000, guid: 759084c7e69e93544a13714b566b90c6, type: 2}
   - {fileID: 11400000, guid: b1084a657d5a2e846ae045ad78451b18, type: 2}
@@ -668,6 +683,9 @@ MonoBehaviour:
   ironcladCannonballRigidbodyData:
   - {fileID: 11400000, guid: 3e35ff5c5a3ef77448de35f08b40db5c, type: 2}
   - {fileID: 11400000, guid: d9f6d2acd59f8fe43b04de307ef56642, type: 2}
+  shipXCannonballRigidbodyData:
+  - {fileID: 11400000, guid: 8cdca9a3f2e7e8146b39236eb4fec46e, type: 2}
+  - {fileID: 11400000, guid: 8cdca9a3f2e7e8146b39236eb4fec46e, type: 2}
   frigateCannonballGravityData:
   - {fileID: 11400000, guid: 7cf2d17d1c9f46442b9ff434d3777f8b, type: 2}
   - {fileID: 11400000, guid: 2d05eec887c29f14986a454cde28a0e1, type: 2}
@@ -680,6 +698,9 @@ MonoBehaviour:
   ironcladCannonballGravityData:
   - {fileID: 11400000, guid: 6a4b31970a5ddc245a548a0476f8066b, type: 2}
   - {fileID: 11400000, guid: b17a1f29459c3d447ad238b134e51a8b, type: 2}
+  shipXCannonballGravityData:
+  - {fileID: 11400000, guid: 179727c6926a06f4c9450d196ff00ceb, type: 2}
+  - {fileID: 11400000, guid: 179727c6926a06f4c9450d196ff00ceb, type: 2}
 --- !u!1 &1657714391
 GameObject:
   m_ObjectHideFlags: 0

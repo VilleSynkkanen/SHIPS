@@ -9,6 +9,7 @@ public class PlayerSpawner : MonoBehaviour
     [SerializeField] GameObject[] playerPrefabs0;
     [SerializeField] GameObject[] playerPrefabs1;
     [SerializeField] GameObject[] playerPrefabs2;
+    [SerializeField] GameObject[] playerPrefabs3;
 
     GameController controller;
     List<GameObject[]> prefabs = new List<GameObject[]>();
@@ -20,6 +21,7 @@ public class PlayerSpawner : MonoBehaviour
         prefabs.Add(playerPrefabs0);
         prefabs.Add(playerPrefabs1);
         prefabs.Add(playerPrefabs2);
+        prefabs.Add(playerPrefabs3);
     }
 
     public void SpawnPlayers()
