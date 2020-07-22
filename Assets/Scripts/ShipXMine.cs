@@ -5,16 +5,20 @@ using UnityEngine;
 public class ShipXMine : MonoBehaviour
 {
     List<ShipMovement> ships = new List<ShipMovement>();
-    [SerializeField] float moveSlowAmount;
-    [SerializeField] float turnSlowAmount;
-    [SerializeField] float moveSpeedupAmount;
-    [SerializeField] float turnSpeedupAmount;
+    [SerializeField] SpriteRenderer sprite;
+    [SerializeField] float spriteAlpha;
+    ShipXMineData data;
 
     void Awake()
     {
-        
+        data = GameSettings.Instance.ShipXMineData;
     }
 
+    public void SetColor(Color color)
+    {
+        sprite.color = new Color(color.r, color.g, color.b, spriteAlpha);
+    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         ShipMovement mov = collision.GetComponent<ShipMovement>();
@@ -23,11 +27,11 @@ public class ShipXMine : MonoBehaviour
             ships.Add(mov);
             if (mov.tag == tag)
             {
-                mov.SlowEffect(-moveSpeedupAmount, -turnSpeedupAmount);
+                mov.SlowEffect(-data.MoveSpeedupAmount, -data.TurnSpeedupAmount);
             }
             else
             { 
-                mov.SlowEffect(moveSlowAmount, turnSlowAmount);
+                mov.SlowEffect(data.MoveSlowAmount, data.TurnSlowAmount);
             }
         }
     }
@@ -40,11 +44,11 @@ public class ShipXMine : MonoBehaviour
             ships.Remove(mov);
             if (mov.tag == tag)
             {
-                mov.EndSlowEffect(-moveSpeedupAmount, -turnSpeedupAmount);
+                mov.EndSlowEffect(-data.MoveSpeedupAmount, -data.TurnSpeedupAmount);
             }
             else
             {
-                mov.EndSlowEffect(moveSlowAmount, turnSlowAmount);
+                mov.EndSlowEffect(data.MoveSlowAmount, data.TurnSlowAmount);
             }
         }
     }

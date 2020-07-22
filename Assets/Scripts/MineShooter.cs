@@ -4,8 +4,9 @@ using UnityEngine;
 public class MineShooter : InstantShooter
 {
     MineShooterData mineData;
-    [SerializeField] bool giveFriendlyTag;
-    
+    [SerializeField] bool giveFriendlyTagAndColor;
+    [SerializeField] SpriteRenderer ship;
+
     void Start()
     {
         mineData = (MineShooterData)Data;
@@ -20,9 +21,11 @@ public class MineShooter : InstantShooter
             mine.GetComponent<Rigidbody2D>().AddRelativeForce(Vector2.up * Data.ShotForce);
             StartCoroutine(ActivateCollider(mine.GetComponent<Collider2D>()));
             location.gameObject.GetComponent<AudioSource>().Play();
-            if (giveFriendlyTag)
+            if (giveFriendlyTagAndColor)
+            {
                 mine.tag = tag;
-
+            }
+                
             if (Data.LimitedAmmo)
             {
                 ExpendAmmo();
@@ -36,5 +39,11 @@ public class MineShooter : InstantShooter
     {
         yield return new WaitForSeconds(mineData.ActivationDelay);
         collider.enabled = true;
+        if(giveFriendlyTagAndColor)
+        {
+            ShipXMine proj = collider.GetComponent<ShipXMine>();
+            if (proj != null)
+                proj.SetColor(ship.color);
+        }
     }
 }

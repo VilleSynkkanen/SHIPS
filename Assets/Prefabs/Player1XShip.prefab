@@ -730,7 +730,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805792157639564680}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.02700001, z: 0}
+  m_LocalPosition: {x: 0, y: -0.157, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 805792156866785950}
@@ -4155,7 +4155,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6244756886829569056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.09, z: 0}
+  m_LocalPosition: {x: 0, y: -0.045, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 517052768740556063}
@@ -4871,7 +4871,7 @@ GameObject:
   - component: {fileID: 7843928269081129743}
   - component: {fileID: 3943543845058859604}
   - component: {fileID: 4762186302237595746}
-  - component: {fileID: 837981122833200420}
+  - component: {fileID: 6539044758917726299}
   - component: {fileID: 3044490286937679037}
   - component: {fileID: 3954604094519345848}
   - component: {fileID: 7888148701442181284}
@@ -5341,7 +5341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooters:
   - {fileID: 4762186302237595746}
-  - {fileID: 837981122833200420}
+  - {fileID: 6539044758917726299}
   - {fileID: 3044490286937679037}
   - {fileID: 3954604094519345848}
   aimableShooters: []
@@ -5397,7 +5397,7 @@ MonoBehaviour:
   rotationGoals:
   - 90
   - 90
---- !u!114 &837981122833200420
+--- !u!114 &6539044758917726299
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5406,12 +5406,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7418036805694961505}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30077020424ea3642acbd6373164a41b, type: 3}
+  m_Script: {fileID: 11500000, guid: c2262c79077255245ae7df7aa18fdf8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shotLocations:
   - {fileID: 517052768740556063}
-  projectile: {fileID: 2496318178972590502, guid: 49bbb98bbe738b740be3b6c3ba507678,
+  projectile: {fileID: 8177353032252264310, guid: ee3d2c50b5061c449a9937da4684c088,
     type: 3}
   ShotEvent:
     m_PersistentCalls:
@@ -5427,18 +5427,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1470151248949036633}
-        m_MethodName: Effect
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   type: 0
+  shipInput: {fileID: 2694431036795723429}
 --- !u!114 &3044490286937679037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5521,8 +5511,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  type: 1
-  giveFriendlyTag: 1
+  type: 8
+  giveFriendlyTagAndColor: 1
+  ship: {fileID: 7418036805408646377}
 --- !u!114 &7888148701442181284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5553,7 +5544,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shooters:
   - {fileID: 4762186302237595746}
-  - {fileID: 837981122833200420}
+  - {fileID: 6539044758917726299}
   - {fileID: 3044490286937679037}
   arrows0:
   - {fileID: 5698389626886325051}
@@ -7199,7 +7190,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9121520095207202154}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.531, z: 0}
+  m_LocalPosition: {x: 0, y: 0.661, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5597031970809532094}
