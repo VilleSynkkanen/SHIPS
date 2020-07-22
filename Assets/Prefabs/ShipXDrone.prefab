@@ -70,8 +70,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 311be22fc238d3e4fbb8113c8d0d2d03, type: 3}
-  m_Color: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+  m_Sprite: {fileID: 21300000, guid: f282129d11382b747ab652256f09103a, type: 3}
+  m_Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -91,11 +91,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8177353032252264309}
   - component: {fileID: 8177353032252264308}
-  - component: {fileID: 8177353032252264311}
-  - component: {fileID: 6947275279009311886}
   - component: {fileID: 2306476747467883677}
   - component: {fileID: 8670183391936873662}
+  - component: {fileID: -1655876589178670026}
+  - component: {fileID: -4209989506499875493}
   - component: {fileID: 6162358668961434319}
+  - component: {fileID: 1130095938982906231}
+  - component: {fileID: 662609987797607712}
   m_Layer: 9
   m_Name: ShipXDrone
   m_TagString: Untagged
@@ -112,7 +114,7 @@ Transform:
   m_GameObject: {fileID: 8177353032252264310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 8177353031442343479}
   m_Father: {fileID: 0}
@@ -139,37 +141,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!58 &8177353032252264311
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8177353032252264310}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.17
---- !u!114 &6947275279009311886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8177353032252264310}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de6a6b1c8d1280146bbdb4cc1c36191d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waterHitEffect: {fileID: 1759561010169357495, guid: 8974a784819331047bb0cc152025170a,
-    type: 3}
-  type: 0
 --- !u!114 &2306476747467883677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +156,7 @@ MonoBehaviour:
   explosion: {fileID: 7189306343603192018, guid: ace811872a8f7154dac0999f2fbc1b7b,
     type: 3}
   explosionTravel: 0.025
-  type: 0
+  type: 9
   boundaryCollision: 1
 --- !u!114 &8670183391936873662
 MonoBehaviour:
@@ -201,7 +172,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ship: 0
   shipType: 0
-  shooterType: 0
+  shooterType: 9
+--- !u!114 &-1655876589178670026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177353032252264310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c1d48bf71d3634cb71fd398a2a261f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controls: {fileID: 1130095938982906231}
+  rb: {fileID: 8177353032252264308}
+  type: 9
+--- !u!114 &-4209989506499875493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177353032252264310}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f848cc954f88184eb275496ef4dbd05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 2
 --- !u!114 &6162358668961434319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,11 +260,33 @@ MonoBehaviour:
     m_ActionId: 22943604-ef19-4574-acee-b5795db8f631
     m_ActionName: Actions/Shoot4[/Keyboard/backslash,/Keyboard/n,/Keyboard/numpadPlus,/XInputControllerWindows/rightShoulder]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1130095938982906231}
+        m_MethodName: OnAimPlus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d573135f-2459-46c1-a47c-0ca2930c912a
     m_ActionName: Actions/AimPlus[/Keyboard/e,/Keyboard/e,/Keyboard/rightBracket,/XInputControllerWindows/rightStick/right]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1130095938982906231}
+        m_MethodName: OnAimMinus
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 3b2ff1e9-8ecb-46df-8c9a-403d0cc5af1e
     m_ActionName: Actions/AimMinus[/Keyboard/q,/Keyboard/q,/Keyboard/p,/XInputControllerWindows/rightStick/left]
   - m_PersistentCalls:
@@ -301,3 +322,48 @@ MonoBehaviour:
   m_DefaultActionMap: Actions
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1130095938982906231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177353032252264310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cdd0d35c4816c742840e556fde166a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!60 &662609987797607712
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177353032252264310}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.07, y: 0.44}
+      - {x: -0.07, y: 0.44}
+      - {x: -0.33, y: -0.15}
+      - {x: -0.15, y: -0.07}
+      - {x: -0.37, y: -0.51}
+      - {x: 0.37, y: -0.51}
+      - {x: 0.15, y: -0.03}
+      - {x: 0.33, y: -0.15}

@@ -647,6 +647,9 @@ MonoBehaviour:
   shipXMineShooterData:
   - {fileID: 11400000, guid: b04a57465c7a20346a1cb26910e6a28f, type: 2}
   - {fileID: 11400000, guid: b04a57465c7a20346a1cb26910e6a28f, type: 2}
+  shipXDroneShooterData:
+  - {fileID: 11400000, guid: d793b13b2bccd3449b1699f6fe9e9b47, type: 2}
+  - {fileID: 11400000, guid: d793b13b2bccd3449b1699f6fe9e9b47, type: 2}
   frigateCannonballProjectileData:
   - {fileID: 11400000, guid: d50d7aa67eff07b4d956b44421f8f204, type: 2}
   - {fileID: 11400000, guid: 4faf1d89b4009184586e971ab294c970, type: 2}
@@ -671,6 +674,9 @@ MonoBehaviour:
   shipXMineData:
   - {fileID: 11400000, guid: ae0a70822d21d794ab24623551486bbe, type: 2}
   - {fileID: 11400000, guid: ae0a70822d21d794ab24623551486bbe, type: 2}
+  shipXDroneProjectileData:
+  - {fileID: 11400000, guid: de48926b5507f2e4f83e028f115427dc, type: 2}
+  - {fileID: 11400000, guid: de48926b5507f2e4f83e028f115427dc, type: 2}
   frigateCannonballRigidbodyData:
   - {fileID: 11400000, guid: 759084c7e69e93544a13714b566b90c6, type: 2}
   - {fileID: 11400000, guid: b1084a657d5a2e846ae045ad78451b18, type: 2}
@@ -692,6 +698,9 @@ MonoBehaviour:
   shipXCannonballRigidbodyData:
   - {fileID: 11400000, guid: 8cdca9a3f2e7e8146b39236eb4fec46e, type: 2}
   - {fileID: 11400000, guid: 8cdca9a3f2e7e8146b39236eb4fec46e, type: 2}
+  shipXDroneRigidbodyData:
+  - {fileID: 11400000, guid: 26bcc38a77567fb41bc91b6328201ad9, type: 2}
+  - {fileID: 11400000, guid: 26bcc38a77567fb41bc91b6328201ad9, type: 2}
   frigateCannonballGravityData:
   - {fileID: 11400000, guid: 7cf2d17d1c9f46442b9ff434d3777f8b, type: 2}
   - {fileID: 11400000, guid: 2d05eec887c29f14986a454cde28a0e1, type: 2}

@@ -10,6 +10,7 @@ TagManager:
   - P4
   - Boundary
   - Mine
+  - Drone
   layers:
   - Default
   - TransparentFX
