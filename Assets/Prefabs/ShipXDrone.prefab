@@ -453,6 +453,7 @@ MonoBehaviour:
   shooter: {fileID: 4131262316210842162}
   collision: {fileID: 2306476747467883677}
   sprite: {fileID: 8177353031442343476}
+  shotCheckRange: 8
 --- !u!114 &-4209989506499875493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,7 +466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f848cc954f88184eb275496ef4dbd05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 6
+  collision: {fileID: 2306476747467883677}
 --- !u!114 &4131262316210842162
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,3 +16,4 @@ MonoBehaviour:
   turnSlowAmount: 0.1
   moveSpeedupAmount: 0.2
   turnSpeedupAmount: 0.1
+  mineScale: 0.42

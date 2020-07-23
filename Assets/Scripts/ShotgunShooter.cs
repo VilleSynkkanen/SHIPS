@@ -1,5 +1,4 @@
-﻿
-public class ShotgunShooter : CannonShooter
+﻿public class ShotgunShooter : CannonShooter
 {
     ShotgunShooterData shotgunData;
     

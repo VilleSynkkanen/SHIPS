@@ -1,17 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ShipXMine : MonoBehaviour
 {
-    List<ShipMovement> ships = new List<ShipMovement>();
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] float spriteAlpha;
+    [SerializeField] Transform model;
+    
     ShipXMineData data;
+    List<ShipMovement> ships = new List<ShipMovement>();
 
     void Awake()
     {
         data = GameSettings.Instance.ShipXMineData;
+        transform.localScale = new Vector3(data.MineScale, data.MineScale, 1);
+        model.localScale = new Vector3(0.75f / data.MineScale, 0.75f / data.MineScale, 1);
     }
 
     public void SetColor(Color color)

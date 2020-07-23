@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DroneDamage : MonoBehaviour, ICollision
 {
     [SerializeField] Rigidbody2D rb;
     [SerializeField] float maxHp;
     [SerializeField] ProjectileCollision drone;
+    
     float hp;
 
     void Awake()

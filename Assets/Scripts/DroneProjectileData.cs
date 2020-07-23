@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [CreateAssetMenu]
-public class DroneProjectileData : ProjectileData
+public class DroneProjectileData : MovingProjectileData
 {
     [SerializeField] float turnSpeed;
     [SerializeField] float lifetime;

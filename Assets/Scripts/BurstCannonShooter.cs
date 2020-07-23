@@ -1,5 +1,4 @@
-﻿
-public class BurstCannonShooter : CannonShooter
+﻿public class BurstCannonShooter : CannonShooter
 {
     BurstShooterData burstData;
     

@@ -618,8 +618,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1007,8 +1007,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1383,7 +1383,20 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "SHIP X: DESCRIPTION \nABILITIES:\n> DESCRIPTION\n> DESCRIPTION\n> DESCRIPTION\n"
+  m_text: 'SHIP X: RANGED FIGHTER
+
+    ABILITIES:
+
+    > 2X2 SIDE CANNONS THAT ROTATE
+    WHEN CHARGING. CHARGE DOES NOT AFFECT SHOT FORCE
+
+    > FRONT CANNON THAT SHOOTS
+    A STEERABLE DRONE THAT SHOOTS ENEMY SHIPS
+
+    > CAN LAY OBJECTS THAT SLOW DOWN
+    ENEMIES AND SPEED THIS SHIP UP IN AN AREA
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1411,8 +1424,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1452,12 +1465,12 @@ MonoBehaviour:
   m_margin: {x: -110.10082, y: -178.83678, z: -108.05914, w: -73.500114}
   m_textInfo:
     textComponent: {fileID: 927434234075236657}
-    characterCount: 74
+    characterCount: 258
     spriteCount: 0
-    spaceCount: 11
-    wordCount: 7
+    spaceCount: 47
+    wordCount: 44
     linkCount: 0
-    lineCount: 5
+    lineCount: 11
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -2175,8 +2188,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2221,7 +2234,7 @@ MonoBehaviour:
     spaceCount: 21
     wordCount: 15
     linkCount: 0
-    lineCount: 8
+    lineCount: 7
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

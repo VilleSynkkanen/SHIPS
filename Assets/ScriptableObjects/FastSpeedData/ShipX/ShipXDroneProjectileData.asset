@@ -16,5 +16,6 @@ MonoBehaviour:
   angleCoefficient: 0.2
   minDamage: 0.5
   explosionForce: 6
+  force: 6
   turnSpeed: 30
   lifetime: 5

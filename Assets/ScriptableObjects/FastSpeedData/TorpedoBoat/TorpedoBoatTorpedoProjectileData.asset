@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e91d979b6032a74e8bbec1fa148b7e2, type: 3}
+  m_Name: TorpedoBoatTorpedoProjectileData
+  m_EditorClassIdentifier: 
+  dmg: 5
+  angleCoefficient: 0
+  minDamage: 1
+  explosionForce: 6
+  force: 3

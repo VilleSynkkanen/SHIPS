@@ -7,7 +7,7 @@ public class ProjectileCollision : MonoBehaviour
     [SerializeField] ShooterType type;
     [SerializeField] bool boundaryCollision;
 
-    ProjectileData data;
+    public ProjectileData data { get; private set; }
     float dmg;
 
     public Rigidbody2D rb { get; private set; }

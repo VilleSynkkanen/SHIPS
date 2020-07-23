@@ -27,7 +27,7 @@ public abstract class Shooter : MonoBehaviour
         ResetState();
     }
 
-    public void ResetState()
+    public virtual void ResetState()
     {
         ammoLeft = data.StartingAmmo;
         cooldownLeft = 0;

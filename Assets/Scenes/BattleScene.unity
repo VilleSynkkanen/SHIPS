@@ -660,8 +660,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ec43dd293f39bb4428f47a3701711534, type: 2}
   - {fileID: 11400000, guid: efda1d797495bf048aa333a55fb713f7, type: 2}
   torpedoBoatTorpedoProjectileData:
-  - {fileID: 11400000, guid: 92402e5bab39cae46a3f7216896fecca, type: 2}
-  - {fileID: 11400000, guid: 41883650bb54ef244bf531f145a640cc, type: 2}
+  - {fileID: 11400000, guid: 1136c7071bc3fe047809dd4fe9eaf2a5, type: 2}
+  - {fileID: 11400000, guid: 1136c7071bc3fe047809dd4fe9eaf2a5, type: 2}
   torpedoBoatCannonballProjectileData:
   - {fileID: 11400000, guid: 0604a29aee601bb4abc8bcb2eb76c5e5, type: 2}
   - {fileID: 11400000, guid: c8849f2660718184fb5f04770ac3db20, type: 2}

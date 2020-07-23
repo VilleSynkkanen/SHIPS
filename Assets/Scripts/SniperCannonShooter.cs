@@ -7,6 +7,7 @@ public class SniperCannonShooter : CannonShooter
     [SerializeField] Transform[] rotationPoints;
     [SerializeField] float[] originalRotations;
     [SerializeField] float[] rotationGoals;
+    
     float[] shotRotations;
 
     private new void Start()
@@ -15,7 +16,7 @@ public class SniperCannonShooter : CannonShooter
         shotRotations = new float[rotationPoints.Length];
     }
 
-    public new void ResetState()
+    public override void ResetState()
     {
         base.ResetState();
         for (int i = 0; i < rotationPoints.Length; i++)

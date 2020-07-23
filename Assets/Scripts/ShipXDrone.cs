@@ -1,17 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ShipXDrone : MonoBehaviour
 {
     [SerializeField] PlayerControlInput controls;
     [SerializeField] Rigidbody2D rb;
     [SerializeField] ShooterType type;
-    DroneProjectileData data;
     [SerializeField] TorpedoMovement movement;
     [SerializeField] CannonShooter shooter;
     [SerializeField] ProjectileCollision collision;
     [SerializeField] SpriteRenderer sprite;
+    [SerializeField] float shotCheckRange;
+
+    DroneProjectileData data;
     float aim;
     bool shoot;
 
@@ -38,7 +38,7 @@ public class ShipXDrone : MonoBehaviour
         {
             LayerMask mask = LayerMask.GetMask("Ships", "Land");
             RaycastHit2D hit = Physics2D.Raycast(new Vector2(shooter.ShotLocations[0].position.x, shooter.ShotLocations[0].position.y),
-                transform.up, Mathf.Infinity, mask);
+                transform.up, shotCheckRange, mask);
             if (hit)
             {
                 ShipSegment segment = hit.collider.GetComponent<ShipSegment>();
