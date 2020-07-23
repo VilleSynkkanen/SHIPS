@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7690fe81a13cf884a9d27f43a73bb762, type: 3}
   m_Name: ShipXDroneRigidbodyData
   m_EditorClassIdentifier: 
-  mass: 0.1
+  mass: 0.075
   linearDrag: 0.2
   angularDrag: 0.5

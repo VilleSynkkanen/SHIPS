@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c73c556f2e84218428945d5530e60ef9, type: 3}
-  m_Name: PlayerVictories
+  m_Script: {fileID: 11500000, guid: 7690fe81a13cf884a9d27f43a73bb762, type: 3}
+  m_Name: ShipXDroneCannonballRigidbodyData
   m_EditorClassIdentifier: 
-  playerVictories: 
-  mapIndex: 1
+  mass: 0.0001
+  linearDrag: 0.005
+  angularDrag: 0.1

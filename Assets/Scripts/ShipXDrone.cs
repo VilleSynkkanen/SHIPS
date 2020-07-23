@@ -8,11 +8,17 @@ public class ShipXDrone : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] ShooterType type;
     DroneProjectileData data;
+    [SerializeField] TorpedoMovement movement;
+    [SerializeField] CannonShooter shooter;
+    [SerializeField] ProjectileCollision collision;
+    [SerializeField] SpriteRenderer sprite;
     float aim;
+    bool shoot;
 
     private void Awake()
     {
         data = (DroneProjectileData)GameSettings.Instance.GetProjectileData(type);
+        shoot = false;
     }
 
     private void Start()
@@ -23,6 +29,28 @@ public class ShipXDrone : MonoBehaviour
     private void Update()
     {
         aim = controls.aim;
+        DetermineShooting();
+    }
+
+    void DetermineShooting()
+    {
+        if (shoot)
+        {
+            LayerMask mask = LayerMask.GetMask("Ships", "Land");
+            RaycastHit2D hit = Physics2D.Raycast(new Vector2(shooter.ShotLocations[0].position.x, shooter.ShotLocations[0].position.y),
+                transform.up, Mathf.Infinity, mask);
+            if (hit)
+            {
+                ShipSegment segment = hit.collider.GetComponent<ShipSegment>();
+                if (segment != null && segment.tag != tag)
+                {
+                    shooter.ShotInput(true);
+                    return;
+                }
+            }
+        }
+
+        shooter.ShotInput(false);
     }
 
     private void FixedUpdate()
@@ -31,9 +59,15 @@ public class ShipXDrone : MonoBehaviour
         rb.velocity = transform.up * rb.velocity.magnitude;
     }
 
-    void Destruction()
+    public void ActivateDrone(Color color)
     {
-        Destroy(gameObject);
-        // explosion effect
+        movement.enabled = true;
+        shoot = true;
+        sprite.color = color;
+    }
+
+    public void Destruction()
+    {
+        collision.DestructionEffect();
     }
 }

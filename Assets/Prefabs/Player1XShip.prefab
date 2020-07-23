@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7515993782752195908}
   - component: {fileID: 6800129828272765897}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8556429167679299538}
   - component: {fileID: 8829077116480375964}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DirectionArrowF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2591357751738115483}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ShotLocations
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 8746637379949723017}
   - component: {fileID: 9220468454167795081}
   - component: {fileID: 5341530553630608086}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: MineIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 3921757331240048596}
   - component: {fileID: 4500995855146300019}
   - component: {fileID: 10997183456115156}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: TurningText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 805792156866785947}
   - component: {fileID: 805792156866785944}
   - component: {fileID: 805792156866785945}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -542,7 +542,7 @@ GameObject:
   - component: {fileID: 805792156887599195}
   - component: {fileID: 805792156887599173}
   - component: {fileID: 805792156887599194}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: UITemplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +617,7 @@ GameObject:
   - component: {fileID: 805792157343877419}
   - component: {fileID: 805792157343877416}
   - component: {fileID: 805792157343877417}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   m_Component:
   - component: {fileID: 805792157639564683}
   - component: {fileID: 805792157639564682}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DirectionArrowF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -798,7 +798,7 @@ GameObject:
   - component: {fileID: 805792157836551187}
   - component: {fileID: 805792157836551197}
   - component: {fileID: 805792157836551186}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ArrowDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 805792157877644630}
   - component: {fileID: 805792157877644624}
   - component: {fileID: 805792157877644625}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: DirectionArrowFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,7 +947,7 @@ GameObject:
   - component: {fileID: 805792158298518649}
   - component: {fileID: 805792158298518651}
   - component: {fileID: 805792158298518648}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: PlayerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1103,7 +1103,7 @@ GameObject:
   - component: {fileID: 805792158824670315}
   - component: {fileID: 805792158824670229}
   - component: {fileID: 805792158824670314}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ArrowUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,7 +1179,7 @@ GameObject:
   - component: {fileID: 9014136249124958682}
   - component: {fileID: 195864311867470666}
   - component: {fileID: 6942424361334154373}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Back
   m_TagString: P1
   m_Icon: {fileID: 0}
@@ -1354,7 +1354,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4547082824840706855}
   - component: {fileID: 6459729483280993718}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1484,7 +1484,7 @@ GameObject:
   - component: {fileID: 8819303982631614997}
   - component: {fileID: 8794061671795191344}
   - component: {fileID: 6998605189981801638}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: LeftShotIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1559,7 +1559,7 @@ GameObject:
   - component: {fileID: 8378931334608611866}
   - component: {fileID: 8441285801368276664}
   - component: {fileID: 8434532700009814878}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: HalfCircleRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1633,7 +1633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6423445228956247712}
   - component: {fileID: 2520550239198408628}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FrigateFrontCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1715,7 +1715,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3872684463341951219}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1768,7 +1768,7 @@ GameObject:
   m_Component:
   - component: {fileID: 746057476579653044}
   - component: {fileID: 6900172252638727399}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1849,7 +1849,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7425967118691734404}
   - component: {fileID: 2309137260730222049}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FrigateFrontCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1933,7 +1933,7 @@ GameObject:
   - component: {fileID: 6712969337708867444}
   - component: {fileID: 9026495984716965161}
   - component: {fileID: 1775904558519831014}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: DirectionArrowFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2007,7 +2007,7 @@ GameObject:
   - component: {fileID: 5954077620658845895}
   - component: {fileID: 6463512578699713235}
   - component: {fileID: 8490987963561202815}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2163,7 +2163,7 @@ GameObject:
   - component: {fileID: 5011590663185820013}
   - component: {fileID: 7252891287777407701}
   - component: {fileID: 1926458595435240907}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: MineAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2319,7 +2319,7 @@ GameObject:
   - component: {fileID: 7655599354472289311}
   - component: {fileID: 765564889536715326}
   - component: {fileID: 7369451222901594924}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: DirectionArrowFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2391,7 +2391,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2572250012124819045}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: L1AimPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2423,7 +2423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8392636753598054218}
   - component: {fileID: 5883997723284936682}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2552,7 +2552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3791742621129435661}
   - component: {fileID: 5618668603896320885}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: L2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2682,7 +2682,7 @@ GameObject:
   - component: {fileID: 4390640527321215479}
   - component: {fileID: 6056430572069554089}
   - component: {fileID: 2206818611666046591}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: DirectionArrowFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2756,7 +2756,7 @@ GameObject:
   - component: {fileID: 4576039860564506869}
   - component: {fileID: 5244378891911282576}
   - component: {fileID: 1886788321905243081}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ShipRear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2831,7 +2831,7 @@ GameObject:
   - component: {fileID: 1476435953002307752}
   - component: {fileID: 2420917298470368809}
   - component: {fileID: 8335192948211031740}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2988,7 +2988,7 @@ GameObject:
   - component: {fileID: 6594312949148671278}
   - component: {fileID: 3653218417265640528}
   - component: {fileID: 5109482027707206027}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3086,7 +3086,7 @@ GameObject:
   - component: {fileID: 2662246383940737736}
   - component: {fileID: 4329183800446080050}
   - component: {fileID: 3256376194932687683}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ControlsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3242,7 +3242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7079136246537728700}
   - component: {fileID: 5760272970886727712}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DirectionArrowF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3324,7 +3324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2958703382485343506}
   - component: {fileID: 7875274749953729502}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FrigateFrontCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3408,7 +3408,7 @@ GameObject:
   - component: {fileID: 15955657679801031}
   - component: {fileID: 989433489788617699}
   - component: {fileID: 6498178888740869351}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3563,7 +3563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2536804085691964540}
   - component: {fileID: 2588184689681096374}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DirectionArrowF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3646,7 +3646,7 @@ GameObject:
   - component: {fileID: 689267147967720843}
   - component: {fileID: 9084918230888949176}
   - component: {fileID: 7688879651702093876}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Cooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3719,7 +3719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5538107946303408064}
   - component: {fileID: 1592748644557358805}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3801,7 +3801,7 @@ GameObject:
   - component: {fileID: 6752310832645010485}
   - component: {fileID: 2615751947915403706}
   - component: {fileID: 137891268994970790}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3878,7 +3878,7 @@ GameObject:
   - component: {fileID: 5698699097817932427}
   - component: {fileID: 1847700313844013709}
   - component: {fileID: 4304818537449858784}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: DirectionArrowFill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3951,7 +3951,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7528172052530982678}
   - component: {fileID: 7865199204892792517}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DirectionArrowF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4034,7 +4034,7 @@ GameObject:
   - component: {fileID: 7344903490367863354}
   - component: {fileID: 2086306723158203511}
   - component: {fileID: 8719909535893351911}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Cooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4106,7 +4106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6896376688373569926}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Segments
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4140,7 +4140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5597031970809532094}
   - component: {fileID: 1195214794560321969}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4220,7 +4220,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3577061718989104732}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R1AimPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4253,7 +4253,7 @@ GameObject:
   - component: {fileID: 846230679349478464}
   - component: {fileID: 1582271767493788574}
   - component: {fileID: 3394156136920339699}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ForwardShotIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4328,7 +4328,7 @@ GameObject:
   - component: {fileID: 3352012410701869308}
   - component: {fileID: 7917465342670674145}
   - component: {fileID: 301552954832989995}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: RightShotIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4402,7 +4402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 391423419543247125}
   - component: {fileID: 4786879404805706864}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4531,7 +4531,7 @@ GameObject:
   - component: {fileID: 5728321201105012142}
   - component: {fileID: 7243081228934854214}
   - component: {fileID: 9117004445357838756}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ShipMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4606,7 +4606,7 @@ GameObject:
   - component: {fileID: 3141333609595477144}
   - component: {fileID: 2658330885263468629}
   - component: {fileID: 4494990776166830929}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Cooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4681,7 +4681,7 @@ GameObject:
   - component: {fileID: 149990655292714576}
   - component: {fileID: 5860104135781890054}
   - component: {fileID: 8421226420816588586}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4778,7 +4778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7418036805408646376}
   - component: {fileID: 7418036805408646377}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4877,7 +4877,7 @@ GameObject:
   - component: {fileID: 7888148701442181284}
   - component: {fileID: 1303597549571634928}
   - component: {fileID: 3933325075570506253}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player1XShip
   m_TagString: P1
   m_Icon: {fileID: 0}
@@ -5429,6 +5429,7 @@ MonoBehaviour:
         m_CallState: 2
   type: 9
   shipInput: {fileID: 2694431036795723429}
+  shipSprite: {fileID: 7418036805408646377}
 --- !u!114 &3044490286937679037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5590,7 +5591,7 @@ GameObject:
   - component: {fileID: 5377864292414054889}
   - component: {fileID: 6120480522567978433}
   - component: {fileID: 624380652754794530}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: SegmentR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5664,7 +5665,7 @@ GameObject:
   - component: {fileID: 6714625336448665726}
   - component: {fileID: 7849926866163680679}
   - component: {fileID: 2181880143277377010}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: HalfCircleLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5740,7 +5741,7 @@ GameObject:
   - component: {fileID: 580208643359724049}
   - component: {fileID: 6910111063796109874}
   - component: {fileID: 3789948057089825839}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Middle
   m_TagString: P1
   m_Icon: {fileID: 0}
@@ -5916,7 +5917,7 @@ GameObject:
   - component: {fileID: 5364497919244912287}
   - component: {fileID: 9007354426102980318}
   - component: {fileID: 2585081760723244005}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Cooldown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5989,7 +5990,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5541542144267988049}
   - component: {fileID: 8899582708403537316}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6069,7 +6070,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2236020408600682241}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: R2AimPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6103,7 +6104,7 @@ GameObject:
   - component: {fileID: 7328299896608518504}
   - component: {fileID: 2014940406219382773}
   - component: {fileID: 515234586689853215}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Front
   m_TagString: P1
   m_Icon: {fileID: 0}
@@ -6281,7 +6282,7 @@ GameObject:
   - component: {fileID: 227511949895089383}
   - component: {fileID: 9064542405482025617}
   - component: {fileID: 3098565499072833782}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: PlayerColor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6355,7 +6356,7 @@ GameObject:
   - component: {fileID: 4165886445519732162}
   - component: {fileID: 5816826641828150671}
   - component: {fileID: 7661196585797107651}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: SegmentM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6429,7 +6430,7 @@ GameObject:
   - component: {fileID: 2513781103992124067}
   - component: {fileID: 2032135553111972753}
   - component: {fileID: 4438740511177824594}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: ShipFront
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6504,7 +6505,7 @@ GameObject:
   - component: {fileID: 5762087849121351431}
   - component: {fileID: 5699849739689684493}
   - component: {fileID: 3475283159623843379}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: SegmentF
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6577,7 +6578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5500599851140208538}
   - component: {fileID: 3448855019538001475}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6708,7 +6709,7 @@ GameObject:
   - component: {fileID: 8573201274842009283}
   - component: {fileID: 88518394816208119}
   - component: {fileID: 8092761854884415643}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6806,7 +6807,7 @@ GameObject:
   - component: {fileID: 5807996519733469206}
   - component: {fileID: 7566204122459336466}
   - component: {fileID: 69035403701043551}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: SpeedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6962,7 +6963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8890833057273319221}
   - component: {fileID: 4209074961137062120}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FrigateFrontCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7044,7 +7045,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2216874206076943945}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: L2AimPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7078,7 +7079,7 @@ GameObject:
   - component: {fileID: 8369424388168642837}
   - component: {fileID: 986402978657570036}
   - component: {fileID: 2990334541970002319}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7175,7 +7176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 517052768740556063}
   - component: {fileID: 3476776865827576958}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: F1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

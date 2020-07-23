@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class ShipXDroneShooter : ChargedShooter
 {
     [SerializeField] PlayerInput shipInput;
+    [SerializeField] SpriteRenderer shipSprite;
 
     DroneShooterData droneData;
 
@@ -26,10 +27,11 @@ public class ShipXDroneShooter : ChargedShooter
             droneInput.SwitchCurrentControlScheme(shipInput.currentControlScheme);
             droneInput.transform.SetProjectileParent();
             Rigidbody2D ball = droneInput.GetComponent<Rigidbody2D>();
-            ball.tag = "Drone";
+            ball.tag = tag;
             ball.rotation += rotation;
             ball.AddRelativeForce(Vector2.up * chargedData.ShotForce * forceMultiplier);
             shotLocation.gameObject.GetComponent<AudioSource>().Play();
+            shotLocation.tag = tag;
             StartCoroutine(ActivateEngine(droneInput.gameObject));
 
             if (Data.LimitedAmmo)
@@ -44,6 +46,7 @@ public class ShipXDroneShooter : ChargedShooter
     IEnumerator ActivateEngine(GameObject drone)
     {
         yield return new WaitForSeconds(droneData.EngineDelay);
-        drone.GetComponent<TorpedoMovement>().enabled = true;
+        if(drone != null)
+            drone.GetComponent<ShipXDrone>().ActivateDrone(shipSprite.color);
     }
 }

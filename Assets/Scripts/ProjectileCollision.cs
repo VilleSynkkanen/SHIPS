@@ -38,6 +38,12 @@ public class ProjectileCollision : MonoBehaviour
         }
     }
 
+    public void DestructionEffect()
+    {
+        Instantiate(explosion, transform.position, transform.rotation);
+        Destroy(gameObject);
+    }
+
     public float CalculateDamage(Vector2 velocity)
     {
         float magnitude = velocity.magnitude;

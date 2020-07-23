@@ -15,6 +15,15 @@ public class SniperCannonShooter : CannonShooter
         shotRotations = new float[rotationPoints.Length];
     }
 
+    public new void ResetState()
+    {
+        base.ResetState();
+        for (int i = 0; i < rotationPoints.Length; i++)
+        {
+            rotationPoints[i].localEulerAngles = new Vector3(0, 0, originalRotations[i]);
+        }
+    }
+    
     public override void Shoot()
     {
         for (int i = 0; i < rotationPoints.Length; i++)

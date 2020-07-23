@@ -650,6 +650,9 @@ MonoBehaviour:
   shipXDroneShooterData:
   - {fileID: 11400000, guid: d793b13b2bccd3449b1699f6fe9e9b47, type: 2}
   - {fileID: 11400000, guid: d793b13b2bccd3449b1699f6fe9e9b47, type: 2}
+  shipXDroneMachinegunShooterData:
+  - {fileID: 11400000, guid: 35a6ed0d7e1736e408f9a155ad2eb4dd, type: 2}
+  - {fileID: 11400000, guid: 35a6ed0d7e1736e408f9a155ad2eb4dd, type: 2}
   frigateCannonballProjectileData:
   - {fileID: 11400000, guid: d50d7aa67eff07b4d956b44421f8f204, type: 2}
   - {fileID: 11400000, guid: 4faf1d89b4009184586e971ab294c970, type: 2}
@@ -677,6 +680,9 @@ MonoBehaviour:
   shipXDroneProjectileData:
   - {fileID: 11400000, guid: de48926b5507f2e4f83e028f115427dc, type: 2}
   - {fileID: 11400000, guid: de48926b5507f2e4f83e028f115427dc, type: 2}
+  shipXMachinegunProjectileData:
+  - {fileID: 11400000, guid: bd886bec3e386df42ae9def1f47d5390, type: 2}
+  - {fileID: 11400000, guid: bd886bec3e386df42ae9def1f47d5390, type: 2}
   frigateCannonballRigidbodyData:
   - {fileID: 11400000, guid: 759084c7e69e93544a13714b566b90c6, type: 2}
   - {fileID: 11400000, guid: b1084a657d5a2e846ae045ad78451b18, type: 2}
@@ -701,6 +707,9 @@ MonoBehaviour:
   shipXDroneRigidbodyData:
   - {fileID: 11400000, guid: 26bcc38a77567fb41bc91b6328201ad9, type: 2}
   - {fileID: 11400000, guid: 26bcc38a77567fb41bc91b6328201ad9, type: 2}
+  shipXMachinegunRigidbodyData:
+  - {fileID: 11400000, guid: aca1ddafd6fa2e94fb11f0fa96da0e59, type: 2}
+  - {fileID: 11400000, guid: aca1ddafd6fa2e94fb11f0fa96da0e59, type: 2}
   frigateCannonballGravityData:
   - {fileID: 11400000, guid: 7cf2d17d1c9f46442b9ff434d3777f8b, type: 2}
   - {fileID: 11400000, guid: 2d05eec887c29f14986a454cde28a0e1, type: 2}
@@ -716,6 +725,9 @@ MonoBehaviour:
   shipXCannonballGravityData:
   - {fileID: 11400000, guid: 179727c6926a06f4c9450d196ff00ceb, type: 2}
   - {fileID: 11400000, guid: 179727c6926a06f4c9450d196ff00ceb, type: 2}
+  shipXMachinegunGravityData:
+  - {fileID: 11400000, guid: e6489c44d6698da449b2b065e2b32132, type: 2}
+  - {fileID: 11400000, guid: e6489c44d6698da449b2b065e2b32132, type: 2}
 --- !u!1 &1657714391
 GameObject:
   m_ObjectHideFlags: 0

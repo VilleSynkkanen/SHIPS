@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 931250063878fbc4089f81a273411e20, type: 3}
   m_Name: ShipXDroneShooterData
   m_EditorClassIdentifier: 
-  shotCooldown: 18
-  shotForce: 16
+  shotCooldown: 20
+  shotForce: 12
   minForce: 1
   maxForce: 1
   rotationVariation: 0

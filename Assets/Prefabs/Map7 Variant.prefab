@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 5060621597044349994}
   - component: {fileID: 9216113507678407104}
   - component: {fileID: 7779582239480676172}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Trigger (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 700320504492741421}
   - component: {fileID: 2144225155049083062}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
