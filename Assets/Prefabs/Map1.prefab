@@ -2872,6 +2872,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1406226073987130125}
+    - target: {fileID: 5768471779714149880, guid: ad6642876704eb0469566603f10615be,
+        type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768471779714149880, guid: ad6642876704eb0469566603f10615be,
+        type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 5768471779714149880, guid: ad6642876704eb0469566603f10615be,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 65535
+      objectReference: {fileID: 0}
     - target: {fileID: 5768471780106320644, guid: ad6642876704eb0469566603f10615be,
         type: 3}
       propertyPath: m_Offset.x

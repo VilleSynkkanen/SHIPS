@@ -44,6 +44,26 @@ PrefabInstance:
       propertyPath: m_TagString
       value: P2
       objectReference: {fileID: 0}
+    - target: {fileID: 2825588301822362884, guid: 7f3e93ffd13f4874dbfdd3299e049f00,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825588301822362884, guid: 7f3e93ffd13f4874dbfdd3299e049f00,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825588301822362884, guid: 7f3e93ffd13f4874dbfdd3299e049f00,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00012207031
+      objectReference: {fileID: 0}
+    - target: {fileID: 2825588301822362884, guid: 7f3e93ffd13f4874dbfdd3299e049f00,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3527079967588887499, guid: 7f3e93ffd13f4874dbfdd3299e049f00,
         type: 3}
       propertyPath: m_AnchorMin.x

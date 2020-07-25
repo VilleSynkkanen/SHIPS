@@ -16,6 +16,12 @@ public class ShipUI : MonoBehaviour
     [SerializeField] Color fullyDamaged;
     [SerializeField] Image[] shotCooldownImages;
     [SerializeField] bool[] useFills;
+    [SerializeField] Color throttlePlus;
+    [SerializeField] Color throttleUpZero;
+    [SerializeField] Color throttleDownZero;
+    [SerializeField] Color throttleMinus;
+    [SerializeField] Color steeringZero;
+    [SerializeField] Color steeringMax;
 
     ShipMovement movement;
     ShipDamage damage;
@@ -45,22 +51,26 @@ public class ShipUI : MonoBehaviour
         if(throttle >= 0)
         {
             positiveThrottle.fillAmount = throttle;
+            positiveThrottle.color = Color.Lerp(throttleUpZero, throttlePlus, throttle);
             negativeThrottle.fillAmount = 0;
         }
         else
         {
             negativeThrottle.fillAmount = -throttle;
+            negativeThrottle.color = Color.Lerp(throttleDownZero, throttleMinus, -throttle);
             positiveThrottle.fillAmount = 0;
         }
 
         if (steering >= 0)
         {
             positiveSteering.fillAmount = steering;
+            positiveSteering.color = Color.Lerp(steeringZero, steeringMax, steering);
             negativeSteering.fillAmount = 0;
         }
         else
         {
             negativeSteering.fillAmount = -steering;
+            negativeSteering.color = Color.Lerp(steeringZero, steeringMax, -steering);
             positiveSteering.fillAmount = 0;
         }
 

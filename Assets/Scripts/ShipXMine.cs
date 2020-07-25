@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ShipXMine : MonoBehaviour
@@ -6,7 +7,7 @@ public class ShipXMine : MonoBehaviour
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] float spriteAlpha;
     [SerializeField] Transform model;
-    
+
     ShipXMineData data;
     List<ShipMovement> ships = new List<ShipMovement>();
 

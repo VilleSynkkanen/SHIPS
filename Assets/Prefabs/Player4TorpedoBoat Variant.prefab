@@ -32,6 +32,26 @@ PrefabInstance:
       propertyPath: m_Pivot.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2080197957029145649, guid: fc2274918dfa0e5429d81017b5b23751,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.00012207031
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080197957029145649, guid: fc2274918dfa0e5429d81017b5b23751,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080197957029145649, guid: fc2274918dfa0e5429d81017b5b23751,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2080197957029145649, guid: fc2274918dfa0e5429d81017b5b23751,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3338351557449969920, guid: fc2274918dfa0e5429d81017b5b23751,
         type: 3}
       propertyPath: m_AnchorMin.x

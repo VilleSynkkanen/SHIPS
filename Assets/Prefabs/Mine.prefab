@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9022144741670196672}
   - component: {fileID: 6723341865110169813}
+  - component: {fileID: 1206634235771384817}
   m_Layer: 8
   m_Name: Sprite
   m_TagString: Untagged
@@ -81,6 +82,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1206634235771384817
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4558254465863454840}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 60069a8b5909e234fa7203a6bb19adc6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5845196771482175130
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +114,7 @@ GameObject:
   - component: {fileID: 1356199553577383976}
   - component: {fileID: 1413323992034295896}
   - component: {fileID: 3588415070714273843}
+  - component: {fileID: 7703428067681711714}
   m_Layer: 8
   m_Name: Mine
   m_TagString: Mine
@@ -132,6 +153,7 @@ MonoBehaviour:
     type: 3}
   explosionTravel: 0
   type: 1
+  boundaryCollision: 0
 --- !u!50 &1356199553577383976
 Rigidbody2D:
   serializedVersion: 4
@@ -184,3 +206,17 @@ MonoBehaviour:
   ship: 0
   shipType: 0
   shooterType: 1
+--- !u!114 &7703428067681711714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5845196771482175130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58d253d1086de8438111bd2954178b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1206634235771384817}
+  animationStart: 2
