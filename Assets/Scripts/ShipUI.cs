@@ -92,13 +92,17 @@ public class ShipUI : MonoBehaviour
 
     public void UpdateHealthbars(float f = 0, SegmentType s = SegmentType.Middle)    // parameters not used
     {
+        int segments = 0;
         for (int i = 0; i < segmentHealth.Length; i++)
         {
             segmentHealth[i].fillAmount = damage.SegmentHealth[i];
             segmentImages[i].color = Color.Lerp(fullyDamaged, undamaged, damage.SegmentHealth[i]);
             segmentTexts[i].text = Mathf.RoundToInt(100 * movement.CalculateDamageEffects(damage.SegmentHealth[i])).ToString() + "%";
+            if (damage.SegmentHealth[i] > 0)
+                segments++;
         }
 
+        segmentTexts[3].text = segments.ToString();
         totalHealth.fillAmount = damage.hp / damage.MaxHp;
     }
 }
