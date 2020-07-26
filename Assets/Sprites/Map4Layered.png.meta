@@ -11,9 +11,6 @@ TextureImporter:
   - first:
       213: 379119603724817665
     second: Map4Layered_2
-  - first:
-      213: 7928342535961551868
-    second: Map4Layered_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -157,27 +154,6 @@ TextureImporter:
       bones: []
       spriteID: 105976b5547e24500800000000000000
       internalID: 379119603724817665
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Map4Layered_3
-      rect:
-        serializedVersion: 2
-        x: 2160
-        y: 0
-        width: 2160
-        height: 2160
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf3ab91c781270e60800000000000000
-      internalID: 7928342535961551868
       vertices: []
       indices: 
       edges: []

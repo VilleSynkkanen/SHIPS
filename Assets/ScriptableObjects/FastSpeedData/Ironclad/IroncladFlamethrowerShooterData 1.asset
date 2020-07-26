@@ -18,8 +18,8 @@ MonoBehaviour:
   maxForce: 0
   rotationVariation: 0
   limitedAmmo: 1
-  startingAmmo: 50
-  damagePerTick: 0.3
+  startingAmmo: 40
+  damagePerTick: 0.25
   heatPerTick: 0.06
   heatDissipation: 0.33
   heatDissipationDelay: 1
