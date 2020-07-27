@@ -22,4 +22,4 @@ MonoBehaviour:
   chargeSpeed: 1
   minimumCharge: 1
   launchDelay: 0.2
-  activationDelay: 1
+  activationDelay: 1.2

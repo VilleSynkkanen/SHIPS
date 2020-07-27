@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 public class ProjectileCollision : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class ProjectileCollision : MonoBehaviour
     [SerializeField] float explosionTravel;
     [SerializeField] ShooterType type;
     [SerializeField] bool boundaryCollision;
+    [SerializeField] bool fireEventOnDestruction;
+    [SerializeField] UnityEvent OnDestruction;
 
     public ProjectileData data { get; private set; }
     float dmg;
@@ -31,17 +34,25 @@ public class ProjectileCollision : MonoBehaviour
             if(collision.tag != "Boundary")
             {
                 Instantiate(explosion, transform.position + explosionPosition, transform.rotation);
-                Destroy(gameObject);
+                Destruction();
             }    
             else if(collision.tag == "Boundary" && boundaryCollision)
-                Destroy(gameObject);
+                Destruction();
         }
     }
 
     public void DestructionEffect()
     {
         Instantiate(explosion, transform.position, transform.rotation);
-        Destroy(gameObject);
+        Destruction();
+    }
+
+    void Destruction()
+    {  
+        if(fireEventOnDestruction)
+            OnDestruction.Invoke();
+        gameObject.SetActive(false);
+        Destroy(gameObject, 1);
     }
 
     public float CalculateDamage(Vector2 velocity)
