@@ -2,11 +2,13 @@
 
 public class ParticleUnparenter : MonoBehaviour
 {
+    [SerializeField] bool stopOnDestruction;
     [SerializeField] ParticleSystem system;
 
     public void ProjectileDestruction()
     {
-        //system.Stop();
+        if (stopOnDestruction)
+            system.Stop();
         system.transform.SetProjectileParent();
         Destroy(system.gameObject, 15);
     }

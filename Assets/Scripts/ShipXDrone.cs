@@ -9,6 +9,7 @@ public class ShipXDrone : MonoBehaviour
     [SerializeField] CannonShooter shooter;
     [SerializeField] ProjectileCollision collision;
     [SerializeField] SpriteRenderer sprite;
+    [SerializeField] ParticleSystem[] engines;
     [SerializeField] float shotCheckRange;
 
     DroneProjectileData data;
@@ -64,6 +65,11 @@ public class ShipXDrone : MonoBehaviour
         movement.enabled = true;
         shoot = true;
         sprite.color = color;
+
+        foreach(ParticleSystem engine in engines)
+        {
+            engine.Play();
+        }
     }
 
     public void Destruction()
