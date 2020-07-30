@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6a6b1c8d1280146bbdb4cc1c36191d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterHitEffect: {fileID: 179019857992845836, guid: 31b09432ceb7f3644b45fdc85f7093af,
+  waterHitEffect: {fileID: 8598510668487823913, guid: 6eae3a66a04eb8e43b7ab7bf1a892dea,
     type: 3}
   type: 3
 --- !u!114 &5157580043060266879

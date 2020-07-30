@@ -52,7 +52,7 @@ public class ProjectileCollision : MonoBehaviour
         if(fireEventOnDestruction)
             OnDestruction.Invoke();
         gameObject.SetActive(false);
-        Destroy(gameObject, 1);
+        Destroy(gameObject, 10);
     }
 
     public float CalculateDamage(Vector2 velocity)

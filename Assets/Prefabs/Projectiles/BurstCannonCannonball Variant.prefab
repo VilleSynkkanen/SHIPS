@@ -16,7 +16,7 @@ PrefabInstance:
         type: 3}
       propertyPath: waterHitEffect
       value: 
-      objectReference: {fileID: 4106312846769502169, guid: 7d2c3e54cee09124186bd8201c4ad5e8,
+      objectReference: {fileID: 4028289484709981743, guid: 00e908b5ce01da64ba66337aee893d3b,
         type: 3}
     - target: {fileID: 2496318178972590501, guid: 49bbb98bbe738b740be3b6c3ba507678,
         type: 3}

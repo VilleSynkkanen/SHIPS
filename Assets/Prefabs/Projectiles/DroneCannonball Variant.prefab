@@ -12,6 +12,12 @@ PrefabInstance:
       propertyPath: type
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: -5496976053363735970, guid: 49bbb98bbe738b740be3b6c3ba507678,
+        type: 3}
+      propertyPath: waterHitEffect
+      value: 
+      objectReference: {fileID: 2719818838681191747, guid: 4df057ee0c4f8c947ad200cee9770776,
+        type: 3}
     - target: {fileID: 2496318178972590501, guid: 49bbb98bbe738b740be3b6c3ba507678,
         type: 3}
       propertyPath: m_LocalPosition.x

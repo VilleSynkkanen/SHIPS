@@ -8,6 +8,7 @@ public class ShipXDroneShooter : ChargedShooter
     [SerializeField] SpriteRenderer shipSprite;
 
     DroneShooterData droneData;
+    bool droneDestroyed;
 
     private new void Start()
     {
@@ -42,10 +43,22 @@ public class ShipXDroneShooter : ChargedShooter
         }
     }
 
-    IEnumerator ActivateEngine(GameObject drone)
+    public void DroneDestroyed()
     {
+        droneDestroyed = true;
+    }
+
+    public IEnumerator ActivateEngine(GameObject drone)
+    {
+        droneDestroyed = false;
+        ShipXDrone dro = drone.GetComponent<ShipXDrone>();
+        dro.SetShooter(this);
         yield return new WaitForSeconds(droneData.EngineDelay);
-        if(drone != null)
-            drone.GetComponent<ShipXDrone>().ActivateDrone(shipSprite.color);
+        if(dro != null && !droneDestroyed)
+        {
+            dro.ActivateDrone(shipSprite.color);
+            print("activated");
+        }
+            
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class ShipXDrone : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class ShipXDrone : MonoBehaviour
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] ParticleSystem[] engines;
     [SerializeField] float shotCheckRange;
-
+    ShipXDroneShooter dShooter;
     DroneProjectileData data;
     float aim;
     bool shoot;
@@ -24,13 +25,18 @@ public class ShipXDrone : MonoBehaviour
 
     private void Start()
     {
-        Invoke("Destruction", data.Lifetime);
+        StartCoroutine(LifetimeDestroy());
     }
 
     private void Update()
     {
         aim = controls.aim;
         DetermineShooting();
+    }
+
+    public void SetShooter(ShipXDroneShooter droneShooter)
+    {
+        dShooter = droneShooter;
     }
 
     void DetermineShooting()
@@ -72,8 +78,17 @@ public class ShipXDrone : MonoBehaviour
         }
     }
 
-    public void Destruction()
+    public void Destruction(bool fireEvent = true)
     {
-        collision.DestructionEffect();
+        StopCoroutine(LifetimeDestroy());
+        dShooter.DroneDestroyed();
+        if(fireEvent)
+            collision.DestructionEffect();
+    }
+
+    IEnumerator LifetimeDestroy()
+    {
+        yield return new WaitForSeconds(data.Lifetime);
+        Destruction();
     }
 }

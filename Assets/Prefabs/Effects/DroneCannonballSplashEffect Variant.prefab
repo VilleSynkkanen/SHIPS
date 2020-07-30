@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1880031800858914491
+--- !u!1001 &4455621030333358580
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 1759561010169357495, guid: 8974a784819331047bb0cc152025170a,
         type: 3}
       propertyPath: m_Name
-      value: ShotgunShotSplashEffect
+      value: DroneCannonballSplashEffect Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3630592079982078368, guid: 8974a784819331047bb0cc152025170a,
         type: 3}
@@ -75,6 +75,11 @@ PrefabInstance:
     - target: {fileID: 3630592079982078368, guid: 8974a784819331047bb0cc152025170a,
         type: 3}
       propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3630592079982078368, guid: 8974a784819331047bb0cc152025170a,
+        type: 3}
+      propertyPath: m_LocalScale.z
       value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
