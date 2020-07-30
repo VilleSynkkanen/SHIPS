@@ -7,6 +7,7 @@ public class ShipXMine : MonoBehaviour
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] float spriteAlpha;
     [SerializeField] Transform model;
+    [SerializeField] ParticleSystem particles;
 
     ShipXMineData data;
     List<ShipMovement> ships = new List<ShipMovement>();
@@ -21,6 +22,9 @@ public class ShipXMine : MonoBehaviour
     public void SetColor(Color color)
     {
         sprite.color = new Color(color.r, color.g, color.b, spriteAlpha);
+        ParticleSystem.MainModule main = particles.main;
+        main.startColor = new Color(color.r, color.g, color.b, 1);
+        particles.Play();
     }
     
     private void OnTriggerEnter2D(Collider2D collision)

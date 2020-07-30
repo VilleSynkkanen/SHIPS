@@ -739,6 +739,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DroneEngineEffect (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6763155068601717893, guid: f8245250d8d7ef743a8f8db2a58e86a8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8245250d8d7ef743a8f8db2a58e86a8, type: 3}
 --- !u!4 &6806192864306786987 stripped
@@ -841,6 +846,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DroneEngineEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 6763155068601717893, guid: f8245250d8d7ef743a8f8db2a58e86a8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8245250d8d7ef743a8f8db2a58e86a8, type: 3}
