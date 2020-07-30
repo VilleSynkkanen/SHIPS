@@ -8,6 +8,7 @@ public class ProjectileCollision : MonoBehaviour
     [SerializeField] ShooterType type;
     [SerializeField] bool boundaryCollision;
     [SerializeField] bool fireEventOnDestruction;
+    [SerializeField] bool letEventHandleDestruction;
     [SerializeField] UnityEvent OnDestruction;
 
     public ProjectileData data { get; private set; }
@@ -44,15 +45,17 @@ public class ProjectileCollision : MonoBehaviour
     public void DestructionEffect()
     {
         Instantiate(explosion, transform.position, transform.rotation);
-        Destruction();
     }
 
     void Destruction()
     {  
         if(fireEventOnDestruction)
             OnDestruction.Invoke();
-        gameObject.SetActive(false);
-        Destroy(gameObject, 10);
+        if(!fireEventOnDestruction || !letEventHandleDestruction)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject, 10);
+        }
     }
 
     public float CalculateDamage(Vector2 velocity)

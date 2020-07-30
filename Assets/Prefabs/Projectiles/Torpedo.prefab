@@ -157,6 +157,7 @@ MonoBehaviour:
   type: 2
   boundaryCollision: 1
   fireEventOnDestruction: 1
+  letEventHandleDestruction: 0
   OnDestruction:
     m_PersistentCalls:
       m_Calls:
@@ -260,6 +261,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d4779ca57580d498cf52399bccd6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stopOnDestruction: 0
+  destroyAndSetParentOnDestruction: 1
   system: {fileID: 5253065454103829107}
 --- !u!198 &5253065454103829107
 ParticleSystem:

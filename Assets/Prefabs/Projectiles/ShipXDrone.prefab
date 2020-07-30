@@ -372,6 +372,7 @@ MonoBehaviour:
   type: 9
   boundaryCollision: 1
   fireEventOnDestruction: 1
+  letEventHandleDestruction: 1
   OnDestruction:
     m_PersistentCalls:
       m_Calls:

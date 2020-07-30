@@ -14,6 +14,7 @@ public class ShipXDrone : MonoBehaviour
     [SerializeField] float shotCheckRange;
     ShipXDroneShooter dShooter;
     DroneProjectileData data;
+    Color defaultColor;
     float aim;
     bool shoot;
 
@@ -21,9 +22,10 @@ public class ShipXDrone : MonoBehaviour
     {
         data = (DroneProjectileData)GameSettings.Instance.GetProjectileData(type);
         shoot = false;
+        defaultColor = sprite.color;
     }
 
-    private void Start()
+    public void StartLife()
     {
         StartCoroutine(LifetimeDestroy());
     }
@@ -78,17 +80,30 @@ public class ShipXDrone : MonoBehaviour
         }
     }
 
-    public void Destruction(bool fireEvent = true)
+    public void DeactivateDrone()
+    {
+        movement.enabled = false;
+        shoot = false;
+        sprite.color = defaultColor;
+
+        foreach (ParticleSystem engine in engines)
+        {
+            engine.Stop();
+        }
+    }
+
+    public void Destruction(bool playEffect)
     {
         StopCoroutine(LifetimeDestroy());
         dShooter.DroneDestroyed();
-        if(fireEvent)
+        DeactivateDrone();
+        if(playEffect)
             collision.DestructionEffect();
     }
 
     IEnumerator LifetimeDestroy()
     {
         yield return new WaitForSeconds(data.Lifetime);
-        Destruction();
+        Destruction(true);
     }
 }
