@@ -10,10 +10,10 @@ public class GameController : MonoBehaviour
     [SerializeField] PlayerVictories victories;
     [SerializeField] TextMeshProUGUI countdownText;
     [SerializeField] PlayerSpawner spawner;
-    [SerializeField] GameObject instructionText;
     [SerializeField] float countdownTime;
     [SerializeField] float startTextDelay;
     [SerializeField] float readyTextDelay;
+    [SerializeField] float restartExtraDelay;
 
     BattleUIManager uiManager;
     List<GameObject> playersAlive = new List<GameObject>();
@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     bool gameEnded;
     bool gameStarted;
     bool countdownStarted;
+    bool firstStart;
 
     public PlayerVictories Victories { get => victories; }
 
@@ -38,6 +39,7 @@ public class GameController : MonoBehaviour
         gameStarted = false;
         countdownStarted = false;
         gameEnded = false;
+        firstStart = true;
 
         uiManager = GetComponent<BattleUIManager>();
         gameEnd += uiManager.ShowVictoryUi;
@@ -60,13 +62,15 @@ public class GameController : MonoBehaviour
 
     void AllPlayersReady()
     {
-        instructionText.SetActive(false);
         StartCoroutine(StartCountdown());
     }
     
     IEnumerator StartCountdown()
     {
-        yield return new WaitForSeconds(readyTextDelay);
+        float delay = readyTextDelay;
+        if (!firstStart)
+            delay += restartExtraDelay;
+        yield return new WaitForSeconds(delay);
 
         countdownStarted = true;
         countdownTimer = countdownTime;
@@ -150,6 +154,7 @@ public class GameController : MonoBehaviour
 
     public void Restart()
     {
+        firstStart = false;
         gameStarted = false;
         countdownStarted = false;
         gameEnded = false;
