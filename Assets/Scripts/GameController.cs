@@ -14,6 +14,9 @@ public class GameController : MonoBehaviour
     [SerializeField] float startTextDelay;
     [SerializeField] float readyTextDelay;
     [SerializeField] float restartExtraDelay;
+    [SerializeField] float shipScalingDelay;
+    [SerializeField] float shipScalingTime;
+    [SerializeField] float shipScalingInterval;
 
     BattleUIManager uiManager;
     List<GameObject> playersAlive = new List<GameObject>();
@@ -137,7 +140,6 @@ public class GameController : MonoBehaviour
             DisablePlayerControls(playersAlive[0]);
             victories.playerVictories[i]++;
             gameEnd(i, victories.playerVictories);
-            Cursor.visible = true;
             gameEnded = true;
         }
     }
@@ -147,29 +149,18 @@ public class GameController : MonoBehaviour
         if (!gameEnded)
         {
             gameEnd(-1, victories.playerVictories);
-            Cursor.visible = true;
             gameEnded = true;
         } 
     }
 
     public void Restart()
     {
+        StopAllCoroutines();
         firstStart = false;
         gameStarted = false;
         countdownStarted = false;
         gameEnded = false;
-        Cursor.visible = false;
-        spawner.ResetPlayerPositions(players);
-        playersAlive = new List<GameObject>();
-        uiManager.HideVictoryUI(); 
-        ProjectileParent.instance.DestroyAllProjectiles();
-        GameRestart();
-        foreach(GameObject player in players)
-        {
-            playersAlive.Add(player);
-            
-        }
-        AllPlayersReady();
+        StartCoroutine(RestartCycle());
     }
 
     public void Quit()
@@ -182,5 +173,31 @@ public class GameController : MonoBehaviour
         ShipDamage.destroyed -= RemovePlayer;
         gameEnd -= uiManager.ShowVictoryUi;
         DeviceAssignment.CountdownStart -= AllPlayersReady;
+    }
+
+    IEnumerator RestartCycle()
+    {
+        Vector3 scalingGoal = new Vector3(0.001f, 0.001f, 0.001f);
+        uiManager.HideVictoryUI();
+        yield return new WaitForSeconds(shipScalingDelay);
+
+        foreach (GameObject player in players)
+        {
+            LeanTween.scale(player, scalingGoal, shipScalingTime);
+        }
+
+        ProjectileParent.instance.DestroyAllProjectiles();
+        yield return new WaitForSeconds(shipScalingInterval);
+        
+        spawner.ResetPlayerPositions(players);
+        playersAlive = new List<GameObject>();
+        GameRestart();
+        foreach (GameObject player in players)
+        {
+            playersAlive.Add(player);
+            LeanTween.scale(player, Vector3.one, shipScalingTime);
+
+        }
+        AllPlayersReady();
     }
 }

@@ -10,6 +10,7 @@ public class DeviceAssignment : MonoBehaviour
     public static UnityAction CountdownStart = delegate { };
 
     [SerializeField] PlayerVictories victories;
+    public static UnityAction VictoriesSetup = delegate { };
 
     PlayerSpawner spawner;
     
@@ -74,6 +75,7 @@ public class DeviceAssignment : MonoBehaviour
         if(victories.playerVictories.Length == 0)
         {
             victories.playerVictories = new int[Assignments.Count];
+            VictoriesSetup();
         }
         for (int i = 0; i < Assignments.Count; i++)
         {

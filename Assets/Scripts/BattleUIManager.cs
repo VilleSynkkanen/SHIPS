@@ -9,45 +9,52 @@ public class BattleUIManager : MonoBehaviour
     [SerializeField] RectTransform movingUi;
     [SerializeField] Button[] victoryButtons;
     [SerializeField] RectTransform[] buttonTransforms;
-    [SerializeField] GameObject[] backgrounds;
     [SerializeField] TextMeshProUGUI[] victoryTexts;
     [SerializeField] TextMeshProUGUI winnerText;
     [SerializeField] EventSystem eventSystem;
     [SerializeField] GameObject playAgainButton;
     [SerializeField] float movingUiHiddenPlace;
     [SerializeField] float uiMoveTime;
+    [SerializeField] float uiWaitTimeMultiplier;
+    [SerializeField] float victoryAdditionTime;
 
     GameController controller;
 
     void Awake()
     {
         controller = GetComponent<GameController>();
-        HideVictoryUI();
+        DeviceAssignment.VictoriesSetup += SetupVictoryUI;
     }
 
-    public void ShowVictoryUi(int winner, int[] victories)      // winner = -1 if draw
+    public void SetupVictoryUI()
     {
-        if(winner == -1)
-            winnerText.text = "DRAW!";
-        else
-            winnerText.text = "PLAYER " + (winner + 1).ToString() + " WON!";
-
         for (int i = 0; i < victoryTexts.Length; i++)
         {
-            if(i >= controller.Victories.playerVictories.Length)
+            if (i >= controller.Victories.playerVictories.Length)
             {
                 victoryTexts[i].text = "";
             }
             else
             {
-                victoryTexts[i].text =  "PLAYER " + (i + 1).ToString() + " VICTORIES: " + controller.Victories.playerVictories[i].ToString();
+                victoryTexts[i].text = "PLAYER " + (i + 1).ToString() + " VICTORIES: " + controller.Victories.playerVictories[i].ToString();
             }
         }
 
-        eventSystem.SetSelectedGameObject(playAgainButton);
-        SetButtonPlacement(controller.Victories.playerVictories.Length);        // should do only once
+        SetButtonPlacement(controller.Victories.playerVictories.Length);
+    }
+    
+    public void ShowVictoryUi(int winner, int[] victories)      // winner = -1 if draw
+    {
+        if(winner == -1)
+            winnerText.text = "DRAW!";
+        else
+        {
+            winnerText.text = "PLAYER " + (winner + 1).ToString() + " WON!";
+            StartCoroutine(AddVictory(winner));
+        }
+            
         LeanTween.moveY(movingUi, 0, uiMoveTime).setEase(LeanTweenType.easeOutBack);
-        StartCoroutine(SetButtonState(uiMoveTime, true));
+        StartCoroutine(SetButtonState(uiWaitTimeMultiplier * uiMoveTime, true));
     }
 
     public void HideVictoryUI()
@@ -58,29 +65,40 @@ public class BattleUIManager : MonoBehaviour
 
     IEnumerator SetButtonState(float waitTime, bool interactable)
     {
+        if(!interactable)
+        {
+            eventSystem.SetSelectedGameObject(null);
+        }
+
         yield return new WaitForSeconds(waitTime);
         foreach(Button button in victoryButtons)
         {
             button.interactable = interactable;
         }
+
+        if(interactable)
+        {
+            eventSystem.SetSelectedGameObject(playAgainButton);
+        } 
+    }
+
+    IEnumerator AddVictory(int i)
+    {
+        yield return new WaitForSeconds(victoryAdditionTime);
+        victoryTexts[i].text = "PLAYER " + (i + 1).ToString() + " VICTORIES: " + controller.Victories.playerVictories[i].ToString();
+        // add sound effect
     }
 
     void SetButtonPlacement(int players)
     {
         foreach (RectTransform button in buttonTransforms)
         {
-            button.anchoredPosition = new Vector3(button.anchoredPosition.x, (4 - players) * 70 - 300);
+            button.anchoredPosition = new Vector3(button.anchoredPosition.x, (4 - players) * 75 - 375);   
         }
-        for(int i = 0; i < backgrounds.Length; i++)
-        {
-            if(i == players - 1)
-            {
-                backgrounds[i].SetActive(true);
-            }
-            else
-            {
-                backgrounds[i].SetActive(false);
-            }
-        }
+    }
+
+    private void OnDisable()
+    {
+        DeviceAssignment.VictoriesSetup -= SetupVictoryUI;
     }
 }

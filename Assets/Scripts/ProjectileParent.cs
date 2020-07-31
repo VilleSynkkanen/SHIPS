@@ -3,6 +3,7 @@
 public class ProjectileParent : MonoBehaviour
 {
     public static ProjectileParent instance = null;
+    [SerializeField] float objectScalingTime;
 
     void Awake()
     {
@@ -21,7 +22,8 @@ public class ProjectileParent : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            Destroy(child.gameObject);
+            LeanTween.scale(child.gameObject, Vector3.zero, objectScalingTime);
+            Destroy(child.gameObject, objectScalingTime);
         }
     }
 }
