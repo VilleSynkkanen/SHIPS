@@ -17,6 +17,7 @@ public class BattleUIManager : MonoBehaviour
     [SerializeField] float uiMoveTime;
     [SerializeField] float uiWaitTimeMultiplier;
     [SerializeField] float victoryAdditionTime;
+    bool gameEnded;
 
     GameController controller;
 
@@ -24,6 +25,7 @@ public class BattleUIManager : MonoBehaviour
     {
         controller = GetComponent<GameController>();
         DeviceAssignment.VictoriesSetup += SetupVictoryUI;
+        gameEnded = false;
     }
 
     public void SetupVictoryUI()
@@ -45,20 +47,25 @@ public class BattleUIManager : MonoBehaviour
     
     public void ShowVictoryUi(int winner, int[] victories)      // winner = -1 if draw
     {
-        if(winner == -1)
-            winnerText.text = "DRAW!";
-        else
+        if(!gameEnded)
         {
-            winnerText.text = "PLAYER " + (winner + 1).ToString() + " WON!";
-            StartCoroutine(AddVictory(winner));
-        }
+            gameEnded = true;
+            if(winner == -1)
+                winnerText.text = "DRAW!";
+            else
+            {
+                winnerText.text = "PLAYER " + (winner + 1).ToString() + " WON!";
+                StartCoroutine(AddVictory(winner));
+            }
             
-        LeanTween.moveY(movingUi, 0, uiMoveTime).setEase(LeanTweenType.easeOutBack);
-        StartCoroutine(SetButtonState(uiWaitTimeMultiplier * uiMoveTime, true));
+            LeanTween.moveY(movingUi, 0, uiMoveTime).setEase(LeanTweenType.easeOutBack);
+            StartCoroutine(SetButtonState(uiWaitTimeMultiplier * uiMoveTime, true));
+        }    
     }
 
     public void HideVictoryUI()
     {
+        gameEnded = false;
         LeanTween.moveY(movingUi, movingUiHiddenPlace, uiMoveTime).setEase(LeanTweenType.easeInBack);
         StartCoroutine(SetButtonState(0, false));
     }
@@ -79,7 +86,7 @@ public class BattleUIManager : MonoBehaviour
         if(interactable)
         {
             eventSystem.SetSelectedGameObject(playAgainButton);
-        } 
+        }
     }
 
     IEnumerator AddVictory(int i)

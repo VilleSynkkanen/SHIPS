@@ -155,7 +155,6 @@ public class GameController : MonoBehaviour
 
     public void Restart()
     {
-        StopAllCoroutines();
         firstStart = false;
         gameStarted = false;
         countdownStarted = false;
