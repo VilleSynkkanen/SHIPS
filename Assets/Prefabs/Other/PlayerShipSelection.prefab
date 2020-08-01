@@ -112,7 +112,8 @@ MonoBehaviour:
 
     AIMABLE FRONT CANNON
 
-    CAN LAY MINES
+    CAN LAY MINES. THE AMOUNT OF MINES
+    IS LIMITED
 
 
 '
@@ -330,7 +331,7 @@ MonoBehaviour:
     STEERABLE DRONE THAT SHOOTS ENEMY SHIPS
 
     CAN LAY MINES THAT SLOW DOWN ENEMIES
-    AND SPEED UP THIS SHIP
+    AND SPEED UP THIS SHIP. THE AMOUNT OF MINES IS LIMITED
 
 '
   m_isRightToLeft: 0
@@ -638,6 +639,11 @@ MonoBehaviour:
   text: {fileID: 6124758256499162444}
   rectTrans: {fileID: 6017171300533598628}
   colorController: {fileID: 8714420130699727094}
+  shipImages:
+  - {fileID: 4045180673410989631}
+  - {fileID: 8070667070941107836}
+  - {fileID: 2948729291651413565}
+  - {fileID: 5032742609342836301}
   startingPositionY: c8fbffffc8fbffff3804000038040000
   animationTime: 0.4
   joinType: 15
@@ -4891,7 +4897,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -342}
+  m_AnchoredPosition: {x: 0, y: -312}
   m_SizeDelta: {x: 800, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2279503492542223506
@@ -5382,7 +5388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -439}
+  m_AnchoredPosition: {x: 0, y: -409}
   m_SizeDelta: {x: 800, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4094869698481707396

@@ -162,6 +162,11 @@ public class GameController : MonoBehaviour
         StartCoroutine(RestartCycle());
     }
 
+    public void ShipSelection()
+    {
+        SceneManager.LoadScene("BattleScene");
+    }
+
     public void Quit()
     {
         SceneManager.LoadScene("MainMenu");

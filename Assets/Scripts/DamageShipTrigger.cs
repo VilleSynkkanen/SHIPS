@@ -6,6 +6,11 @@ public class DamageShipTrigger : MonoBehaviour
     [SerializeField] DamageShipTriggerData data;
     List<ShipSegment> segments = new List<ShipSegment>();
 
+    private void Awake()
+    {
+        GameController.GameRestart += ResetState;
+    }
+
     private void Update()
     {
         for(int i = 0; i < segments.Count; i++)
@@ -38,5 +43,15 @@ public class DamageShipTrigger : MonoBehaviour
             if (data.PlayDamageSound)
                 seg.StopTerrainDamage();
         }
+    }
+
+    public void ResetState()
+    {
+        segments = new List<ShipSegment>();
+    }
+
+    private void OnDisable()
+    {
+        GameController.GameRestart -= ResetState;
     }
 }

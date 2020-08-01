@@ -1,9 +1,13 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class ShipUI : MonoBehaviour
 {
+    [SerializeField] RectTransform rectTrans;
+    [SerializeField] float startingPosY;
+    [SerializeField] float animationTime;
     [SerializeField] Image negativeThrottle;
     [SerializeField] Image positiveThrottle;
     [SerializeField] Image negativeSteering;
@@ -22,6 +26,7 @@ public class ShipUI : MonoBehaviour
     [SerializeField] Color throttleMinus;
     [SerializeField] Color steeringZero;
     [SerializeField] Color steeringMax;
+    [SerializeField] LeanTweenType animationType;
 
     ShipMovement movement;
     ShipDamage damage;
@@ -36,6 +41,11 @@ public class ShipUI : MonoBehaviour
         negativeThrottle.fillAmount = 0;
         positiveSteering.fillAmount = 0;
         negativeSteering.fillAmount = 0;
+    }
+
+    private void Start()
+    {
+        StartCoroutine(UIAnimation());
     }
 
     private void Update()
@@ -104,5 +114,12 @@ public class ShipUI : MonoBehaviour
 
         segmentTexts[3].text = segments.ToString();
         totalHealth.fillAmount = damage.hp / damage.MaxHp;
+    }
+
+    public IEnumerator UIAnimation()
+    {
+        LeanTween.moveY(rectTrans, startingPosY, 0).setEase(animationType);
+        yield return new WaitForSeconds(animationTime);
+        LeanTween.moveY(rectTrans, 0, animationTime).setEase(animationType);
     }
 }

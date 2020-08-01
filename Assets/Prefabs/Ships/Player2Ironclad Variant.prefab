@@ -39,6 +39,11 @@ PrefabInstance:
       propertyPath: m_Pivot.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1036532949756361571, guid: 7f3e93ffd13f4874dbfdd3299e049f00,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1870
+      objectReference: {fileID: 0}
     - target: {fileID: 1055843674261362768, guid: 7f3e93ffd13f4874dbfdd3299e049f00,
         type: 3}
       propertyPath: m_TagString
@@ -67,7 +72,7 @@ PrefabInstance:
     - target: {fileID: 2825588301822362884, guid: 7f3e93ffd13f4874dbfdd3299e049f00,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 1870
       objectReference: {fileID: 0}
     - target: {fileID: 2825588301822362884, guid: 7f3e93ffd13f4874dbfdd3299e049f00,
         type: 3}
@@ -92,7 +97,7 @@ PrefabInstance:
     - target: {fileID: 3527079967588887499, guid: 7f3e93ffd13f4874dbfdd3299e049f00,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -740.5
+      value: 1130.2
       objectReference: {fileID: 0}
     - target: {fileID: 6678534197649590289, guid: 7f3e93ffd13f4874dbfdd3299e049f00,
         type: 3}

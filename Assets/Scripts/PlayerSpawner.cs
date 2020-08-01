@@ -24,7 +24,7 @@ public class PlayerSpawner : MonoBehaviour
         prefabs.Add(playerPrefabs3);
     }
 
-    public void SpawnPlayers()
+    public void SpawnPlayers(float spawnAnimationTime = 0)
     {
         Transform[] spawns;
         int players = DeviceAssignment.instance.Inputs.Count;
@@ -54,6 +54,8 @@ public class PlayerSpawner : MonoBehaviour
                     }
                 }
             }
+            LeanTween.scale(player.gameObject, new Vector3(0.001f, 0.001f, 0.001f), 0);
+            LeanTween.scale(player.gameObject, Vector3.one, spawnAnimationTime);
 
             inputs.Add(player);
             player.transform.position = spawns[i].position;

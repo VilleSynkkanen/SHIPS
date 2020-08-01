@@ -94,7 +94,7 @@ public class DeviceAssignmentControls : MonoBehaviour
 
     public void OnPlayer2Join(InputAction.CallbackContext context)
     {
-        if (context.started && !assignment.plr2Joined && !unjoining)
+        if (context.started && !assignment.plr2Joined && !unjoining && assignment.plr2 == null)
         {
             PlayerInput player = PlayerInput.Instantiate(player2Prefab, -1, null, -1, Keyboard.current);
             player.SwitchCurrentControlScheme("KeyboardSecondary");

@@ -19,6 +19,10 @@ PrefabInstance:
       propertyPath: m_Pivot.x
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 654386446, guid: 9b5e019842cb10a4eadcda28ba2f6649, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1870
+      objectReference: {fileID: 0}
     - target: {fileID: 1933072685, guid: 9b5e019842cb10a4eadcda28ba2f6649, type: 3}
       propertyPath: m_text
       value: PLAYER 2
@@ -56,7 +60,7 @@ PrefabInstance:
     - target: {fileID: 4508162269539874214, guid: 9b5e019842cb10a4eadcda28ba2f6649,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -740.2
+      value: 1130.2
       objectReference: {fileID: 0}
     - target: {fileID: 6850355539462680270, guid: 9b5e019842cb10a4eadcda28ba2f6649,
         type: 3}
@@ -141,7 +145,7 @@ PrefabInstance:
     - target: {fileID: 8014559918158283810, guid: 9b5e019842cb10a4eadcda28ba2f6649,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.00012207031
+      value: 1870
       objectReference: {fileID: 0}
     - target: {fileID: 8014559918158283810, guid: 9b5e019842cb10a4eadcda28ba2f6649,
         type: 3}

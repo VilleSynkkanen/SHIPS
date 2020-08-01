@@ -12,6 +12,7 @@ public class DeviceAssignment : MonoBehaviour
     [SerializeField] PlayerVictories victories;
     public static UnityAction VictoriesSetup = delegate { };
 
+    [SerializeField] float spawnAnimationTime;
     PlayerSpawner spawner;
     
     List<PlayerInput> inputs = new List<PlayerInput>();
@@ -47,11 +48,13 @@ public class DeviceAssignment : MonoBehaviour
 
     public void JoinDevice(PlayerInput input)
     {
-        Inputs.Add(input);
         DeviceAssignmentControls ass = input.GetComponent<DeviceAssignmentControls>();
-        Assignments.Add(ass);
         if(ass != null)
+        {
+            Inputs.Add(input);
+            Assignments.Add(ass);
             ass.SetDeviceAssignment(this, Inputs.Count - 1);
+        }    
     }
 
     public void CheckReadiness()
@@ -85,14 +88,17 @@ public class DeviceAssignment : MonoBehaviour
         for (int i = 0; i < Assignments.Count; i++)
         {
             ships.Add((ShipType)assignments[i].Selection.i);
+            LeanTween.scale(assignments[i].Selection.ShipImages[assignments[i].Selection.i], Vector3.zero, spawnAnimationTime);
         }
+
+        yield return new WaitForSeconds(spawnAnimationTime);
         
         // spawning must be done before deactivating gameobjects
-        spawner.SpawnPlayers();
-        foreach (DeviceAssignmentControls ass in Assignments)
+        spawner.SpawnPlayers(spawnAnimationTime);
+        for (int i = 0; i < Assignments.Count; i++)
         {
-            if (ass != null)
-                ass.gameObject.SetActive(false);
+            assignments[i].Selection.UnjoinAnimation(i);
+            Assignments[i].gameObject.SetActive(false);
         }
         gameObject.SetActive(false);
         CountdownStart();
@@ -106,7 +112,7 @@ public class DeviceAssignment : MonoBehaviour
         {
             controls.Player2Disconnected();
         }
-        Destroy(controls.gameObject, 1);
+        Destroy(controls.gameObject);
 
         for(int i = 0; i < assignments.Count; i++)
         {

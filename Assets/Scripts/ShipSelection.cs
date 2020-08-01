@@ -10,6 +10,7 @@ public class ShipSelection : MonoBehaviour
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] RectTransform rectTrans;
     [SerializeField] PlayerColorController colorController;
+    [SerializeField] RectTransform[] shipImages;
     [SerializeField] int[] startingPositionY;
     [SerializeField] float animationTime;
     [SerializeField] LeanTweenType joinType;
@@ -23,6 +24,7 @@ public class ShipSelection : MonoBehaviour
     List<InputType> inputQueue = new List<InputType>();
     public int i { get; private set; }
     public float AnimationTime { get => animationTime; }
+    public RectTransform[] ShipImages { get => shipImages; }
 
     bool switching;
 
@@ -189,5 +191,4 @@ public class ShipSelection : MonoBehaviour
         if(index < startingPositionY.Length) 
             LeanTween.moveY(rectTrans, startingPositionY[index], animationTime).setEase(leaveType);
     }
-
 }
