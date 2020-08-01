@@ -71,8 +71,13 @@ public class DeviceAssignment : MonoBehaviour
     IEnumerator SpawnShips()
     {
         yield return new WaitForSeconds(0.1f);
-        
-        if(victories.playerVictories.Length == 0)
+
+        if (Assignments.Count < 2)
+        {
+            yield break;
+        }
+
+        if (victories.playerVictories.Length == 0)
         {
             victories.playerVictories = new int[Assignments.Count];
             VictoriesSetup();
@@ -101,12 +106,12 @@ public class DeviceAssignment : MonoBehaviour
         {
             controls.Player2Disconnected();
         }
-        Destroy(controls.gameObject);
+        Destroy(controls.gameObject, 1);
 
         for(int i = 0; i < assignments.Count; i++)
         {
             assignments[i].SetIndex(i);
-            assignments[i].Selection.SetUI(i);
+            assignments[i].Selection.CheckUIPosition(i);
         }
     }
 

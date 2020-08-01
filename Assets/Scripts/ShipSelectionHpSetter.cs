@@ -1,14 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class ShipSelectionHpSetter : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI[] fronts;
-    [SerializeField] TextMeshProUGUI[] middles;
-    [SerializeField] TextMeshProUGUI[] rears;
-    [SerializeField] TextMeshProUGUI[] totals;
+    [SerializeField] Image[] defenses;
 
     void Start()
     {
@@ -17,13 +14,15 @@ public class ShipSelectionHpSetter : MonoBehaviour
 
     void SetHitpoints()
     {
-        for(int i = 0; i < totals.Length; i++)
+        for(int i = 0; i < defenses.Length; i++)
         {
             ShipData data = GameSettings.Instance.GetShipData((ShipType)i);
-            fronts[i].text = data.SegmentHp[0].ToString();
-            middles[i].text = data.SegmentHp[1].ToString();
-            rears[i].text = data.SegmentHp[2].ToString();
-            totals[i].text = data.MaxHp.ToString();
+            int front = data.SegmentHp[0];
+            int middle = data.SegmentHp[1];
+            int rear = data.SegmentHp[2];
+            int total = data.MaxHp;
+            float defenseValue = 1.5f * (0.9f * total + (0.8f * front + middle + 0.8f * rear) / 3);
+            defenses[i].fillAmount = defenseValue / 100;
         }
     }
 }
