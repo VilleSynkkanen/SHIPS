@@ -36,6 +36,7 @@ public class ShipSegment : MonoBehaviour, ICollision
     public void ResetSegmentHealth()
     {
         hp = MaxHp;
+        StopTerrainDamage();
     }
     
     public void Collision(ProjectileCollision collider)

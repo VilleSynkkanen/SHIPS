@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 15
   speedPower: 2
+  constantDamage: 0.01
   moveSlowAmount: 0.25
   turningSlowAmount: 0.25
+  playDamageSound: 0

@@ -47,7 +47,7 @@ public class ProjectileCollision : MonoBehaviour
         Instantiate(explosion, transform.position, transform.rotation);
     }
 
-    void Destruction()
+    public void Destruction()
     {  
         if(fireEventOnDestruction)
             OnDestruction.Invoke();

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8207571101030957378}
   - component: {fileID: 8883406510019219764}
   - component: {fileID: 4842897824313590933}
+  - component: {fileID: 6418952443826143167}
   m_Layer: 9
   m_Name: ShotLocation
   m_TagString: Untagged
@@ -177,6 +178,21 @@ PolygonCollider2D:
       - {x: -0.46, y: -0.58}
       - {x: 0.46, y: -0.58}
       - {x: 0.40174294, y: 0.05}
+--- !u!114 &6418952443826143167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2410635374627568184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92705a741f219ea4d9bdc68519cbd0b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 8177353032252264308}
+  maxHp: 2
+  drone: {fileID: 2306476747467883677}
 --- !u!1 &4218904999275439718
 GameObject:
   m_ObjectHideFlags: 0

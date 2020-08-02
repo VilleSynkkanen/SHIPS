@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     [SerializeField] float shipScalingDelay;
     [SerializeField] float shipScalingTime;
     [SerializeField] float shipScalingInterval;
+    [SerializeField] float victoryCheckDelay;
 
     BattleUIManager uiManager;
     List<GameObject> playersAlive = new List<GameObject>();
@@ -124,19 +125,22 @@ public class GameController : MonoBehaviour
     {
         playersAlive.Remove(player);
         DisablePlayerControls(player);
-        CheckGameEnd();
+        StartCoroutine(CheckGameEnd());
     }
 
-    void CheckGameEnd()
+    IEnumerator CheckGameEnd()
     {
+        yield return new WaitForSeconds(victoryCheckDelay);
         if(playersAlive.Count == 1)
         {
             string i = "" + playersAlive[0].tag[1];
             Victory(int.Parse(i) - 1);
+            StopAllCoroutines();
         }
         else if(playersAlive.Count == 0)
         {
             Draw();
+            StopAllCoroutines();
         }
     }
     

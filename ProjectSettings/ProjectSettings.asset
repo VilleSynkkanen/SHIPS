@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: StrifeProductions
   productName: SHIPS!
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: 8e90fd30536746b45bde4e10f07af758, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -263,7 +263,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 7f4f70bb6a3ed724d899fbaed8884e09, type: 3}
+      m_Icon: {fileID: 2800000, guid: 48097fa8977a6ef488d313ca6ade4539, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0

@@ -5,6 +5,7 @@ public class DamageShipTriggerData : ScriptableObject
 {
     [SerializeField] float baseDamage;
     [SerializeField] float speedPower;
+    [SerializeField] float constantDamage;
     [SerializeField] float moveSlowAmount;
     [SerializeField] float turningSlowAmount;
     [SerializeField] bool playDamageSound;
@@ -14,4 +15,5 @@ public class DamageShipTriggerData : ScriptableObject
     public float MoveSlowAmount { get => moveSlowAmount; }
     public float TurningSlowAmount { get => turningSlowAmount; }
     public bool PlayDamageSound { get => playDamageSound; }
+    public float ConstantDamage { get => constantDamage; }
 }

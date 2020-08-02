@@ -17,6 +17,7 @@ public class BattleUIManager : MonoBehaviour
     [SerializeField] float uiMoveTime;
     [SerializeField] float uiWaitTimeMultiplier;
     [SerializeField] float victoryAdditionTime;
+    [SerializeField] AudioSource addVictorySound;
     bool gameEnded;
 
     GameController controller;
@@ -93,7 +94,7 @@ public class BattleUIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(victoryAdditionTime);
         victoryTexts[i].text = "PLAYER " + (i + 1).ToString() + " VICTORIES: " + controller.Victories.playerVictories[i].ToString();
-        // add sound effect
+        addVictorySound.Play();
     }
 
     void SetButtonPlacement(int players)

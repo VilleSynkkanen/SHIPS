@@ -27,7 +27,7 @@ public class DroneDamage : MonoBehaviour, ICollision
         if (hp <= 0)
         {
             hp = 0;
-            drone.DestructionEffect();
+            drone.Destruction();
         }
     }
 }

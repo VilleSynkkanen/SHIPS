@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -23,15 +24,25 @@ public class MainMenu : MonoBehaviour
     [SerializeField] float moveToTransition;
     [SerializeField] float toTransitionLength;
     [SerializeField] TransitionToMenu transitionBool;
+    [SerializeField] CanvasGroup fadeTransition;
+    [SerializeField] float fadeTime;
+    [SerializeField] float fadeStartDelay;
 
     [SerializeField] UnityEvent OnMainMenu;
 
     void Start()
     {
         if (transitionBool.transition)
+        {
+            fadeTransition.alpha = 0;
             StartCoroutine(ToTransition());
+        }
+            
         else
-            Cursor.visible = true;
+        {
+            StartCoroutine(FadeDelay());
+        }
+        transitionBool.transition = false;
     }
 
     IEnumerator ToTransition()
@@ -39,6 +50,19 @@ public class MainMenu : MonoBehaviour
         LeanTween.scale(toTransition, Vector3.one, 0);
         yield return null;
         LeanTween.moveX(toTransition, moveToTransition, toTransitionLength).setEase(toTransitionType);
+        StartCoroutine(DelayedCursor(toTransitionLength));
+    }
+
+    IEnumerator FadeDelay()
+    {
+        yield return new WaitForSeconds(fadeStartDelay);
+        LeanTween.alphaCanvas(fadeTransition, 0, fadeTime);
+        StartCoroutine(DelayedCursor(fadeTime));
+    }
+
+    IEnumerator DelayedCursor(float delay)
+    {
+        yield return new WaitForSeconds(delay);
         Cursor.visible = true;
     }
     
