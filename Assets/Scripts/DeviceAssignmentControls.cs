@@ -107,7 +107,7 @@ public class DeviceAssignmentControls : MonoBehaviour
     {
         if (context.started)
         {
-            SceneManager.LoadScene("MainMenu");
+            GameController.instance.Quit();
         }
     }
 

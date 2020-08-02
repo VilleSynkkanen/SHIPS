@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameController : MonoBehaviour
@@ -28,14 +27,28 @@ public class GameController : MonoBehaviour
     bool gameStarted;
     bool countdownStarted;
     bool firstStart;
+    bool quitting;
 
     public PlayerVictories Victories { get => victories; }
 
     public event UnityAction<int, int[]> gameEnd = delegate { };
     public static event UnityAction GameRestart = delegate { };
+    public static event UnityAction QuitGame = delegate { };
+    public static event UnityAction ToShipSelection = delegate { };
+
+    public static GameController instance { get; private set; }
 
     void Awake()
     {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+
         Cursor.visible = false;
         
         ShipDamage.destroyed += RemovePlayer;
@@ -43,6 +56,7 @@ public class GameController : MonoBehaviour
         countdownStarted = false;
         gameEnded = false;
         firstStart = true;
+        quitting = false;
 
         uiManager = GetComponent<BattleUIManager>();
         gameEnd += uiManager.ShowVictoryUi;
@@ -163,13 +177,21 @@ public class GameController : MonoBehaviour
     }
 
     public void ShipSelection()
-    {
-        SceneManager.LoadScene("BattleScene");
+    { 
+        if(!quitting)
+        {
+            quitting = true;
+            ToShipSelection.Invoke();
+        }   
     }
 
     public void Quit()
     {
-        SceneManager.LoadScene("MainMenu");
+        if (!quitting)
+        {
+            quitting = true;
+            QuitGame.Invoke();
+        } 
     }
 
     void OnDestroy()

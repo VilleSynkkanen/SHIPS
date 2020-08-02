@@ -4137,8 +4137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d638d6cbdc02de84b91cf3b450347732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaleAnimationLength: 1
-  moveAnimationLength: 1
+  animationDelay: 0.4
+  scaleAnimationLength: 0.8
+  moveAnimationLength: 0.8
   scaleAnimationType: 5
   moveAnimationType: 21
 --- !u!1 &7108835757711201316
