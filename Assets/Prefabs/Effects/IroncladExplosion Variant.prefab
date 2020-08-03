@@ -7,6 +7,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 355443609422170855, guid: f906b0c68f289424baab94d9439e4e2f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3454239015269559308, guid: f906b0c68f289424baab94d9439e4e2f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -80,7 +85,17 @@ PrefabInstance:
     - target: {fileID: 3454239015269559411, guid: f906b0c68f289424baab94d9439e4e2f,
         type: 3}
       propertyPath: m_Name
-      value: IroncladExplosion
+      value: IroncladExplosion Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7966048687709566386, guid: f906b0c68f289424baab94d9439e4e2f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463270286411620190, guid: f906b0c68f289424baab94d9439e4e2f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f906b0c68f289424baab94d9439e4e2f, type: 3}

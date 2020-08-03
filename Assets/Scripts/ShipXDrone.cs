@@ -11,6 +11,7 @@ public class ShipXDrone : MonoBehaviour
     [SerializeField] ProjectileCollision collision;
     [SerializeField] SpriteRenderer sprite;
     [SerializeField] ParticleSystem[] engines;
+    [SerializeField] AudioSource engineSound;
     [SerializeField] float shotCheckRange;
     ShipXDroneShooter dShooter;
     DroneProjectileData data;
@@ -78,6 +79,8 @@ public class ShipXDrone : MonoBehaviour
         {
             engine.Play();
         }
+
+        engineSound.Play();
     }
 
     public void DeactivateDrone()
@@ -90,6 +93,8 @@ public class ShipXDrone : MonoBehaviour
         {
             engine.Stop();
         }
+
+        engineSound.Stop();
     }
 
     public void Destruction(bool playEffect)

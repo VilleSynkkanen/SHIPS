@@ -82,5 +82,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DroneCannonballExplosion Variant Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 791558033598346969, guid: dd25b1b3f29639442b65d37064e6244d,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f01c623f724825e44a923d1ae50256f2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd25b1b3f29639442b65d37064e6244d, type: 3}

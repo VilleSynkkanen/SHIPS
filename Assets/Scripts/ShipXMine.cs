@@ -8,6 +8,7 @@ public class ShipXMine : MonoBehaviour
     [SerializeField] float spriteAlpha;
     [SerializeField] Transform model;
     [SerializeField] ParticleSystem particles;
+    [SerializeField] AudioSource pingSound;
 
     ShipXMineData data;
     List<ShipMovement> ships = new List<ShipMovement>();
@@ -25,6 +26,7 @@ public class ShipXMine : MonoBehaviour
         ParticleSystem.MainModule main = particles.main;
         main.startColor = new Color(color.r, color.g, color.b, 1);
         particles.Play();
+        pingSound.PlayDelayed(0.5f);
     }
     
     private void OnTriggerEnter2D(Collider2D collision)

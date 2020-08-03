@@ -8,7 +8,10 @@ public class FlamethrowerShooter : InstantShooter
     
     FlamethrowerShooterData flamerData;
     float timeShot;
-    float audioPlayedTime;
+    bool playingAudio;
+    [SerializeField] float soundFadeStart;
+    [SerializeField] float soundFadeAmount;
+    float originalVolume;
 
     public float heat { get; private set; }
     public bool overheated { get; private set; }
@@ -20,7 +23,8 @@ public class FlamethrowerShooter : InstantShooter
         flamerData = (FlamethrowerShooterData)Data;
         heat = 0;
         timeShot = Time.time;
-        audioPlayedTime = Time.time;
+        playingAudio = false;
+        originalVolume = audioSource.volume;
     }
 
     public new void Update()
@@ -28,8 +32,10 @@ public class FlamethrowerShooter : InstantShooter
         base.Update();
         if (heat >= 1)
             overheated = true;
-        
-        if(Time.time - timeShot > flamerData.HeatDissipationDelay)
+
+        float timeDiff = Time.time - timeShot;
+
+        if (timeDiff > flamerData.HeatDissipationDelay)
         {
             heat -= flamerData.HeatDissipation * Time.deltaTime;
             if (heat <= 0)
@@ -37,6 +43,15 @@ public class FlamethrowerShooter : InstantShooter
                 heat = 0;
                 overheated = false;
             }   
+        }
+
+        if (timeDiff >= soundFadeStart && timeDiff <= 1 / soundFadeAmount)
+        {
+            audioSource.volume -= soundFadeAmount * Time.deltaTime;
+            if(audioSource.volume <= 0)
+            {
+                audioSource.Stop();
+            }
         }
     }
     
@@ -60,9 +75,9 @@ public class FlamethrowerShooter : InstantShooter
             }
 
             
-            if (Time.time - audioPlayedTime > 0.1f)
+            if (!playingAudio)
             {
-                audioPlayedTime = Time.time;
+                audioSource.volume = originalVolume;
                 audioSource.Play();
             }
             

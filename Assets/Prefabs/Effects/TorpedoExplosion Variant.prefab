@@ -82,5 +82,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: TorpedoExplosion Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1016240002173889604, guid: 8ca4211d149069f42ab7150c1948a691,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: fd706038486fee041947a774223dc22e, type: 3}
+    - target: {fileID: 1016240002173889604, guid: 8ca4211d149069f42ab7150c1948a691,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016240002173889604, guid: 8ca4211d149069f42ab7150c1948a691,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: 0.9935608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1016240002173889604, guid: 8ca4211d149069f42ab7150c1948a691,
+        type: 3}
+      propertyPath: DopplerLevel
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ca4211d149069f42ab7150c1948a691, type: 3}

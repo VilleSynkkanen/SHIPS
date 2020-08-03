@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 153781043075632086}
   - component: {fileID: 1478263774766409038}
   m_Layer: 0
-  m_Name: ShipExplosion
+  m_Name: FrigateExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,7 +45,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3249345746775159817, guid: 72d80f99dc6279245b8959d8d839ab3e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: f0bba60dd1813bd40af826dbaa99b983, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c1f8c36ebdb20024ea8a59ec457d582c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.8
   m_Pitch: 1
@@ -198,6 +198,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1037974474407081260, guid: dfbdf2134f769dc4486867bd0989e1f4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}
 --- !u!4 &2831565156652214311 stripped
@@ -273,6 +278,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1037974474407081260, guid: dfbdf2134f769dc4486867bd0989e1f4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}
 --- !u!4 &5559799872717018994 stripped
@@ -347,6 +357,11 @@ PrefabInstance:
     - target: {fileID: 4341710008561718, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037974474407081260, guid: dfbdf2134f769dc4486867bd0989e1f4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}

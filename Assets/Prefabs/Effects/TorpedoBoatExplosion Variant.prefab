@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 153781043075632041, guid: c831b34c2bedb8b4aba1c669b88d25ec,
         type: 3}
       propertyPath: m_Name
-      value: TorpedoBoatExplosion
+      value: TorpedoBoatExplosion Variant
       objectReference: {fileID: 0}
     - target: {fileID: 153781043075632086, guid: c831b34c2bedb8b4aba1c669b88d25ec,
         type: 3}
@@ -81,6 +81,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964337268083600701, guid: c831b34c2bedb8b4aba1c669b88d25ec,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846062371585430120, guid: c831b34c2bedb8b4aba1c669b88d25ec,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394592923567487108, guid: c831b34c2bedb8b4aba1c669b88d25ec,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c831b34c2bedb8b4aba1c669b88d25ec, type: 3}
