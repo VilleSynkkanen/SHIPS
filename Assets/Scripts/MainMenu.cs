@@ -90,6 +90,7 @@ public class MainMenu : MonoBehaviour
     IEnumerator FromTransition()
     {
         Cursor.visible = false;
+        MusicPlayer.instance.FadeMusic(-1, FadeType.clipSwitch);
         LeanTween.moveX(fromTransition, 0, fromTransitionLength).setEase(fromTransitionType);
         yield return new WaitForSeconds(fromTransitionLength);
         SceneManager.LoadScene("BattleScene");

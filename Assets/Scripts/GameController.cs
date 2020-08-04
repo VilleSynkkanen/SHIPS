@@ -39,6 +39,7 @@ public class GameController : MonoBehaviour
     public static event UnityAction ToShipSelection = delegate { };
 
     public static GameController instance { get; private set; }
+    BattleMusicPlayer music;
 
     void Awake()
     {
@@ -65,6 +66,11 @@ public class GameController : MonoBehaviour
         DeviceAssignment.CountdownStart += AllPlayersReady;
     }
 
+    private void Start()
+    {
+        music = (BattleMusicPlayer)MusicPlayer.instance;
+    }
+
     void Update()
     {
         if (!gameStarted && countdownStarted)
@@ -89,6 +95,7 @@ public class GameController : MonoBehaviour
         float delay = readyTextDelay;
         if (!firstStart)
             delay += restartExtraDelay;
+        music.FadeMusic(-1, FadeType.clipSwitch);
         yield return new WaitForSeconds(delay);
         countdownSound.Play();
         countdownStarted = true;
@@ -100,8 +107,8 @@ public class GameController : MonoBehaviour
         gameStarted = true;
         countdownStarted = false;
         countdownText.text = "GO";
-
-        foreach(GameObject player in playersAlive)
+        music.SwitchToClip(1, false);
+        foreach (GameObject player in playersAlive)
         {
             player.GetComponent<PlayerComponents>().Activate();
         }
@@ -160,6 +167,7 @@ public class GameController : MonoBehaviour
             victories.playerVictories[i]++;
             gameEnd(i, victories.playerVictories);
             gameEnded = true;
+            music.SwitchToClip(0, true);
         }
     }
     
@@ -169,6 +177,7 @@ public class GameController : MonoBehaviour
         {
             gameEnd(-1, victories.playerVictories);
             gameEnded = true;
+            music.SwitchToClip(0, true);
         } 
     }
 

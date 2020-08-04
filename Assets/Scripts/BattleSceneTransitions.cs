@@ -40,6 +40,7 @@ public class BattleSceneTransitions : MonoBehaviour
     
     IEnumerator FromTransition()
     {
+        MusicPlayer.instance.FadeMusic(-1, FadeType.sceneSwitch);
         LeanTween.moveX(fromTransition, 0, fromTransitionLength).setEase(fromTransitionType);
         yield return new WaitForSeconds(fromTransitionLength);
         SceneManager.LoadScene("MainMenu");
@@ -49,6 +50,7 @@ public class BattleSceneTransitions : MonoBehaviour
 
     IEnumerator TransitionToItself()
     {
+        MusicPlayer.instance.FadeMusic(-1, FadeType.sceneSwitch);
         LeanTween.moveX(toItselfTransition, 0, toTransitionLength).setEase(toTransitionType);
         yield return new WaitForSeconds(toTransitionLength);
         SceneManager.LoadScene("BattleScene");
