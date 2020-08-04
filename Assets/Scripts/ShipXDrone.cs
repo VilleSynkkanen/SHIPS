@@ -109,6 +109,7 @@ public class ShipXDrone : MonoBehaviour
     IEnumerator LifetimeDestroy()
     {
         yield return new WaitForSeconds(data.Lifetime);
-        Destruction(true);
+        if(movement.enabled)
+            Destruction(true);
     }
 }

@@ -3,7 +3,9 @@ using UnityEngine.InputSystem;
 
 public class ShipMovement : MonoBehaviour
 {
-    [SerializeField] ShipType type;  
+    [SerializeField] ShipType type;
+    [SerializeField] AudioSource engineSound;
+    [SerializeField] float engineBaseVolume;
     ShipMovementData data;
     Rigidbody2D rb;
 
@@ -43,6 +45,7 @@ public class ShipMovement : MonoBehaviour
     void Update()
     {
         ReadInput();
+        SetSoundVolume();
     }
 
     void FixedUpdate()
@@ -64,10 +67,16 @@ public class ShipMovement : MonoBehaviour
         rb.AddTorque(-currentTurnSpeed * turnMultiplier * steering * turningCoefficient * Time.fixedDeltaTime);
     }
 
+    void SetSoundVolume()
+    {
+        engineSound.volume = (Mathf.Abs(throttle) + 0.25f * Mathf.Abs(steering)) * engineBaseVolume;
+    }
+    
     public void SetControlsToZero()
     {
         throttle = 0;
         steering = 0;
+        engineSound.volume = 0;
     }
     
     void ReadInput()

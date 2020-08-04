@@ -11,17 +11,19 @@ public class ShipXDroneShooter : ChargedShooter
     Collider2D droneCollider;
     Rigidbody2D droneRb;
     bool droneDestroyed;
+    int locationNumber;
 
     private new void Start()
     {
         base.Start();
         droneData = (DroneShooterData)Data;
+        locationNumber = int.Parse(tag[1] + "");
         SpawnDrone();
     }
 
     void SpawnDrone()
     {
-        Vector3 location = new Vector3(1000, 1000, 0);
+        Vector3 location = locationNumber * new Vector3(1000, 1000, 0);
         PlayerInput droneInput = Instantiate(Projectile, location, Quaternion.identity).GetComponent<PlayerInput>();
         droneInput.SwitchCurrentControlScheme(shipInput.currentControlScheme);
         drone = droneInput.GetComponent<ShipXDrone>();
@@ -40,7 +42,7 @@ public class ShipXDroneShooter : ChargedShooter
 
     void HideDrone()
     {
-        Vector3 location = new Vector3(1000, 1000, 0);
+        Vector3 location = locationNumber * new Vector3(1000, 1000, 0);
         drone.transform.position = location;
         droneRb.velocity = Vector2.zero;
         droneRb.angularVelocity = 0;

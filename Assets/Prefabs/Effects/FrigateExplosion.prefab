@@ -45,9 +45,9 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3249345746775159817, guid: 72d80f99dc6279245b8959d8d839ab3e,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: c1f8c36ebdb20024ea8a59ec457d582c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d4aee29185389894b9cc0d8873904a49, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.8
+  m_Volume: 0.24
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -203,7 +203,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1037974474407081260, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}
 --- !u!4 &2831565156652214311 stripped
 Transform:
@@ -283,7 +284,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1037974474407081260, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}
 --- !u!4 &5559799872717018994 stripped
 Transform:
@@ -363,7 +365,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1037974474407081260, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dfbdf2134f769dc4486867bd0989e1f4, type: 3}
 --- !u!4 &6257440424177483166 stripped
 Transform:

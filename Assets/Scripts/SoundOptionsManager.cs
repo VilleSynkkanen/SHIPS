@@ -16,13 +16,12 @@ public class SoundOptionsManager : MonoBehaviour
 
     void Awake()
     {
-        mixer.SetFloat("Master", CalculateVolume(PlayerPrefs.GetFloat("Master", 1)));
-        mixer.SetFloat("Music", CalculateVolume(PlayerPrefs.GetFloat("Music", 1)));
-        mixer.SetFloat("Effects", CalculateVolume(PlayerPrefs.GetFloat("Effects", 1)));
-
         master.value = PlayerPrefs.GetFloat("Master", 1);
-        music.value = PlayerPrefs.GetFloat("Music", 0.75f);
+        music.value = PlayerPrefs.GetFloat("Music", 1);
         effects.value = PlayerPrefs.GetFloat("Effects", 1);
+        mixer.SetFloat("Master", CalculateVolume(master.value));
+        mixer.SetFloat("Music", CalculateVolume(music.value));
+        mixer.SetFloat("Effects", CalculateVolume(effects.value));
         UpdateTexts();
     }
     

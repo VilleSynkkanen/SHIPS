@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     [SerializeField] float shipScalingTime;
     [SerializeField] float shipScalingInterval;
     [SerializeField] float victoryCheckDelay;
+    [SerializeField] AudioSource countdownSound;
 
     BattleUIManager uiManager;
     List<GameObject> playersAlive = new List<GameObject>();
@@ -89,7 +90,7 @@ public class GameController : MonoBehaviour
         if (!firstStart)
             delay += restartExtraDelay;
         yield return new WaitForSeconds(delay);
-
+        countdownSound.Play();
         countdownStarted = true;
         countdownTimer = countdownTime;
     }

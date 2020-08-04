@@ -28,6 +28,7 @@ public class PlayerComponents : MonoBehaviour
     public void Deactivate()
     {
         movement.enabled = false;
+        movement.SetControlsToZero();
         shooter.enabled = false;
         aim.enabled = false;
     }
