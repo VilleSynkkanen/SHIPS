@@ -1,39 +1,28 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class MapSelection : MonoBehaviour
+public class MapSelection : ScrollableMenu
 {
-    [SerializeField] Sprite[] mapImages;
-    [SerializeField] Image image;
     [SerializeField] PlayerVictories victories;
 
-    private void Awake()
+    private new void Awake()
     {
-        UpdateMap();
+        base.Awake();
+        victories.mapIndex = i;
     }
 
-    public void Next()
+    public new void Next()
     {
-        victories.mapIndex++;
-        if(victories.mapIndex == mapImages.Length)
-        {
-            victories.mapIndex = 0;
-        }
-        UpdateMap();
+        base.Next();
+        victories.mapIndex = i;
     }
 
-    public void Previous()
+    public new void Previous()
     {
-        victories.mapIndex--;
-        if (victories.mapIndex == -1)
-        {
-            victories.mapIndex = mapImages.Length - 1;
-        }
-        UpdateMap();
+        base.Previous();
+        victories.mapIndex = i;
     }
 
-    void UpdateMap()
-    {
-        image.sprite = mapImages[victories.mapIndex];
-    }
+
+
 }

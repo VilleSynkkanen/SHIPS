@@ -1,51 +1,71 @@
 ﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.EventSystems;
 
 public class ScrollableMenu : MonoBehaviour
 {
-    [SerializeField] EventSystem eventSystem;
-    [SerializeField] GameObject[] tips;
-    int i;
+    [SerializeField] CanvasGroup[] tips;
+    [SerializeField] float fadeTime;
+    [SerializeField] float fadeDelayTime;
+    protected int i;
     
-    void Awake()
+    public void Awake()
     {
         i = 0;
     }
 
     public void Previous()
     {
-        tips[i].SetActive(false);
+        StartCoroutine(PreviousDelayed());
+    }
+
+    IEnumerator PreviousDelayed()
+    {
+        LeanTween.alphaCanvas(tips[i], 0, fadeTime);
         i--;
+        yield return new WaitForSeconds(fadeDelayTime);
         if (i == -1)
         {
             i = tips.Length - 1;
-            tips[i].SetActive(true);
+            LeanTween.alphaCanvas(tips[i], 1, fadeTime);
         }
         else
         {
-            tips[i].SetActive(true);
+            LeanTween.alphaCanvas(tips[i], 1, fadeTime);
         }
     }
 
     public void Next()
     {
-        tips[i].SetActive(false);
+        StartCoroutine(NextDelayed());
+    }
+
+    IEnumerator NextDelayed()
+    {
+        LeanTween.alphaCanvas(tips[i], 0, fadeTime);
         i++;
-        if(i == tips.Length)
+        yield return new WaitForSeconds(fadeDelayTime);
+        if (i == tips.Length)
         {
             i = 0;
-            tips[i].SetActive(true);
+            LeanTween.alphaCanvas(tips[i], 1, fadeTime);
         }
         else
         {
-            tips[i].SetActive(true);
+            LeanTween.alphaCanvas(tips[i], 1, fadeTime);
         }
     }
 
     public void ActivateMenu(int index)
     {
-        tips[i].SetActive(false);
+        StartCoroutine(ActivateDelayed(index));
+    }
+
+    IEnumerator ActivateDelayed(int index)
+    {
+        LeanTween.alphaCanvas(tips[i], 0, fadeTime);
         i = index;
-        tips[i].SetActive(true);
+        yield return new WaitForSeconds(fadeDelayTime);
+        LeanTween.alphaCanvas(tips[i], 1, fadeTime);
     }
 }
