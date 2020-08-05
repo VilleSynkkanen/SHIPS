@@ -7,6 +7,7 @@ public class ScrollableMenu : MonoBehaviour
     [SerializeField] CanvasGroup[] tips;
     [SerializeField] float fadeTime;
     [SerializeField] float fadeDelayTime;
+    [SerializeField] bool deactivateObjects;
     protected int i;
     
     public void Awake()
@@ -21,6 +22,7 @@ public class ScrollableMenu : MonoBehaviour
 
     IEnumerator PreviousDelayed()
     {
+        GameObject deactivate = tips[i].gameObject;
         LeanTween.alphaCanvas(tips[i], 0, fadeTime);
         i--;
         yield return new WaitForSeconds(fadeDelayTime);
@@ -33,6 +35,12 @@ public class ScrollableMenu : MonoBehaviour
         {
             LeanTween.alphaCanvas(tips[i], 1, fadeTime);
         }
+        if (deactivateObjects)
+            tips[i].gameObject.SetActive(true);
+        yield return new WaitForSeconds(fadeTime - fadeDelayTime);
+        if (deactivateObjects)
+            deactivate.SetActive(false);
+
     }
 
     public void Next()
@@ -42,6 +50,7 @@ public class ScrollableMenu : MonoBehaviour
 
     IEnumerator NextDelayed()
     {
+        GameObject deactivate = tips[i].gameObject;
         LeanTween.alphaCanvas(tips[i], 0, fadeTime);
         i++;
         yield return new WaitForSeconds(fadeDelayTime);
@@ -54,18 +63,30 @@ public class ScrollableMenu : MonoBehaviour
         {
             LeanTween.alphaCanvas(tips[i], 1, fadeTime);
         }
+        if (deactivateObjects)
+            tips[i].gameObject.SetActive(true);
+        yield return new WaitForSeconds(fadeTime - fadeDelayTime);
+        if (deactivateObjects)
+            deactivate.SetActive(false);
     }
 
     public void ActivateMenu(int index)
     {
-        StartCoroutine(ActivateDelayed(index));
+        if(index != i)
+            StartCoroutine(ActivateDelayed(index));
     }
 
     IEnumerator ActivateDelayed(int index)
     {
+        GameObject deactivate = tips[i].gameObject;
         LeanTween.alphaCanvas(tips[i], 0, fadeTime);
         i = index;
         yield return new WaitForSeconds(fadeDelayTime);
         LeanTween.alphaCanvas(tips[i], 1, fadeTime);
+        if (deactivateObjects)
+            tips[i].gameObject.SetActive(true);
+        yield return new WaitForSeconds(fadeTime - fadeDelayTime);
+        if (deactivateObjects)
+            deactivate.SetActive(false);
     }
 }
