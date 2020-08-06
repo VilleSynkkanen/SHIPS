@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
@@ -7,10 +8,15 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] GameObject mainMenu;
-    [SerializeField] GameObject playMenu;
-    [SerializeField] GameObject howToPlayMenu;
-    [SerializeField] GameObject optionsMenu;
+    [SerializeField] RectTransform mainMenu;
+    [SerializeField] RectTransform playMenu;
+    [SerializeField] RectTransform howToPlayMenu;
+    [SerializeField] RectTransform optionsMenu;
+    [SerializeField] float[] menusHidden;
+    [SerializeField] float[] menusVisible;
+    [SerializeField] float menuAnimationTime;
+    [SerializeField] LeanTweenType menuFromTransitionType;
+    [SerializeField] LeanTweenType menuToTransitionType;
     [SerializeField] EventSystem eventSystem;
     [SerializeField] GameObject menuStart;
     [SerializeField] GameObject playMenuStart;
@@ -27,11 +33,15 @@ public class MainMenu : MonoBehaviour
     [SerializeField] CanvasGroup fadeTransition;
     [SerializeField] float fadeTime;
     [SerializeField] float fadeStartDelay;
+    int activeMenu;
+    List<RectTransform> menus;
 
     [SerializeField] UnityEvent OnMainMenu;
 
     void Start()
     {
+        menus = new List<RectTransform> { mainMenu, playMenu, howToPlayMenu, optionsMenu };
+        activeMenu = 0;
         if (transitionBool.transition)
         {
             fadeTransition.alpha = 0;
@@ -66,19 +76,28 @@ public class MainMenu : MonoBehaviour
         Cursor.visible = true;
     }
     
+    void ActivateMenu(int i)
+    {
+        activeMenu = i;
+        LeanTween.moveY(menus[i], menusVisible[i], menuAnimationTime).setEase(menuToTransitionType);
+    }
+    
+    void DeactivateMenu(int i)
+    {
+        LeanTween.moveY(menus[i], menusHidden[i], menuAnimationTime).setEase(menuFromTransitionType);
+    }
+    
     public void ToMainMenu()
     {
-        mainMenu.SetActive(true);
-        playMenu.SetActive(false);
-        howToPlayMenu.SetActive(false);
-        optionsMenu.SetActive(false);
+        DeactivateMenu(activeMenu);
+        ActivateMenu(0);
         eventSystem.SetSelectedGameObject(menuStart);
         OnMainMenu.Invoke();
     }
     public void PlayMenu()
     {
-        playMenu.SetActive(true);
-        mainMenu.SetActive(false);
+        DeactivateMenu(activeMenu);
+        ActivateMenu(1);
         eventSystem.SetSelectedGameObject(playMenuStart);
     }
 
@@ -98,15 +117,15 @@ public class MainMenu : MonoBehaviour
 
     public void HowToPlayMenu()
     {
-        howToPlayMenu.SetActive(true);
-        mainMenu.SetActive(false);
+        DeactivateMenu(activeMenu);
+        ActivateMenu(2);
         eventSystem.SetSelectedGameObject(howToPlayStart);
     }
 
     public void OptionsMenu()
     {
-        optionsMenu.SetActive(true);
-        mainMenu.SetActive(false);
+        DeactivateMenu(activeMenu);
+        ActivateMenu(3);
         eventSystem.SetSelectedGameObject(optionsStart);
     }
 

@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a51f86d8188f9d4883257cd40b13f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventSystem: {fileID: 7970249974714327783}
+  deselectOnPointerExit: 0
   selectedScale: {x: 1.2, y: 1.2, z: 1.2}
   animationTime: 0.42
   selectType: 27
@@ -1535,6 +1537,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a51f86d8188f9d4883257cd40b13f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventSystem: {fileID: 7970249974714327783}
+  deselectOnPointerExit: 0
   selectedScale: {x: 1.2, y: 1.2, z: 1.2}
   animationTime: 0.42
   selectType: 27
@@ -2895,6 +2899,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a51f86d8188f9d4883257cd40b13f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  eventSystem: {fileID: 7970249974714327783}
+  deselectOnPointerExit: 0
   selectedScale: {x: 1.2, y: 1.2, z: 1.2}
   animationTime: 0.42
   selectType: 27
