@@ -187,6 +187,7 @@ public class GameController : MonoBehaviour
         gameStarted = false;
         countdownStarted = false;
         gameEnded = false;
+        StopAllCoroutines();
         StartCoroutine(RestartCycle());
     }
 

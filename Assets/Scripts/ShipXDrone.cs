@@ -50,17 +50,14 @@ public class ShipXDrone : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(new Vector2(shooter.ShotLocations[0].position.x, shooter.ShotLocations[0].position.y),
                 transform.up, shotCheckRange, mask);
             if (hit)
-            {
+            { 
                 ShipSegment segment = hit.collider.GetComponent<ShipSegment>();
                 if (segment != null && segment.tag != tag)
                 {
                     shooter.ShotInput(true);
-                    return;
                 }
             }
         }
-
-        shooter.ShotInput(false);
     }
 
     private void FixedUpdate()
