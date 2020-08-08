@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cec5bc13416f0c4681189b7277465e7, type: 3}
   m_Name: ShipXDroneProjectileData
   m_EditorClassIdentifier: 
-  dmg: 1.4
+  dmg: 0.42
   angleCoefficient: 0.2
   minDamage: 0.5
   explosionForce: 6
