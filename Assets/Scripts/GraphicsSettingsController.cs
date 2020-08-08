@@ -7,7 +7,7 @@ public class GraphicsSettingsController : MonoBehaviour
     [SerializeField] TMP_Dropdown textures;
     [SerializeField] TMP_Dropdown vsync;
     [SerializeField] TMP_Dropdown resolutionDropdown;
-    Resolution[] resolutions;
+    List<Resolution> resolutions;
 
     private void Start()
     {
@@ -20,11 +20,19 @@ public class GraphicsSettingsController : MonoBehaviour
 
     void ManageResolutions()
     {
-        resolutions = Screen.resolutions;
+        Resolution[] allResolutions = Screen.resolutions;
+        resolutions = new List<Resolution>();
+        foreach(Resolution res in allResolutions)
+        {
+            if(9 * res.width == 16 * res.height)
+            {
+                resolutions.Add(res);
+            }
+        }
         resolutionDropdown.ClearOptions();
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
-        for(int i = 0; i < resolutions.Length; i++)
+        for(int i = 0; i < resolutions.Count; i++)
         {
             string option = resolutions[i].width + "x" + resolutions[i].height + " " + resolutions[i].refreshRate + "Hz";
             options.Add(option);

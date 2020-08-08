@@ -46,7 +46,7 @@ public class ShipXDrone : MonoBehaviour
     {
         if (shoot)
         {
-            LayerMask mask = LayerMask.GetMask("Ships", "Land");
+            LayerMask mask = LayerMask.GetMask("ShipSegments", "Land");
             RaycastHit2D hit = Physics2D.Raycast(new Vector2(shooter.ShotLocations[0].position.x, shooter.ShotLocations[0].position.y),
                 transform.up, shotCheckRange, mask);
             if (hit)

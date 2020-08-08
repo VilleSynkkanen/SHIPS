@@ -74,11 +74,8 @@ public class ActionRebindingController : MonoBehaviour
             keyboard = true;
         }
 
-        print(controlType);
-        print(bindingIndex);
-
         rebindOperation = inputAction.PerformInteractiveRebinding(bindingIndex).WithCancelingThrough(cancelType)
-            .WithControlsHavingToMatchPath(controlType).OnCancel(operation =>
+            .WithCancelingThrough("<Keyboard>/escape").WithControlsHavingToMatchPath(controlType).OnCancel(operation =>
             {
                 CleanUp();
                 ui.SetInstructionOverlay(false);
