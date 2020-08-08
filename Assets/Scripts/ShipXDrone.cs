@@ -97,16 +97,16 @@ public class ShipXDrone : MonoBehaviour
     public void Destruction(bool playEffect)
     {
         StopCoroutine(LifetimeDestroy());
-        dShooter.DroneDestroyed();
-        DeactivateDrone();
-        if(playEffect)
+        if (playEffect)
             collision.DestructionEffect();
+        dShooter.DroneDestroyed();
+        DeactivateDrone();  
     }
 
     IEnumerator LifetimeDestroy()
     {
         yield return new WaitForSeconds(data.Lifetime);
         if(movement.enabled)
-            Destruction(true);
+            Destruction(true);  
     }
 }
