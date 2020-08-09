@@ -12,6 +12,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] RectTransform playMenu;
     [SerializeField] RectTransform howToPlayMenu;
     [SerializeField] RectTransform optionsMenu;
+    [SerializeField] RectTransform creditsMenu;
     [SerializeField] float[] menusHidden;
     [SerializeField] float[] menusVisible;
     [SerializeField] float menuAnimationTime;
@@ -22,6 +23,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] GameObject playMenuStart;
     [SerializeField] GameObject howToPlayStart;
     [SerializeField] GameObject optionsStart;
+    [SerializeField] GameObject creditsStart;
     [SerializeField] RectTransform fromTransition;
     [SerializeField] LeanTweenType fromTransitionType;
     [SerializeField] float fromTransitionLength;
@@ -40,7 +42,7 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
-        menus = new List<RectTransform> { mainMenu, playMenu, howToPlayMenu, optionsMenu };
+        menus = new List<RectTransform> { mainMenu, playMenu, howToPlayMenu, optionsMenu, creditsMenu };
         activeMenu = 0;
         if (transitionBool.transition)
         {
@@ -127,6 +129,13 @@ public class MainMenu : MonoBehaviour
         DeactivateMenu(activeMenu);
         ActivateMenu(3);
         eventSystem.SetSelectedGameObject(optionsStart);
+    }
+
+    public void CreditsMenu()
+    {
+        DeactivateMenu(activeMenu);
+        ActivateMenu(4);
+        eventSystem.SetSelectedGameObject(creditsStart);
     }
 
     public void Quit()
