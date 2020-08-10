@@ -5,6 +5,7 @@ using TMPro;
 public class GraphicsSettingsController : MonoBehaviour
 {
     [SerializeField] TMP_Dropdown textures;
+    [SerializeField] TMP_Dropdown waterAnimation;
     [SerializeField] TMP_Dropdown vsync;
     [SerializeField] TMP_Dropdown resolutionDropdown;
     List<Resolution> resolutions;
@@ -13,6 +14,7 @@ public class GraphicsSettingsController : MonoBehaviour
     {
         textures.value = PlayerPrefs.GetInt("TextureQuality", 2);
         QualitySettings.SetQualityLevel(textures.value);
+        waterAnimation.value = PlayerPrefs.GetInt("WaterAnimation", 1);
         vsync.value = PlayerPrefs.GetInt("VSync", 0);
         QualitySettings.vSyncCount = vsync.value;
         ManageResolutions();
@@ -52,6 +54,11 @@ public class GraphicsSettingsController : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(amount);
         PlayerPrefs.SetInt("TextureQuality", amount);
+    }
+
+    public void SetWaterAnimation(int amount)
+    {
+        PlayerPrefs.SetInt("WaterAnimation", amount);
     }
 
     public void SetVsyncValue(int amount)

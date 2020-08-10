@@ -3105,6 +3105,7 @@ GameObject:
   - component: {fileID: 1406226073987130125}
   - component: {fileID: 7099814770731481679}
   - component: {fileID: 1406226073987130124}
+  - component: {fileID: 2003210756282540525}
   m_Layer: 0
   m_Name: Map1
   m_TagString: Untagged
@@ -3239,6 +3240,23 @@ MonoBehaviour:
   uiWaitTimeMultiplier: 2
   victoryAdditionTime: 1.5
   addVictorySound: {fileID: 5351652030577435514}
+--- !u!114 &2003210756282540525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406226073987130120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 472077b009232ce4b831660ca9f5778e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationObjects:
+  - {fileID: 8382805213886146252}
+  - {fileID: 5579745305471823248}
+  - {fileID: 2665222859788714376}
+  - {fileID: 8088839065203341435}
 --- !u!1 &1406226074007623232
 GameObject:
   m_ObjectHideFlags: 0
