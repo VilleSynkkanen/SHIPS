@@ -25,8 +25,8 @@ public class ShipDamage : MonoBehaviour
     public ShipMovement Movement { get => movement; }
     public ShipUI Ui { get => ui; }
 
-    public event UnityAction<float, SegmentType> segmentDamage = delegate { };
     public static event UnityAction<GameObject> destroyed = delegate { };
+    public event UnityAction<float, SegmentType> segmentDamage = delegate { };
 
     void Awake()
     {

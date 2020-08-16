@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RigidbodySettingsController : MonoBehaviour
 {
@@ -17,6 +15,7 @@ public class RigidbodySettingsController : MonoBehaviour
             data = GameSettings.Instance.GetShipRigidbodyData(shipType);
         else
             data = GameSettings.Instance.GetProjectileRigidbodyData(shooterType);
+        
         rb = GetComponent<Rigidbody2D>();
         rb.mass = data.Mass;
         rb.drag = data.LinearDrag;

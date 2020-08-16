@@ -4,6 +4,7 @@ using UnityEngine;
 public class DamageShipTrigger : MonoBehaviour
 {
     [SerializeField] DamageShipTriggerData data;
+    
     List<ShipSegment> segments = new List<ShipSegment>();
 
     private void Awake()

@@ -6,6 +6,7 @@ public class ShipXDroneShooter : ChargedShooter
 {
     [SerializeField] PlayerInput shipInput;
     [SerializeField] SpriteRenderer shipSprite;
+    
     ShipXDrone drone;
     DroneShooterData droneData;
     Collider2D droneCollider;
@@ -84,7 +85,6 @@ public class ShipXDroneShooter : ChargedShooter
         if(dro != null && !droneDestroyed)
         {
             dro.ActivateDrone(shipSprite.color);
-        }
-            
+        }    
     }
 }

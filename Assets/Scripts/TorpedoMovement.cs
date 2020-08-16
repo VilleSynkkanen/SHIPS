@@ -3,6 +3,7 @@
 public class TorpedoMovement : MonoBehaviour
 {
     [SerializeField] ProjectileCollision collision;
+    
     Rigidbody2D rb;
     MovingProjectileData data;
 

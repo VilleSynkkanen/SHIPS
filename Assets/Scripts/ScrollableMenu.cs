@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.EventSystems;
 
 public class ScrollableMenu : MonoBehaviour
 {
@@ -8,6 +7,7 @@ public class ScrollableMenu : MonoBehaviour
     [SerializeField] float fadeTime;
     [SerializeField] float fadeDelayTime;
     [SerializeField] bool deactivateObjects;
+    
     protected int i;
     
     public void Awake()

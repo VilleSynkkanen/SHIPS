@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
@@ -12,6 +10,7 @@ public class SoundOptionsManager : MonoBehaviour
     [SerializeField] Slider music;
     [SerializeField] Slider effects;
     [SerializeField] TextMeshProUGUI[] texts;
+    
     string exposedParam;
 
     void Awake()

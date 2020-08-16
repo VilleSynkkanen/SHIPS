@@ -2,10 +2,10 @@
 
 public class Gravity : MonoBehaviour
 {
-    ProjectileGravityData data;
     [SerializeField] GameObject waterHitEffect;
     [SerializeField] ShooterType type;
 
+    ProjectileGravityData data;
     float altitude;
     float downwardVelocity;
 

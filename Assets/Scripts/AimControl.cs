@@ -9,8 +9,8 @@ public class AimControl : MonoBehaviour
 
     PlayerControlInput input;
     ShipShooterManager shooter;
-    Vector3[] currentAngles;
     AimPointData data;
+    Vector3[] currentAngles;
 
     void Awake()
     {

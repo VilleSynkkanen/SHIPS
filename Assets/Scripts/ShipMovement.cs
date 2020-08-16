@@ -6,9 +6,9 @@ public class ShipMovement : MonoBehaviour
     [SerializeField] ShipType type;
     [SerializeField] AudioSource engineSound;
     [SerializeField] float engineBaseVolume;
+    
     ShipMovementData data;
     Rigidbody2D rb;
-
     float currentMoveSpeed;
     float currentTurnSpeed;
     float currentSteeringSpeed;
@@ -59,7 +59,7 @@ public class ShipMovement : MonoBehaviour
             turningCoefficient = (1 - data.MaxTurningPenalty) * rb.velocity.magnitude / data.TurningPenaltyTreshold + data.MaxTurningPenalty;
         }
         
-        // makes reversing invert turning controls (experimental)
+        // makes reversing invert turning controls
         if (Vector3.Dot(rb.velocity, transform.up) < 0)
             turningCoefficient *= -1;
 

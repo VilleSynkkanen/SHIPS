@@ -5,19 +5,18 @@ public class FlamethrowerShooter : InstantShooter
 {
     [SerializeField] FlamethrowerCollider col;
     [SerializeField] AudioSource audioSource;
-    
+    [SerializeField] float soundFadeStart;
+    [SerializeField] float soundFadeAmount;
+    [SerializeField] UnityEvent OnDrainedAmmo;
+
     FlamethrowerShooterData flamerData;
     float timeShot;
     bool playingAudio;
-    [SerializeField] float soundFadeStart;
-    [SerializeField] float soundFadeAmount;
     float originalVolume;
 
     public float heat { get; private set; }
     public bool overheated { get; private set; }
     
-    [SerializeField] UnityEvent OnDrainedAmmo;
-
     private void Start()
     {
         flamerData = (FlamethrowerShooterData)Data;

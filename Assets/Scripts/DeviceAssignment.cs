@@ -8,13 +8,12 @@ public class DeviceAssignment : MonoBehaviour
 {
     public static DeviceAssignment instance = null;
     public static UnityAction CountdownStart = delegate { };
-
-    [SerializeField] PlayerVictories victories;
     public static UnityAction VictoriesSetup = delegate { };
-
-    [SerializeField] float spawnAnimationTime;
-    PlayerSpawner spawner;
     
+    [SerializeField] PlayerVictories victories;
+    [SerializeField] float spawnAnimationTime;
+
+    PlayerSpawner spawner;
     List<PlayerInput> inputs = new List<PlayerInput>();
     List<DeviceAssignmentControls> assignments = new List<DeviceAssignmentControls>();
     List<ShipType> ships = new List<ShipType>();

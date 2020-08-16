@@ -5,6 +5,7 @@ public class PlayerColorController : MonoBehaviour
 {
     [SerializeField] SpriteRenderer[] sprites;
     [SerializeField] Image[] images;
+    
     DeviceAssignmentControls assignment;
 
     void Awake()

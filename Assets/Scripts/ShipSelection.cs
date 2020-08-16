@@ -19,14 +19,14 @@ public class ShipSelection : MonoBehaviour
     [SerializeField] float fadeInterval;
     [SerializeField] LeanTweenType fadeInType;
     [SerializeField] LeanTweenType fadeOutType;
-    int uiPosition;
-    
+
     List<InputType> inputQueue = new List<InputType>();
+    int uiPosition;
+    bool switching;
+
     public int i { get; private set; }
     public float AnimationTime { get => animationTime; }
     public RectTransform[] ShipImages { get => shipImages; }
-
-    bool switching;
 
     private void Awake()
     {

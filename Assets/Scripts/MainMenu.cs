@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -35,6 +34,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] CanvasGroup fadeTransition;
     [SerializeField] float fadeTime;
     [SerializeField] float fadeStartDelay;
+    
     int activeMenu;
     List<RectTransform> menus;
 

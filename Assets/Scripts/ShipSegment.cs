@@ -65,7 +65,6 @@ public class ShipSegment : MonoBehaviour, ICollision
         terrainDamage.Stop();
     }
 
-
     void OnDestroy()
     {
         damageTaken -= Ship.TakeDamage;

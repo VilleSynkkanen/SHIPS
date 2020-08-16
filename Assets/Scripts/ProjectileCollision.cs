@@ -11,9 +11,9 @@ public class ProjectileCollision : MonoBehaviour
     [SerializeField] bool letEventHandleDestruction;
     [SerializeField] UnityEvent OnDestruction;
 
-    public ProjectileData data { get; private set; }
     float dmg;
-
+    
+    public ProjectileData data { get; private set; }
     public Rigidbody2D rb { get; private set; }
     public float ExplosionForce { get => data.ExplosionForce; }
 
@@ -63,6 +63,7 @@ public class ProjectileCollision : MonoBehaviour
         float magnitude = velocity.magnitude;
         float damage = data.AngleCoefficient * magnitude + data.MinDamage;
 
-        return damage * dmg;    // multiply coefficient by base dmg
+        // multiply coefficient by base dmg
+        return damage * dmg;    
     } 
 }

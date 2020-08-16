@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
 public class DeviceAssignmentControls : MonoBehaviour
 {
@@ -16,7 +15,6 @@ public class DeviceAssignmentControls : MonoBehaviour
     public bool ready { get; private set; }
     public PlayerInput Input { get => input; }
     public ShipSelection Selection { get => selection; }
-
 
     private void Start()
     {

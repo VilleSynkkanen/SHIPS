@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public abstract class Shooter : MonoBehaviour
@@ -9,6 +7,7 @@ public abstract class Shooter : MonoBehaviour
     [SerializeField] GameObject projectile;
     [SerializeField] UnityEvent ShotEvent;
     [SerializeField] ShooterType type;
+    
     ShooterData data;
 
     public ShooterData Data { get => data; }

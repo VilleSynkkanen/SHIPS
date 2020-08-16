@@ -13,6 +13,7 @@ public class ShipXDrone : MonoBehaviour
     [SerializeField] ParticleSystem[] engines;
     [SerializeField] AudioSource engineSound;
     [SerializeField] float shotCheckRange;
+    
     ShipXDroneShooter dShooter;
     DroneProjectileData data;
     Color defaultColor;

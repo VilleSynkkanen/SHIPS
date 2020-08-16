@@ -3,6 +3,7 @@
 public class ProjectileParent : MonoBehaviour
 {
     public static ProjectileParent instance = null;
+    
     [SerializeField] float objectScalingTime;
 
     void Awake()

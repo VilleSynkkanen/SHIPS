@@ -18,9 +18,9 @@ public class BattleUIManager : MonoBehaviour
     [SerializeField] float uiWaitTimeMultiplier;
     [SerializeField] float victoryAdditionTime;
     [SerializeField] AudioSource addVictorySound;
-    bool gameEnded;
 
     GameController controller;
+    bool gameEnded;
 
     void Awake()
     {
@@ -46,9 +46,10 @@ public class BattleUIManager : MonoBehaviour
         SetButtonPlacement(controller.Victories.playerVictories.Length);
     }
     
-    public void ShowVictoryUi(int winner, int[] victories)      // winner = -1 if draw
+    public void ShowVictoryUi(int winner, int[] victories)      
     {
-        if(!gameEnded)
+        // winner = -1 if draw
+        if (!gameEnded)
         {
             gameEnded = true;
             if(winner == -1)

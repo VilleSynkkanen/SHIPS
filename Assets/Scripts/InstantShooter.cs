@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public abstract class InstantShooter : Shooter
+﻿public abstract class InstantShooter : Shooter
 {
     public override void ShotInput(bool input)
     {

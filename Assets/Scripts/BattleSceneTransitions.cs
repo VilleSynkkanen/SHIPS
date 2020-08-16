@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -45,7 +44,6 @@ public class BattleSceneTransitions : MonoBehaviour
         yield return new WaitForSeconds(fromTransitionLength);
         SceneManager.LoadScene("MainMenu");
         menuTransition.transition = true;
-        // communicate to menu that transition is needed (or do transition always)
     }
 
     IEnumerator TransitionToItself()

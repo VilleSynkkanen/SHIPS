@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoveWater : MonoBehaviour
 {
@@ -9,10 +7,10 @@ public class MoveWater : MonoBehaviour
     [SerializeField] Vector2 direction;
     [SerializeField] float directionSwapInterval;
     [SerializeField] float directionSwapPerSecond;
+    
     float lastDirectionSwapTime;
     int swappingDirection;      // -1, 0 or 1
     float currentDirection;
-
 
     private void Start()
     {
@@ -40,6 +38,4 @@ public class MoveWater : MonoBehaviour
             swappingDirection = -(int)currentDirection;
         }
     }
-
-    
 }

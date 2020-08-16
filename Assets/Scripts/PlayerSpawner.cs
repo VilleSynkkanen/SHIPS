@@ -35,7 +35,8 @@ public class PlayerSpawner : MonoBehaviour
 
         for (int i = 0; i < players; i++)
         {
-            PlayerInput player;       
+            PlayerInput player;
+            // check if device is not plr2 keyboard
             if (DeviceAssignment.instance.Inputs[i].devices.Count > 0)
             {
                 player = PlayerInput.Instantiate(prefabs[(int)DeviceAssignment.instance.Ships[i]][i], -1, null, -1,
@@ -43,7 +44,6 @@ public class PlayerSpawner : MonoBehaviour
             }
             else
             {
-                //if device is not plr2 keyboard
                 player = PlayerInput.Instantiate(prefabs[(int)DeviceAssignment.instance.Ships[i]][i], -1, null, -1, Keyboard.current);
                 player.SwitchCurrentControlScheme("KeyboardSecondary");
                 foreach(PlayerInput input in inputs)

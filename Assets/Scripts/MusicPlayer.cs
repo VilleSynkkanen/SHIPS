@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 
-
 public enum FadeType { clipSwitch, sceneSwitch };
 public class MusicPlayer : MonoBehaviour
 {
     public static MusicPlayer instance = null;
+    
     [SerializeField] AudioSource music;
     [SerializeField] float[] fadeSpeed;
+
+    protected int fadeIndex;   // 0 = clip switch, 1 = scene switch;
     int fading; // -1, 0 or 1
     float startVolume;
 
     public AudioSource Music { get => music; }
     public float[] FadeSpeed { get => fadeSpeed; }
-    protected int fadeIndex;   // 0 = clip switch, 1 = scene switch;
-
+    
     void Awake()
     {
         if (instance != null)

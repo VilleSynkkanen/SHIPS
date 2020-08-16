@@ -3,9 +3,10 @@ using UnityEngine;
 
 public class MineShooter : InstantShooter
 {
-    MineShooterData mineData;
     [SerializeField] bool giveFriendlyTagAndColor;
     [SerializeField] SpriteRenderer ship;
+
+    MineShooterData mineData;
 
     void Start()
     {

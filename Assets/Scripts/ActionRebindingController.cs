@@ -33,7 +33,6 @@ public class ActionRebindingController : MonoBehaviour
         }
     }
 
-
     public void Rebind(string actionAndGroup)
     {
         string[] arr = actionAndGroup.Split(':');

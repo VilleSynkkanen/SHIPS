@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class ActionRebindingUI : MonoBehaviour
 {
-    // tmprougui and actionnames lists correspond to each other
+    // TMProUGUI and actionnames lists correspond to each other
     [SerializeField] TextMeshProUGUI[] keyboard;
     [SerializeField] TextMeshProUGUI[] keyboardPrimary;
     [SerializeField] TextMeshProUGUI[] keyboardSecondary;
@@ -70,7 +70,7 @@ public class ActionRebindingUI : MonoBehaviour
         }
         else if(active && !keyboard)
         {
-            instructions.text = "PRESS A BUTTON YOU WANT TO BIND TO\nPRESS START TO CANCEL REBINDING";
+            instructions.text = "PRESS A BUTTON YOU WANT TO BIND TO\nPRESS START OR ESC TO CANCEL REBINDING";
         }
     }
 }

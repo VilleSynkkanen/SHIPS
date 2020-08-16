@@ -6,6 +6,8 @@ using TMPro;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController instance { get; private set; }
+
     [SerializeField] PlayerVictories victories;
     [SerializeField] TextMeshProUGUI countdownText;
     [SerializeField] PlayerSpawner spawner;
@@ -20,10 +22,10 @@ public class GameController : MonoBehaviour
     [SerializeField] AudioSource countdownSound;
 
     BattleUIManager uiManager;
+    BattleMusicPlayer music;
     List<GameObject> playersAlive = new List<GameObject>();
     List<GameObject> players = new List<GameObject>();
     List<PlayerControlInput> playerInputs = new List<PlayerControlInput>();
-
     float countdownTimer;
     bool gameEnded;
     bool gameStarted;
@@ -33,13 +35,10 @@ public class GameController : MonoBehaviour
 
     public PlayerVictories Victories { get => victories; }
 
-    public event UnityAction<int, int[]> gameEnd = delegate { };
     public static event UnityAction GameRestart = delegate { };
     public static event UnityAction QuitGame = delegate { };
     public static event UnityAction ToShipSelection = delegate { };
-
-    public static GameController instance { get; private set; }
-    BattleMusicPlayer music;
+    public event UnityAction<int, int[]> gameEnd = delegate { };
 
     void Awake()
     {
@@ -53,8 +52,6 @@ public class GameController : MonoBehaviour
         }
 
         Cursor.visible = false;
-        
-        ShipDamage.destroyed += RemovePlayer;
         gameStarted = false;
         countdownStarted = false;
         gameEnded = false;
@@ -62,6 +59,7 @@ public class GameController : MonoBehaviour
         quitting = false;
 
         uiManager = GetComponent<BattleUIManager>();
+        ShipDamage.destroyed += RemovePlayer;
         gameEnd += uiManager.ShowVictoryUi;
         DeviceAssignment.CountdownStart += AllPlayersReady;
     }

@@ -22,7 +22,4 @@ public class MapSelection : ScrollableMenu
         base.Previous();
         victories.mapIndex = i;
     }
-
-
-
 }
